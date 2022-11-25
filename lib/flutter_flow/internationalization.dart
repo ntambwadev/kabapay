@@ -399,8 +399,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '180k82nb': {
       'en': 'Logout',
-      'fr': 'Prochain',
-      'sw': 'Inayofuata',
+      'fr': 'Se déconnecter',
+      'sw': 'Ondoka',
     },
     'lgf10g04': {
       'en': 'Home',
