@@ -26,6 +26,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     emailAddressController = TextEditingController();
     passwordLoginController = TextEditingController();
     passwordLoginVisibility = false;
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'login_page'});
   }
 
   @override
@@ -70,6 +71,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             size: 28,
                           ),
                           onPressed: () async {
+                            logFirebaseEvent(
+                                'LOGIN_PAGE_PAGE_chevron_left_ICN_ON_TAP');
+                            logFirebaseEvent('IconButton_navigate_back');
                             context.pop();
                           },
                         ),
@@ -290,6 +294,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      logFirebaseEvent('LOGIN_PAGE_PAGE_Button-Login_ON_TAP');
+                      logFirebaseEvent('Button-Login_auth');
                       GoRouter.of(context).prepareAuthEvent();
 
                       final user = await signInWithEmail(
@@ -333,6 +339,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
+                          logFirebaseEvent(
+                              'LOGIN_PAGE_PAGE_Button-Login_ON_TAP');
+                          logFirebaseEvent('Button-Login_navigate_to');
+
                           context.pushNamed('forgot_password_page');
                         },
                         text: FFLocalizations.of(context).getText(

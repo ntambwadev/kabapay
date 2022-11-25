@@ -78,6 +78,9 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                       ),
                       InkWell(
                         onTap: () async {
+                          logFirebaseEvent(
+                              'ADD_PHONE_INSTRUMENT_Container_cyugx7h9_');
+                          logFirebaseEvent('Container_bottom_sheet');
                           await showModalBottomSheet(
                             isScrollControlled: true,
                             backgroundColor: Colors.transparent,
@@ -280,6 +283,8 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 20),
               child: FFButtonWidget(
                 onPressed: () async {
+                  logFirebaseEvent('ADD_PHONE_INSTRUMENT_COMP_ADD_BTN_ON_TAP');
+                  logFirebaseEvent('Button_bottom_sheet');
                   Navigator.pop(context);
                 },
                 text: FFLocalizations.of(context).getText(

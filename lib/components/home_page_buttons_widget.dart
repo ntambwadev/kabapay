@@ -16,6 +16,8 @@ class HomePageButtonsWidget extends StatefulWidget {
 class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
 
   _onBuyButtonTap(BuildContext context) {
+    logFirebaseEvent('HOME_BUY_BUTTON_Container_g4p1ceub_ON_TAP');
+    logFirebaseEvent('home_buy_button_navigate_to');
     context.pushNamed(
       'tokens_page',
       extra: <String, dynamic>{
@@ -28,6 +30,8 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
   }
 
   _onSendButtonTap(BuildContext context) {
+    logFirebaseEvent('HOME_SEND_BUTTON_Container_g4p1ceub_ON_TAP');
+    logFirebaseEvent('home_send_button_navigate_to');
     context.pushNamed(
       'tokens_page',
       extra: <String, dynamic>{
@@ -40,6 +44,8 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
   }
 
   _onReceiveButtonTap(BuildContext context) async {
+    logFirebaseEvent('HOME_RECEIVE_BUTTON_Container_g4p1ceub_ON_TAP');
+    logFirebaseEvent('home_receive_button_navigate_to');
     await showModalBottomSheet(
         isScrollControlled: true,
         backgroundColor: Colors.transparent,

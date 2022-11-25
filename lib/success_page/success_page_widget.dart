@@ -15,6 +15,13 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
+  void initState() {
+    super.initState();
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'success_page'});
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
@@ -72,9 +79,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(0, 10, 0, 30),
                             child: Text(
-                              FFLocalizations.of(context).getText(
-                                'jfgpj763' /* Your transaction was successfu... */,
-                              ),
+                              getRemoteConfigString('success_message'),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .subtitle2
@@ -91,6 +96,9 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                   ),
                   FFButtonWidget(
                     onPressed: () async {
+                      logFirebaseEvent('SUCCESS_PAGE_PAGE_DONE_BTN_ON_TAP');
+                      logFirebaseEvent('Button_navigate_to');
+
                       context.goNamed(
                         'home_page',
                         extra: <String, dynamic>{

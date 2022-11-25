@@ -20,6 +20,8 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
   @override
   void initState() {
     super.initState();
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'phone_login_page'});
     phoneNumberController = TextEditingController();
   }
 
@@ -64,6 +66,9 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                             size: 28,
                           ),
                           onPressed: () async {
+                            logFirebaseEvent(
+                                'PHONE_LOGIN_chevron_left_ICN_ON_TAP');
+                            logFirebaseEvent('IconButton_navigate_back');
                             context.pop();
                           },
                         ),
@@ -206,6 +211,8 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                         child: FFButtonWidget(
                           onPressed: () async {
+                            logFirebaseEvent('PHONE_LOGIN_Button-Login_ON_TAP');
+                            logFirebaseEvent('Button-Login_auth');
                             final phoneNumberVal = phoneNumberController!.text;
                             if (phoneNumberVal == null ||
                                 phoneNumberVal.isEmpty ||

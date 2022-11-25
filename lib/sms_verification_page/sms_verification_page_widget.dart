@@ -22,6 +22,8 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
   @override
   void initState() {
     super.initState();
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'sms_verification_page'});
     pinCodeController = TextEditingController();
   }
 
@@ -122,6 +124,9 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 44),
                       child: FFButtonWidget(
                         onPressed: () async {
+                          logFirebaseEvent(
+                              'SMS_VERIFICATION_CONFIRM_&_CONTINUE_BTN_');
+                          logFirebaseEvent('Button_auth');
                           GoRouter.of(context).prepareAuthEvent();
                           final smsCodeVal = pinCodeController!.text;
                           if (smsCodeVal == null || smsCodeVal.isEmpty) {

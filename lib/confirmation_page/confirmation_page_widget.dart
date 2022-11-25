@@ -16,6 +16,13 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
+  void initState() {
+    super.initState();
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'confirmation_page'});
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
@@ -50,6 +57,9 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                             size: 28,
                           ),
                           onPressed: () async {
+                            logFirebaseEvent(
+                                'CONFIRMATION_chevron_left_ICN_ON_TAP');
+                            logFirebaseEvent('IconButton_navigate_back');
                             context.pop();
                           },
                         ),
@@ -315,6 +325,10 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                   ),
                   FFButtonWidget(
                     onPressed: () async {
+                      logFirebaseEvent(
+                          'CONFIRMATION_CONFIRM_AND_PAY_BTN_ON_TAP');
+                      logFirebaseEvent('Button_navigate_to');
+
                       context.pushNamed(
                         'success_page',
                         extra: <String, dynamic>{

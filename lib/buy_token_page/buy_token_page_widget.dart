@@ -18,6 +18,13 @@ class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
+  void initState() {
+    super.initState();
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'buy_token_page'});
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
@@ -52,6 +59,9 @@ class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
                             size: 28,
                           ),
                           onPressed: () async {
+                            logFirebaseEvent(
+                                'BUY_TOKEN_chevron_left_ICN_ON_TAP');
+                            logFirebaseEvent('IconButton_navigate_back');
                             context.pop();
                           },
                         ),
@@ -179,6 +189,9 @@ class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
                   NumberKeyboardWidget(),
                   FFButtonWidget(
                     onPressed: () async {
+                      logFirebaseEvent('BUY_TOKEN_PAGE_PAGE_NEXT_BTN_ON_TAP');
+                      logFirebaseEvent('Button_navigate_to');
+
                       context.pushNamed(
                         'payment_methods_page',
                         extra: <String, dynamic>{

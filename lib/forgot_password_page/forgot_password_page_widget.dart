@@ -22,6 +22,8 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
   void initState() {
     super.initState();
     emailAddressController = TextEditingController();
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'forgot_password_page'});
   }
 
   @override
@@ -65,6 +67,9 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
                             size: 28,
                           ),
                           onPressed: () async {
+                            logFirebaseEvent(
+                                'FORGOT_PASSWORD_chevron_left_ICN_ON_TAP');
+                            logFirebaseEvent('IconButton_navigate_back');
                             context.pop();
                           },
                         ),
@@ -190,6 +195,8 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      logFirebaseEvent('FORGOT_PASSWORD_Button-Login_ON_TAP');
+                      logFirebaseEvent('Button-Login_auth');
                       if (emailAddressController!.text.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(

@@ -63,6 +63,9 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                 children: [
                   InkWell(
                     onTap: () async {
+                      logFirebaseEvent(
+                          'TELECOM_SELECTOR_Container_kncjvkcm_ON_T');
+                      logFirebaseEvent('Container_bottom_sheet');
                       Navigator.pop(context);
                     },
                     child: Container(
@@ -141,6 +144,9 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                   ),
                   InkWell(
                     onTap: () async {
+                      logFirebaseEvent(
+                          'TELECOM_SELECTOR_Container_eiv70dbx_ON_T');
+                      logFirebaseEvent('Container_bottom_sheet');
                       Navigator.pop(context);
                     },
                     child: Container(
@@ -219,6 +225,9 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                   ),
                   InkWell(
                     onTap: () async {
+                      logFirebaseEvent(
+                          'TELECOM_SELECTOR_Container_frq8odze_ON_T');
+                      logFirebaseEvent('Container_bottom_sheet');
                       Navigator.pop(context);
                     },
                     child: Container(

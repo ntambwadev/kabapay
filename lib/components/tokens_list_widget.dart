@@ -26,6 +26,9 @@ class _TokensListWidgetState extends State<TokensListWidget> {
         children: [
           InkWell(
             onTap: () async {
+              logFirebaseEvent('TOKENS_LIST_Container_ywi18osh_ON_TAP');
+              logFirebaseEvent('token_item_navigate_to');
+
               context.pushNamed(
                 'buy_token_page',
                 extra: <String, dynamic>{
