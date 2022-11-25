@@ -31,6 +31,8 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
     emailAddressController = TextEditingController();
     passwordController = TextEditingController();
     passwordVisibility = false;
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'register_page'});
   }
 
   @override
@@ -76,6 +78,9 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                             size: 28,
                           ),
                           onPressed: () async {
+                            logFirebaseEvent(
+                                'REGISTER_chevron_left_ICN_ON_TAP');
+                            logFirebaseEvent('IconButton_navigate_back');
                             context.pop();
                           },
                         ),
@@ -369,6 +374,9 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      logFirebaseEvent(
+                          'REGISTER_PAGE_PAGE_Button-Login_ON_TAP');
+                      logFirebaseEvent('Button-Login_auth');
                       GoRouter.of(context).prepareAuthEvent();
                       if (passwordController?.text !=
                           confirmPasswordController?.text) {

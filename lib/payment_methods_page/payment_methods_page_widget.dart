@@ -21,6 +21,13 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
+  void initState() {
+    super.initState();
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'payment_methods_page'});
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
@@ -55,6 +62,9 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                             size: 28,
                           ),
                           onPressed: () async {
+                            logFirebaseEvent(
+                                'PAYMENT_METHODS_chevron_left_ICN_ON_TAP');
+                            logFirebaseEvent('IconButton_navigate_back');
                             context.pop();
                           },
                         ),
@@ -140,6 +150,11 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                                 final phonesItem = phones[phonesIndex];
                                 return InkWell(
                                   onTap: () async {
+                                    logFirebaseEvent(
+                                        'PAYMENT_METHODS_Container_vzt3cso2_ON_TA');
+                                    logFirebaseEvent(
+                                        'phone_payment_method_item_navigate_to');
+
                                     context.pushNamed(
                                       'confirmation_page',
                                       extra: <String, dynamic>{
@@ -178,6 +193,9 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 1),
                           child: FFButtonWidget(
                             onPressed: () async {
+                              logFirebaseEvent(
+                                  'PAYMENT_METHODS_ADD_NEW_NUMBER_BTN_ON_TA');
+                              logFirebaseEvent('Button_bottom_sheet');
                               await showModalBottomSheet(
                                 isScrollControlled: true,
                                 backgroundColor: Colors.transparent,

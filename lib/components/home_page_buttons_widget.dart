@@ -27,6 +27,9 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
         children: [
           InkWell(
             onTap: () async {
+              logFirebaseEvent('HOME_BUTTONS_Container_g4p1ceub_ON_TAP');
+              logFirebaseEvent('home_button_navigate_to');
+
               context.pushNamed(
                 'tokens_page',
                 extra: <String, dynamic>{

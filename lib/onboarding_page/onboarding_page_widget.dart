@@ -18,6 +18,13 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
+  void initState() {
+    super.initState();
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'onboarding_page'});
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
@@ -245,6 +252,9 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                 child: FFButtonWidget(
                   onPressed: () async {
+                    logFirebaseEvent('ONBOARDING_LOGIN_WITH_PHONE_BTN_ON_TAP');
+                    logFirebaseEvent('Button_navigate_to');
+
                     context.pushNamed('phone_login_page');
                   },
                   text: FFLocalizations.of(context).getText(
@@ -270,6 +280,9 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 16),
                 child: FFButtonWidget(
                   onPressed: () async {
+                    logFirebaseEvent('ONBOARDING_LOGIN_WITH_EMAIL_BTN_ON_TAP');
+                    logFirebaseEvent('Button_navigate_to');
+
                     context.pushNamed('login_page');
                   },
                   text: FFLocalizations.of(context).getText(
@@ -295,6 +308,10 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 24),
                 child: FFButtonWidget(
                   onPressed: () async {
+                    logFirebaseEvent(
+                        'ONBOARDING_PAGE_PAGE_REGISTER_BTN_ON_TAP');
+                    logFirebaseEvent('Button_navigate_to');
+
                     context.pushNamed('register_page');
                   },
                   text: FFLocalizations.of(context).getText(

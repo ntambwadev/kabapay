@@ -415,14 +415,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Succès!',
       'sw': 'Mafanikio!',
     },
-    'jfgpj763': {
-      'en':
-          'Your transaction was successfully created.  Please make the payment of \$97 to 0971504436. You\'ll receive your tokens once we verify that your payment was completed.',
-      'fr':
-          'Votre transaction a été créée avec succès. Veuillez effectuer le paiement de 97 \$ au 0971504436. Vous recevrez vos jetons une fois que nous aurons vérifié que votre paiement a été effectué.',
-      'sw':
-          'Muamala wako umeundwa. Tafadhali fanya malipo ya \$97 kwa 0971504436. Utapokea tokeni zako pindi tutakapothibitisha kuwa malipo yako yamekamilika.',
-    },
     'ba5y4wt5': {
       'en': 'Done',
       'fr': 'Fait',

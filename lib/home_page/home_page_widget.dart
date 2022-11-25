@@ -17,6 +17,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
+  void initState() {
+    super.initState();
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'home_page'});
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,

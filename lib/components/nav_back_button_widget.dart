@@ -32,11 +32,14 @@ class _NavBackButtonWidgetState extends State<NavBackButtonWidget> {
                   borderWidth: 1,
                   buttonSize: 50,
                   icon: Icon(
-                    Icons.chevron_left,
+                    Icons.arrow_back_rounded,
                     color: FlutterFlowTheme.of(context).primaryText,
                     size: 32,
                   ),
                   onPressed: () async {
+                    logFirebaseEvent(
+                        'NAV_BACK_BUTTON_arrow_back_rounded_ICN_O');
+                    logFirebaseEvent('IconButton_navigate_back');
                     context.pop();
                   },
                 ),

@@ -21,6 +21,12 @@ class _TokensPageWidgetState extends State<TokensPageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
+  void initState() {
+    super.initState();
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'tokens_page'});
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
@@ -55,6 +61,9 @@ class _TokensPageWidgetState extends State<TokensPageWidget> {
                             size: 28,
                           ),
                           onPressed: () async {
+                            logFirebaseEvent(
+                                'TOKENS_PAGE_PAGE_chevron_left_ICN_ON_TAP');
+                            logFirebaseEvent('IconButton_navigate_back');
                             context.pop();
                           },
                         ),

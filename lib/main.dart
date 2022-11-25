@@ -8,6 +8,8 @@ import 'auth/auth_util.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
+import 'package:flutter/foundation.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
@@ -17,6 +19,11 @@ void main() async {
   await Firebase.initializeApp();
 
   await FFLocalizations.initialize();
+
+  if (!kIsWeb) {
+    FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+  }
+  await initializeFirebaseRemoteConfig();
 
   runApp(MyApp());
 }

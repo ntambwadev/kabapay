@@ -68,6 +68,9 @@ class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 20),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        logFirebaseEvent(
+                            'RECEIVE_TOKEN_0X123GHXFFKJSDS_BTN_ON_TAP');
+                        logFirebaseEvent('Button_bottom_sheet');
                         Navigator.pop(context);
                       },
                       text: FFLocalizations.of(context).getText(
