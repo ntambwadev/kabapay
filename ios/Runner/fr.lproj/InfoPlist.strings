@@ -1,0 +1,3 @@
+NSFaceIDUsageDescription = "Cette application nécessite des autorisations pour effectuer une vérification biométrique";
+NSCameraUsageDescription = "Cette application nécessite l'autorisation d'accéder à l'appareil photo afin de rechercher des codes-barres et des codes QR.";
+PermissionGroupNotification = "Cette application nécessite une autorisation pour vous envoyer une notification de transactions";

@@ -1,0 +1,3 @@
+NSFaceIDUsageDescription = "This app requires permissions to perfrom biometric verification";
+NSCameraUsageDescription = "This app requires permission to access the camera in order to scan for barcodes and QR codes. ";
+PermissionGroupNotification = "This app requires permission to send you notifaction of transactions";

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "519309012038",
+    "project_id": "kabapaycd",
+    "storage_bucket": "kabapaycd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519309012038:android:b1bee99634aca8be5d2e47",
+        "android_client_info": {
+          "package_name": "com.basixlabs.kabapay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519309012038-kbnd8b0iettjupb6t9d2a3dculjev34v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiob6ho8RX8EMgM7uZRmCfsDlQxPq94KE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519309012038-kbnd8b0iettjupb6t9d2a3dculjev34v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "519309012038-skobj65e3pnud655898ktnmf3m74plvs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.basixlabs.kabapay"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

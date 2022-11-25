@@ -1,0 +1,3 @@
+NSFaceIDUsageDescription = "Programu hii inahitaji ruhusa ili kufanya uthibitishaji wa kibayometriki";
+NSCameraUsageDescription = "Programu hii inahitaji ruhusa ya kufikia kamera ili kutafuta misimbo pau na misimbo ya QR.";
+PermissionGroupNotification = "Programu hii inahitaji ruhusa ili kukutumia arifa kuhusu miamala";
