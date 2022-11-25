@@ -96,50 +96,19 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                 color: FlutterFlowTheme.of(context).primaryBackground,
               ),
               child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Column(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            width: 32,
-                            height: 32,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Image.asset(
-                              'assets/images/usdt.png',
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                '4vjkx5f0' /* 100 USDT */,
-                              ),
-                              style:
-                                  FlutterFlowTheme.of(context).title3.override(
-                                        fontFamily: 'Poppins',
-                                        color: Color(0xFF21BF73),
-                                      ),
-                            ),
-                          ),
-                        ],
-                      ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
                         child: Container(
                           width: double.infinity,
-                          height: 250,
+                          height: 280,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).secondaryColor,
                             borderRadius: BorderRadius.circular(8),
@@ -158,28 +127,65 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                               children: [
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'bwnhhc3c' /* Payment method */,
+                                    Container(
+                                      width: 32,
+                                      height: 32,
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1,
+                                      child: Image.asset(
+                                        'assets/images/usdt.png',
+                                      ),
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 0, 0, 0),
+                                          15, 0, 0, 0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'p1ybxwkk' /* MPesa */,
+                                          '4vjkx5f0' /* 100 USDT */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .title3
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFF21BF73),
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 20, 0, 0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'bwnhhc3c' /* Payment method */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1,
                                       ),
-                                    ),
-                                  ],
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10, 0, 0, 0),
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            'p1ybxwkk' /* MPesa */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                                 Row(
                                   mainAxisSize: MainAxisSize.max,

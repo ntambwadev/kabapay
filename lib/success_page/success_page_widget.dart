@@ -45,53 +45,49 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
               ),
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 6, 20, 20),
+              padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                'rmg0tflb' /* Success! */,
-                              ),
-                              style: FlutterFlowTheme.of(context).title1,
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'rmg0tflb' /* Success! */,
                             ),
+                            style: FlutterFlowTheme.of(context).title1,
                           ),
-                          Image.asset(
-                            'assets/images/transaction-success.png',
-                            width: 200,
-                            height: 200,
-                            fit: BoxFit.cover,
+                        ),
+                        Image.asset(
+                          'assets/images/transaction-success.png',
+                          width: 200,
+                          height: 200,
+                          fit: BoxFit.cover,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 30),
+                          child: Text(
+                            getRemoteConfigString('success_message'),
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                ),
                           ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 10, 0, 30),
-                            child: Text(
-                              getRemoteConfigString('success_message'),
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryColor,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                   FFButtonWidget(
