@@ -53,13 +53,13 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
             child: Container(
               width: double.infinity,
-              height: 667,
+              height: double.infinity,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).primaryBackground,
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Padding(
