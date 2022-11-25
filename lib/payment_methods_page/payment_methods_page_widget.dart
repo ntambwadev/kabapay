@@ -32,6 +32,7 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      resizeToAvoidBottomInset: false,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100),
@@ -166,14 +167,12 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                                   return Padding(
                                     padding: MediaQuery.of(context).viewInsets,
                                     child: Container(
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.75,
+                                      height: MediaQuery.of(context).size.height * 0.45,
                                       child: AddPhoneInstrumentWidget(),
                                     ),
                                   );
                                 },
-                              ).then((value) => setState(() {}));
+                              );
                             },
                             text: FFLocalizations.of(context).getText(
                               'bcv1wdx6' /* Add new number */,
