@@ -1,3 +1,4 @@
+import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -65,10 +66,13 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                 children: [
                   FFButtonWidget(
                     onPressed: () async {
-                      context.pushNamed('payment_methods_page');
+                      GoRouter.of(context).prepareAuthEvent();
+                      await signOut();
+
+                      context.goNamedAuth('onboarding_page', mounted);
                     },
                     text: FFLocalizations.of(context).getText(
-                      '180k82nb' /* Next */,
+                      '180k82nb' /* Logout */,
                     ),
                     options: FFButtonOptions(
                       width: double.infinity,

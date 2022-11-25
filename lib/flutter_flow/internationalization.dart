@@ -217,26 +217,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // home_page
   {
-    'tnbszs7p': {
-      'en': 'Balance',
-      'fr': 'Solde',
-      'sw': 'Mizani',
-    },
-    'dufa8rkw': {
-      'en': '\$0',
-      'fr': '0 \$',
-      'sw': '\$0',
-    },
-    'gwqxjlje': {
-      'en': 'Tokens',
-      'fr': 'Jetons',
-      'sw': 'Ishara',
-    },
-    '65gqux1v': {
-      'en': 'Transactions',
-      'fr': 'Transactions',
-      'sw': 'Shughuli',
-    },
     '5f7w2rwu': {
       'en': 'Home',
       'fr': 'Maison',
@@ -418,7 +398,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sw': 'Mipangilio',
     },
     '180k82nb': {
-      'en': 'Next',
+      'en': 'Logout',
       'fr': 'Prochain',
       'sw': 'Inayofuata',
     },
@@ -695,6 +675,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Confirm your code',
       'fr': 'Confirmez votre code',
       'sw': 'Thibitisha nambari yako ya kuthibitisha',
+    },
+  },
+  // home_page_tab
+  {
+    '3k4uw7qb': {
+      'en': 'Tokens',
+      'fr': 'Jetons',
+      'sw': 'Ishara',
+    },
+    'fx56ak9t': {
+      'en': 'Transactions',
+      'fr': 'Transactions',
+      'sw': 'Shughuli',
+    },
+  },
+  // home_page_balance
+  {
+    'nvsz7pmg': {
+      'en': 'Balance',
+      'fr': 'Solde',
+      'sw': 'Mizani',
+    },
+    '82j6thjy': {
+      'en': '\$0',
+      'fr': '0 \$',
+      'sw': '\$0',
     },
   },
   // Miscellaneous
