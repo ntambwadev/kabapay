@@ -25,6 +25,10 @@ class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
         parameters: {'screen_name': 'buy_token_page'});
   }
 
+  _onKeyboardTap(String value) {
+    _priceWidgetKey.currentState?.onKeyboardTap(value);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -148,7 +152,7 @@ class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
                       ],
                     ),
                   ),
-                  NumberKeyboardWidget(),
+                  NumberKeyboardWidget(callback: _onKeyboardTap),
                   FFButtonWidget(
                     onPressed: () async {
                       logFirebaseEvent('BUY_TOKEN_PAGE_PAGE_NEXT_BTN_ON_TAP');

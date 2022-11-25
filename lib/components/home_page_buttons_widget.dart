@@ -54,7 +54,7 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
       return Padding(
         padding: MediaQuery.of(context).viewInsets,
         child: Container(
-          height: 600,
+          height: 550,
           child: ReceiveTokenWidget(),
         ),
       );

@@ -4,8 +4,14 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+typedef KeyboardTapCallback = void Function(String text);
+
 class NumberKeyboardWidget extends StatefulWidget {
-  const NumberKeyboardWidget({Key? key}) : super(key: key);
+  const NumberKeyboardWidget({
+    Key? key,
+    required this.callback,
+  }) : super(key: key);
+  final KeyboardTapCallback callback;
 
   @override
   _NumberKeyboardWidgetState createState() => _NumberKeyboardWidgetState();
@@ -18,7 +24,7 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
       width: double.infinity,
       height: 250,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).primaryBackground,
+        color: FlutterFlowTheme.of(context).backgroundcolor,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.max,
@@ -41,7 +47,8 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                     size: 22,
                   ),
                   onPressed: () {
-                    print('IconButton pressed ...');
+                    print('IconButton pressed 1');
+                    widget.callback('1');
                   },
                 ),
                 FlutterFlowIconButton(
@@ -55,7 +62,8 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                     size: 22,
                   ),
                   onPressed: () {
-                    print('IconButton pressed ...');
+                    print('IconButton pressed 2');
+                    widget.callback('2');
                   },
                 ),
                 FlutterFlowIconButton(
@@ -69,7 +77,8 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                     size: 22,
                   ),
                   onPressed: () {
-                    print('IconButton pressed ...');
+                    print('IconButton pressed 3');
+                    widget.callback('3');
                   },
                 ),
               ],
@@ -91,7 +100,8 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                     size: 22,
                   ),
                   onPressed: () {
-                    print('IconButton pressed ...');
+                    print('IconButton pressed 4');
+                    widget.callback('4');
                   },
                 ),
                 FlutterFlowIconButton(
@@ -105,7 +115,8 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                     size: 22,
                   ),
                   onPressed: () {
-                    print('IconButton pressed ...');
+                    print('IconButton pressed 5');
+                    widget.callback('5');
                   },
                 ),
                 FlutterFlowIconButton(
@@ -119,7 +130,8 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                     size: 22,
                   ),
                   onPressed: () {
-                    print('IconButton pressed ...');
+                    print('IconButton pressed 6');
+                    widget.callback('6');
                   },
                 ),
               ],
@@ -141,7 +153,8 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                     size: 22,
                   ),
                   onPressed: () {
-                    print('IconButton pressed ...');
+                    print('IconButton pressed 7');
+                    widget.callback('7');
                   },
                 ),
                 FlutterFlowIconButton(
@@ -155,7 +168,8 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                     size: 22,
                   ),
                   onPressed: () {
-                    print('IconButton pressed ...');
+                    print('IconButton pressed 8');
+                    widget.callback('8');
                   },
                 ),
                 FlutterFlowIconButton(
@@ -169,7 +183,8 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                     size: 22,
                   ),
                   onPressed: () {
-                    print('IconButton pressed ...');
+                    print('IconButton pressed 9');
+                    widget.callback('9');
                   },
                 ),
               ],
@@ -188,10 +203,11 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                   icon: Icon(
                     FFIcons.kdot,
                     color: FlutterFlowTheme.of(context).primaryText,
-                    size: 6,
+                    size: 1,
                   ),
                   onPressed: () {
-                    print('IconButton pressed ...');
+                    print('IconButton pressed .');
+                    widget.callback('.');
                   },
                 ),
                 FlutterFlowIconButton(
@@ -205,7 +221,8 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                     size: 22,
                   ),
                   onPressed: () {
-                    print('IconButton pressed ...');
+                    print('IconButton pressed 0');
+                    widget.callback('0');
                   },
                 ),
                 FlutterFlowIconButton(
@@ -219,7 +236,8 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                     size: 22,
                   ),
                   onPressed: () {
-                    print('IconButton pressed ...');
+                    print('IconButton pressed back <');
+                    widget.callback('<');
                   },
                 ),
               ],
