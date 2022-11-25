@@ -40,11 +40,13 @@ class BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
       } else if (value == '<') {
         if (amount.length == 1) {
           amount = '0';
+          tokenAmount = '0';
           return;
         }
         amount = removeLast(amount);
       } else if (amount == '0') {
         amount = value;
+        tokenAmount = '0';
       } else if (amount.length  > 3) {
         return;
       } else {
@@ -123,9 +125,7 @@ class BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
                       style: FlutterFlowTheme.of(context).subtitle2,
                     ),
                     Text(
-                      FFLocalizations.of(context).getText(
-                        '59h7pq5s' /* 0.000345 ETH */,
-                      ),
+                      '$tokenAmount $tokenSymbol',
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).subtitle2,
                     ),
