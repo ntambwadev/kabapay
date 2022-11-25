@@ -39,7 +39,11 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
           automaticallyImplyLeading: false,
           actions: [],
           flexibleSpace: FlexibleSpaceBar(
-            title: NavBackButtonWidget(),
+            title: NavBackButtonWidget(
+              titleKey: 'dqz8qdg4',
+              firebaseEvent: 'NAV_BACK_BUTTON_arrow_back_rounded_ICN_O',
+              firebaseEvent2: 'IconButton_navigate_back',
+            ),
             centerTitle: true,
             expandedTitleScale: 1.0,
           ),

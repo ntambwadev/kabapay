@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class NavBackButtonWidget extends StatefulWidget {
-  const NavBackButtonWidget({Key? key}) : super(key: key);
-
+  const NavBackButtonWidget({Key? key, this.titleKey = "", required this.firebaseEvent, required this.firebaseEvent2}) : super(key: key);
+  final String titleKey;
+  final String firebaseEvent;
+  final String firebaseEvent2;
   @override
   _NavBackButtonWidgetState createState() => _NavBackButtonWidgetState();
 }
@@ -37,9 +39,8 @@ class _NavBackButtonWidgetState extends State<NavBackButtonWidget> {
                     size: 32,
                   ),
                   onPressed: () async {
-                    logFirebaseEvent(
-                        'NAV_BACK_BUTTON_arrow_back_rounded_ICN_O');
-                    logFirebaseEvent('IconButton_navigate_back');
+                    logFirebaseEvent(widget.firebaseEvent);
+                    logFirebaseEvent(widget.firebaseEvent2);
                     context.pop();
                   },
                 ),
@@ -51,7 +52,7 @@ class _NavBackButtonWidgetState extends State<NavBackButtonWidget> {
           padding: EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
           child: Text(
             FFLocalizations.of(context).getText(
-              'dqz8qdg4' /* Confirm your code */,
+              widget.titleKey /* 'dqz8qdg4'  Confirm your code */,
             ),
             style: FlutterFlowTheme.of(context).title1,
           ),

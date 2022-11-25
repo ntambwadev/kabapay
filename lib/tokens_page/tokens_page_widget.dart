@@ -1,3 +1,4 @@
+import '../components/nav_back_button_widget.dart';
 import '../components/tokens_list_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -38,49 +39,10 @@ class _TokensPageWidgetState extends State<TokensPageWidget> {
           automaticallyImplyLeading: false,
           actions: [],
           flexibleSpace: FlexibleSpaceBar(
-            title: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                        child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 30,
-                          borderWidth: 1,
-                          buttonSize: 50,
-                          icon: Icon(
-                            Icons.chevron_left,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 28,
-                          ),
-                          onPressed: () async {
-                            logFirebaseEvent(
-                                'TOKENS_PAGE_PAGE_chevron_left_ICN_ON_TAP');
-                            logFirebaseEvent('IconButton_navigate_back');
-                            context.pop();
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
-                  child: Text(
-                    FFLocalizations.of(context).getText(
-                      '4dfo553x' /* Tokens */,
-                    ),
-                    style: FlutterFlowTheme.of(context).title1,
-                  ),
-                ),
-              ],
+            title: NavBackButtonWidget(
+              titleKey: '4dfo553x' /* Tokens */,
+              firebaseEvent: 'TOKENS_PAGE_PAGE_chevron_left_ICN_ON_TAP',
+              firebaseEvent2: 'IconButton_navigate_back',
             ),
             centerTitle: true,
             expandedTitleScale: 1.0,
