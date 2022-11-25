@@ -37,23 +37,13 @@ class _TokensListPlaceholderWidgetState
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Lottie.asset(
-                'assets/lottie_animations/lottie-loading.json',
+                'assets/lottie_animations/loading-crypto.json',
                 width: MediaQuery.of(context).size.width * 0.5,
                 height: 200,
                 fit: BoxFit.cover,
                 animate: true,
               ),
             ],
-          ),
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(40, 40, 40, 40),
-            child: Text(
-              FFLocalizations.of(context).getText(
-                'xe1hloro' /* Loading tokens... */,
-              ),
-              textAlign: TextAlign.center,
-              style: FlutterFlowTheme.of(context).subtitle1,
-            ),
           ),
         ],
       ),

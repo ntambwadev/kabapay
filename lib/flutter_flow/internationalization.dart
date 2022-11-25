@@ -484,11 +484,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // sms_verification_page
   {
-    '8xzatv32': {
-      'en': 'Confirm your code',
-      'fr': 'Confirmez votre code',
-      'sw': 'Thibitisha nambari yako ya kuthibitisha',
-    },
     'ojco3nk2': {
       'en': 'This code helps keep your account safe and secure.',
       'fr': 'Ce code permet de garder votre compte sûr et sécurisé.',
@@ -661,14 +656,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sw': '+10.34%',
     },
   },
-  // tokens_list_placeholder
-  {
-    'xe1hloro': {
-      'en': 'Loading tokens...',
-      'fr': 'Chargement des jetons...',
-      'sw': 'Inapakia tokeni...',
-    },
-  },
   // receive_token
   {
     'bjys7lu3': {
@@ -700,6 +687,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Waiting for mobile money payment...',
       'fr': 'En attente de paiement mobile money...',
       'sw': 'Inasubiri malipo ya pesa kwa simu...',
+    },
+  },
+  // nav_back_button
+  {
+    'dqz8qdg4': {
+      'en': 'Confirm your code',
+      'fr': 'Confirmez votre code',
+      'sw': 'Thibitisha nambari yako ya kuthibitisha',
     },
   },
   // Miscellaneous
