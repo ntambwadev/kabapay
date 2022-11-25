@@ -243,36 +243,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Acheter un jeton',
       'sw': 'Nunua Tokeni',
     },
-    'e3jcp2my': {
-      'en': '\$',
-      'fr': '\$',
-      'sw': '\$',
-    },
-    'zf6yii2x': {
-      'en': '0',
-      'fr': '0',
-      'sw': '0',
-    },
-    'gi7eetc3': {
-      'en': 'USD',
-      'fr': 'USD',
-      'sw': 'USD',
-    },
-    'ue9pzn39': {
-      'en': '= ',
-      'fr': '=',
-      'sw': '=',
-    },
-    'w851v3so': {
-      'en': '0.000345 ETH',
-      'fr': '0,000345 ETH',
-      'sw': '0.000345 ETH',
-    },
-    '3do0c6iw': {
-      'en': 'Next',
-      'fr': 'Prochain',
-      'sw': 'Inayofuata',
-    },
     'u9is7l5l': {
       'en': 'Home',
       'fr': 'Maison',
@@ -693,6 +663,42 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '\$0',
       'fr': '0 \$',
       'sw': '\$0',
+    },
+  },
+  // buy_token_amount
+  {
+    'bvf6srr8': {
+      'en': '\$',
+      'fr': '\$',
+      'sw': '\$',
+    },
+    '9sx28qt6': {
+      'en': '0',
+      'fr': '0',
+      'sw': '0',
+    },
+    'ozwfhod8': {
+      'en': 'USD',
+      'fr': 'USD',
+      'sw': 'USD',
+    },
+    'src5r0fb': {
+      'en': '= ',
+      'fr': '=',
+      'sw': '=',
+    },
+    '59h7pq5s': {
+      'en': '0.000345 ETH',
+      'fr': '0,000345 ETH',
+      'sw': '0.000345 ETH',
+    },
+  },
+  // buy_token_next_button
+  {
+    '8ze2o2h0': {
+      'en': 'Next',
+      'fr': 'Prochain',
+      'sw': 'Inayofuata',
     },
   },
   // Miscellaneous
