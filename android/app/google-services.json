@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "519309012038-mg69otoiarvbfrb8g8u9fn9ka5qfll4m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.basixlabs.kabapay",
+            "certificate_hash": "f0af8d1d3dbbbd9eb4a475aa9b9e4221afb71970"
+          }
+        },
+        {
           "client_id": "519309012038-kbnd8b0iettjupb6t9d2a3dculjev34v.apps.googleusercontent.com",
           "client_type": 3
         }

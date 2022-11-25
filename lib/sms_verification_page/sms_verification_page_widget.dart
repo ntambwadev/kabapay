@@ -120,7 +120,7 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(0, 32, 0, 0),
                       child: PinCodeTextField(
                         appContext: context,
-                        length: 4,
+                        length: 6,
                         textStyle: FlutterFlowTheme.of(context)
                             .subtitle2
                             .override(
