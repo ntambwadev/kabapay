@@ -47,11 +47,11 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
         padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Column(
               mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
