@@ -1,3 +1,5 @@
+import 'package:kabapay/components/receive_token_widget.dart';
+
 import '../components/home_button_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -12,6 +14,48 @@ class HomePageButtonsWidget extends StatefulWidget {
 }
 
 class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
+
+  _onBuyButtonTap(BuildContext context) {
+    context.pushNamed(
+      'tokens_page',
+      extra: <String, dynamic>{
+        kTransitionInfoKey: TransitionInfo(
+          hasTransition: true,
+          transitionType: PageTransitionType.rightToLeft,
+        ),
+      },
+    );
+  }
+
+  _onSendButtonTap(BuildContext context) {
+    context.pushNamed(
+      'tokens_page',
+      extra: <String, dynamic>{
+        kTransitionInfoKey: TransitionInfo(
+          hasTransition: true,
+          transitionType: PageTransitionType.rightToLeft,
+        ),
+      },
+    );
+  }
+
+  _onReceiveButtonTap(BuildContext context) async {
+    await showModalBottomSheet(
+        isScrollControlled: true,
+        backgroundColor: Colors.transparent,
+        context: context,
+        builder: (context) {
+      return Padding(
+        padding: MediaQuery.of(context).viewInsets,
+        child: Container(
+          height: 600,
+          child: ReceiveTokenWidget(),
+        ),
+      );
+    },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,20 +71,22 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
         children: [
           InkWell(
             onTap: () async {
-              context.pushNamed(
-                'tokens_page',
-                extra: <String, dynamic>{
-                  kTransitionInfoKey: TransitionInfo(
-                    hasTransition: true,
-                    transitionType: PageTransitionType.rightToLeft,
-                  ),
-                },
-              );
+              _onBuyButtonTap(context);
             },
-            child: HomeButtonWidget(),
+            child: HomeButtonWidget(titleKey: "tkmbhgt6", iconData: Icons.attach_money_outlined,),
           ),
-          HomeButtonWidget(),
-          HomeButtonWidget(),
+          InkWell(
+            onTap: () async {
+              _onSendButtonTap(context);
+            },
+            child: HomeButtonWidget(titleKey: "tkmbhgt7", iconData: Icons.arrow_upward_outlined,),
+          ),
+          InkWell(
+            onTap: () async {
+              _onReceiveButtonTap(context);
+            },
+            child: HomeButtonWidget(titleKey: "tkmbhgt8", iconData: Icons.arrow_downward,),
+          ),
         ],
       ),
     );

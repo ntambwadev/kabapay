@@ -514,9 +514,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // home_button
   {
     'tkmbhgt6': {
+      'en': 'Buy',
+      'fr': 'Acheter',
+      'sw': 'Nunua',
+    },
+    'tkmbhgt7': {
       'en': 'Send',
       'fr': 'Envoyer',
       'sw': 'Tuma',
+    },
+    'tkmbhgt8': {
+      'en': 'Receive',
+      'fr': 'Recevoir',
+      'sw': 'Pata',
     },
   },
   // add_phone_instrument

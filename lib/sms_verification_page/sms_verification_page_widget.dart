@@ -79,6 +79,7 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 32, 0, 0),
                       child: PinCodeTextField(
+                        keyboardType: TextInputType.number,
                         appContext: context,
                         length: 6,
                         textStyle: FlutterFlowTheme.of(context)
@@ -95,8 +96,8 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                         obscureText: false,
                         hintCharacter: '-',
                         pinTheme: PinTheme(
-                          fieldHeight: 60,
-                          fieldWidth: 60,
+                          fieldHeight: 54,
+                          fieldWidth: 54,
                           borderWidth: 2,
                           borderRadius: BorderRadius.circular(12),
                           shape: PinCodeFieldShape.box,
