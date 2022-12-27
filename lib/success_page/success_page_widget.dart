@@ -76,7 +76,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 30),
                           child: Text(
-                            getRemoteConfigString('success_message'),
+                            'Your transaction was successfully created.  Please make the payment of \$97 to 0971504436. You\'ll receive your tokens once we verify that your payment was completed.',//getRemoteConfigString('success_message'),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .subtitle2

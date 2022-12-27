@@ -2,6 +2,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:kabapay/firestore/firestore_service.dart';
+import 'package:kabapay/models/transaction_model.dart';
+import 'package:kabapay/models/user_model.dart';
+import 'package:provider/provider.dart';
 import 'auth/firebase_user_provider.dart';
 import 'auth/auth_util.dart';
 
@@ -17,13 +21,12 @@ import 'index.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
   await FFLocalizations.initialize();
 
   if (!kIsWeb) {
     FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
   }
-  await initializeFirebaseRemoteConfig();
+  // await initializeFirebaseRemoteConfig();
 
   runApp(MyApp());
 }
@@ -126,48 +129,108 @@ class _NavBarPageState extends State<NavBarPage> {
 
   @override
   Widget build(BuildContext context) {
+    final FirestoreService firestoreService = FirestoreService();
+
     final tabs = {
       'home_page': HomePageWidget(),
       'settings_page': SettingsPageWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
-    return Scaffold(
-      body: _currentPage ?? tabs[_currentPageName],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
-        onTap: (i) => setState(() {
-          _currentPage = null;
-          _currentPageName = tabs.keys.toList()[i];
-        }),
-        backgroundColor: Colors.white,
-        selectedItemColor: FlutterFlowTheme.of(context).primaryColor,
-        unselectedItemColor: Color(0x8A000000),
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
-              size: 24,
+
+    return MultiProvider(
+      providers: [
+        StreamProvider<UserModel?>.value(
+          value: firestoreService.streamCurrentUserData(currentUserUid),
+          initialData: null,
+          catchError:(context, err) {
+            debugPrint('USER MODEL PROVIDER ERROR: ${err.toString()}');
+            return null;
+          },),
+        StreamProvider<List<TransactionModel>>.value(
+          value: firestoreService.streamTransactions(),
+          initialData: [],
+          catchError: (context, err) {
+            debugPrint('TRANSACTION MODEL PROVIDER ERROR: ${err.toString()}');
+            return List.empty();
+          },),
+      ],
+      child: Scaffold(
+        body: _currentPage ?? tabs[_currentPageName],
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: currentIndex,
+          onTap: (i) => setState(() {
+            _currentPage = null;
+            _currentPageName = tabs.keys.toList()[i];
+          }),
+          backgroundColor: Colors.white,
+          selectedItemColor: FlutterFlowTheme.of(context).primaryColor,
+          unselectedItemColor: Color(0x8A000000),
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          type: BottomNavigationBarType.fixed,
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home_outlined,
+                size: 24,
+              ),
+              label: FFLocalizations.of(context).getText(
+                '5f7w2rwu' /* Home */,
+              ),
+              tooltip: '',
             ),
-            label: FFLocalizations.of(context).getText(
-              '5f7w2rwu' /* Home */,
-            ),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.settings,
-              size: 24,
-            ),
-            label: FFLocalizations.of(context).getText(
-              'lgf10g04' /* Home */,
-            ),
-            tooltip: '',
-          )
-        ],
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.settings,
+                size: 24,
+              ),
+              label: FFLocalizations.of(context).getText(
+                'lgf10g04' /* Home */,
+              ),
+              tooltip: '',
+            )
+          ],
+        ),
       ),
     );
+
+    // return Scaffold(
+    //   body: _currentPage ?? tabs[_currentPageName],
+    //   bottomNavigationBar: BottomNavigationBar(
+    //     currentIndex: currentIndex,
+    //     onTap: (i) => setState(() {
+    //       _currentPage = null;
+    //       _currentPageName = tabs.keys.toList()[i];
+    //     }),
+    //     backgroundColor: Colors.white,
+    //     selectedItemColor: FlutterFlowTheme.of(context).primaryColor,
+    //     unselectedItemColor: Color(0x8A000000),
+    //     showSelectedLabels: false,
+    //     showUnselectedLabels: false,
+    //     type: BottomNavigationBarType.fixed,
+    //     items: <BottomNavigationBarItem>[
+    //       BottomNavigationBarItem(
+    //         icon: Icon(
+    //           Icons.home_outlined,
+    //           size: 24,
+    //         ),
+    //         label: FFLocalizations.of(context).getText(
+    //           '5f7w2rwu' /* Home */,
+    //         ),
+    //         tooltip: '',
+    //       ),
+    //       BottomNavigationBarItem(
+    //         icon: Icon(
+    //           Icons.settings,
+    //           size: 24,
+    //         ),
+    //         label: FFLocalizations.of(context).getText(
+    //           'lgf10g04' /* Home */,
+    //         ),
+    //         tooltip: '',
+    //       )
+    //     ],
+    //   ),
+    // );
   }
 }

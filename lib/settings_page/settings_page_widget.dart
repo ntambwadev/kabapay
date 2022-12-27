@@ -1,8 +1,12 @@
+import 'package:kabapay/models/transaction_model.dart';
+import 'package:kabapay/models/user_model.dart';
+
 import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SettingsPageWidget extends StatefulWidget {
@@ -24,6 +28,9 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    UserModel? userData = Provider.of<UserModel?>(context);
+    List transactions = Provider.of<List<TransactionModel>>(context);
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -71,6 +78,10 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  Text('${userData?.email}'),
+                  Text('${userData?.phoneNumber}'),
+                  Text('${userData?.address}'),
+                  Text('Transaction count: ${transactions.length}'),
                   FFButtonWidget(
                     onPressed: () async {
                       logFirebaseEvent('SETTINGS_PAGE_PAGE_LOGOUT_BTN_ON_TAP');
