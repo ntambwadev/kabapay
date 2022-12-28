@@ -40,10 +40,11 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  '0wbebkl7' /* 2022-09-08 1:52:35: PM */,
+                  'tfuogp09' /* 2022-09-08 1:52:35: PM */,
                 ),
                 style: FlutterFlowTheme.of(context).bodyText2.override(
                       fontFamily: 'Poppins',
+                      color: FlutterFlowTheme.of(context).secondaryText,
                       fontSize: 10,
                     ),
               ),
@@ -73,18 +74,25 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                         children: [
                           Text(
                             FFLocalizations.of(context).getText(
-                              'qniinzdc' /* Received */,
+                              'nc374fp7' /* Received */,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyText1,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyText1
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                ),
                           ),
                           Text(
                             FFLocalizations.of(context).getText(
-                              'hvkocwff' /* Pending */,
+                              'v3z6xy0x' /* Pending */,
                             ),
                             style:
                                 FlutterFlowTheme.of(context).bodyText2.override(
                                       fontFamily: 'Poppins',
-                                      color: Color(0xFFF48236),
+                                      color: FlutterFlowTheme.of(context)
+                                          .tertiaryColor,
                                       fontSize: 10,
                                     ),
                           ),
@@ -99,21 +107,26 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                         children: [
                           Text(
                             FFLocalizations.of(context).getText(
-                              'hqyu25ti' /* 20 USDT */,
+                              'tf19m68r' /* 20 USDT */,
                             ),
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 12,
-                                    ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyText1
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  fontSize: 12,
+                                ),
                           ),
                           Text(
                             FFLocalizations.of(context).getText(
-                              '4p5n3a9r' /* $19.20 */,
+                              'm0o9ogso' /* $19.20 */,
                             ),
                             style:
                                 FlutterFlowTheme.of(context).bodyText2.override(
                                       fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
                                       fontSize: 12,
                                     ),
                           ),

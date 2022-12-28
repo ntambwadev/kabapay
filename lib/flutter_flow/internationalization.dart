@@ -73,7 +73,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'kgi0yevl': {
       'en': 'Welcome',
-      'fr': 'Accueillir',
+      'fr': 'Bienvenue',
       'sw': 'Karibu',
     },
     '76x3qb7u': {
@@ -127,12 +127,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8lb31spr': {
       'en': 'Register',
-      'fr': 'S\'inscrire',
+      'fr': 'Enregistrer',
       'sw': 'Sajili',
     },
     'zl6et8z1': {
       'en': 'Home',
-      'fr': 'Maison',
+      'fr': 'Domicile',
       'sw': 'Nyumbani',
     },
   },
@@ -173,7 +173,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zmghngze': {
       'en': 'Home',
-      'fr': 'Maison',
+      'fr': 'Domicile',
       'sw': 'Nyumbani',
     },
   },
@@ -211,7 +211,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'e8tl8j5k': {
       'en': 'Home',
-      'fr': 'Maison',
+      'fr': 'Domicile',
       'sw': 'Nyumbani',
     },
   },
@@ -219,7 +219,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '5f7w2rwu': {
       'en': 'Home',
-      'fr': 'Maison',
+      'fr': 'Domicile',
       'sw': 'Nyumbani',
     },
   },
@@ -232,7 +232,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zv0rvf78': {
       'en': 'Home',
-      'fr': 'Maison',
+      'fr': 'Domicile',
       'sw': 'Nyumbani',
     },
   },
@@ -245,7 +245,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'u9is7l5l': {
       'en': 'Home',
-      'fr': 'Maison',
+      'fr': 'Domicile',
       'sw': 'Nyumbani',
     },
   },
@@ -263,7 +263,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lfjf7ceh': {
       'en': 'Or ',
-      'fr': 'Ou',
+      'fr': 'Ou alors',
       'sw': 'Au',
     },
     'bcv1wdx6': {
@@ -273,7 +273,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ii5gh4ls': {
       'en': 'Home',
-      'fr': 'Maison',
+      'fr': 'Domicile',
       'sw': 'Nyumbani',
     },
   },
@@ -356,7 +356,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'gsq78zqf': {
       'en': 'Home',
-      'fr': 'Maison',
+      'fr': 'Domicile',
       'sw': 'Nyumbani',
     },
   },
@@ -374,7 +374,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lgf10g04': {
       'en': 'Home',
-      'fr': 'Maison',
+      'fr': 'Domicile',
       'sw': 'Nyumbani',
     },
   },
@@ -392,7 +392,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fi4h7dml': {
       'en': 'Home',
-      'fr': 'Maison',
+      'fr': 'Domicile',
       'sw': 'Nyumbani',
     },
   },
@@ -420,7 +420,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '6osi0bb0': {
       'en': 'Home',
-      'fr': 'Maison',
+      'fr': 'Domicile',
       'sw': 'Nyumbani',
     },
   },
@@ -438,7 +438,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'm18584jp': {
       'en': 'Home',
-      'fr': 'Maison',
+      'fr': 'Domicile',
       'sw': 'Nyumbani',
     },
   },
@@ -469,7 +469,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '7n73lcp5': {
       'en': 'Home',
-      'fr': 'Maison',
+      'fr': 'Domicile',
       'sw': 'Nyumbani',
     },
   },
@@ -707,36 +707,36 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '8ze2o2h0': {
       'en': 'Next',
-      'fr': 'Prochain',
+      'fr': 'Suivant',
       'sw': 'Inayofuata',
     },
   },
   // transaction_item
   {
-    '0wbebkl7': {
+    'tfuogp09': {
       'en': '2022-09-08 1:52:35: PM',
-      'fr': '',
-      'sw': '',
+      'fr': '2022-09-08 1:52:35 : PM',
+      'sw': '2022-09-08 1:52:35: PM',
     },
-    'qniinzdc': {
+    'nc374fp7': {
       'en': 'Received',
-      'fr': '',
-      'sw': '',
+      'fr': 'A reçu',
+      'sw': 'Imepokelewa',
     },
-    'hvkocwff': {
+    'v3z6xy0x': {
       'en': 'Pending',
-      'fr': '',
-      'sw': '',
+      'fr': 'En attente',
+      'sw': 'Inasubiri',
     },
-    'hqyu25ti': {
+    'tf19m68r': {
       'en': '20 USDT',
-      'fr': '',
-      'sw': '',
+      'fr': '20 USDT',
+      'sw': '20 USDT',
     },
-    '4p5n3a9r': {
+    'm0o9ogso': {
       'en': '\$19.20',
-      'fr': '',
-      'sw': '',
+      'fr': '19,20 \$',
+      'sw': '\$19.20',
     },
   },
   // Miscellaneous
