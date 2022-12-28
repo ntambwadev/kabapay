@@ -202,44 +202,5 @@ class _NavBarPageState extends State<NavBarPage> {
         ),
       ),
     );
-
-    // return Scaffold(
-    //   body: _currentPage ?? tabs[_currentPageName],
-    //   bottomNavigationBar: BottomNavigationBar(
-    //     currentIndex: currentIndex,
-    //     onTap: (i) => setState(() {
-    //       _currentPage = null;
-    //       _currentPageName = tabs.keys.toList()[i];
-    //     }),
-    //     backgroundColor: Colors.white,
-    //     selectedItemColor: FlutterFlowTheme.of(context).primaryColor,
-    //     unselectedItemColor: Color(0x8A000000),
-    //     showSelectedLabels: false,
-    //     showUnselectedLabels: false,
-    //     type: BottomNavigationBarType.fixed,
-    //     items: <BottomNavigationBarItem>[
-    //       BottomNavigationBarItem(
-    //         icon: Icon(
-    //           Icons.home_outlined,
-    //           size: 24,
-    //         ),
-    //         label: FFLocalizations.of(context).getText(
-    //           '5f7w2rwu' /* Home */,
-    //         ),
-    //         tooltip: '',
-    //       ),
-    //       BottomNavigationBarItem(
-    //         icon: Icon(
-    //           Icons.settings,
-    //           size: 24,
-    //         ),
-    //         label: FFLocalizations.of(context).getText(
-    //           'lgf10g04' /* Home */,
-    //         ),
-    //         tooltip: '',
-    //       )
-    //     ],
-    //   ),
-    // );
   }
 }
