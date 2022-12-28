@@ -20,7 +20,7 @@ class _TokensListWidgetState extends State<TokensListWidget> {
       width: double.infinity,
       height: double.infinity,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).secondaryBackground,
+        color: FlutterFlowTheme.of(context).lineColor,
       ),
       child: Builder(
         builder: (context) {
