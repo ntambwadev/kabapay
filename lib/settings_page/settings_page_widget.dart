@@ -17,6 +17,7 @@ class SettingsPageWidget extends StatefulWidget {
 }
 
 class _SettingsPageWidgetState extends State<SettingsPageWidget> {
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -24,6 +25,12 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
     super.initState();
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'settings_page'});
+  }
+
+  @override
+  void dispose() {
+    _unfocusNode.dispose();
+    super.dispose();
   }
 
   @override
@@ -65,7 +72,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
             child: Container(

@@ -16,6 +16,7 @@ class BuyTokenPageWidget extends StatefulWidget {
 }
 
 class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey<BuyTokenAmountWidgetState> _tokenAmountWidgetKey = GlobalKey();
 
@@ -28,6 +29,12 @@ class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
 
   _onKeyboardTap(String value) {
     _tokenAmountWidgetKey.currentState?.onKeyboardTap(value);
+  }
+
+  @override
+  void dispose() {
+    _unfocusNode.dispose();
+    super.dispose();
   }
 
   @override
@@ -55,7 +62,7 @@ class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
             child: Container(

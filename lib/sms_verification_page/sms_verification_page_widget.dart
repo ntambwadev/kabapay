@@ -17,6 +17,7 @@ class SmsVerificationPageWidget extends StatefulWidget {
 
 class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
   TextEditingController? pinCodeController;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -25,6 +26,13 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'sms_verification_page'});
     pinCodeController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _unfocusNode.dispose();
+    pinCodeController?.dispose();
+    super.dispose();
   }
 
   @override
@@ -52,7 +60,7 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
             child: Column(

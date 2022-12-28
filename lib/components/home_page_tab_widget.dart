@@ -1,4 +1,5 @@
-import '../components/tokens_list_placeholder_widget.dart';
+import '../components/tokens_list_widget.dart';
+import '../components/transactions_list_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -56,8 +57,8 @@ class _HomePageTabWidgetState extends State<HomePageTabWidget> {
               Expanded(
                 child: TabBarView(
                   children: [
-                    TokensListPlaceholderWidget(),
-                    Container(),
+                    TokensListWidget(),
+                    TransactionsListWidget(),
                   ],
                 ),
               ),

@@ -16,6 +16,7 @@ class PhoneLoginPageWidget extends StatefulWidget {
 
 class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
   TextEditingController? phoneNumberController;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -28,6 +29,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     phoneNumberController?.dispose();
     super.dispose();
   }
@@ -57,7 +59,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
             child: Container(
@@ -192,7 +194,10 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                               phoneNumber: phoneNumberVal,
                               onCodeSent: () async {
                                 context.goNamedAuth(
-                                    'sms_verification_page', mounted);
+                                  'sms_verification_page',
+                                  mounted,
+                                  ignoreRedirect: true,
+                                );
                               },
                             );
                           },
