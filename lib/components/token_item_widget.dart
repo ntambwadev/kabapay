@@ -34,20 +34,20 @@ class _TokenItemWidgetState extends State<TokenItemWidget> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(6, 0, 12, 0),
-              child: Container(
-                width: 40,
-                height: 40,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                ),
-                child: Image.network(
-                  '',
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: EdgeInsetsDirectional.fromSTEB(6, 0, 12, 0),
+            //   child: Container(
+            //     width: 40,
+            //     height: 40,
+            //     clipBehavior: Clip.antiAlias,
+            //     decoration: BoxDecoration(
+            //       shape: BoxShape.circle,
+            //     ),
+            //     child: Image.network(
+            //       '',
+            //     ),
+            //   ),
+            // ),
             Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,

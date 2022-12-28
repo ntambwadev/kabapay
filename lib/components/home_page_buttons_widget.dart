@@ -1,6 +1,7 @@
 import 'package:kabapay/components/receive_token_widget.dart';
 
 import '../components/home_button_widget.dart';
+import '../firestore/firestore_service.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -15,18 +16,19 @@ class HomePageButtonsWidget extends StatefulWidget {
 
 class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
 
-  _onBuyButtonTap(BuildContext context) {
+  _onBuyButtonTap(BuildContext context) async {
     logFirebaseEvent('HOME_BUY_BUTTON_Container_g4p1ceub_ON_TAP');
     logFirebaseEvent('home_buy_button_navigate_to');
-    context.pushNamed(
-      'tokens_page',
-      extra: <String, dynamic>{
-        kTransitionInfoKey: TransitionInfo(
-          hasTransition: true,
-          transitionType: PageTransitionType.rightToLeft,
-        ),
-      },
-    );
+    await FirestoreService().createTestTransaction();
+    // context.pushNamed(
+    //   'tokens_page',
+    //   extra: <String, dynamic>{
+    //     kTransitionInfoKey: TransitionInfo(
+    //       hasTransition: true,
+    //       transitionType: PageTransitionType.rightToLeft,
+    //     ),
+    //   },
+    // );
   }
 
   _onSendButtonTap(BuildContext context) {

@@ -4,15 +4,14 @@ class TokenMetadataModel {
   final String id;
   final String name;
   final String chain;
-  final String currentPrice;
+  final double currentPrice;
   final String symbol;
   final String image;
-  final String priceChangePercent24h;
-  final String amountUSD;
+  final double priceChangePercent24h;
 
   TokenMetadataModel({required this.id, required this.name, required this.chain,
     required this.currentPrice, required this.symbol,
-    required this.image, required this.priceChangePercent24h, required this.amountUSD});
+    required this.image, required this.priceChangePercent24h});
 
   factory TokenMetadataModel.fromMap(Map? data) {
     data = data ?? { };
@@ -24,7 +23,6 @@ class TokenMetadataModel {
       symbol: data['symbol'] ?? '',
       image: data['image'] ?? '',
       priceChangePercent24h: data['priceChangePercent24h'] ?? '',
-      amountUSD: data['amountUSD'] ?? '',
     );
   }
 
@@ -38,7 +36,16 @@ class TokenMetadataModel {
       symbol: data['symbol'] ?? '',
       image: data['image'] ?? '',
       priceChangePercent24h: data['priceChangePercent24h'] ?? '',
-      amountUSD: data['amountUSD'] ?? '',
     );
   }
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'name': name,
+    'chain': chain,
+    'currentPrice': currentPrice,
+    'symbol': symbol,
+    'image': image,
+    'priceChangePercent24h': priceChangePercent24h,
+  };
 }

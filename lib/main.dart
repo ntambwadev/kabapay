@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:kabapay/firestore/firestore_service.dart';
+import 'package:kabapay/models/current_transaction_model.dart';
+import 'package:kabapay/models/token_model.dart';
 import 'package:kabapay/models/transaction_model.dart';
 import 'package:kabapay/models/user_model.dart';
 import 'package:provider/provider.dart';
@@ -129,8 +131,6 @@ class _NavBarPageState extends State<NavBarPage> {
 
   @override
   Widget build(BuildContext context) {
-    final FirestoreService firestoreService = FirestoreService();
-
     final tabs = {
       'home_page': HomePageWidget(),
       'settings_page': SettingsPageWidget(),
@@ -140,19 +140,27 @@ class _NavBarPageState extends State<NavBarPage> {
     return MultiProvider(
       providers: [
         StreamProvider<UserModel?>.value(
-          value: firestoreService.streamCurrentUserData(currentUserUid),
+          value: FirestoreService().streamCurrentUserData(currentUserUid),
           initialData: null,
           catchError:(context, err) {
             debugPrint('USER MODEL PROVIDER ERROR: ${err.toString()}');
             return null;
           },),
         StreamProvider<List<TransactionModel>>.value(
-          value: firestoreService.streamTransactions(),
+          value: FirestoreService().streamTransactions(),
           initialData: [],
           catchError: (context, err) {
             debugPrint('TRANSACTION MODEL PROVIDER ERROR: ${err.toString()}');
             return List.empty();
           },),
+        StreamProvider<List<TokenModel>>.value(
+          value: FirestoreService().streamTokens(),
+          initialData: [],
+          catchError: (context, err) {
+            debugPrint('TOKENS MODEL PROVIDER ERROR: ${err.toString()}');
+            return List.empty();
+          },),
+        ChangeNotifierProvider(create: (context) => CurrentTransactionModel()),
       ],
       child: Scaffold(
         body: _currentPage ?? tabs[_currentPageName],

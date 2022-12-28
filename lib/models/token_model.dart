@@ -34,4 +34,12 @@ class TokenModel {
       tokenMetadata: TokenMetadataModel.fromMap(data['tokenMetadata']),
     );
   }
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'symbol': symbol,
+    'amountToken': amountToken,
+    'amountUSD': amountUSD,
+    'tokenMetadata': tokenMetadata!.toJson(),
+  };
 }
