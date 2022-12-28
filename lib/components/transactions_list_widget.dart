@@ -1,19 +1,19 @@
-import '../components/token_item_widget.dart';
 import '../components/tokens_list_placeholder_widget.dart';
+import '../components/transaction_item_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TokensListWidget extends StatefulWidget {
-  const TokensListWidget({Key? key}) : super(key: key);
+class TransactionsListWidget extends StatefulWidget {
+  const TransactionsListWidget({Key? key}) : super(key: key);
 
   @override
-  _TokensListWidgetState createState() => _TokensListWidgetState();
+  _TransactionsListWidgetState createState() => _TransactionsListWidgetState();
 }
 
-class _TokensListWidgetState extends State<TokensListWidget> {
+class _TransactionsListWidgetState extends State<TransactionsListWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,24 +44,8 @@ class _TokensListWidgetState extends State<TokensListWidget> {
             itemCount: items.length,
             itemBuilder: (context, itemsIndex) {
               final itemsItem = items[itemsIndex];
-              return InkWell(
-                onTap: () async {
-                  logFirebaseEvent('TOKENS_LIST_Container_ywi18osh_ON_TAP');
-                  logFirebaseEvent('token_item_navigate_to');
-
-                  context.pushNamed(
-                    'buy_token_page',
-                    extra: <String, dynamic>{
-                      kTransitionInfoKey: TransitionInfo(
-                        hasTransition: true,
-                        transitionType: PageTransitionType.rightToLeft,
-                      ),
-                    },
-                  );
-                },
-                child: TokenItemWidget(
-                  key: UniqueKey(),
-                ),
+              return TransactionItemWidget(
+                key: UniqueKey(),
               );
             },
           );

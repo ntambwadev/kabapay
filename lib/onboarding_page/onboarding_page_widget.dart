@@ -15,6 +15,7 @@ class OnboardingPageWidget extends StatefulWidget {
 
 class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
   PageController? pageViewController;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -22,6 +23,12 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
     super.initState();
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'onboarding_page'});
+  }
+
+  @override
+  void dispose() {
+    _unfocusNode.dispose();
+    super.dispose();
   }
 
   @override
@@ -44,7 +51,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [

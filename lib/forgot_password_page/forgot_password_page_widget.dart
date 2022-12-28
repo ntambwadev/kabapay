@@ -16,6 +16,7 @@ class ForgotPasswordPageWidget extends StatefulWidget {
 
 class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
   TextEditingController? emailAddressController;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -28,6 +29,7 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     emailAddressController?.dispose();
     super.dispose();
   }
@@ -96,7 +98,7 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
             child: Column(

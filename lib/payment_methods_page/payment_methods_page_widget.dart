@@ -18,6 +18,7 @@ class PaymentMethodsPageWidget extends StatefulWidget {
 }
 
 class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -25,6 +26,12 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
     super.initState();
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'payment_methods_page'});
+  }
+
+  @override
+  void dispose() {
+    _unfocusNode.dispose();
+    super.dispose();
   }
 
   @override
@@ -91,7 +98,7 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Container(
             width: double.infinity,
             height: double.infinity,
@@ -167,8 +174,7 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                                     );
                                   },
                                   child: PhonePaymentMethodItemWidget(
-                                    key: Key(
-                                        'phone_payment_method_item_${phonesIndex}'),
+                                    key: UniqueKey(),
                                   ),
                                 );
                               },

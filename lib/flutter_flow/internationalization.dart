@@ -701,6 +701,34 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sw': 'Inayofuata',
     },
   },
+  // transaction_item
+  {
+    '0wbebkl7': {
+      'en': '2022-09-08 1:52:35: PM',
+      'fr': '',
+      'sw': '',
+    },
+    'qniinzdc': {
+      'en': 'Received',
+      'fr': '',
+      'sw': '',
+    },
+    'hvkocwff': {
+      'en': 'Pending',
+      'fr': '',
+      'sw': '',
+    },
+    'hqyu25ti': {
+      'en': '20 USDT',
+      'fr': '',
+      'sw': '',
+    },
+    '4p5n3a9r': {
+      'en': '\$19.20',
+      'fr': '',
+      'sw': '',
+    },
+  },
   // Miscellaneous
   {
     'q9u9tqyi': {

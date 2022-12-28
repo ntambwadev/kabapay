@@ -16,8 +16,8 @@ class LoginPageWidget extends StatefulWidget {
 class _LoginPageWidgetState extends State<LoginPageWidget> {
   TextEditingController? emailAddressController;
   TextEditingController? passwordLoginController;
-
   late bool passwordLoginVisibility;
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -31,6 +31,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
 
   @override
   void dispose() {
+    _unfocusNode.dispose();
     emailAddressController?.dispose();
     passwordLoginController?.dispose();
     super.dispose();
@@ -100,7 +101,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
             child: Column(

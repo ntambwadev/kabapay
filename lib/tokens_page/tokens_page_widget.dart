@@ -18,12 +18,19 @@ class TokensPageWidget extends StatefulWidget {
 }
 
 class _TokensPageWidgetState extends State<TokensPageWidget> {
+  final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'tokens_page'});
+  }
+
+  @override
+  void dispose() {
+    _unfocusNode.dispose();
+    super.dispose();
   }
 
   @override
@@ -90,7 +97,7 @@ class _TokensPageWidgetState extends State<TokensPageWidget> {
       ),
       body: SafeArea(
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
             child: Container(
