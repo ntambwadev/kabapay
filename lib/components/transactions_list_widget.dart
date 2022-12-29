@@ -1,3 +1,6 @@
+import 'package:kabapay/models/transaction_model.dart';
+import 'package:provider/provider.dart';
+
 import '../components/tokens_list_placeholder_widget.dart';
 import '../components/transaction_item_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -24,12 +27,8 @@ class _TransactionsListWidgetState extends State<TransactionsListWidget> {
       ),
       child: Builder(
         builder: (context) {
-          final items = List.generate(random_data.randomInteger(5, 5),
-                  (index) => random_data.randomName(true, false))
-              .toList()
-              .take(5)
-              .toList();
-          if (items.isEmpty) {
+          List<TransactionModel> transactions = Provider.of<List<TransactionModel>>(context);
+          if (transactions.isEmpty) {
             return Center(
               child: Container(
                 width: double.infinity,
@@ -38,16 +37,22 @@ class _TransactionsListWidgetState extends State<TransactionsListWidget> {
               ),
             );
           }
-          return ListView.builder(
-            padding: EdgeInsets.zero,
-            scrollDirection: Axis.vertical,
-            itemCount: items.length,
-            itemBuilder: (context, itemsIndex) {
-              final itemsItem = items[itemsIndex];
-              return TransactionItemWidget(
-                key: UniqueKey(),
-              );
+          return RefreshIndicator(
+            onRefresh: () async {
+              //TODO refresh transactions list
             },
+            child: ListView.builder(
+              padding: EdgeInsets.zero,
+              scrollDirection: Axis.vertical,
+              itemCount: transactions.length,
+              itemBuilder: (context, itemIndex) {
+                final transactionItem = transactions[itemIndex];
+                return TransactionItemWidget(
+                  key: UniqueKey(),
+                  transaction: transactionItem,
+                );
+              },
+            ),
           );
         },
       ),

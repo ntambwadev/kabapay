@@ -1,3 +1,7 @@
+import 'package:kabapay/firestore/firestore_service.dart';
+import 'package:kabapay/models/token_model.dart';
+import 'package:provider/provider.dart';
+
 import '../components/token_item_widget.dart';
 import '../components/tokens_list_placeholder_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -24,12 +28,8 @@ class _TokensListWidgetState extends State<TokensListWidget> {
       ),
       child: Builder(
         builder: (context) {
-          final items = List.generate(random_data.randomInteger(5, 5),
-                  (index) => random_data.randomName(true, false))
-              .toList()
-              .take(5)
-              .toList();
-          if (items.isEmpty) {
+          List<TokenModel> tokens = Provider.of<List<TokenModel>>(context);
+          if (tokens.isEmpty) {
             return Center(
               child: Container(
                 width: double.infinity,
@@ -38,32 +38,38 @@ class _TokensListWidgetState extends State<TokensListWidget> {
               ),
             );
           }
-          return ListView.builder(
-            padding: EdgeInsets.zero,
-            scrollDirection: Axis.vertical,
-            itemCount: items.length,
-            itemBuilder: (context, itemsIndex) {
-              final itemsItem = items[itemsIndex];
-              return InkWell(
-                onTap: () async {
-                  logFirebaseEvent('TOKENS_LIST_Container_ywi18osh_ON_TAP');
-                  logFirebaseEvent('token_item_navigate_to');
-
-                  context.pushNamed(
-                    'buy_token_page',
-                    extra: <String, dynamic>{
-                      kTransitionInfoKey: TransitionInfo(
-                        hasTransition: true,
-                        transitionType: PageTransitionType.rightToLeft,
-                      ),
-                    },
-                  );
-                },
-                child: TokenItemWidget(
-                  key: UniqueKey(),
-                ),
-              );
+          return RefreshIndicator(
+            onRefresh: () async {
+              //TODO refresh tokens list with new values
             },
+            child: ListView.builder(
+              padding: EdgeInsets.zero,
+              scrollDirection: Axis.vertical,
+              itemCount: tokens.length,
+              itemBuilder: (context, tokenIndex) {
+                final tokenItem = tokens[tokenIndex];
+                return InkWell(
+                  onTap: () async {
+                    logFirebaseEvent('TOKENS_LIST_Container_ywi18osh_ON_TAP');
+                    logFirebaseEvent('token_item_navigate_to');
+
+                    context.pushNamed(
+                      'buy_token_page',
+                      extra: <String, dynamic>{
+                        kTransitionInfoKey: TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.rightToLeft,
+                        ),
+                      },
+                    );
+                  },
+                  child: TokenItemWidget(
+                    key: UniqueKey(),
+                    token: tokenItem,
+                  ),
+                );
+              },
+            ),
           );
         },
       ),

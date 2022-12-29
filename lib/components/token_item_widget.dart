@@ -1,10 +1,13 @@
+import 'package:kabapay/models/token_model.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TokenItemWidget extends StatefulWidget {
-  const TokenItemWidget({Key? key}) : super(key: key);
+  const TokenItemWidget({Key? key, required this.token}) : super(key: key);
+  final TokenModel token;
 
   @override
   _TokenItemWidgetState createState() => _TokenItemWidgetState();
@@ -13,6 +16,14 @@ class TokenItemWidget extends StatefulWidget {
 class _TokenItemWidgetState extends State<TokenItemWidget> {
   @override
   Widget build(BuildContext context) {
+    final priceChangePercent = widget.token.tokenMetadata.priceChangePercent24h.toString();
+    bool isNegativePriceChange = priceChangePercent.contains('-');
+    final priceChangePercentText = isNegativePriceChange
+        ? '$priceChangePercent%' : '+$priceChangePercent%';
+    Color priceChangeColor = isNegativePriceChange
+        ? FlutterFlowTheme.of(context).loss
+        : FlutterFlowTheme.of(context).gain;
+
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
       child: Container(
@@ -46,7 +57,7 @@ class _TokenItemWidgetState extends State<TokenItemWidget> {
                     shape: BoxShape.circle,
                   ),
                   child: Image.network(
-                    '',
+                    widget.token.tokenMetadata.image,
                   ),
                 ),
               ),
@@ -56,19 +67,34 @@ class _TokenItemWidgetState extends State<TokenItemWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    FFLocalizations.of(context).getText(
-                      'yqcnl5yr' /* Ethereum */,
+                    widget.token.tokenMetadata.symbol.toUpperCase(),
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                      fontFamily: 'Poppins',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500
                     ),
-                    style: FlutterFlowTheme.of(context).bodyText1,
                   ),
-                  Text(
-                    FFLocalizations.of(context).getText(
-                      'o1xrnt04' /* ETH BEP20 */,
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyText2.override(
+                  Row(
+                    children: [
+                      Text(
+                        '\$${widget.token.tokenMetadata.currentPrice} ',
+                        style: FlutterFlowTheme.of(context).bodyText2.override(
+                              fontFamily: 'Poppins',
+                              fontSize: 10,
+                            ),
+                      ),
+                      Text(
+                        priceChangePercentText,
+                        style: FlutterFlowTheme.of(context)
+                            .bodyText2
+                            .override(
                           fontFamily: 'Poppins',
-                          fontSize: 12,
+                          color: priceChangeColor,
+                          fontSize: 9,
+                          fontWeight: FontWeight.normal,
                         ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -80,32 +106,19 @@ class _TokenItemWidgetState extends State<TokenItemWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              '9xrvaw4d' /* $ */,
-                            ),
-                            style: FlutterFlowTheme.of(context).bodyText1,
-                          ),
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'zdn08gbt' /* $ 1734 */,
-                            ),
-                            style: FlutterFlowTheme.of(context).bodyText1,
-                          ),
-                        ],
+                      Text(
+                        '${widget.token.amountToken} ${widget.token.symbol.toUpperCase()}',
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500
+                        ),
                       ),
                       Text(
-                        FFLocalizations.of(context).getText(
-                          'x6wbjhmi' /* +10.34% */,
-                        ),
+                        '\$${widget.token.amountUSD}',
                         style: FlutterFlowTheme.of(context).bodyText2.override(
                               fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context).gain,
-                              fontSize: 11,
+                              fontSize: 10,
                               fontWeight: FontWeight.normal,
                             ),
                       ),

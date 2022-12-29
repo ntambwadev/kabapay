@@ -652,13 +652,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // home_page_tab
   {
     '3k4uw7qb': {
-      'en': 'Tokens',
-      'fr': 'Jetons',
+      'en': 'Crypto',
+      'fr': 'Crypto',
       'sw': 'Ishara',
     },
     'fx56ak9t': {
-      'en': 'Transactions',
-      'fr': 'Transactions',
+      'en': 'History',
+      'fr': 'Historique',
       'sw': 'Shughuli',
     },
   },
@@ -737,6 +737,69 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '\$19.20',
       'fr': '19,20 \$',
       'sw': '\$19.20',
+    },
+  },
+
+  // TransactionStatus Description
+  {
+    'status_pending_payment': {
+      'en': 'Pending payment',
+      'fr': 'En attente de votre payment',
+      'sw': 'kusubiri malipo yako',
+    },
+    'status_payment_received': {
+      'en': 'Payment received',
+      'fr': 'Payment recu',
+      'sw': 'Malipo yamepokelewa',
+    },
+    'status_processing': {
+      'en': 'Transaction processing',
+      'fr': 'Transaction en cours',
+      'sw': 'Usindikaji wa muamala',
+    },
+    'status_completed': {
+      'en': 'Completed',
+      'fr': 'Completer',
+      'sw': 'Imekamilika',
+    },
+    'status_failed': {
+      'en': 'Failed',
+      'fr': 'Echec',
+      'sw': 'Imeshindwa',
+    },
+  },
+
+  // TransactionType Description
+  {
+    'buy': {
+      'en': 'Buy',
+      'fr': 'Achat',
+      'sw': '',
+    },
+    'send': {
+      'en': 'Send',
+      'fr': 'Envoie',
+      'sw': '',
+    },
+    'received': {
+      'en': 'Received',
+      'fr': 'Recu',
+      'sw': '',
+    },
+    'payout': {
+      'en': 'Widthdraw',
+      'fr': 'Retrait',
+      'sw': '',
+    },
+    'interac_cash_out': {
+      'en': 'Interac cash out',
+      'fr': 'Interac cash out',
+      'sw': '',
+    },
+    'interac_cash_in': {
+      'en': 'Interac cash in',
+      'fr': 'Interac cash in',
+      'sw': '',
     },
   },
   // Miscellaneous

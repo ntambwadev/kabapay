@@ -1,3 +1,5 @@
+import 'package:kabapay/components/transaction_details_timeline.dart';
+
 import '../components/tokens_list_widget.dart';
 import '../components/transactions_list_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';

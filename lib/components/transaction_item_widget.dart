@@ -1,10 +1,13 @@
+import 'package:kabapay/models/transaction_model.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TransactionItemWidget extends StatefulWidget {
-  const TransactionItemWidget({Key? key}) : super(key: key);
+  const TransactionItemWidget({Key? key, required this.transaction}) : super(key: key);
+  final TransactionModel transaction;
 
   @override
   _TransactionItemWidgetState createState() => _TransactionItemWidgetState();
@@ -13,6 +16,8 @@ class TransactionItemWidget extends StatefulWidget {
 class _TransactionItemWidgetState extends State<TransactionItemWidget> {
   @override
   Widget build(BuildContext context) {
+    final amountTokenText = '${widget.transaction.token.amountToken} ${widget.transaction.token.symbol.toUpperCase()}';
+    final amountUSDText = '\$${widget.transaction.token.amountUSD}';
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 10),
       child: Container(
@@ -39,9 +44,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                FFLocalizations.of(context).getText(
-                  'tfuogp09' /* 2022-09-08 1:52:35: PM */,
-                ),
+                widget.transaction.createdAt,
                 style: FlutterFlowTheme.of(context).bodyText2.override(
                       fontFamily: 'Poppins',
                       color: FlutterFlowTheme.of(context).secondaryText,
@@ -61,8 +64,8 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                       ),
-                      child: Image.asset(
-                        'assets/images/btc.png',
+                      child: Image.network(
+                        widget.transaction.token.tokenMetadata.image
                       ),
                     ),
                     Padding(
@@ -74,7 +77,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                         children: [
                           Text(
                             FFLocalizations.of(context).getText(
-                              'nc374fp7' /* Received */,
+                                widget.transaction.type.descriptionKey,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyText1
@@ -86,13 +89,12 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                           ),
                           Text(
                             FFLocalizations.of(context).getText(
-                              'v3z6xy0x' /* Pending */,
+                              widget.transaction.status.descriptionKey,
                             ),
                             style:
                                 FlutterFlowTheme.of(context).bodyText2.override(
                                       fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .tertiaryColor,
+                                      color: widget.transaction.status.color,
                                       fontSize: 10,
                                     ),
                           ),
@@ -106,9 +108,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
-                            FFLocalizations.of(context).getText(
-                              'tf19m68r' /* 20 USDT */,
-                            ),
+                            amountTokenText,
                             style: FlutterFlowTheme.of(context)
                                 .bodyText1
                                 .override(
@@ -119,9 +119,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                                 ),
                           ),
                           Text(
-                            FFLocalizations.of(context).getText(
-                              'm0o9ogso' /* $19.20 */,
-                            ),
+                            amountUSDText,
                             style:
                                 FlutterFlowTheme.of(context).bodyText2.override(
                                       fontFamily: 'Poppins',
