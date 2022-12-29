@@ -20,6 +20,12 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
       height: double.infinity,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).lineColor,
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(0),
+          bottomRight: Radius.circular(0),
+          topLeft: Radius.circular(8),
+          topRight: Radius.circular(8),
+        ),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.max,

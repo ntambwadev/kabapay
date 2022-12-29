@@ -22,6 +22,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
           logFirebaseEvent('Container_bottom_sheet');
           await showModalBottomSheet(
             isScrollControlled: true,
+            backgroundColor: Colors.transparent,
             enableDrag: false,
             context: context,
             builder: (context) {
