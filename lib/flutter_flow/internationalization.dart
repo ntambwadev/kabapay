@@ -740,6 +740,75 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
   },
 
+  // transaction_details
+  {
+    'o1hg2c4w': {
+      'en': '100 USDT',
+      'fr': '100 USDT',
+      'sw': '100 USDT',
+    },
+    '65lx7y6n': {
+      'en': 'Payment method',
+      'fr': 'Mode de paiement',
+      'sw': 'Njia ya malipo',
+    },
+    'ud47rs8x': {
+      'en': 'MPesa',
+      'fr': 'MPesa',
+      'sw': 'MPesa',
+    },
+    'ry8sp7jr': {
+      'en': 'Mobile money number',
+      'fr': 'Numéro d\'argent mobile',
+      'sw': 'Nambari ya pesa ya rununu',
+    },
+    'xzxm13ky': {
+      'en': '0971504436',
+      'fr': '0971504436',
+      'sw': '0971504436',
+    },
+    'dx5z3y16': {
+      'en': 'You pay',
+      'fr': 'Tu payes',
+      'sw': 'Unalipa',
+    },
+    'g77605sg': {
+      'en': '\$100 USD',
+      'fr': '100 USD',
+      'sw': '\$100 USD',
+    },
+    'x7my7d1b': {
+      'en': 'You receive',
+      'fr': 'Vous recevez',
+      'sw': 'Unapokea',
+    },
+    'jztot544': {
+      'en': '100 USDT',
+      'fr': '100 USDT',
+      'sw': '100 USDT',
+    },
+    'ra5ua0p4': {
+      'en': 'Transaction fees',
+      'fr': 'Les frais de transaction',
+      'sw': 'Ada za muamala',
+    },
+    'bk0h6u8c': {
+      'en': '\$0.05 USD',
+      'fr': '0,05 USD',
+      'sw': '\$0.05 USD',
+    },
+    'smcd6ix8': {
+      'en': 'Total',
+      'fr': 'Total',
+      'sw': 'Jumla',
+    },
+    'r2jau6jx': {
+      'en': '\$100.05 USD',
+      'fr': '100,05 USD',
+      'sw': '\$100.05 USD',
+    },
+  },
+
   // TransactionStatus Description
   {
     'status_pending_payment': {
@@ -802,6 +871,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sw': '',
     },
   },
+
   // Miscellaneous
   {
     'q9u9tqyi': {
