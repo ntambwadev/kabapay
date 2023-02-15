@@ -1,3 +1,6 @@
+import 'package:kabapay/models/current_transaction_model.dart';
+import 'package:provider/provider.dart';
+
 import '../components/nav_back_button_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -32,6 +35,7 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    CurrentTransactionModel transactionModel = Provider.of<CurrentTransactionModel>(context);
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -108,9 +112,7 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       15, 0, 0, 0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      '4vjkx5f0' /* 100 USDT */,
-                                    ),
+                                    '${transactionModel.amountToken} ${transactionModel.token?.symbol.toUpperCase()}',
                                     style: FlutterFlowTheme.of(context)
                                         .title3
                                         .override(
@@ -140,9 +142,7 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         10, 0, 0, 0),
                                     child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'p1ybxwkk' /* MPesa */,
-                                      ),
+                                        '${transactionModel.phone?.mobileMoney}',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1,
                                     ),
@@ -161,9 +161,7 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                                   style: FlutterFlowTheme.of(context).bodyText1,
                                 ),
                                 Text(
-                                  FFLocalizations.of(context).getText(
-                                    'e2evfdqy' /* 0971504436 */,
-                                  ),
+                                  '${transactionModel.phone?.number}',
                                   style: FlutterFlowTheme.of(context).bodyText1,
                                 ),
                               ],
@@ -179,9 +177,7 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                                   style: FlutterFlowTheme.of(context).bodyText1,
                                 ),
                                 Text(
-                                  FFLocalizations.of(context).getText(
-                                    'wch0p206' /* $100 USD */,
-                                  ),
+                                  '\$ ${transactionModel.amountUSD} USD',
                                   style: FlutterFlowTheme.of(context).bodyText1,
                                 ),
                               ],
@@ -215,9 +211,7 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           5, 0, 0, 0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'quiv6rl3' /* 100 USDT */,
-                                        ),
+                                        '${transactionModel.amountToken} ${transactionModel.token?.symbol.toUpperCase()}',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1,
                                       ),
@@ -260,9 +254,7 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                                       ),
                                 ),
                                 Text(
-                                  FFLocalizations.of(context).getText(
-                                    'v5x74dkn' /* $100.05 USD */,
-                                  ),
+                                  '\$ ${transactionModel.amountUSD} USD',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(

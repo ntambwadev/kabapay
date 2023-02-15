@@ -86,24 +86,56 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'kabapay',
-      localizationsDelegates: [
-        FFLocalizationsDelegate(),
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
+    return MultiProvider(
+      providers: [
+        StreamProvider<UserModel?>(
+          initialData: null,
+          create: (context) =>
+              FirestoreService().streamCurrentUserData(currentUserUid),
+          catchError:(context, err) {
+            debugPrint('USER MODEL PROVIDER ERROR: ${err.toString()}');
+            return null;
+          },
+        ),
+        StreamProvider<List<TransactionModel>>(
+          initialData: [],
+          create: (context) =>
+            FirestoreService().streamTransactions(currentUserUid),
+          catchError: (context, err) {
+            debugPrint('TRANSACTION MODEL PROVIDER ERROR: ${err.toString()}');
+            return List.empty();
+          },
+        ),
+        StreamProvider<List<TokenModel>>(
+          initialData: [],
+          create: (context) =>
+              FirestoreService().streamTokens(currentUserUid),
+          catchError: (context, err) {
+            debugPrint('TOKENS MODEL PROVIDER ERROR: ${err.toString()}');
+            return List.empty();
+          },
+        ),
+        ChangeNotifierProvider(create: (context) => CurrentTransactionModel()),
       ],
-      locale: _locale,
-      supportedLocales: const [
-        Locale('en'),
-        Locale('fr'),
-        Locale('sw'),
-      ],
-      theme: ThemeData(brightness: Brightness.light),
-      themeMode: _themeMode,
-      routeInformationParser: _router.routeInformationParser,
-      routerDelegate: _router.routerDelegate,
+      child: MaterialApp.router(
+        title: 'kabapay',
+        localizationsDelegates: [
+          FFLocalizationsDelegate(),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        locale: _locale,
+        supportedLocales: const [
+          Locale('en'),
+          Locale('fr'),
+          Locale('sw'),
+        ],
+        theme: ThemeData(brightness: Brightness.light),
+        themeMode: _themeMode,
+        routeInformationParser: _router.routeInformationParser,
+        routerDelegate: _router.routerDelegate,
+      ),
     );
   }
 }
@@ -138,68 +170,49 @@ class _NavBarPageState extends State<NavBarPage> {
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
-    return MultiProvider(
-      providers: [
-        StreamProvider<UserModel?>.value(
-          value: FirestoreService().streamCurrentUserData(currentUserUid),
-          initialData: null,
-          catchError:(context, err) {
-            debugPrint('USER MODEL PROVIDER ERROR: ${err.toString()}');
-            return null;
-          },),
-        StreamProvider<List<TransactionModel>>.value(
-          value: FirestoreService().streamTransactions(),
-          initialData: [],
-          catchError: (context, err) {
-            debugPrint('TRANSACTION MODEL PROVIDER ERROR: ${err.toString()}');
-            return List.empty();
-          },),
-        StreamProvider<List<TokenModel>>.value(
-          value: FirestoreService().streamTokens(),
-          initialData: [],
-          catchError: (context, err) {
-            debugPrint('TOKENS MODEL PROVIDER ERROR: ${err.toString()}');
-            return List.empty();
-          },),
-        ChangeNotifierProvider(create: (context) => CurrentTransactionModel()),
-      ],
-      child: Scaffold(
-        body: _currentPage ?? tabs[_currentPageName],
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: currentIndex,
-          onTap: (i) => setState(() {
-            _currentPage = null;
-            _currentPageName = tabs.keys.toList()[i];
-          }),
-          backgroundColor: Colors.white,
-          selectedItemColor: FlutterFlowTheme.of(context).primaryColor,
-          unselectedItemColor: Color(0x8A000000),
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          type: BottomNavigationBarType.fixed,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_outlined,
-                size: 24,
-              ),
-              label: FFLocalizations.of(context).getText(
-                '5f7w2rwu' /* Home */,
-              ),
-              tooltip: '',
+    // preloads all items here
+    Provider.of<UserModel?>(context);
+    Provider.of<List<TokenModel>>(context);
+    Provider.of<List<TransactionModel>>(context);
+    Provider.of<CurrentTransactionModel>(context, listen: false)
+        .addUserId(currentUserUid);
+
+    return Scaffold(
+      body: _currentPage ?? tabs[_currentPageName],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (i) => setState(() {
+          _currentPage = null;
+          _currentPageName = tabs.keys.toList()[i];
+        }),
+        backgroundColor: Colors.white,
+        selectedItemColor: FlutterFlowTheme.of(context).primaryColor,
+        unselectedItemColor: Color(0x8A000000),
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_outlined,
+              size: 24,
             ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.settings,
-                size: 24,
-              ),
-              label: FFLocalizations.of(context).getText(
-                'lgf10g04' /* Home */,
-              ),
-              tooltip: '',
-            )
-          ],
-        ),
+            label: FFLocalizations.of(context).getText(
+              '5f7w2rwu' /* Home */,
+            ),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.settings,
+              size: 24,
+            ),
+            label: FFLocalizations.of(context).getText(
+              'lgf10g04' /* Home */,
+            ),
+            tooltip: '',
+          )
+        ],
       ),
     );
   }

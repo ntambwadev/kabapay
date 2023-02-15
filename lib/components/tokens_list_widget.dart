@@ -1,5 +1,7 @@
 import 'package:kabapay/firestore/firestore_service.dart';
+import 'package:kabapay/models/current_transaction_model.dart';
 import 'package:kabapay/models/token_model.dart';
+import 'package:kabapay/models/user_model.dart';
 import 'package:provider/provider.dart';
 
 import '../components/token_item_widget.dart';
@@ -18,6 +20,22 @@ class TokensListWidget extends StatefulWidget {
 }
 
 class _TokensListWidgetState extends State<TokensListWidget> {
+  _onTokenSelected(BuildContext context, TokenModel tokenItem, UserModel? userModel) async {
+    logFirebaseEvent('TOKENS_LIST_Container_ywi18osh_ON_TAP');
+    logFirebaseEvent('token_item_navigate_to');
+    Provider.of<CurrentTransactionModel>(context, listen: false)
+        .selectToken(tokenItem, userModel);
+    context.pushNamed(
+      'buy_token_page',
+      extra: <String, dynamic>{
+        kTransitionInfoKey: TransitionInfo(
+          hasTransition: true,
+          transitionType: PageTransitionType.rightToLeft,
+        ),
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,6 +47,7 @@ class _TokensListWidgetState extends State<TokensListWidget> {
       child: Builder(
         builder: (context) {
           List<TokenModel> tokens = Provider.of<List<TokenModel>>(context);
+          UserModel? userModel = Provider.of<UserModel?>(context);
           if (tokens.isEmpty) {
             return Center(
               child: Container(
@@ -50,18 +69,7 @@ class _TokensListWidgetState extends State<TokensListWidget> {
                 final tokenItem = tokens[tokenIndex];
                 return InkWell(
                   onTap: () async {
-                    logFirebaseEvent('TOKENS_LIST_Container_ywi18osh_ON_TAP');
-                    logFirebaseEvent('token_item_navigate_to');
-
-                    context.pushNamed(
-                      'buy_token_page',
-                      extra: <String, dynamic>{
-                        kTransitionInfoKey: TransitionInfo(
-                          hasTransition: true,
-                          transitionType: PageTransitionType.rightToLeft,
-                        ),
-                      },
-                    );
+                    _onTokenSelected(context, tokenItem, userModel);
                   },
                   child: TokenItemWidget(
                     key: UniqueKey(),

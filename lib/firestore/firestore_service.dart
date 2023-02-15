@@ -22,22 +22,35 @@ class FirestoreService {
   final FirebaseFirestore _firestoreDb = FirebaseFirestore.instance;
 
   /// Get a stream of a single document
-  Stream<UserModel> streamCurrentUserData(String id) {
-    debugPrint('CURRENT USER ID: $id');
-    return _firestoreDb
-        .collection('users')
-        .doc(id)
-        .snapshots()
-        .map((snap) => UserModel.fromMap(snap.data()));
+  Stream<UserModel> streamCurrentUserData(String? userId) {
+    if (userId == null || userId.isEmpty) {
+      print('CURRENT USER DATA ERROR EMPTY userId');
+      return Stream.empty();
+    }
+    try {
+      debugPrint('CURRENT USER ID: $userId');
+      return _firestoreDb
+          .collection('users')
+          .doc(userId)
+          .snapshots()
+          .map((snap) => UserModel.fromMap(snap.data()));
+    } catch (error) {
+      print('CURRENT USER DATA QUERY ERROR: $error');
+      return Stream.empty();
+    }
   }
 
   /// Query the transaction collection
-  Stream<List<TransactionModel>> streamTransactions() {
+  Stream<List<TransactionModel>> streamTransactions(String? userId) {
+    if (userId == null || userId.isEmpty) {
+      print('TRANSACTION QUERY ERROR EMPTY userId');
+      return Stream.empty();
+    }
     try {
       var ref = _firestoreDb
           .collection('transactions')
           .orderBy('createdAt', descending: true)
-          .where('userId', isEqualTo: currentUserUid);
+          .where('userId', isEqualTo: userId);
 
       return ref.snapshots().map((list) =>
           list.docs.map((doc) => TransactionModel.fromFirestore(doc)).toList());
@@ -48,11 +61,15 @@ class FirestoreService {
   }
 
   /// Query the user tokens subcollection
-  Stream<List<TokenModel>> streamTokens() {
+  Stream<List<TokenModel>> streamTokens(String? userId) {
+    if (userId == null || userId.isEmpty) {
+      print('TOKEN QUERY ERROR EMPTY userId');
+      return Stream.empty();
+    }
     try {
       var ref = _firestoreDb
           .collection('users_data')
-          .doc(currentUserUid)
+          .doc(userId)
           .collection('tokens');
       return ref.snapshots().map((list) =>
           list.docs.map((doc) => TokenModel.fromFirestore(doc)).toList());

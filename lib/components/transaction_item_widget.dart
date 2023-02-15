@@ -18,27 +18,28 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
   Widget build(BuildContext context) {
     final amountTokenText = '${widget.transaction.token.amountToken} ${widget.transaction.token.symbol.toUpperCase()}';
     final amountUSDText = '\$${widget.transaction.token.amountUSD}';
-    return InkWell(
-      onTap: () async {
-        logFirebaseEvent('TRANSACTION_ITEM_Container_3pf0lgjc_ON_T');
-        logFirebaseEvent('Container_bottom_sheet');
-        await showModalBottomSheet(
-          isScrollControlled: true,
-          enableDrag: false,
-          context: context,
-          builder: (context) {
-            return Padding(
-              padding: MediaQuery.of(context).viewInsets,
-              child: Container(
-                height: MediaQuery.of(context).size.height * 0.75,
-                child: TransactionDetailsWidget(),
-              ),
-            );
-          },
-        ).then((value) => setState(() {}));
-      },
-      child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 10),
+    return Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 10),
+      child: InkWell(
+        onTap: () async {
+          logFirebaseEvent('TRANSACTION_ITEM_Container_3pf0lgjc_ON_T');
+          logFirebaseEvent('Container_bottom_sheet');
+          await showModalBottomSheet(
+            isScrollControlled: true,
+            backgroundColor: Colors.transparent,
+            enableDrag: false,
+            context: context,
+            builder: (context) {
+              return Padding(
+                padding: MediaQuery.of(context).viewInsets,
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.75,
+                  child: TransactionDetailsWidget(transactionModel: widget.transaction),
+                ),
+              );
+            },
+          ).then((value) => setState(() {}));
+        },
         child: Container(
           width: double.infinity,
           height: 80,

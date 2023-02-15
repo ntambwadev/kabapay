@@ -24,22 +24,29 @@ class CurrentTransactionModel extends ChangeNotifier {
   String? get recipientAddress => _recipientAddress;
   PhoneModel? get phone => _phone;
 
+  void addUserId(String userId) {
+    _userId = userId;
+  }
+
   void selectTxType(String type) {
     _type = type;
     notifyListeners();
   }
 
-  void selectToken(TokenModel token, UserModel userModel) {
+  void selectToken(TokenModel token, UserModel? userModel) {
     _token = token;
-    _userAddress = userModel.address;
-    this._userId = userModel.uid;
+    if (userModel != null) {
+      _userAddress = userModel.address;
+      _userId = userModel.uid;
+    }
     notifyListeners();
   }
 
-  void addAmount(String amountUSD) {
+  void addAmount(String amountUSD, String tokenAmount) {
     _amountUSD = amountUSD;
     String currentPrice = '${token?.tokenMetadata.currentPrice ?? 0}';
-    _amountToken = (double.parse(currentPrice) * double.parse(amountUSD)).toString();
+    _amountToken = tokenAmount;
+        // (double.parse(currentPrice) * double.parse(amountUSD)).toString();
     notifyListeners();
   }
 

@@ -1,3 +1,7 @@
+import 'package:kabapay/models/current_transaction_model.dart';
+import 'package:kabapay/models/token_model.dart';
+import 'package:provider/provider.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -21,8 +25,10 @@ class BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
   @override
   void initState() {
     super.initState();
-    tokenSymbol = "BUSD";
-    tokenPrice = double.parse("1.11");
+    TokenModel? tokenModel =
+        Provider.of<CurrentTransactionModel>(context, listen: false).token;
+    tokenSymbol = tokenModel?.symbol.toUpperCase() ?? "";
+    tokenPrice = tokenModel?.tokenMetadata.currentPrice ?? 0.0;
     if (tokenSymbol == "BUSD" || tokenSymbol == "USDT") {
       decimalNumber = 2;
     }
@@ -54,8 +60,8 @@ class BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
       }
       tokenAmount = (double.parse(amount) / tokenPrice).toStringAsFixed(decimalNumber);
     });
-    // FFAppState().currentCryptoTx.amountPaid = amount;
-    // FFAppState().currentCryptoTx.tokenAmount = tokenAmount;
+    Provider.of<CurrentTransactionModel>(context, listen: false)
+        .addAmount(amount, tokenAmount);
     print(value);
   }
 

@@ -1,4 +1,8 @@
 import 'package:kabapay/components/receive_token_widget.dart';
+import 'package:kabapay/index.dart';
+import 'package:kabapay/models/current_transaction_model.dart';
+import 'package:kabapay/models/transaction_model.dart';
+import 'package:provider/provider.dart';
 
 import '../components/home_button_widget.dart';
 import '../firestore/firestore_service.dart';
@@ -19,21 +23,25 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
   _onBuyButtonTap(BuildContext context) async {
     logFirebaseEvent('HOME_BUY_BUTTON_Container_g4p1ceub_ON_TAP');
     logFirebaseEvent('home_buy_button_navigate_to');
-    await FirestoreService().createTestTransaction();
-    // context.pushNamed(
-    //   'tokens_page',
-    //   extra: <String, dynamic>{
-    //     kTransitionInfoKey: TransitionInfo(
-    //       hasTransition: true,
-    //       transitionType: PageTransitionType.rightToLeft,
-    //     ),
-    //   },
-    // );
+    // await FirestoreService().createTestTransaction();
+    Provider.of<CurrentTransactionModel>(context, listen: false)
+        .selectTxType(TransactionType.BUY.descriptionKey);
+    context.pushNamed(
+      'tokens_page',
+      extra: <String, dynamic>{
+        kTransitionInfoKey: TransitionInfo(
+          hasTransition: true,
+          transitionType: PageTransitionType.rightToLeft,
+        ),
+      },
+    );
   }
 
   _onSendButtonTap(BuildContext context) {
     logFirebaseEvent('HOME_SEND_BUTTON_Container_g4p1ceub_ON_TAP');
     logFirebaseEvent('home_send_button_navigate_to');
+    Provider.of<CurrentTransactionModel>(context, listen: false)
+        .selectTxType(TransactionType.SEND.descriptionKey);
     context.pushNamed(
       'tokens_page',
       extra: <String, dynamic>{

@@ -1,3 +1,7 @@
+import 'package:kabapay/models/current_transaction_model.dart';
+import 'package:kabapay/models/phone_model.dart';
+import 'package:provider/provider.dart';
+
 import '../components/add_phone_instrument_widget.dart';
 import '../components/nav_back_button_widget.dart';
 import '../components/phone_payment_method_item_widget.dart';
@@ -37,6 +41,26 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    _onSelectedPayment(BuildContext context, String phoneNumber) async {
+      Provider.of<CurrentTransactionModel>(context, listen: false)
+          .addPhone(PhoneModel(number: phoneNumber, telecom: "Voda", mobileMoney: "Mpesa"));
+      logFirebaseEvent(
+          'PAYMENT_METHODS_Container_vzt3cso2_ON_TA');
+      logFirebaseEvent(
+          'phone_payment_method_item_navigate_to');
+
+      context.pushNamed(
+        'confirmation_page',
+        extra: <String, dynamic>{
+          kTransitionInfoKey: TransitionInfo(
+            hasTransition: true,
+            transitionType:
+            PageTransitionType.rightToLeft,
+          ),
+        },
+      );
+    }
+
     return Scaffold(
       key: scaffoldKey,
       resizeToAvoidBottomInset: false,
@@ -120,21 +144,7 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                                 final phonesItem = phones[phonesIndex];
                                 return InkWell(
                                   onTap: () async {
-                                    logFirebaseEvent(
-                                        'PAYMENT_METHODS_Container_vzt3cso2_ON_TA');
-                                    logFirebaseEvent(
-                                        'phone_payment_method_item_navigate_to');
-
-                                    context.pushNamed(
-                                      'confirmation_page',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.rightToLeft,
-                                        ),
-                                      },
-                                    );
+                                    _onSelectedPayment(context, phonesItem);
                                   },
                                   child: PhonePaymentMethodItemWidget(
                                     key: UniqueKey(),
