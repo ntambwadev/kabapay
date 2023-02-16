@@ -5,6 +5,9 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'register_page_model.dart';
+export 'register_page_model.dart';
 
 class RegisterPageWidget extends StatefulWidget {
   const RegisterPageWidget({Key? key}) : super(key: key);
@@ -14,32 +17,28 @@ class RegisterPageWidget extends StatefulWidget {
 }
 
 class _RegisterPageWidgetState extends State<RegisterPageWidget> {
-  TextEditingController? confirmPasswordController;
-  late bool confirmPasswordVisibility;
-  TextEditingController? emailAddressController;
-  TextEditingController? passwordController;
-  late bool passwordVisibility;
-  final _unfocusNode = FocusNode();
+  late RegisterPageModel _model;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
-    confirmPasswordController = TextEditingController();
-    confirmPasswordVisibility = false;
-    emailAddressController = TextEditingController();
-    passwordController = TextEditingController();
-    passwordVisibility = false;
+    _model = createModel(context, () => RegisterPageModel());
+
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'register_page'});
+    _model.emailAddressController = TextEditingController();
+    _model.passwordController = TextEditingController();
+    _model.confirmPasswordController = TextEditingController();
   }
 
   @override
   void dispose() {
+    _model.dispose();
+
     _unfocusNode.dispose();
-    confirmPasswordController?.dispose();
-    emailAddressController?.dispose();
-    passwordController?.dispose();
     super.dispose();
   }
 
@@ -155,7 +154,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: TextFormField(
-                      controller: emailAddressController,
+                      controller: _model.emailAddressController,
                       obscureText: false,
                       decoration: InputDecoration(
                         labelStyle: FlutterFlowTheme.of(context).bodyText2,
@@ -202,6 +201,8 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                             EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
                       ),
                       style: FlutterFlowTheme.of(context).bodyText1,
+                      validator: _model.emailAddressControllerValidator
+                          .asValidator(context),
                     ),
                   ),
                 ),
@@ -222,8 +223,8 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: TextFormField(
-                      controller: passwordController,
-                      obscureText: !passwordVisibility,
+                      controller: _model.passwordController,
+                      obscureText: !_model.passwordVisibility,
                       decoration: InputDecoration(
                         labelStyle: FlutterFlowTheme.of(context).bodyText2,
                         hintText: FFLocalizations.of(context).getText(
@@ -269,11 +270,12 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                             EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
                         suffixIcon: InkWell(
                           onTap: () => setState(
-                            () => passwordVisibility = !passwordVisibility,
+                            () => _model.passwordVisibility =
+                                !_model.passwordVisibility,
                           ),
                           focusNode: FocusNode(skipTraversal: true),
                           child: Icon(
-                            passwordVisibility
+                            _model.passwordVisibility
                                 ? Icons.visibility_outlined
                                 : Icons.visibility_off_outlined,
                             color: FlutterFlowTheme.of(context).secondaryText,
@@ -282,6 +284,8 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                         ),
                       ),
                       style: FlutterFlowTheme.of(context).bodyText1,
+                      validator: _model.passwordControllerValidator
+                          .asValidator(context),
                     ),
                   ),
                 ),
@@ -302,8 +306,8 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: TextFormField(
-                      controller: confirmPasswordController,
-                      obscureText: !confirmPasswordVisibility,
+                      controller: _model.confirmPasswordController,
+                      obscureText: !_model.confirmPasswordVisibility,
                       decoration: InputDecoration(
                         labelStyle: FlutterFlowTheme.of(context).bodyText2,
                         hintText: FFLocalizations.of(context).getText(
@@ -353,12 +357,12 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                             EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
                         suffixIcon: InkWell(
                           onTap: () => setState(
-                            () => confirmPasswordVisibility =
-                                !confirmPasswordVisibility,
+                            () => _model.confirmPasswordVisibility =
+                                !_model.confirmPasswordVisibility,
                           ),
                           focusNode: FocusNode(skipTraversal: true),
                           child: Icon(
-                            confirmPasswordVisibility
+                            _model.confirmPasswordVisibility
                                 ? Icons.visibility_outlined
                                 : Icons.visibility_off_outlined,
                             color: FlutterFlowTheme.of(context).secondaryText,
@@ -367,6 +371,8 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                         ),
                       ),
                       style: FlutterFlowTheme.of(context).bodyText1,
+                      validator: _model.confirmPasswordControllerValidator
+                          .asValidator(context),
                     ),
                   ),
                 ),
@@ -378,8 +384,8 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                           'REGISTER_PAGE_PAGE_Button-Login_ON_TAP');
                       logFirebaseEvent('Button-Login_auth');
                       GoRouter.of(context).prepareAuthEvent();
-                      if (passwordController?.text !=
-                          confirmPasswordController?.text) {
+                      if (_model.passwordController.text !=
+                          _model.confirmPasswordController.text) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(
@@ -392,8 +398,8 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
 
                       final user = await createAccountWithEmail(
                         context,
-                        emailAddressController!.text,
-                        passwordController!.text,
+                        _model.emailAddressController.text,
+                        _model.passwordController.text,
                       );
                       if (user == null) {
                         return;

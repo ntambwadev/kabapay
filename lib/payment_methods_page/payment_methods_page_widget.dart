@@ -8,6 +8,9 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import '../flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'payment_methods_page_model.dart';
+export 'payment_methods_page_model.dart';
 
 class PaymentMethodsPageWidget extends StatefulWidget {
   const PaymentMethodsPageWidget({Key? key}) : super(key: key);
@@ -18,18 +21,24 @@ class PaymentMethodsPageWidget extends StatefulWidget {
 }
 
 class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
-  final _unfocusNode = FocusNode();
+  late PaymentMethodsPageModel _model;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
+    _model = createModel(context, () => PaymentMethodsPageModel());
+
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'payment_methods_page'});
   }
 
   @override
   void dispose() {
+    _model.dispose();
+
     _unfocusNode.dispose();
     super.dispose();
   }
@@ -174,7 +183,8 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                                     );
                                   },
                                   child: PhonePaymentMethodItemWidget(
-                                    key: UniqueKey(),
+                                    key: Key(
+                                        'Keyvzt_${phonesIndex}_of_${phones.length}'),
                                   ),
                                 );
                               },

@@ -4,6 +4,9 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'home_page_tab_model.dart';
+export 'home_page_tab_model.dart';
 
 class HomePageTabWidget extends StatefulWidget {
   const HomePageTabWidget({Key? key}) : super(key: key);
@@ -13,6 +16,27 @@ class HomePageTabWidget extends StatefulWidget {
 }
 
 class _HomePageTabWidgetState extends State<HomePageTabWidget> {
+  late HomePageTabModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => HomePageTabModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -57,8 +81,16 @@ class _HomePageTabWidgetState extends State<HomePageTabWidget> {
               Expanded(
                 child: TabBarView(
                   children: [
-                    TokensListWidget(),
-                    TransactionsListWidget(),
+                    wrapWithModel(
+                      model: _model.tokensListModel,
+                      updateCallback: () => setState(() {}),
+                      child: TokensListWidget(),
+                    ),
+                    wrapWithModel(
+                      model: _model.transactionsListModel,
+                      updateCallback: () => setState(() {}),
+                      child: TransactionsListWidget(),
+                    ),
                   ],
                 ),
               ),

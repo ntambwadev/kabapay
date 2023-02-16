@@ -3,6 +3,9 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'number_keyboard_model.dart';
+export 'number_keyboard_model.dart';
 
 class NumberKeyboardWidget extends StatefulWidget {
   const NumberKeyboardWidget({Key? key}) : super(key: key);
@@ -12,6 +15,27 @@ class NumberKeyboardWidget extends StatefulWidget {
 }
 
 class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
+  late NumberKeyboardModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => NumberKeyboardModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(

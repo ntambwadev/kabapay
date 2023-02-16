@@ -6,6 +6,9 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'buy_token_page_model.dart';
+export 'buy_token_page_model.dart';
 
 class BuyTokenPageWidget extends StatefulWidget {
   const BuyTokenPageWidget({Key? key}) : super(key: key);
@@ -15,18 +18,24 @@ class BuyTokenPageWidget extends StatefulWidget {
 }
 
 class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
-  final _unfocusNode = FocusNode();
+  late BuyTokenPageModel _model;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
+    _model = createModel(context, () => BuyTokenPageModel());
+
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'buy_token_page'});
   }
 
   @override
   void dispose() {
+    _model.dispose();
+
     _unfocusNode.dispose();
     super.dispose();
   }
@@ -109,9 +118,21 @@ class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  BuyTokenAmountWidget(),
-                  NumberKeyboardWidget(),
-                  BuyTokenNextButtonWidget(),
+                  wrapWithModel(
+                    model: _model.buyTokenAmountModel,
+                    updateCallback: () => setState(() {}),
+                    child: BuyTokenAmountWidget(),
+                  ),
+                  wrapWithModel(
+                    model: _model.numberKeyboardModel,
+                    updateCallback: () => setState(() {}),
+                    child: NumberKeyboardWidget(),
+                  ),
+                  wrapWithModel(
+                    model: _model.buyTokenNextButtonModel,
+                    updateCallback: () => setState(() {}),
+                    child: BuyTokenNextButtonWidget(),
+                  ),
                 ],
               ),
             ),

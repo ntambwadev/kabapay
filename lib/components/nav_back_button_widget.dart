@@ -3,6 +3,9 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'nav_back_button_model.dart';
+export 'nav_back_button_model.dart';
 
 class NavBackButtonWidget extends StatefulWidget {
   const NavBackButtonWidget({Key? key}) : super(key: key);
@@ -12,6 +15,27 @@ class NavBackButtonWidget extends StatefulWidget {
 }
 
 class _NavBackButtonWidgetState extends State<NavBackButtonWidget> {
+  late NavBackButtonModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => NavBackButtonModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(

@@ -4,6 +4,9 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'settings_page_model.dart';
+export 'settings_page_model.dart';
 
 class SettingsPageWidget extends StatefulWidget {
   const SettingsPageWidget({Key? key}) : super(key: key);
@@ -13,18 +16,24 @@ class SettingsPageWidget extends StatefulWidget {
 }
 
 class _SettingsPageWidgetState extends State<SettingsPageWidget> {
-  final _unfocusNode = FocusNode();
+  late SettingsPageModel _model;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
+    _model = createModel(context, () => SettingsPageModel());
+
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'settings_page'});
   }
 
   @override
   void dispose() {
+    _model.dispose();
+
     _unfocusNode.dispose();
     super.dispose();
   }

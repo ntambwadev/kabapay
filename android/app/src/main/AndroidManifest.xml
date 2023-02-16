@@ -1,12 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.basixlabs.kabapay"
     xmlns:tools="http://schemas.android.com/tools">
-   <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
- <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
-  <uses-permission android:name="android.permission.CAMERA"/>
-  <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
-   <application
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <application
         android:label="kabapay"
         tools:replace="android:label"
         android:icon="@mipmap/ic_launcher"

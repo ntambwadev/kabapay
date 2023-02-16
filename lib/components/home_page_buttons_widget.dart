@@ -3,6 +3,9 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'home_page_buttons_model.dart';
+export 'home_page_buttons_model.dart';
 
 class HomePageButtonsWidget extends StatefulWidget {
   const HomePageButtonsWidget({Key? key}) : super(key: key);
@@ -12,6 +15,27 @@ class HomePageButtonsWidget extends StatefulWidget {
 }
 
 class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
+  late HomePageButtonsModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => HomePageButtonsModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,10 +64,22 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
                 },
               );
             },
+            child: wrapWithModel(
+              model: _model.homeButtonModel1,
+              updateCallback: () => setState(() {}),
+              child: HomeButtonWidget(),
+            ),
+          ),
+          wrapWithModel(
+            model: _model.homeButtonModel2,
+            updateCallback: () => setState(() {}),
             child: HomeButtonWidget(),
           ),
-          HomeButtonWidget(),
-          HomeButtonWidget(),
+          wrapWithModel(
+            model: _model.homeButtonModel3,
+            updateCallback: () => setState(() {}),
+            child: HomeButtonWidget(),
+          ),
         ],
       ),
     );

@@ -5,6 +5,9 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'login_page_model.dart';
+export 'login_page_model.dart';
 
 class LoginPageWidget extends StatefulWidget {
   const LoginPageWidget({Key? key}) : super(key: key);
@@ -14,26 +17,26 @@ class LoginPageWidget extends StatefulWidget {
 }
 
 class _LoginPageWidgetState extends State<LoginPageWidget> {
-  TextEditingController? emailAddressController;
-  TextEditingController? passwordLoginController;
-  late bool passwordLoginVisibility;
-  final _unfocusNode = FocusNode();
+  late LoginPageModel _model;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
-    emailAddressController = TextEditingController();
-    passwordLoginController = TextEditingController();
-    passwordLoginVisibility = false;
+    _model = createModel(context, () => LoginPageModel());
+
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'login_page'});
+    _model.emailAddressController = TextEditingController();
+    _model.passwordLoginController = TextEditingController();
   }
 
   @override
   void dispose() {
+    _model.dispose();
+
     _unfocusNode.dispose();
-    emailAddressController?.dispose();
-    passwordLoginController?.dispose();
     super.dispose();
   }
 
@@ -149,7 +152,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: TextFormField(
-                      controller: emailAddressController,
+                      controller: _model.emailAddressController,
                       obscureText: false,
                       decoration: InputDecoration(
                         labelStyle: FlutterFlowTheme.of(context).bodyText2,
@@ -203,6 +206,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.normal,
                           ),
+                      validator: _model.emailAddressControllerValidator
+                          .asValidator(context),
                     ),
                   ),
                 ),
@@ -223,8 +228,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: TextFormField(
-                      controller: passwordLoginController,
-                      obscureText: !passwordLoginVisibility,
+                      controller: _model.passwordLoginController,
+                      obscureText: !_model.passwordLoginVisibility,
                       decoration: InputDecoration(
                         labelStyle: FlutterFlowTheme.of(context).bodyText2,
                         hintText: FFLocalizations.of(context).getText(
@@ -274,12 +279,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
                         suffixIcon: InkWell(
                           onTap: () => setState(
-                            () => passwordLoginVisibility =
-                                !passwordLoginVisibility,
+                            () => _model.passwordLoginVisibility =
+                                !_model.passwordLoginVisibility,
                           ),
                           focusNode: FocusNode(skipTraversal: true),
                           child: Icon(
-                            passwordLoginVisibility
+                            _model.passwordLoginVisibility
                                 ? Icons.visibility_outlined
                                 : Icons.visibility_off_outlined,
                             color: FlutterFlowTheme.of(context).secondaryText,
@@ -288,6 +293,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                         ),
                       ),
                       style: FlutterFlowTheme.of(context).bodyText1,
+                      validator: _model.passwordLoginControllerValidator
+                          .asValidator(context),
                     ),
                   ),
                 ),
@@ -301,8 +308,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
 
                       final user = await signInWithEmail(
                         context,
-                        emailAddressController!.text,
-                        passwordLoginController!.text,
+                        _model.emailAddressController.text,
+                        _model.passwordLoginController.text,
                       );
                       if (user == null) {
                         return;
