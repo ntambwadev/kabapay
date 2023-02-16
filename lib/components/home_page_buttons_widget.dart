@@ -10,6 +10,10 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'home_page_buttons_model.dart';
+export 'home_page_buttons_model.dart';
+import '../flutter_flow/flutter_flow_model.dart';
 
 class HomePageButtonsWidget extends StatefulWidget {
   const HomePageButtonsWidget({Key? key}) : super(key: key);
@@ -19,7 +23,6 @@ class HomePageButtonsWidget extends StatefulWidget {
 }
 
 class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
-
   _onBuyButtonTap(BuildContext context) async {
     logFirebaseEvent('HOME_BUY_BUTTON_Container_g4p1ceub_ON_TAP');
     logFirebaseEvent('home_buy_button_navigate_to');
@@ -72,6 +75,27 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
     );
   }
 
+  late HomePageButtonsModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => HomePageButtonsModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -89,19 +113,31 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
             onTap: () async {
               _onBuyButtonTap(context);
             },
-            child: HomeButtonWidget(titleKey: "tkmbhgt6", iconData: Icons.attach_money_outlined,),
+            child: wrapWithModel(
+              model: _model.homeButtonModel1,
+              updateCallback: () => setState(() {}),
+              child: HomeButtonWidget(titleKey: "tkmbhgt6", iconData: Icons.attach_money_outlined,),
+            ),
           ),
           InkWell(
             onTap: () async {
               _onSendButtonTap(context);
             },
-            child: HomeButtonWidget(titleKey: "tkmbhgt7", iconData: Icons.arrow_upward_outlined,),
+            child: wrapWithModel(
+              model: _model.homeButtonModel2,
+              updateCallback: () => setState(() {}),
+              child: HomeButtonWidget(titleKey: "tkmbhgt7", iconData: Icons.arrow_upward_outlined,),
+            ),
           ),
           InkWell(
             onTap: () async {
               _onReceiveButtonTap(context);
             },
-            child: HomeButtonWidget(titleKey: "tkmbhgt8", iconData: Icons.arrow_downward,),
+            child: wrapWithModel(
+              model: _model.homeButtonModel3,
+              updateCallback: () => setState(() {}),
+              child: HomeButtonWidget(titleKey: "tkmbhgt8", iconData: Icons.arrow_downward,),
+            ),
           ),
         ],
       ),

@@ -385,6 +385,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Succès!',
       'sw': 'Mafanikio!',
     },
+    '6p8d0o9w': {
+      'en': '0971504436',
+      'fr': '0x123ghxffkjsds',
+      'sw': '0x123ghxffkjsds',
+    },
     'ba5y4wt5': {
       'en': 'Done',
       'fr': 'Fait',

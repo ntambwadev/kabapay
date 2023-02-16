@@ -11,6 +11,10 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'receive_token_model.dart';
+export 'receive_token_model.dart';
+import '../flutter_flow/flutter_flow_model.dart';
 
 class ReceiveTokenWidget extends StatefulWidget {
   const ReceiveTokenWidget({Key? key}) : super(key: key);
@@ -20,7 +24,6 @@ class ReceiveTokenWidget extends StatefulWidget {
 }
 
 class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
-
   var userAddress = valueOrDefault(currentUserDocument?.address, '');
 
   _copyToClipboard() async {
@@ -44,6 +47,26 @@ class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
                   textAlign: TextAlign.center,),
               ))));
     });
+  }
+  late ReceiveTokenModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => ReceiveTokenModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
   }
 
   @override

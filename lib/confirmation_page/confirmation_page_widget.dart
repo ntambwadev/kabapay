@@ -8,6 +8,10 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'confirmation_page_model.dart';
+export 'confirmation_page_model.dart';
+import '../flutter_flow/flutter_flow_model.dart';
 
 class ConfirmationPageWidget extends StatefulWidget {
   const ConfirmationPageWidget({Key? key}) : super(key: key);
@@ -17,18 +21,24 @@ class ConfirmationPageWidget extends StatefulWidget {
 }
 
 class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
-  final _unfocusNode = FocusNode();
+  late ConfirmationPageModel _model;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
+    _model = createModel(context, () => ConfirmationPageModel());
+
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'confirmation_page'});
   }
 
   @override
   void dispose() {
+    _model.dispose();
+
     _unfocusNode.dispose();
     super.dispose();
   }

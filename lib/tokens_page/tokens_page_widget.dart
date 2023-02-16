@@ -5,6 +5,10 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'tokens_page_model.dart';
+export 'tokens_page_model.dart';
+import '../flutter_flow/flutter_flow_model.dart';
 
 class TokensPageWidget extends StatefulWidget {
   const TokensPageWidget({
@@ -19,17 +23,23 @@ class TokensPageWidget extends StatefulWidget {
 }
 
 class _TokensPageWidgetState extends State<TokensPageWidget> {
-  final _unfocusNode = FocusNode();
+  late TokensPageModel _model;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
+    _model = createModel(context, () => TokensPageModel());
+
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'tokens_page'});
   }
 
   @override
   void dispose() {
+    _model.dispose();
+
     _unfocusNode.dispose();
     super.dispose();
   }
@@ -68,7 +78,11 @@ class _TokensPageWidgetState extends State<TokensPageWidget> {
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
               ),
-              child: TokensListWidget(),
+              child: wrapWithModel(
+                model: _model.tokensListModel,
+                updateCallback: () => setState(() {}),
+                child: TokensListWidget(),
+              ),
             ),
           ),
         ),

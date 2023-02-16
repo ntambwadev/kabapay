@@ -5,6 +5,9 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'add_phone_instrument_model.dart';
+export 'add_phone_instrument_model.dart';
 
 class AddPhoneInstrumentWidget extends StatefulWidget {
   const AddPhoneInstrumentWidget({Key? key}) : super(key: key);
@@ -15,17 +18,26 @@ class AddPhoneInstrumentWidget extends StatefulWidget {
 }
 
 class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
-  TextEditingController? textController;
+  late AddPhoneInstrumentModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
 
   @override
   void initState() {
     super.initState();
-    textController = TextEditingController();
+    _model = createModel(context, () => AddPhoneInstrumentModel());
+
+    _model.textController = TextEditingController();
   }
 
   @override
   void dispose() {
-    textController?.dispose();
+    _model.dispose();
+
     super.dispose();
   }
 
@@ -201,9 +213,9 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       6, 0, 0, 0),
                                   child: TextFormField(
-                                    controller: textController,
+                                    controller: _model.textController,
                                     onChanged: (_) => EasyDebounce.debounce(
-                                      'textController',
+                                      '_model.textController',
                                       Duration(milliseconds: 2000),
                                       () => setState(() {}),
                                     ),
@@ -248,25 +260,27 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                                         ),
                                         borderRadius: BorderRadius.circular(0),
                                       ),
-                                      suffixIcon:
-                                          textController!.text.isNotEmpty
-                                              ? InkWell(
-                                                  onTap: () async {
-                                                    textController?.clear();
-                                                    setState(() {});
-                                                  },
-                                                  child: Icon(
-                                                    Icons.clear,
-                                                    color: Color(0xFF757575),
-                                                    size: 22,
-                                                  ),
-                                                )
-                                              : null,
+                                      suffixIcon: _model
+                                              .textController!.text.isNotEmpty
+                                          ? InkWell(
+                                              onTap: () async {
+                                                _model.textController?.clear();
+                                                setState(() {});
+                                              },
+                                              child: Icon(
+                                                Icons.clear,
+                                                color: Color(0xFF757575),
+                                                size: 22,
+                                              ),
+                                            )
+                                          : null,
                                     ),
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,
                                     textAlign: TextAlign.start,
                                     keyboardType: TextInputType.number,
+                                    validator: _model.textControllerValidator
+                                        .asValidator(context),
                                   ),
                                 ),
                               ),

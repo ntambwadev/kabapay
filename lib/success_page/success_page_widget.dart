@@ -3,6 +3,9 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'success_page_model.dart';
+export 'success_page_model.dart';
 
 class SuccessPageWidget extends StatefulWidget {
   const SuccessPageWidget({Key? key}) : super(key: key);
@@ -12,18 +15,24 @@ class SuccessPageWidget extends StatefulWidget {
 }
 
 class _SuccessPageWidgetState extends State<SuccessPageWidget> {
-  final _unfocusNode = FocusNode();
+  late SuccessPageModel _model;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
+    _model = createModel(context, () => SuccessPageModel());
+
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'success_page'});
   }
 
   @override
   void dispose() {
+    _model.dispose();
+
     _unfocusNode.dispose();
     super.dispose();
   }
@@ -81,7 +90,69 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                           fit: BoxFit.cover,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 30),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                          child: Text(
+                            getRemoteConfigString('success_message'),
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                          child: Text(
+                            getRemoteConfigString('success_message'),
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .subtitle2
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              logFirebaseEvent(
+                                  'SUCCESS_PAGE_PAGE_0971504436_BTN_ON_TAP');
+                              logFirebaseEvent('Button_bottom_sheet');
+                              Navigator.pop(context);
+                            },
+                            text: FFLocalizations.of(context).getText(
+                              '6p8d0o9w' /* 0971504436 */,
+                            ),
+                            icon: Icon(
+                              Icons.content_copy_outlined,
+                              size: 20,
+                            ),
+                            options: FFButtonOptions(
+                              width: 160,
+                              height: 50,
+                              color: FlutterFlowTheme.of(context).primaryColor,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                           child: Text(
                             'Your transaction was successfully created.  Please make the payment of \$97 to 0971504436. You\'ll receive your tokens once we verify that your payment was completed.',//getRemoteConfigString('success_message'),
                             textAlign: TextAlign.center,

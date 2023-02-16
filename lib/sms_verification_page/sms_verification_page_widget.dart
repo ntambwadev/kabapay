@@ -6,6 +6,10 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'sms_verification_page_model.dart';
+export 'sms_verification_page_model.dart';
+import '../flutter_flow/flutter_flow_model.dart';
 
 class SmsVerificationPageWidget extends StatefulWidget {
   const SmsVerificationPageWidget({Key? key}) : super(key: key);
@@ -16,22 +20,25 @@ class SmsVerificationPageWidget extends StatefulWidget {
 }
 
 class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
-  TextEditingController? pinCodeController;
-  final _unfocusNode = FocusNode();
+  late SmsVerificationPageModel _model;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
+    _model = createModel(context, () => SmsVerificationPageModel());
+
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'sms_verification_page'});
-    pinCodeController = TextEditingController();
   }
 
   @override
   void dispose() {
+    _model.dispose();
+
     _unfocusNode.dispose();
-    pinCodeController?.dispose();
     super.dispose();
   }
 
@@ -47,10 +54,14 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
           automaticallyImplyLeading: false,
           actions: [],
           flexibleSpace: FlexibleSpaceBar(
-            title: NavBackButtonWidget(
-              titleKey: 'dqz8qdg4',
-              firebaseEvent: 'NAV_BACK_BUTTON_arrow_back_rounded_ICN_O',
-              firebaseEvent2: 'IconButton_navigate_back',
+            title: wrapWithModel(
+              model: _model.navBackButtonModel,
+              updateCallback: () => setState(() {}),
+              child: NavBackButtonWidget(
+                titleKey: 'dqz8qdg4',
+                firebaseEvent: 'NAV_BACK_BUTTON_arrow_back_rounded_ICN_O',
+                firebaseEvent2: 'IconButton_navigate_back',
+              ),
             ),
             centerTitle: true,
             expandedTitleScale: 1.0,
@@ -128,7 +139,7 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                           selectedFillColor:
                               FlutterFlowTheme.of(context).secondaryText,
                         ),
-                        controller: pinCodeController,
+                        controller: _model.pinCodeController,
                         onChanged: (_) => {},
                       ),
                     ),
@@ -140,7 +151,7 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                               'SMS_VERIFICATION_CONFIRM_&_CONTINUE_BTN_');
                           logFirebaseEvent('Button_auth');
                           GoRouter.of(context).prepareAuthEvent();
-                          final smsCodeVal = pinCodeController!.text;
+                          final smsCodeVal = _model.pinCodeController!.text;
                           if (smsCodeVal == null || smsCodeVal.isEmpty) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(

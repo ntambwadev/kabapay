@@ -6,6 +6,9 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'phone_login_page_model.dart';
+export 'phone_login_page_model.dart';
 
 class PhoneLoginPageWidget extends StatefulWidget {
   const PhoneLoginPageWidget({Key? key}) : super(key: key);
@@ -15,22 +18,26 @@ class PhoneLoginPageWidget extends StatefulWidget {
 }
 
 class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
-  TextEditingController? phoneNumberController;
-  final _unfocusNode = FocusNode();
+  late PhoneLoginPageModel _model;
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
+    _model = createModel(context, () => PhoneLoginPageModel());
+
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'phone_login_page'});
-    phoneNumberController = TextEditingController();
+    _model.phoneNumberController = TextEditingController();
   }
 
   @override
   void dispose() {
+    _model.dispose();
+
     _unfocusNode.dispose();
-    phoneNumberController?.dispose();
     super.dispose();
   }
 
@@ -114,7 +121,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: TextFormField(
-                            controller: phoneNumberController,
+                            controller: _model.phoneNumberController,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -168,6 +175,8 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                             ),
                             style: FlutterFlowTheme.of(context).bodyText1,
                             keyboardType: TextInputType.phone,
+                            validator: _model.phoneNumberControllerValidator
+                                .asValidator(context),
                           ),
                         ),
                       ),
@@ -177,7 +186,8 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                           onPressed: () async {
                             logFirebaseEvent('PHONE_LOGIN_Button-Login_ON_TAP');
                             logFirebaseEvent('Button-Login_auth');
-                            final phoneNumberVal = phoneNumberController!.text;
+                            final phoneNumberVal =
+                                _model.phoneNumberController.text;
                             if (phoneNumberVal == null ||
                                 phoneNumberVal.isEmpty ||
                                 !phoneNumberVal.startsWith('+')) {

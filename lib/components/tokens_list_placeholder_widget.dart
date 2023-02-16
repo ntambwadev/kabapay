@@ -6,6 +6,9 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
+import 'tokens_list_placeholder_model.dart';
+export 'tokens_list_placeholder_model.dart';
 
 class TokensListPlaceholderWidget extends StatefulWidget {
   const TokensListPlaceholderWidget({Key? key}) : super(key: key);
@@ -17,6 +20,27 @@ class TokensListPlaceholderWidget extends StatefulWidget {
 
 class _TokensListPlaceholderWidgetState
     extends State<TokensListPlaceholderWidget> {
+  late TokensListPlaceholderModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => TokensListPlaceholderModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(

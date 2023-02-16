@@ -4,6 +4,9 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'token_item_model.dart';
+export 'token_item_model.dart';
 
 class TokenItemWidget extends StatefulWidget {
   const TokenItemWidget({Key? key, required this.token}) : super(key: key);
@@ -14,6 +17,27 @@ class TokenItemWidget extends StatefulWidget {
 }
 
 class _TokenItemWidgetState extends State<TokenItemWidget> {
+  late TokenItemModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => TokenItemModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final priceChangePercent = widget.token.tokenMetadata.priceChangePercent24h.toString();

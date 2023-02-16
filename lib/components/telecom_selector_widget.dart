@@ -3,6 +3,9 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'telecom_selector_model.dart';
+export 'telecom_selector_model.dart';
 
 class TelecomSelectorWidget extends StatefulWidget {
   const TelecomSelectorWidget({Key? key}) : super(key: key);
@@ -12,6 +15,27 @@ class TelecomSelectorWidget extends StatefulWidget {
 }
 
 class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
+  late TelecomSelectorModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => TelecomSelectorModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,7 +54,11 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          TopSeparatorWidget(),
+          wrapWithModel(
+            model: _model.topSeparatorModel,
+            updateCallback: () => setState(() {}),
+            child: TopSeparatorWidget(),
+          ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
             child: Column(

@@ -7,6 +7,10 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'buy_token_amount_model.dart';
+export 'buy_token_amount_model.dart';
+import '../flutter_flow/flutter_flow_model.dart';
 
 class BuyTokenAmountWidget extends StatefulWidget {
   const BuyTokenAmountWidget({Key? key}) : super(key: key);
@@ -16,11 +20,18 @@ class BuyTokenAmountWidget extends StatefulWidget {
 }
 
 class BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
+  late BuyTokenAmountModel _model;
   var amount = '0';
   var tokenAmount = '';
   double tokenPrice = 0.0;
   var tokenSymbol = '';
   var decimalNumber = 7;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
 
   @override
   void initState() {
@@ -32,6 +43,7 @@ class BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
     if (tokenSymbol == "BUSD" || tokenSymbol == "USDT") {
       decimalNumber = 2;
     }
+    _model = createModel(context, () => BuyTokenAmountModel());
   }
 
   onKeyboardTap(String value) {
@@ -69,6 +81,13 @@ class BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
     List<String> c = word.split("");
     c.removeLast();
     return c.join();
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
   }
 
   @override

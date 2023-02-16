@@ -8,6 +8,10 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'transactions_list_model.dart';
+export 'transactions_list_model.dart';
+import '../flutter_flow/flutter_flow_model.dart';
 
 class TransactionsListWidget extends StatefulWidget {
   const TransactionsListWidget({Key? key}) : super(key: key);
@@ -17,6 +21,27 @@ class TransactionsListWidget extends StatefulWidget {
 }
 
 class _TransactionsListWidgetState extends State<TransactionsListWidget> {
+  late TransactionsListModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => TransactionsListModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(

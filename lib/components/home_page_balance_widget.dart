@@ -2,6 +2,9 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'home_page_balance_model.dart';
+export 'home_page_balance_model.dart';
 
 class HomePageBalanceWidget extends StatefulWidget {
   const HomePageBalanceWidget({Key? key}) : super(key: key);
@@ -11,6 +14,27 @@ class HomePageBalanceWidget extends StatefulWidget {
 }
 
 class _HomePageBalanceWidgetState extends State<HomePageBalanceWidget> {
+  late HomePageBalanceModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => HomePageBalanceModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
