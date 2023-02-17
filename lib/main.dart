@@ -21,6 +21,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
+import 'models/payment_instrument_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -116,6 +117,15 @@ class _MyAppState extends State<MyApp> {
             return List.empty();
           },
         ),
+        StreamProvider<List<PaymentInstrumentModel>>(
+          initialData: [],
+          create: (context) =>
+              FirestoreService().streamPaymentInstruments(currentUserUid),
+          catchError:(context, err) {
+            debugPrint('PAYMENT INSTRUMENT PROVIDER ERROR: ${err.toString()}');
+            return List.empty();
+          },
+        ),
         ChangeNotifierProvider(create: (context) => CurrentTransactionModel()),
       ],
       child: MaterialApp.router(
@@ -175,6 +185,7 @@ class _NavBarPageState extends State<NavBarPage> {
     Provider.of<UserModel?>(context);
     Provider.of<List<TokenModel>>(context);
     Provider.of<List<TransactionModel>>(context);
+    Provider.of<List<PaymentInstrumentModel>>(context);
     Provider.of<CurrentTransactionModel>(context, listen: false)
         .addUserId(currentUserUid);
 

@@ -26,4 +26,10 @@ class PhoneModel {
       mobileMoney: data['mobileMoney'] ?? '',
     );
   }
+
+  Map<String, dynamic> toJson() => {
+    'number': number,
+    'telecom': telecom,
+    'mobileMoney': mobileMoney,
+  };
 }

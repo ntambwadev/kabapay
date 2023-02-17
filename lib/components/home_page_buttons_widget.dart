@@ -11,6 +11,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../models/user_model.dart';
 import 'home_page_buttons_model.dart';
 export 'home_page_buttons_model.dart';
 import '../flutter_flow/flutter_flow_model.dart';
@@ -23,12 +24,13 @@ class HomePageButtonsWidget extends StatefulWidget {
 }
 
 class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
-  _onBuyButtonTap(BuildContext context) async {
+  _onBuyButtonTap(BuildContext context, UserModel? userModel) async {
     logFirebaseEvent('HOME_BUY_BUTTON_Container_g4p1ceub_ON_TAP');
     logFirebaseEvent('home_buy_button_navigate_to');
-    // await FirestoreService().createTestTransaction();
     Provider.of<CurrentTransactionModel>(context, listen: false)
-        .selectTxType(TransactionType.BUY.descriptionKey);
+        .selectTxType(TransactionType.BUY);
+    Provider.of<CurrentTransactionModel>(context, listen: false)
+        .addRecipientAddress(userModel?.address);
     context.pushNamed(
       'tokens_page',
       extra: <String, dynamic>{
@@ -44,7 +46,7 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
     logFirebaseEvent('HOME_SEND_BUTTON_Container_g4p1ceub_ON_TAP');
     logFirebaseEvent('home_send_button_navigate_to');
     Provider.of<CurrentTransactionModel>(context, listen: false)
-        .selectTxType(TransactionType.SEND.descriptionKey);
+        .selectTxType(TransactionType.SEND);
     context.pushNamed(
       'tokens_page',
       extra: <String, dynamic>{
@@ -98,6 +100,7 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    UserModel? userModel = Provider.of<UserModel?>(context);
     return Container(
       width: double.infinity,
       height: 90,
@@ -111,7 +114,7 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
         children: [
           InkWell(
             onTap: () async {
-              _onBuyButtonTap(context);
+              _onBuyButtonTap(context, userModel);
             },
             child: wrapWithModel(
               model: _model.homeButtonModel1,

@@ -2,6 +2,8 @@ import 'package:kabapay/models/current_transaction_model.dart';
 import 'package:provider/provider.dart';
 
 import '../components/nav_back_button_widget.dart';
+import '../components/transaction_details_widget.dart';
+import '../firestore/firestore_service.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -41,6 +43,22 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
 
     _unfocusNode.dispose();
     super.dispose();
+  }
+
+  _onConfirmButtonTapped(BuildContext context, CurrentTransactionModel transactionModel) async {
+    logFirebaseEvent(
+        'CONFIRMATION_CONFIRM_AND_PAY_BTN_ON_TAP');
+    logFirebaseEvent('Button_navigate_to');
+    await FirestoreService().createTransaction(transactionModel);
+    context.pushNamed(
+      'success_page',
+      extra: <String, dynamic>{
+        kTransitionInfoKey: TransitionInfo(
+          hasTransition: true,
+          transitionType: PageTransitionType.rightToLeft,
+        ),
+      },
+    );
   }
 
   @override
@@ -281,19 +299,7 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                   ),
                   FFButtonWidget(
                     onPressed: () async {
-                      logFirebaseEvent(
-                          'CONFIRMATION_CONFIRM_AND_PAY_BTN_ON_TAP');
-                      logFirebaseEvent('Button_navigate_to');
-
-                      context.pushNamed(
-                        'success_page',
-                        extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
-                            hasTransition: true,
-                            transitionType: PageTransitionType.rightToLeft,
-                          ),
-                        },
-                      );
+                      _onConfirmButtonTapped(context, transactionModel);
                     },
                     text: FFLocalizations.of(context).getText(
                       'm4tvulyy' /* Confirm and pay */,

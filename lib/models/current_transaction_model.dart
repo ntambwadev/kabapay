@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
 import 'package:kabapay/models/phone_model.dart';
+import 'package:kabapay/models/transaction_model.dart';
 import 'package:kabapay/models/user_model.dart';
 
 import 'token_model.dart';
@@ -9,7 +10,7 @@ class CurrentTransactionModel extends ChangeNotifier {
   String? _userId;
   String? _amountUSD;
   String? _amountToken;
-  String? _type;
+  TransactionType? _type;
   TokenModel? _token;
   String? _userAddress;
   String? _recipientAddress;
@@ -18,7 +19,7 @@ class CurrentTransactionModel extends ChangeNotifier {
   String? get userId => _userId;
   String? get amountUSD => _amountUSD;
   String? get amountToken => _amountToken;
-  String? get type => _type;
+  TransactionType? get type => _type;
   TokenModel? get token => _token;
   String? get userAddress => _userAddress;
   String? get recipientAddress => _recipientAddress;
@@ -28,7 +29,7 @@ class CurrentTransactionModel extends ChangeNotifier {
     _userId = userId;
   }
 
-  void selectTxType(String type) {
+  void selectTxType(TransactionType type) {
     _type = type;
     notifyListeners();
   }
@@ -55,8 +56,8 @@ class CurrentTransactionModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void addRecipientAddress(String recipientAddress) {
-    _recipientAddress = recipientAddress;
+  void addRecipientAddress(String? recipientAddress) {
+    _recipientAddress = recipientAddress ?? "";
     notifyListeners();
   }
 }

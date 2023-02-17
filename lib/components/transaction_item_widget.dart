@@ -60,6 +60,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                 child: Container(
                   height: MediaQuery.of(context).size.height * 0.75,
                   child: TransactionDetailsWidget(transactionModel: widget.transaction),
+
                 ),
               );
             },

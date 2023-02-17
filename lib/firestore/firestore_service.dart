@@ -80,7 +80,11 @@ class FirestoreService {
   }
 
   /// Query the user payment instruments subcollection
-  Stream<List<PaymentInstrumentModel>> streamPaymentInstruments() {
+  Stream<List<PaymentInstrumentModel>> streamPaymentInstruments(String? userId) {
+    if (userId == null || userId.isEmpty) {
+      print('PAYMENT INSTRUMENT QUERY ERROR EMPTY userId');
+      return Stream.empty();
+    }
     try {
       var ref = _firestoreDb
           .collection('users_data')
@@ -89,27 +93,36 @@ class FirestoreService {
       return ref.snapshots().map((list) =>
           list.docs.map((doc) => PaymentInstrumentModel.fromFirestore(doc)).toList());
     } catch (error) {
-      print('TOKEN QUERY ERROR: $error');
+      print('PAYMENT INSTRUMENT QUERY ERROR: $error');
       return Stream.empty();
     }
   }
 
   /// Write data
-  Future<void> createTransaction(CurrentTransactionModel currentTransactionModel) {
+  Future<DocumentReference<Map<String, dynamic>>> createTransaction(CurrentTransactionModel currentTransactionModel) {
     var txObject = {
       "userId" : currentUserUid.toString(),
-      'type': currentTransactionModel.type,
+      'type': currentTransactionModel.type?.descriptionKey,
       'token': currentTransactionModel.token?.toJson(),
       'amountPaid': currentTransactionModel.amountUSD,
       'tokenAmount': currentTransactionModel.amountToken,
       'recipientAddress': currentTransactionModel.recipientAddress,
+      'phone': currentTransactionModel.phone?.toJson()
     };
-    return _firestoreDb
-        .collection('transactions')
-        .doc(currentUserUid).set(txObject);
+    if (currentTransactionModel.type == TransactionType.INTERAC_CASH_IN ||
+        currentTransactionModel.type == TransactionType.INTERAC_CASH_OUT) {
+    }
+    try {
+      return _firestoreDb
+          .collection('transactions')
+          .add(txObject);
+    } catch (error) {
+      print('createTestTransaction ERROR: $error');
+      return new Future.value();
+    }
   }
 
-  Future<void> createTestTransaction() {
+  Future<DocumentReference<Map<String, dynamic>>> createTestTransaction() async {
     var txObject = {
       "userId" : currentUserUid.toString(),
       'type': 'buy',
@@ -138,8 +151,13 @@ class FirestoreService {
         "mobileMoney": "Airtel mMoney"
       }
     };
-    return _firestoreDb
-        .collection('transactions')
-        .doc(currentUserUid).set(txObject);
+    try {
+      return _firestoreDb
+          .collection('transactions')
+          .add(txObject);
+    } catch (error) {
+      print('createTestTransaction ERROR: $error');
+      return new Future.value();
+    }
   }
 }
