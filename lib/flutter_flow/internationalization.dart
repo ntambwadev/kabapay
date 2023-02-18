@@ -321,76 +321,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Confirmation',
       'sw': 'Uthibitisho',
     },
-    'wdiad6h0': {
-      'en': 'Transaction Summary',
-      'fr': 'État de la transaction',
-      'sw': 'Hali ya Muamala',
-    },
-    '4vjkx5f0': {
-      'en': '100 USDT',
-      'fr': '100 USDT',
-      'sw': '100 USDT',
-    },
-    'bwnhhc3c': {
-      'en': 'Payment method',
-      'fr': 'Mode de paiement',
-      'sw': 'Njia ya malipo',
-    },
-    'p1ybxwkk': {
-      'en': 'MPesa',
-      'fr': 'MPesa',
-      'sw': 'MPesa',
-    },
-    'yd16fwfu': {
-      'en': 'Mobile money number',
-      'fr': 'Numéro d\'argent mobile',
-      'sw': 'Nambari ya pesa ya rununu',
-    },
-    'e2evfdqy': {
-      'en': '0971504436',
-      'fr': '0971504436',
-      'sw': '0971504436',
-    },
-    'z2mx8aje': {
-      'en': 'You pay',
-      'fr': 'Tu payes',
-      'sw': 'Unalipa',
-    },
-    'wch0p206': {
-      'en': '\$100 USD',
-      'fr': '100 USD',
-      'sw': '\$100 USD',
-    },
-    '5mh7nlpe': {
-      'en': 'You receive',
-      'fr': 'Vous recevez',
-      'sw': 'Unapokea',
-    },
-    'quiv6rl3': {
-      'en': '100 USDT',
-      'fr': '100 USDT',
-      'sw': '100 USDT',
-    },
-    'xaq1xgef': {
-      'en': 'Transaction fees',
-      'fr': 'Les frais de transaction',
-      'sw': 'Ada za muamala',
-    },
-    'oylxwi7k': {
-      'en': '\$0.05 USD',
-      'fr': '0,05 USD',
-      'sw': '\$0.05 USD',
-    },
-    'z7vzfboh': {
-      'en': 'Total',
-      'fr': 'Total',
-      'sw': 'Jumla',
-    },
-    'v5x74dkn': {
-      'en': '\$100.05 USD',
-      'fr': '100,05 USD',
-      'sw': '\$100.05 USD',
-    },
     'm4tvulyy': {
       'en': 'Confirm and pay',
       'fr': 'Confirmer et payer',
@@ -816,72 +746,70 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'État de la transaction',
       'sw': 'Hali ya Muamala',
     },
-    'c9f0hmgc': {
+  },
+  // transaction_summary
+  {
+    'g9cyjw6b': {
       'en': 'Transaction Summary',
-      'fr': 'récapitulatif des transactions',
-      'sw': 'Muhtasari wa Muamala',
+      'fr': 'État de la transaction',
+      'sw': 'Hali ya Muamala',
     },
-    'o1hg2c4w': {
-      'en': '100 USDT',
-      'fr': '100 USDT',
-      'sw': '100 USDT',
-    },
-    '65lx7y6n': {
+    '0s3cbmii': {
       'en': 'Payment method',
       'fr': 'Mode de paiement',
       'sw': 'Njia ya malipo',
     },
-    'ud47rs8x': {
+    'pibxg7fm': {
       'en': 'MPesa',
       'fr': 'MPesa',
       'sw': 'MPesa',
     },
-    'ry8sp7jr': {
+    '1vdr04oj': {
       'en': 'Mobile money number',
       'fr': 'Numéro d\'argent mobile',
       'sw': 'Nambari ya pesa ya rununu',
     },
-    'xzxm13ky': {
+    '9j45tc8b': {
       'en': '0971504436',
       'fr': '0971504436',
       'sw': '0971504436',
     },
-    'dx5z3y16': {
+    'enxf3cm7': {
       'en': 'You pay',
       'fr': 'Tu payes',
       'sw': 'Unalipa',
     },
-    'g77605sg': {
+    'plkzh84c': {
       'en': '\$100 USD',
       'fr': '100 USD',
       'sw': '\$100 USD',
     },
-    'x7my7d1b': {
+    'a4h035al': {
       'en': 'You receive',
       'fr': 'Vous recevez',
       'sw': 'Unapokea',
     },
-    'jztot544': {
+    'hfvxl2pp': {
       'en': '100 USDT',
       'fr': '100 USDT',
       'sw': '100 USDT',
     },
-    'ra5ua0p4': {
+    '9dx3sx8g': {
       'en': 'Transaction fees',
       'fr': 'Les frais de transaction',
       'sw': 'Ada za muamala',
     },
-    'bk0h6u8c': {
+    '5qtg3guc': {
       'en': '\$0.05 USD',
       'fr': '0,05 USD',
       'sw': '\$0.05 USD',
     },
-    'smcd6ix8': {
+    '2caxy42a': {
       'en': 'Total',
       'fr': 'Total',
       'sw': 'Jumla',
     },
-    'r2jau6jx': {
+    'c3vla7vk': {
       'en': '\$100.05 USD',
       'fr': '100,05 USD',
       'sw': '\$100.05 USD',
