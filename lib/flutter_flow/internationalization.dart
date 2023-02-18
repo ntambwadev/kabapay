@@ -811,6 +811,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // transaction_details
   {
+    'j4tcradb': {
+      'en': 'Transaction Details',
+      'fr': 'détails de la transaction',
+      'sw': 'Maelezo ya Muamala',
+    },
+    'lw2h6xsc': {
+      'en': 'Transaction Status',
+      'fr': 'État de la transaction',
+      'sw': 'Hali ya Muamala',
+    },
+    'c9f0hmgc': {
+      'en': 'Transaction Summary',
+      'fr': 'récapitulatif des transactions',
+      'sw': 'Muhtasari wa Muamala',
+    },
     'o1hg2c4w': {
       'en': '100 USDT',
       'fr': '100 USDT',
