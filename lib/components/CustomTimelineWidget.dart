@@ -17,7 +17,7 @@ class CustomTimelineWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 250,
+      height: 170,
       child: FixedTimeline.tileBuilder(
         theme: TimelineThemeData(
           nodePosition: 0,

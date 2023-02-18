@@ -52,13 +52,13 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
           await showModalBottomSheet(
             isScrollControlled: true,
             backgroundColor: Colors.transparent,
-            enableDrag: false,
+            enableDrag: true,
             context: context,
             builder: (context) {
               return Padding(
                 padding: MediaQuery.of(context).viewInsets,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.85,
+                  height: MediaQuery.of(context).size.height * 0.75,
                   child: TransactionDetailsWidget(transactionModel: widget.transaction),
 
                 ),
