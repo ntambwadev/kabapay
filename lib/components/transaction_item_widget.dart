@@ -122,9 +122,8 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              FFLocalizations.of(context).getText(
-                                  widget.transaction.type.descriptionKey,
-                              ),
+                              '${FFLocalizations.of(context).getText(widget.transaction.type.descriptionKey)} '
+                                  '${widget.transaction.token.tokenMetadata.name}',
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(

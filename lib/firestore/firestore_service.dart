@@ -9,7 +9,6 @@ import 'dart:async';
 import 'package:kabapay/models/user_model.dart';
 import '../auth/auth_util.dart';
 import '../models/payment_instrument_model.dart';
-import '../models/phone_model.dart';
 
 class FirestoreService {
   FirestoreService._privateConstructor();
@@ -99,6 +98,21 @@ class FirestoreService {
   }
 
   /// Write data
+  Future<DocumentReference<Map<String, dynamic>>> addPaymentInstrument(PaymentInstrumentModel paymentInstrument) {
+    try {
+      return _firestoreDb
+          .collection('users_data')
+          .doc(currentUserUid)
+          .collection('payment_instruments')
+          .add(paymentInstrument.toJson());
+    } catch (error) {
+      print('createTestTransaction ERROR: $error');
+      return new Future.value();
+    }
+  }
+
+
+  /// Write data
   Future<DocumentReference<Map<String, dynamic>>> createTransaction(CurrentTransactionModel currentTransactionModel) {
     var txObject = {
       "userId" : currentUserUid.toString(),
@@ -107,7 +121,7 @@ class FirestoreService {
       'amountPaid': currentTransactionModel.amountUSD,
       'tokenAmount': currentTransactionModel.amountToken,
       'recipientAddress': currentTransactionModel.recipientAddress,
-      'phone': currentTransactionModel.phone?.toJson()
+      'paymentInstrument': currentTransactionModel.paymentInstrument?.toJson()
     };
     if (currentTransactionModel.type == TransactionType.INTERAC_CASH_IN ||
         currentTransactionModel.type == TransactionType.INTERAC_CASH_OUT) {

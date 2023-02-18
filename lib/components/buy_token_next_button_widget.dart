@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:kabapay/models/current_transaction_model.dart';
 import 'package:provider/provider.dart';
 
@@ -20,9 +21,20 @@ class BuyTokenNextButtonWidget extends StatefulWidget {
 }
 
 class _BuyTokenNextButtonWidgetState extends State<BuyTokenNextButtonWidget> {
-  _onNextButtonSelected(BuildContext context) async {
+  _onNextButtonSelected(BuildContext context, CurrentTransactionModel currentTransaction) async {
     logFirebaseEvent('BUY_TOKEN_NEXT_BUTTON_NEXT_BTN_ON_TAP');
     logFirebaseEvent('Button_navigate_to');
+    if (currentTransaction.amountUSD == null || currentTransaction.amountUSD == '0') {
+      Flushbar(
+        backgroundColor: Colors.red,
+        margin: EdgeInsets.all(8),
+        borderRadius: BorderRadius.circular(8),
+        title:  FFLocalizations.of(context).getText('error_title',), /* Please enter an amount */
+        message:  FFLocalizations.of(context).getText('u9is7890',),
+        duration:  Duration(seconds: 2),
+      )..show(context);
+      return;
+    }
     context.pushNamed(
       'payment_methods_page',
       extra: <String, dynamic>{
@@ -57,9 +69,10 @@ class _BuyTokenNextButtonWidgetState extends State<BuyTokenNextButtonWidget> {
 
   @override
   Widget build(BuildContext context) {
+    CurrentTransactionModel currentTransaction = Provider.of<CurrentTransactionModel>(context);
     return FFButtonWidget(
       onPressed: () async {
-        _onNextButtonSelected(context);
+        _onNextButtonSelected(context, currentTransaction);
       },
       text: FFLocalizations.of(context).getText(
         '8ze2o2h0' /* Next */,

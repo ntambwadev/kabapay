@@ -1,5 +1,4 @@
 import 'package:kabapay/models/current_transaction_model.dart';
-import 'package:kabapay/models/phone_model.dart';
 import 'package:provider/provider.dart';
 
 import '../components/add_phone_instrument_widget.dart';
@@ -14,6 +13,7 @@ import '../flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../models/payment_instrument_model.dart';
 import 'payment_methods_page_model.dart';
 export 'payment_methods_page_model.dart';
 import '../flutter_flow/flutter_flow_model.dart';
@@ -49,27 +49,49 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
     super.dispose();
   }
 
+  _onSelectedPayment(BuildContext context, PaymentInstrumentModel paymentInstrument) async {
+    Provider.of<CurrentTransactionModel>(context, listen: false)
+        .addPaymentInstrument(paymentInstrument);
+    logFirebaseEvent(
+        'PAYMENT_METHODS_Container_vzt3cso2_ON_TA');
+    logFirebaseEvent(
+        'phone_payment_method_item_navigate_to');
+
+    context.pushNamed(
+      'confirmation_page',
+      extra: <String, dynamic>{
+        kTransitionInfoKey: TransitionInfo(
+          hasTransition: true,
+          transitionType:
+          PageTransitionType.rightToLeft,
+        ),
+      },
+    );
+  }
+
+  _onAddNewNumberButtonTapped(BuildContext context) async {
+    logFirebaseEvent(
+        'PAYMENT_METHODS_ADD_NEW_NUMBER_BTN_ON_TA');
+    logFirebaseEvent('Button_bottom_sheet');
+    await showModalBottomSheet(
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      context: context,
+      builder: (context) {
+        return Padding(
+          padding: MediaQuery.of(context).viewInsets,
+          child: Container(
+            height: 340,
+            child: AddPhoneInstrumentWidget(),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    _onSelectedPayment(BuildContext context, String phoneNumber) async {
-      Provider.of<CurrentTransactionModel>(context, listen: false)
-          .addPhone(PhoneModel(number: phoneNumber, telecom: "Voda", mobileMoney: "Mpesa"));
-      logFirebaseEvent(
-          'PAYMENT_METHODS_Container_vzt3cso2_ON_TA');
-      logFirebaseEvent(
-          'phone_payment_method_item_navigate_to');
-
-      context.pushNamed(
-        'confirmation_page',
-        extra: <String, dynamic>{
-          kTransitionInfoKey: TransitionInfo(
-            hasTransition: true,
-            transitionType:
-            PageTransitionType.rightToLeft,
-          ),
-        },
-      );
-    }
+    List<PaymentInstrumentModel> paymentInstruments = Provider.of<List<PaymentInstrumentModel>>(context);
 
     return Scaffold(
       key: scaffoldKey,
@@ -135,30 +157,24 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                       children: [
                         Builder(
                           builder: (context) {
-                            final phones = List.generate(
-                                    random_data.randomInteger(3, 3),
-                                    (index) =>
-                                        random_data.randomName(true, true))
-                                .toList()
-                                .take(3)
-                                .toList();
-                            if (phones.isEmpty) {
-                              return TokensListPlaceholderWidget();
+                            if (paymentInstruments.isEmpty) {
+                              return Flexible(child: TokensListPlaceholderWidget());
                             }
                             return ListView.builder(
                               padding: EdgeInsets.zero,
                               shrinkWrap: true,
                               scrollDirection: Axis.vertical,
-                              itemCount: phones.length,
-                              itemBuilder: (context, phonesIndex) {
-                                final phonesItem = phones[phonesIndex];
+                              itemCount: paymentInstruments.length,
+                              itemBuilder: (context, instrumentIndex) {
+                                final instrumentItem = paymentInstruments[instrumentIndex];
                                 return InkWell(
                                   onTap: () async {
-                                    _onSelectedPayment(context, phonesItem);
+                                    _onSelectedPayment(context, instrumentItem);
                                   },
                                   child: PhonePaymentMethodItemWidget(
+                                    paymentInstrument: instrumentItem,
                                     key: Key(
-                                        'Keyvzt_${phonesIndex}_of_${phones.length}'),
+                                        'Keyvzt_${instrumentIndex}_of_${paymentInstruments.length}'),
                                   ),
                                 );
                               },
@@ -183,23 +199,7 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 1),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              logFirebaseEvent(
-                                  'PAYMENT_METHODS_ADD_NEW_NUMBER_BTN_ON_TA');
-                              logFirebaseEvent('Button_bottom_sheet');
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.transparent,
-                                context: context,
-                                builder: (context) {
-                                  return Padding(
-                                    padding: MediaQuery.of(context).viewInsets,
-                                    child: Container(
-                                      height: 340,
-                                      child: AddPhoneInstrumentWidget(),
-                                    ),
-                                  );
-                                },
-                              );
+                              _onAddNewNumberButtonTapped(context);
                             },
                             text: FFLocalizations.of(context).getText(
                               'bcv1wdx6' /* Add new number */,

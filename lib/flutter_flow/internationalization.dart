@@ -533,6 +533,36 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Ajouter',
       'sw': 'Ongeza',
     },
+    '1xq7xq7x': {
+      'en': 'Please enter a valid phone number',
+      'fr': 'Veillez entrer un numéro de téléphone valide',
+      'sw': 'Tafadhali weka nambari ya simu sahihi',
+    },
+    'airtel_error': {
+      'en': 'Please enter a valid Airtel number',
+      'fr': 'Veuillez entrer un numéro de téléphone Airtel valide',
+      'sw': 'Tafadhali weka nambari ya Airtel sahihi',
+    },
+    'orange_error': {
+      'en': 'Please enter a valid Orange number',
+      'fr': 'Veuillez entrer un numéro de téléphone Orange valide',
+      'sw': 'Tafadhali weka nambari ya Orange sahihi',
+    },
+    'vodacom_error': {
+      'en': 'Please enter a valid Vodacom number',
+      'fr': 'Veuillez entrer un numéro de téléphone Vodacom valide',
+      'sw': 'Tafadhali weka nambari ya Vodacom sahihi',
+    },
+    'old_phone_error': {
+      'en': 'This number is already in use',
+      'fr': 'Ce numéro est déjà utilisé',
+      'sw': 'Nambari hii tayari inatumika',
+    },
+    'error_title': {
+      'en': 'Error',
+      'fr': 'Erreur',
+      'sw': 'Hitilafu',
+    },
   },
   // telecom_selector
   {
@@ -637,6 +667,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '0x123ghxffkjsds',
       'sw': '0x123ghxffkjsds',
     },
+    'toast_title': {
+      'en': 'You copied your address',
+      'fr': 'Vous avez copié votre adresse',
+      'sw': 'Ume nakili anwani yako',
+    },
   },
   // loading_view
   {
@@ -714,6 +749,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Next',
       'fr': 'Suivant',
       'sw': 'Inayofuata',
+    },
+    'u9is7890': {
+      'en': 'Please enter an amount',
+      'fr': 'Veuillez entrez un montant',
+      'sw': 'Tafadhali weka kiasi',
     },
   },
   // transaction_item

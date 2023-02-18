@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:ui' as ui;
 
+import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/services.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -28,24 +29,22 @@ class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
 
   _copyToClipboard() async {
     Clipboard.setData(new ClipboardData(text: userAddress)).then((_){
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          behavior: SnackBarBehavior.floating,
-          duration: const Duration(seconds: 2),
-          content: Container(
-              width: double.infinity,
-              height: 70,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).primaryColor,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 15, 20, 10),
-                child: Text(userAddress,
-                  textAlign: TextAlign.center,),
-              ))));
+      Flushbar(
+        backgroundColor: Colors.black,
+        margin: EdgeInsets.all(8),
+        borderRadius: BorderRadius.circular(8),
+        title:  FFLocalizations.of(context).getText('toast_title',), /* Please enter an amount */
+        message:  FFLocalizations.of(context).getText(userAddress,),
+        messageText: Text(
+          userAddress,
+          style: GoogleFonts.getFont(
+            'Poppins',
+            color: Colors.white,
+            fontSize: 14,
+          ),
+        ),
+        duration:  Duration(seconds: 2),
+      )..show(context);
     });
   }
   late ReceiveTokenModel _model;

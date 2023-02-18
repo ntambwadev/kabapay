@@ -170,7 +170,7 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         10, 0, 0, 0),
                                     child: Text(
-                                        '${transactionModel.phone?.mobileMoney}',
+                                        '${transactionModel.paymentInstrument?.productName}',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1,
                                     ),
@@ -189,7 +189,7 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                                   style: FlutterFlowTheme.of(context).bodyText1,
                                 ),
                                 Text(
-                                  '${transactionModel.phone?.number}',
+                                  '${transactionModel.paymentInstrument?.accountNumber}',
                                   style: FlutterFlowTheme.of(context).bodyText1,
                                 ),
                               ],

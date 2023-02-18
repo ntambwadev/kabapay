@@ -15,9 +15,14 @@ class AddPhoneInstrumentModel extends FlutterFlowModel {
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
 
+  // Model for top_separator component.
+  late TelecomSelectorModel telecomSelectorModel;
+
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    telecomSelectorModel = createModel(context, () => TelecomSelectorModel());
+  }
 
   void dispose() {
     textController?.dispose();

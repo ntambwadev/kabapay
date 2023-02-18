@@ -1,3 +1,5 @@
+import 'package:kabapay/models/payment_instrument_model.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +10,8 @@ export 'phone_payment_method_item_model.dart';
 import '../flutter_flow/flutter_flow_model.dart';
 
 class PhonePaymentMethodItemWidget extends StatefulWidget {
-  const PhonePaymentMethodItemWidget({Key? key}) : super(key: key);
+  const PhonePaymentMethodItemWidget({Key? key, required this.paymentInstrument}) : super(key: key);
+  final PaymentInstrumentModel paymentInstrument;
 
   @override
   _PhonePaymentMethodItemWidgetState createState() =>
@@ -68,7 +71,7 @@ class _PhonePaymentMethodItemWidgetState
                   shape: BoxShape.circle,
                 ),
                 child: Image.asset(
-                  'assets/images/mpesa-vertical.png',
+                  widget.paymentInstrument.imageUrl,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -79,16 +82,10 @@ class _PhonePaymentMethodItemWidgetState
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    FFLocalizations.of(context).getText(
-                      'dahr2van' /* 0823345678 */,
-                    ),
+                  Text(widget.paymentInstrument.accountNumber,
                     style: FlutterFlowTheme.of(context).bodyText1,
                   ),
-                  Text(
-                    FFLocalizations.of(context).getText(
-                      'j6rjiybj' /* Vodacom */,
-                    ),
+                  Text(widget.paymentInstrument.organizationName,
                     style: FlutterFlowTheme.of(context).bodyText2.override(
                           fontFamily: 'Poppins',
                           fontSize: 12,

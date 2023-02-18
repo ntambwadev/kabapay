@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:kabapay/models/phone_model.dart';
+import 'package:kabapay/models/payment_instrument_model.dart';
 
 import '../flutter_flow/flutter_flow_util.dart';
 import 'token_model.dart';
@@ -15,14 +15,14 @@ class TransactionModel {
   final TokenModel token;
   final String userAddress;
   final String recipientAddress;
-  final PhoneModel phone;
+  final PaymentInstrumentModel paymentInstrument;
   final String createdAt;
   final TransactionStatus status;
 
   TransactionModel({required this.id, required this.userId,
     required this.amountPaid, required this.tokenAmount,
     required this.type, required this.token, required this.userAddress,
-    required this.recipientAddress, required this.phone, required this.createdAt,
+    required this.recipientAddress, required this.paymentInstrument, required this.createdAt,
     required this.status});
 
   factory TransactionModel.fromFirestore(DocumentSnapshot doc) {
@@ -32,11 +32,11 @@ class TransactionModel {
       userId: data['userId'] ?? '',
       amountPaid: data['amountPaid'] ?? '',
       tokenAmount: data['tokenAmount'] ?? '',
-      type: TransactionType.fromValue(data['type']),
+      type: TransactionType.fromValue(data['type'] ?? 'buy'),
       token: TokenModel.fromMap(data['token']),
       userAddress: data['userAddress'] ?? '',
       recipientAddress: data['recipientAddress'] ?? '',
-      phone: PhoneModel.fromMap(data['phone'] as Map<String, dynamic>),
+      paymentInstrument: PaymentInstrumentModel.fromMap(data['paymentInstrument'] as Map<String, dynamic>),
       createdAt: DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.parse(data['createdAt'])),
       status: TransactionStatus.fromValue(data['status'] ?? ''),
     );

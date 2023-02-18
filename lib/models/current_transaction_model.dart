@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
-import 'package:kabapay/models/phone_model.dart';
+import 'package:kabapay/models/payment_instrument_model.dart';
 import 'package:kabapay/models/transaction_model.dart';
 import 'package:kabapay/models/user_model.dart';
 
@@ -14,7 +14,7 @@ class CurrentTransactionModel extends ChangeNotifier {
   TokenModel? _token;
   String? _userAddress;
   String? _recipientAddress;
-  PhoneModel? _phone;
+  PaymentInstrumentModel? _paymentInstrument;
 
   String? get userId => _userId;
   String? get amountUSD => _amountUSD;
@@ -23,7 +23,7 @@ class CurrentTransactionModel extends ChangeNotifier {
   TokenModel? get token => _token;
   String? get userAddress => _userAddress;
   String? get recipientAddress => _recipientAddress;
-  PhoneModel? get phone => _phone;
+  PaymentInstrumentModel? get paymentInstrument => _paymentInstrument;
 
   void addUserId(String userId) {
     _userId = userId;
@@ -51,8 +51,8 @@ class CurrentTransactionModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void addPhone(PhoneModel phoneModel) {
-    _phone = phoneModel;
+  void addPaymentInstrument(PaymentInstrumentModel paymentInstrumentModel) {
+    _paymentInstrument = paymentInstrumentModel;
     notifyListeners();
   }
 

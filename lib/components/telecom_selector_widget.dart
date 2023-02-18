@@ -1,3 +1,5 @@
+import 'package:kabapay/models/payment_instrument_model.dart';
+
 import '../components/top_separator_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -36,8 +38,31 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
     super.dispose();
   }
 
+  _onSelectedAirtel(BuildContext context) async {
+    _model.selectedNetworkMoMo = 'Airtel Money';
+    _model.selectedNetworkName = MomoTelecomOption.AIRTEL;
+    _model.selectedNetworkImageUrl = 'assets/images/airtel-circle.png';
+    Navigator.pop(context);
+  }
+
+  _onSelectedOrange(BuildContext context) async {
+    _model.selectedNetworkMoMo = 'Orange Money';
+    _model.selectedNetworkName = MomoTelecomOption.ORANGE;
+    _model.selectedNetworkImageUrl = 'assets/images/orange-circle.png';
+    Navigator.pop(context);
+  }
+
+  _onSelectedVodacom(BuildContext context) async {
+    _model.selectedNetworkMoMo = 'Mpesa';
+    _model.selectedNetworkName = MomoTelecomOption.VODACOM;
+    _model.selectedNetworkImageUrl = 'assets/images/mpesa-vertical.png';
+    Navigator.pop(context);
+  }
+
   @override
   Widget build(BuildContext context) {
+
+
     return Container(
       width: double.infinity,
       height: double.infinity,
@@ -94,7 +119,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                       logFirebaseEvent(
                           'TELECOM_SELECTOR_Container_kncjvkcm_ON_T');
                       logFirebaseEvent('Container_bottom_sheet');
-                      Navigator.pop(context);
+                      _onSelectedAirtel(context);
                     },
                     child: Container(
                       width: double.infinity,
@@ -175,7 +200,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                       logFirebaseEvent(
                           'TELECOM_SELECTOR_Container_eiv70dbx_ON_T');
                       logFirebaseEvent('Container_bottom_sheet');
-                      Navigator.pop(context);
+                      await _onSelectedVodacom(context);
                     },
                     child: Container(
                       width: double.infinity,
@@ -256,7 +281,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                       logFirebaseEvent(
                           'TELECOM_SELECTOR_Container_frq8odze_ON_T');
                       logFirebaseEvent('Container_bottom_sheet');
-                      Navigator.pop(context);
+                      _onSelectedOrange(context);
                     },
                     child: Container(
                       width: double.infinity,
