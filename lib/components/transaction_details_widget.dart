@@ -65,7 +65,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
       child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             FlutterFlowIconButton(
               borderColor: Colors.transparent,
