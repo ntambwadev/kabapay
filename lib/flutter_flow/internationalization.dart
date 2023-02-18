@@ -427,11 +427,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Votre transaction a été créée avec succès.',
       'sw': 'Muamala wako umeundwa.',
     },
-    '29ju1bse': {
-      'en': 'What\'s next? ',
-      'fr': 'Et après?',
-      'sw': 'Nini kinafuata?',
-    },
     'x73isb0j': {
       'en': 'To complete the transaction, send',
       'fr': 'Pour terminer la transaction, envoyez',
@@ -452,15 +447,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '0x123ghxffkjsds',
       'sw': '0x123ghxffkjsds',
     },
-    'r5l33oii': {
-      'en': 'We\'ll send your crypto once we receive the payment. ',
-      'fr':
-          'Nous vous enverrons votre crypto une fois que nous aurons reçu le paiement.',
-      'sw': 'Tutakutumia cryptocurrency yako mara tu tutakapopokea malipo.',
-    },
     'vsl23of4': {
       'en':
-          'Important: Make sure to use your number: 0971504436 for the transfer',
+          'Important: Make sure to use your number: 0971504436 for the transfer. We\'ll send your crypto once we receive the payment. ',
       'fr':
           'Important : Assurez-vous d\'utiliser votre numéro : 0971504436 pour le transfert',
       'sw': 'Muhimu: Hakikisha unatumia nambari yako: 0971504436 kwa uhamisho',
