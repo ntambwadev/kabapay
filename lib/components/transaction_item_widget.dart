@@ -34,7 +34,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
 
   @override
   void dispose() {
-    _model.dispose();
+    _model.maybeDispose();
 
     super.dispose();
   }
@@ -58,7 +58,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
               return Padding(
                 padding: MediaQuery.of(context).viewInsets,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.75,
+                  height: MediaQuery.of(context).size.height * 0.85,
                   child: TransactionDetailsWidget(transactionModel: widget.transaction),
 
                 ),

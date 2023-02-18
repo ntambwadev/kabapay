@@ -62,7 +62,7 @@ class _BuyTokenNextButtonWidgetState extends State<BuyTokenNextButtonWidget> {
 
   @override
   void dispose() {
-    _model.dispose();
+    _model.maybeDispose();
 
     super.dispose();
   }

@@ -30,9 +30,9 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'register_page'});
-    _model.emailAddressController = TextEditingController();
-    _model.passwordController = TextEditingController();
-    _model.confirmPasswordController = TextEditingController();
+    _model.emailAddressController ??= TextEditingController();
+    _model.passwordController ??= TextEditingController();
+    _model.confirmPasswordController ??= TextEditingController();
   }
 
   @override

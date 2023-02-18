@@ -33,7 +33,7 @@ class _NavBackButtonWidgetState extends State<NavBackButtonWidget> {
 
   @override
   void dispose() {
-    _model.dispose();
+    _model.maybeDispose();
 
     super.dispose();
   }

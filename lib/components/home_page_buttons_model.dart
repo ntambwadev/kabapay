@@ -24,7 +24,11 @@ class HomePageButtonsModel extends FlutterFlowModel {
     homeButtonModel3 = createModel(context, () => HomeButtonModel());
   }
 
-  void dispose() {}
+  void dispose() {
+    homeButtonModel1.dispose();
+    homeButtonModel2.dispose();
+    homeButtonModel3.dispose();
+  }
 
   /// Additional helper methods are added here.
 

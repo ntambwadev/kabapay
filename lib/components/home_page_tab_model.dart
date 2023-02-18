@@ -24,7 +24,10 @@ class HomePageTabModel extends FlutterFlowModel {
     transactionsListModel = createModel(context, () => TransactionsListModel());
   }
 
-  void dispose() {}
+  void dispose() {
+    tokensListModel.dispose();
+    transactionsListModel.dispose();
+  }
 
   /// Additional helper methods are added here.
 

@@ -33,7 +33,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
 
   @override
   void dispose() {
-    _model.dispose();
+    _model.maybeDispose();
 
     super.dispose();
   }

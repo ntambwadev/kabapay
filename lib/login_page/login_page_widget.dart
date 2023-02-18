@@ -29,8 +29,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     _model = createModel(context, () => LoginPageModel());
 
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'login_page'});
-    _model.emailAddressController = TextEditingController();
-    _model.passwordLoginController = TextEditingController();
+    _model.emailAddressController ??= TextEditingController();
+    _model.passwordLoginController ??= TextEditingController();
   }
 
   @override

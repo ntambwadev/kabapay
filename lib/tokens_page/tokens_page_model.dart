@@ -19,7 +19,9 @@ class TokensPageModel extends FlutterFlowModel {
     tokensListModel = createModel(context, () => TokensListModel());
   }
 
-  void dispose() {}
+  void dispose() {
+    tokensListModel.dispose();
+  }
 
   /// Additional helper methods are added here.
 

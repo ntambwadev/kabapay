@@ -26,6 +26,7 @@ class SmsVerificationPageModel extends FlutterFlowModel {
   }
 
   void dispose() {
+    navBackButtonModel.dispose();
     pinCodeController?.dispose();
   }
 
