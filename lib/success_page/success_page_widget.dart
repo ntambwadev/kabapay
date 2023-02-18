@@ -119,7 +119,10 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                             'rmg0tflb' /* Success! */,
                           ),
                           textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.of(context).title1,
+                          style: FlutterFlowTheme.of(context).title1.override(
+                                fontFamily: 'Poppins',
+                                fontSize: 32,
+                              ),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 30),
@@ -149,10 +152,10 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                           children: [
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  '29ju1bse' /* What's next?  */,
+                                  'x73isb0j' /* To complete the transaction, s... */,
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -161,37 +164,26 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryColor,
-                                      fontSize: 28,
-                                      fontWeight: FontWeight.w600,
+                                      fontSize: 14,
                                     ),
                               ),
-                        ),
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                'x73isb0j' /* To complete the transaction, s... */,
-                              ),
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryColor,
-                                fontSize: 14,
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                              child: Text(
+                                '\$${currentTransaction.amountUSD} USD',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                      fontSize: 28,
+                                    ),
                               ),
                             ),
-                        Text(
-                          '\$${currentTransaction.amountUSD} USD' ,
-                          textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.of(context)
-                              .subtitle2
-                              .override(
-                            fontFamily: 'Poppins',
-                            color:
-                            FlutterFlowTheme.of(context).primaryColor,
-                            fontSize: 28,
-                          ),
-                        ),
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
@@ -247,24 +239,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                             ),
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'r5l33oii' /* We'll send your crypto once we... */,
-                                ),
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .subtitle2
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryColor,
-                                    ),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 10),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'vsl23of4' /* Important: Make sure to use yo... */,
@@ -289,8 +264,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                   ),
                   FFButtonWidget(
                     onPressed: () async {
-                      logFirebaseEvent(
-                          'SUCCESS_I_COMPLETED_THE_TRANSFER_BTN_ON_');
+                      logFirebaseEvent('SUCCESS_PAGE_PAGE_DONE_BTN_ON_TAP');
                       logFirebaseEvent('Button_navigate_to');
 
                       context.goNamed(
@@ -304,7 +278,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                       );
                     },
                     text: FFLocalizations.of(context).getText(
-                      'ba5y4wt5' /* I completed the transfer */,
+                      'ba5y4wt5' /* Done */,
                     ),
                     options: FFButtonOptions(
                       width: double.infinity,
