@@ -226,8 +226,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                   ),
                   FFButtonWidget(
                     onPressed: () async {
-                      logFirebaseEvent(
-                          'SUCCESS_I_COMPLETED_THE_TRANSFER_BTN_ON_');
+                      logFirebaseEvent('SUCCESS_PAGE_PAGE_DONE_BTN_ON_TAP');
                       logFirebaseEvent('Button_navigate_to');
 
                       context.goNamed(
@@ -241,7 +240,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                       );
                     },
                     text: FFLocalizations.of(context).getText(
-                      'ba5y4wt5' /* I completed the transfer */,
+                      'ba5y4wt5' /* Done */,
                     ),
                     options: FFButtonOptions(
                       width: double.infinity,

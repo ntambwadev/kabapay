@@ -110,7 +110,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'kgi0yevl': {
       'en': 'Welcome',
-      'fr': 'Bienvenue',
+      'fr': 'Accueillir',
       'sw': 'Karibu',
     },
     '76x3qb7u': {
@@ -169,7 +169,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zl6et8z1': {
       'en': 'Home',
-      'fr': 'Domicile',
+      'fr': 'Maison',
       'sw': 'Nyumbani',
     },
   },
@@ -210,7 +210,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zmghngze': {
       'en': 'Home',
-      'fr': 'Domicile',
+      'fr': 'Maison',
       'sw': 'Nyumbani',
     },
   },
@@ -248,7 +248,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'e8tl8j5k': {
       'en': 'Home',
-      'fr': 'Domicile',
+      'fr': 'Maison',
       'sw': 'Nyumbani',
     },
   },
@@ -256,7 +256,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '5f7w2rwu': {
       'en': 'Home',
-      'fr': 'Domicile',
+      'fr': 'Maison',
       'sw': 'Nyumbani',
     },
   },
@@ -269,7 +269,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zv0rvf78': {
       'en': 'Home',
-      'fr': 'Domicile',
+      'fr': 'Maison',
       'sw': 'Nyumbani',
     },
   },
@@ -282,7 +282,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'u9is7l5l': {
       'en': 'Home',
-      'fr': 'Domicile',
+      'fr': 'Maison',
       'sw': 'Nyumbani',
     },
   },
@@ -300,7 +300,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lfjf7ceh': {
       'en': 'Or ',
-      'fr': 'Ou alors',
+      'fr': 'Ou',
       'sw': 'Au',
     },
     'bcv1wdx6': {
@@ -310,7 +310,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ii5gh4ls': {
       'en': 'Home',
-      'fr': 'Domicile',
+      'fr': 'Maison',
       'sw': 'Nyumbani',
     },
   },
@@ -393,7 +393,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'gsq78zqf': {
       'en': 'Home',
-      'fr': 'Domicile',
+      'fr': 'Maison',
       'sw': 'Nyumbani',
     },
   },
@@ -401,7 +401,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'ny2njesp': {
       'en': 'Settings',
-      'fr': 'Réglages',
+      'fr': 'Paramètres',
       'sw': 'Mipangilio',
     },
     '180k82nb': {
@@ -411,7 +411,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lgf10g04': {
       'en': 'Home',
-      'fr': 'Domicile',
+      'fr': 'Maison',
       'sw': 'Nyumbani',
     },
   },
@@ -456,9 +456,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Muhimu: Hakikisha unatumia nambari yako: 0971504436 kwa uhamisho. Tutakutumia cryptocurrency yako mara tu tutakapopokea malipo.',
     },
     'ba5y4wt5': {
-      'en': 'I completed the transfer',
-      'fr': 'J\'ai terminé le transfert',
-      'sw': 'Nilikamilisha uhamisho',
+      'en': 'Done',
+      'fr': 'Fait',
+      'sw': 'Imekamilika',
     },
     'fi4h7dml': {
       'en': 'Home',
@@ -490,7 +490,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '6osi0bb0': {
       'en': 'Home',
-      'fr': 'Domicile',
+      'fr': 'Maison',
       'sw': 'Nyumbani',
     },
   },
@@ -508,7 +508,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'm18584jp': {
       'en': 'Home',
-      'fr': 'Domicile',
+      'fr': 'Maison',
       'sw': 'Nyumbani',
     },
   },
@@ -539,7 +539,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '7n73lcp5': {
       'en': 'Home',
-      'fr': 'Domicile',
+      'fr': 'Maison',
       'sw': 'Nyumbani',
     },
   },
@@ -726,7 +726,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'nvsz7pmg': {
       'en': 'Balance',
-      'fr': 'Solde',
+      'fr': 'Équilibre',
       'sw': 'Mizani',
     },
     '82j6thjy': {
@@ -780,7 +780,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'nc374fp7': {
       'en': 'Received',
-      'fr': 'A reçu',
+      'fr': 'Reçu',
       'sw': 'Imepokelewa',
     },
     'v3z6xy0x': {
