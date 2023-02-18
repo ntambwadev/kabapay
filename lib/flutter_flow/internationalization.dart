@@ -25,6 +25,10 @@ class FFLocalizations {
   }
 
   String get languageCode => locale.toString();
+  String? get languageShortCode =>
+      _languagesWithShortCode.contains(locale.toString())
+          ? '${locale.toString()}_short'
+          : null;
   int get languageIndex => languages().contains(languageCode)
       ? languages().indexOf(languageCode)
       : 0;
@@ -38,6 +42,39 @@ class FFLocalizations {
     String? swText = '',
   }) =>
       [enText, frText, swText][languageIndex] ?? '';
+
+  static const Set<String> _languagesWithShortCode = {
+    'ar',
+    'az',
+    'ca',
+    'cs',
+    'da',
+    'de',
+    'dv',
+    'en',
+    'es',
+    'et',
+    'fi',
+    'fr',
+    'gr',
+    'he',
+    'hi',
+    'hu',
+    'it',
+    'km',
+    'ku',
+    'mn',
+    'ms',
+    'no',
+    'pt',
+    'ro',
+    'ru',
+    'rw',
+    'sv',
+    'th',
+    'uk',
+    'vi',
+  };
 }
 
 class FFLocalizationsDelegate extends LocalizationsDelegate<FFLocalizations> {
@@ -385,19 +422,38 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Succès!',
       'sw': 'Mafanikio!',
     },
+    'jfgpj763': {
+      'en': 'Your transaction was successfully created.  \nPlease send',
+      'fr':
+          'Votre transaction a été créée avec succès.\nEnvoyez s\'il vous plaît',
+      'sw': 'Muamala wako umeundwa.\ntafadhali tuma',
+    },
+    'uchit8od': {
+      'en': 'to',
+      'fr': 'pour',
+      'sw': 'kwa',
+    },
     '6p8d0o9w': {
       'en': '0971504436',
       'fr': '0x123ghxffkjsds',
       'sw': '0x123ghxffkjsds',
     },
+    '0vf7xpa1': {
+      'en':
+          'to complete the transaction. \nWe\'ll send your crypto once we receive the payment.',
+      'fr':
+          'pour finaliser la transaction.\nNous vous enverrons votre crypto une fois que nous aurons reçu le paiement.',
+      'sw':
+          'kukamilisha muamala.\nTutakutumia cryptocurrency yako mara tu tutakapopokea malipo.',
+    },
     'ba5y4wt5': {
-      'en': 'Done',
-      'fr': 'Fait',
-      'sw': 'Imekamilika',
+      'en': 'I completed the payment',
+      'fr': 'J\'ai terminé le paiement',
+      'sw': 'Nilikamilisha malipo',
     },
     'fi4h7dml': {
       'en': 'Home',
-      'fr': 'Domicile',
+      'fr': 'Maison',
       'sw': 'Nyumbani',
     },
   },

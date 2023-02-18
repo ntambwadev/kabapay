@@ -30,7 +30,7 @@ class _HomePageBalanceWidgetState extends State<HomePageBalanceWidget> {
 
   @override
   void dispose() {
-    _model.dispose();
+    _model.maybeDispose();
 
     super.dispose();
   }

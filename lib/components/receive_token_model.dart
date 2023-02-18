@@ -18,7 +18,9 @@ class ReceiveTokenModel extends FlutterFlowModel {
     topSeparatorModel = createModel(context, () => TopSeparatorModel());
   }
 
-  void dispose() {}
+  void dispose() {
+    topSeparatorModel.dispose();
+  }
 
   /// Additional helper methods are added here.
 

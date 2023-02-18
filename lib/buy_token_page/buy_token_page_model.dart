@@ -27,7 +27,11 @@ class BuyTokenPageModel extends FlutterFlowModel {
         createModel(context, () => BuyTokenNextButtonModel());
   }
 
-  void dispose() {}
+  void dispose() {
+    buyTokenAmountModel.dispose();
+    numberKeyboardModel.dispose();
+    buyTokenNextButtonModel.dispose();
+  }
 
   /// Additional helper methods are added here.
 

@@ -30,7 +30,7 @@ class _HomeButtonWidgetState extends State<HomeButtonWidget> {
 
   @override
   void dispose() {
-    _model.dispose();
+    _model.maybeDispose();
 
     super.dispose();
   }

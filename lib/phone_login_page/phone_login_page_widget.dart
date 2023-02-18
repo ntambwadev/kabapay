@@ -29,7 +29,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'phone_login_page'});
-    _model.phoneNumberController = TextEditingController();
+    _model.phoneNumberController ??= TextEditingController();
   }
 
   @override

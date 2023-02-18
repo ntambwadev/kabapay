@@ -32,7 +32,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
 
   @override
   void dispose() {
-    _model.dispose();
+    _model.maybeDispose();
 
     super.dispose();
   }

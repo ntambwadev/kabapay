@@ -33,7 +33,7 @@ class _TokensListWidgetState extends State<TokensListWidget> {
 
   @override
   void dispose() {
-    _model.dispose();
+    _model.maybeDispose();
 
     super.dispose();
   }

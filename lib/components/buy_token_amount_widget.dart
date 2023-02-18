@@ -31,7 +31,7 @@ class _BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
 
   @override
   void dispose() {
-    _model.dispose();
+    _model.maybeDispose();
 
     super.dispose();
   }

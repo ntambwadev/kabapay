@@ -31,7 +31,7 @@ class _LoadingViewWidgetState extends State<LoadingViewWidget> {
 
   @override
   void dispose() {
-    _model.dispose();
+    _model.maybeDispose();
 
     super.dispose();
   }

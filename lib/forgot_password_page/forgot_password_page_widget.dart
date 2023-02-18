@@ -30,7 +30,7 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'forgot_password_page'});
-    _model.emailAddressController = TextEditingController();
+    _model.emailAddressController ??= TextEditingController();
   }
 
   @override

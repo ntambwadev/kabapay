@@ -33,7 +33,7 @@ class _TokensListPlaceholderWidgetState
 
   @override
   void dispose() {
-    _model.dispose();
+    _model.maybeDispose();
 
     super.dispose();
   }

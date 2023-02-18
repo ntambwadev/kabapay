@@ -1,6 +1,7 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -80,6 +81,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                             FFLocalizations.of(context).getText(
                               'rmg0tflb' /* Success! */,
                             ),
+                            textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context).title1,
                           ),
                         ),
@@ -92,7 +94,9 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                           child: Text(
-                            getRemoteConfigString('success_message'),
+                            FFLocalizations.of(context).getText(
+                              'jfgpj763' /* Your transaction was successfu... */,
+                            ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .subtitle2
@@ -100,22 +104,40 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                   fontFamily: 'Poppins',
                                   color:
                                       FlutterFlowTheme.of(context).primaryColor,
+                                  fontSize: 14,
                                 ),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
-                          child: Text(
-                            getRemoteConfigString('success_message'),
-                            textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context)
-                                .subtitle2
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
-                                ),
+                        Text(
+                          random_data.randomString(
+                            0,
+                            0,
+                            true,
+                            false,
+                            false,
                           ),
+                          textAlign: TextAlign.center,
+                          style: FlutterFlowTheme.of(context)
+                              .subtitle2
+                              .override(
+                                fontFamily: 'Poppins',
+                                color:
+                                    FlutterFlowTheme.of(context).primaryColor,
+                                fontSize: 28,
+                              ),
+                        ),
+                        Text(
+                          FFLocalizations.of(context).getText(
+                            'uchit8od' /* to */,
+                          ),
+                          textAlign: TextAlign.center,
+                          style: FlutterFlowTheme.of(context)
+                              .subtitle2
+                              .override(
+                                fontFamily: 'Poppins',
+                                color:
+                                    FlutterFlowTheme.of(context).primaryColor,
+                              ),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
@@ -136,12 +158,13 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                             options: FFButtonOptions(
                               width: 160,
                               height: 50,
-                              color: FlutterFlowTheme.of(context).primaryColor,
+                              color: Color(0xFF393939),
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
+                                    fontSize: 16,
                                   ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
@@ -154,7 +177,11 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                           child: Text(
-                            getRemoteConfigString('success_message'),
+                            FFLocalizations.of(context).getText(
+                              '0vf7xpa1' /* to complete the transaction. 
+... */
+                              ,
+                            ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .subtitle2
@@ -170,7 +197,8 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                   ),
                   FFButtonWidget(
                     onPressed: () async {
-                      logFirebaseEvent('SUCCESS_PAGE_PAGE_DONE_BTN_ON_TAP');
+                      logFirebaseEvent(
+                          'SUCCESS_I_COMPLETED_THE_PAYMENT_BTN_ON_T');
                       logFirebaseEvent('Button_navigate_to');
 
                       context.goNamed(
@@ -184,7 +212,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                       );
                     },
                     text: FFLocalizations.of(context).getText(
-                      'ba5y4wt5' /* Done */,
+                      'ba5y4wt5' /* I completed the payment */,
                     ),
                     options: FFButtonOptions(
                       width: double.infinity,

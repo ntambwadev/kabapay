@@ -25,7 +25,11 @@ class HomePageModel extends FlutterFlowModel {
     homePageTabModel = createModel(context, () => HomePageTabModel());
   }
 
-  void dispose() {}
+  void dispose() {
+    homePageBalanceModel.dispose();
+    homePageButtonsModel.dispose();
+    homePageTabModel.dispose();
+  }
 
   /// Additional helper methods are added here.
 
