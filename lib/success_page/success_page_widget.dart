@@ -209,7 +209,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                   logFirebaseEvent(
                                       'SUCCESS_PAGE_PAGE_0971504436_BTN_ON_TAP');
                                   logFirebaseEvent('Button_bottom_sheet');
-                                  Navigator.pop(context);
+                                  _onAccountNumberCopied(context, '0971504436');
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   '6p8d0o9w' /* 0971504436 */,
