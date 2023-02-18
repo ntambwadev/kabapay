@@ -1,7 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -75,24 +74,15 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
-                          child: Text(
-                            FFLocalizations.of(context).getText(
-                              'rmg0tflb' /* Success! */,
-                            ),
-                            textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context).title1,
+                        Text(
+                          FFLocalizations.of(context).getText(
+                            'rmg0tflb' /* Success! */,
                           ),
-                        ),
-                        Image.asset(
-                          'assets/images/transaction-success.png',
-                          width: 200,
-                          height: 200,
-                          fit: BoxFit.cover,
+                          textAlign: TextAlign.center,
+                          style: FlutterFlowTheme.of(context).title1,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 30),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               'jfgpj763' /* Your transaction was successfu... */,
@@ -108,89 +98,153 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                 ),
                           ),
                         ),
-                        Text(
-                          random_data.randomString(
-                            0,
-                            0,
-                            true,
-                            false,
-                            false,
-                          ),
-                          textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.of(context)
-                              .subtitle2
-                              .override(
-                                fontFamily: 'Poppins',
-                                color:
-                                    FlutterFlowTheme.of(context).primaryColor,
-                                fontSize: 28,
-                              ),
+                        Image.asset(
+                          'assets/images/transaction-success.png',
+                          width: 200,
+                          height: 200,
+                          fit: BoxFit.cover,
                         ),
-                        Text(
-                          FFLocalizations.of(context).getText(
-                            'uchit8od' /* to */,
-                          ),
-                          textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.of(context)
-                              .subtitle2
-                              .override(
-                                fontFamily: 'Poppins',
-                                color:
-                                    FlutterFlowTheme.of(context).primaryColor,
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  '29ju1bse' /* What's next?  */,
+                                ),
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                      fontSize: 28,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                               ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              logFirebaseEvent(
-                                  'SUCCESS_PAGE_PAGE_0971504436_BTN_ON_TAP');
-                              logFirebaseEvent('Button_bottom_sheet');
-                              Navigator.pop(context);
-                            },
-                            text: FFLocalizations.of(context).getText(
-                              '6p8d0o9w' /* 0971504436 */,
                             ),
-                            icon: Icon(
-                              Icons.content_copy_outlined,
-                              size: 20,
-                            ),
-                            options: FFButtonOptions(
-                              width: 160,
-                              height: 50,
-                              color: Color(0xFF393939),
-                              textStyle: FlutterFlowTheme.of(context)
+                            Text(
+                              FFLocalizations.of(context).getText(
+                                'x73isb0j' /* To complete the transaction, s... */,
+                              ),
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
                                     fontFamily: 'Poppins',
-                                    color: Colors.white,
-                                    fontSize: 16,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                    fontSize: 14,
                                   ),
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1,
+                            ),
+                            Text(
+                              FFLocalizations.of(context).getText(
+                                'lda607x5' /* $97 USD */,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                    fontSize: 28,
+                                  ),
                             ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
-                          child: Text(
-                            FFLocalizations.of(context).getText(
-                              '0vf7xpa1' /* to complete the transaction. 
-... */
-                              ,
-                            ),
-                            textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context)
-                                .subtitle2
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  '4uxsg6tk' /* to */,
                                 ),
-                          ),
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  logFirebaseEvent(
+                                      'SUCCESS_PAGE_PAGE_0971504436_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_bottom_sheet');
+                                  Navigator.pop(context);
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  '6p8d0o9w' /* 0971504436 */,
+                                ),
+                                icon: Icon(
+                                  Icons.content_copy_outlined,
+                                  size: 20,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 160,
+                                  height: 50,
+                                  color: Color(0xFF393939),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .subtitle2
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                      ),
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'r5l33oii' /* We'll send your crypto once we... */,
+                                ),
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'vsl23of4' /* Important: Make sure to use yo... */,
+                                ),
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -198,7 +252,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                   FFButtonWidget(
                     onPressed: () async {
                       logFirebaseEvent(
-                          'SUCCESS_I_COMPLETED_THE_PAYMENT_BTN_ON_T');
+                          'SUCCESS_I_COMPLETED_THE_TRANSFER_BTN_ON_');
                       logFirebaseEvent('Button_navigate_to');
 
                       context.goNamed(
@@ -212,7 +266,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                       );
                     },
                     text: FFLocalizations.of(context).getText(
-                      'ba5y4wt5' /* I completed the payment */,
+                      'ba5y4wt5' /* I completed the transfer */,
                     ),
                     options: FFButtonOptions(
                       width: double.infinity,

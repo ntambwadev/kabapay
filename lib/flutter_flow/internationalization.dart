@@ -423,12 +423,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sw': 'Mafanikio!',
     },
     'jfgpj763': {
-      'en': 'Your transaction was successfully created.  \nPlease send',
-      'fr':
-          'Votre transaction a été créée avec succès.\nEnvoyez s\'il vous plaît',
-      'sw': 'Muamala wako umeundwa.\ntafadhali tuma',
+      'en': 'Your transaction was successfully created. ',
+      'fr': 'Votre transaction a été créée avec succès.',
+      'sw': 'Muamala wako umeundwa.',
     },
-    'uchit8od': {
+    '29ju1bse': {
+      'en': 'What\'s next? ',
+      'fr': 'Et après?',
+      'sw': 'Nini kinafuata?',
+    },
+    'x73isb0j': {
+      'en': 'To complete the transaction, send',
+      'fr': 'Pour terminer la transaction, envoyez',
+      'sw': 'Ili kukamilisha muamala, tuma',
+    },
+    'lda607x5': {
+      'en': '\$97 USD',
+      'fr': '97 USD',
+      'sw': '\$97 USD',
+    },
+    '4uxsg6tk': {
       'en': 'to',
       'fr': 'pour',
       'sw': 'kwa',
@@ -438,18 +452,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '0x123ghxffkjsds',
       'sw': '0x123ghxffkjsds',
     },
-    '0vf7xpa1': {
-      'en':
-          'to complete the transaction. \nWe\'ll send your crypto once we receive the payment.',
+    'r5l33oii': {
+      'en': 'We\'ll send your crypto once we receive the payment. ',
       'fr':
-          'pour finaliser la transaction.\nNous vous enverrons votre crypto une fois que nous aurons reçu le paiement.',
-      'sw':
-          'kukamilisha muamala.\nTutakutumia cryptocurrency yako mara tu tutakapopokea malipo.',
+          'Nous vous enverrons votre crypto une fois que nous aurons reçu le paiement.',
+      'sw': 'Tutakutumia cryptocurrency yako mara tu tutakapopokea malipo.',
+    },
+    'vsl23of4': {
+      'en':
+          'Important: Make sure to use your number: 0971504436 for the transfer',
+      'fr':
+          'Important : Assurez-vous d\'utiliser votre numéro : 0971504436 pour le transfert',
+      'sw': 'Muhimu: Hakikisha unatumia nambari yako: 0971504436 kwa uhamisho',
     },
     'ba5y4wt5': {
-      'en': 'I completed the payment',
-      'fr': 'J\'ai terminé le paiement',
-      'sw': 'Nilikamilisha malipo',
+      'en': 'I completed the transfer',
+      'fr': 'J\'ai terminé le transfert',
+      'sw': 'Nilikamilisha uhamisho',
     },
     'fi4h7dml': {
       'en': 'Home',
