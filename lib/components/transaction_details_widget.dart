@@ -1,8 +1,5 @@
 import 'package:kabapay/components/CustomTimelineWidget.dart';
-import 'package:kabapay/components/transaction_details_timeline.dart';
 import 'package:kabapay/models/transaction_model.dart';
-
-import '../components/top_separator_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -67,11 +64,15 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
       child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            wrapWithModel(
-              model: _model.topSeparatorModel,
-              updateCallback: () => setState(() {}),
-              child: TopSeparatorWidget(),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+              child: Icon(
+                Icons.close,
+                color: Colors.black,
+                size: 24,
+              ),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),

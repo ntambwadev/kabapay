@@ -1,6 +1,3 @@
-import 'package:kabapay/components/top_separator_model.dart';
-
-import '../components/top_separator_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -9,20 +6,11 @@ import 'package:provider/provider.dart';
 import '../flutter_flow/flutter_flow_model.dart';
 
 class TransactionDetailsModel extends FlutterFlowModel {
-  ///  State fields for stateful widgets in this component.
-
-  // Model for top_separator component.
-  late TopSeparatorModel topSeparatorModel;
-
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {
-    topSeparatorModel = createModel(context, () => TopSeparatorModel());
-  }
+  void initState(BuildContext context) {}
 
-  void dispose() {
-    topSeparatorModel.dispose();
-  }
+  void dispose() {}
 
   /// Additional helper methods are added here.
 
