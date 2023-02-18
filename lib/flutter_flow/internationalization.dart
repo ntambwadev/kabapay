@@ -451,8 +451,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'Important: Make sure to use your number: 0971504436 for the transfer. We\'ll send your crypto once we receive the payment. ',
       'fr':
-          'Important : Assurez-vous d\'utiliser votre numéro : 0971504436 pour le transfert',
-      'sw': 'Muhimu: Hakikisha unatumia nambari yako: 0971504436 kwa uhamisho',
+          'Important : Assurez-vous d\'utiliser votre numéro : 0971504436 pour le transfert. Nous vous enverrons votre crypto une fois que nous aurons reçu le paiement.',
+      'sw':
+          'Muhimu: Hakikisha unatumia nambari yako: 0971504436 kwa uhamisho. Tutakutumia cryptocurrency yako mara tu tutakapopokea malipo.',
     },
     'ba5y4wt5': {
       'en': 'I completed the transfer',
