@@ -80,14 +80,14 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'j4tcradb' /* Transaction Details */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Poppins',
-                            fontSize: 22,
+                            fontSize: 24,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -100,7 +100,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Poppins',
-                            fontSize: 12,
+                            fontSize: 14,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -114,7 +114,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Poppins',
-                            fontSize: 12,
+                            fontSize: 14,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
