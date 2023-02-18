@@ -53,7 +53,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
       ),
       child: Column(
         mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           FlutterFlowIconButton(
             borderColor: Colors.transparent,
