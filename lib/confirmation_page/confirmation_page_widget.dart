@@ -113,143 +113,56 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
-                    child: Container(
-                      width: double.infinity,
-                      height: 340,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryColor,
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).secondaryColor,
-                          width: 0.5,
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            'wdiad6h0' /* Transaction Summary */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                         ),
                       ),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 32,
-                                  height: 32,
-                                  clipBehavior: Clip.antiAlias,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Image.asset(
-                                    'assets/images/usdt.png',
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15, 0, 0, 0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      '4vjkx5f0' /* 100 USDT */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .title3
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: Color(0xFF21BF73),
-                                        ),
-                                  ),
-                                ),
-                              ],
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 340,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).secondaryColor,
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(
+                              color:
+                                  FlutterFlowTheme.of(context).secondaryColor,
+                              width: 0.5,
                             ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      'bwnhhc3c' /* Payment method */,
-                                    ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyText1,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 0, 0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'p1ybxwkk' /* MPesa */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Row(
+                          ),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                            child: Column(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'yd16fwfu' /* Mobile money number */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1,
-                                ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'e2evfdqy' /* 0971504436 */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1,
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'z2mx8aje' /* You pay */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1,
-                                ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'wch0p206' /* $100 USD */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1,
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    '5mh7nlpe' /* You receive */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1,
-                                ),
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Container(
-                                      width: 18,
-                                      height: 18,
+                                      width: 32,
+                                      height: 32,
                                       clipBehavior: Clip.antiAlias,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
@@ -260,103 +173,228 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5, 0, 0, 0),
+                                          15, 0, 0, 0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'quiv6rl3' /* 100 USDT */,
+                                          '4vjkx5f0' /* 100 USDT */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .title3
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFF21BF73),
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 20, 0, 0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'bwnhhc3c' /* Payment method */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1,
                                       ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10, 0, 0, 0),
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            'p1ybxwkk' /* MPesa */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'yd16fwfu' /* Mobile money number */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
+                                    ),
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'e2evfdqy' /* 0971504436 */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'z2mx8aje' /* You pay */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
+                                    ),
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'wch0p206' /* $100 USD */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        '5mh7nlpe' /* You receive */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Container(
+                                          width: 18,
+                                          height: 18,
+                                          clipBehavior: Clip.antiAlias,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Image.asset(
+                                            'assets/images/usdt.png',
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5, 0, 0, 0),
+                                          child: Text(
+                                            FFLocalizations.of(context).getText(
+                                              'quiv6rl3' /* 100 USDT */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'xaq1xgef' /* Transaction fees */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
+                                    ),
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'oylxwi7k' /* $0.05 USD */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'z7vzfboh' /* Total */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                    ),
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        'v5x74dkn' /* $100.05 USD */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            fontWeight: FontWeight.w600,
+                                          ),
                                     ),
                                   ],
                                 ),
                               ],
                             ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'xaq1xgef' /* Transaction fees */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1,
-                                ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'oylxwi7k' /* $0.05 USD */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1,
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'z7vzfboh' /* Total */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'v5x74dkn' /* $100.05 USD */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                ),
-                              ],
-                            ),
-                          ],
+                          ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                  FFButtonWidget(
-                    onPressed: () async {
-                      logFirebaseEvent(
-                          'CONFIRMATION_CONFIRM_AND_PAY_BTN_ON_TAP');
-                      logFirebaseEvent('Button_navigate_to');
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                    child: FFButtonWidget(
+                      onPressed: () async {
+                        logFirebaseEvent(
+                            'CONFIRMATION_CONFIRM_AND_PAY_BTN_ON_TAP');
+                        logFirebaseEvent('Button_navigate_to');
 
-                      context.pushNamed(
-                        'success_page',
-                        extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
-                            hasTransition: true,
-                            transitionType: PageTransitionType.rightToLeft,
-                          ),
-                        },
-                      );
-                    },
-                    text: FFLocalizations.of(context).getText(
-                      'm4tvulyy' /* Confirm and pay */,
-                    ),
-                    options: FFButtonOptions(
-                      width: double.infinity,
-                      height: 50,
-                      color: FlutterFlowTheme.of(context).primaryColor,
-                      textStyle:
-                          FlutterFlowTheme.of(context).subtitle2.override(
-                                fontFamily: 'Poppins',
-                                color: Colors.white,
-                              ),
-                      borderSide: BorderSide(
-                        color: Colors.transparent,
-                        width: 1,
+                        context.pushNamed(
+                          'success_page',
+                          extra: <String, dynamic>{
+                            kTransitionInfoKey: TransitionInfo(
+                              hasTransition: true,
+                              transitionType: PageTransitionType.rightToLeft,
+                            ),
+                          },
+                        );
+                      },
+                      text: FFLocalizations.of(context).getText(
+                        'm4tvulyy' /* Confirm and pay */,
                       ),
-                      borderRadius: BorderRadius.circular(8),
+                      options: FFButtonOptions(
+                        width: double.infinity,
+                        height: 50,
+                        color: FlutterFlowTheme.of(context).primaryColor,
+                        textStyle:
+                            FlutterFlowTheme.of(context).subtitle2.override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.white,
+                                ),
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                     ),
                   ),
                 ],
