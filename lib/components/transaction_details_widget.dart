@@ -134,7 +134,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                         width: double.infinity,
                         height: 340,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).secondaryColor,
+                          color: Colors.transparent,
                           borderRadius: BorderRadius.circular(8),
                           border: Border.all(
                             color:
