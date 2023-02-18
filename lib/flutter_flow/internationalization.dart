@@ -321,6 +321,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Confirmation',
       'sw': 'Uthibitisho',
     },
+    'wdiad6h0': {
+      'en': 'Transaction Summary',
+      'fr': 'État de la transaction',
+      'sw': 'Hali ya Muamala',
+    },
     '4vjkx5f0': {
       'en': '100 USDT',
       'fr': '100 USDT',
