@@ -1,3 +1,4 @@
+import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -54,13 +55,19 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
-            child: Icon(
+          FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
               Icons.close,
-              color: Colors.black,
+              color: FlutterFlowTheme.of(context).primaryText,
               size: 24,
             ),
+            onPressed: () {
+              print('IconButton pressed ...');
+            },
           ),
           Expanded(
             child: Padding(
