@@ -177,8 +177,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'mrifrk2y': {
       'en': 'Recipient',
-      'fr': 'Jetons',
-      'sw': 'Ishara',
+      'fr': 'Destinataire',
+      'sw': 'Mpokeaji',
     },
     'hjqrsgeh': {
       'en': 'Wallet address',
@@ -197,8 +197,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'o8a13o07': {
       'en': 'Full name',
-      'fr': 'Nom du destinataire',
-      'sw': 'Jina la mpokeaji',
+      'fr': 'Nom et prénom',
+      'sw': 'Jina kamili',
     },
     '0cn0t6d5': {
       'en': '',
@@ -212,8 +212,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lc09brsg': {
       'en': 'Mobile phone',
-      'fr': 'Nom du destinataire',
-      'sw': 'Jina la mpokeaji',
+      'fr': 'Téléphone mobile',
+      'sw': 'Simu ya rununu',
     },
     's66futd5': {
       'en': '',
@@ -222,8 +222,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3r2nt6g2': {
       'en': '+243992457388',
-      'fr': 'Aimé Tshibangu',
-      'sw': 'Aime Tshibangu',
+      'fr': '+243992457388',
+      'sw': '+243992457388',
     },
     'o2q4hy0a': {
       'en': 'Continue',
