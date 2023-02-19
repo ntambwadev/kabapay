@@ -48,7 +48,7 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
     Provider.of<CurrentTransactionModel>(context, listen: false)
         .selectTxType(TransactionType.SEND);
     context.pushNamed(
-      'tokens_page',
+      'recipient_page',
       extra: <String, dynamic>{
         kTransitionInfoKey: TransitionInfo(
           hasTransition: true,

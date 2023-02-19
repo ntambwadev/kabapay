@@ -173,6 +173,54 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sw': 'Nyumbani',
     },
   },
+  // recipient_page
+  {
+    '9myhatyc': {
+      'en': 'Recipient',
+      'fr': 'Destinataire',
+      'sw': 'Mpokeaji',
+    },
+    'hjqrsgeh': {
+      'en': 'Wallet address',
+      'fr': 'Adresse du portefeuille',
+      'sw': 'Anwani ya Wallet',
+    },
+    '8s1mp27d': {
+      'en': '',
+      'fr': '',
+      'sw': '',
+    },
+    'do55n5r6': {
+      'en': '0x473Adc04036b3c318aD4c18EF6C0',
+      'fr': '0x473Adc04036b3c318aD4c18EF6C0',
+      'sw': '0x473Adc04036b3c318aD4c18EF6C0',
+    },
+    'o8a13o07': {
+      'en': 'Recipient name',
+      'fr': 'Nom du destinataire',
+      'sw': 'Jina la mpokeaji',
+    },
+    '0cn0t6d5': {
+      'en': '',
+      'fr': '',
+      'sw': '',
+    },
+    'z9ovzo1e': {
+      'en': 'Aime Tshibangu',
+      'fr': 'Aimé Tshibangu',
+      'sw': 'Aime Tshibangu',
+    },
+    'o2q4hy0a': {
+      'en': 'Continue',
+      'fr': 'Continuer',
+      'sw': 'Endelea',
+    },
+    'jvdsxbuz': {
+      'en': 'Home',
+      'fr': 'Maison',
+      'sw': 'Nyumbani',
+    },
+  },
   // register_page
   {
     '33vz8nqh': {
@@ -823,8 +871,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'g9cyjw6b': {
       'en': 'Transaction Summary',
-      'fr': 'État de la transaction',
-      'sw': 'Hali ya Muamala',
+      'fr': 'récapitulatif des transactions',
+      'sw': 'Muhtasari wa Muamala',
     },
     '0s3cbmii': {
       'en': 'Payment method',
