@@ -196,7 +196,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sw': '0x473Adc04036b3c318aD4c18EF6C0',
     },
     'o8a13o07': {
-      'en': 'Recipient name',
+      'en': 'Full name',
       'fr': 'Nom du destinataire',
       'sw': 'Jina la mpokeaji',
     },
@@ -207,6 +207,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'z9ovzo1e': {
       'en': 'Aime Tshibangu',
+      'fr': 'Aimé Tshibangu',
+      'sw': 'Aime Tshibangu',
+    },
+    'lc09brsg': {
+      'en': 'Mobile phone',
+      'fr': 'Nom du destinataire',
+      'sw': 'Jina la mpokeaji',
+    },
+    's66futd5': {
+      'en': '',
+      'fr': '',
+      'sw': '',
+    },
+    '3r2nt6g2': {
+      'en': '+243992457388',
       'fr': 'Aimé Tshibangu',
       'sw': 'Aime Tshibangu',
     },

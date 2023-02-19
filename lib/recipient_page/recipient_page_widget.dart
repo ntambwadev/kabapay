@@ -31,6 +31,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
         parameters: {'screen_name': 'recipient_page'});
     _model.textController1 ??= TextEditingController();
     _model.textController2 ??= TextEditingController();
+    _model.textController3 ??= TextEditingController();
   }
 
   @override
@@ -238,10 +239,10 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'o8a13o07' /* Recipient name */,
+                        'o8a13o07' /* Full name */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Poppins',
@@ -325,6 +326,96 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                       keyboardType: TextInputType.name,
                       validator:
                           _model.textController2Validator.asValidator(context),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'lc09brsg' /* Mobile phone */,
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    child: TextFormField(
+                      controller: _model.textController3,
+                      onChanged: (_) => EasyDebounce.debounce(
+                        '_model.textController3',
+                        Duration(milliseconds: 2000),
+                        () => setState(() {}),
+                      ),
+                      autofocus: true,
+                      textCapitalization: TextCapitalization.words,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        hintText: FFLocalizations.of(context).getText(
+                          '3r2nt6g2' /* +243992457388 */,
+                        ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).bodyText2.override(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 10,
+                                  lineHeight: 1.5,
+                                ),
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            width: 0.5,
+                          ),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 0.5,
+                          ),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        errorBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 0.5,
+                          ),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        focusedErrorBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0x00000000),
+                            width: 0.5,
+                          ),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        suffixIcon: _model.textController3!.text.isNotEmpty
+                            ? InkWell(
+                                onTap: () async {
+                                  _model.textController3?.clear();
+                                  setState(() {});
+                                },
+                                child: Icon(
+                                  Icons.clear,
+                                  color: Color(0xFF757575),
+                                  size: 18,
+                                ),
+                              )
+                            : null,
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 14,
+                            lineHeight: 1.5,
+                          ),
+                      maxLines: 2,
+                      minLines: 1,
+                      keyboardType: TextInputType.name,
+                      validator:
+                          _model.textController3Validator.asValidator(context),
                     ),
                   ),
                   Padding(
