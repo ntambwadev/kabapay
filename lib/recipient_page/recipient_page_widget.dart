@@ -90,7 +90,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      '9myhatyc' /* Recipient */,
+                      'mrifrk2y' /* Recipient */,
                     ),
                     style: FlutterFlowTheme.of(context).title1,
                   ),
@@ -128,7 +128,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Poppins',
                             fontSize: 16,
-                            fontWeight: FontWeight.normal,
+                            fontWeight: FontWeight.w500,
                           ),
                     ),
                   ),
@@ -209,6 +209,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                             style:
                                 FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Poppins',
+                                      fontSize: 14,
                                       lineHeight: 1.5,
                                     ),
                             maxLines: 2,
@@ -245,7 +246,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Poppins',
                             fontSize: 16,
-                            fontWeight: FontWeight.normal,
+                            fontWeight: FontWeight.w500,
                           ),
                     ),
                   ),
@@ -316,6 +317,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                       ),
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Poppins',
+                            fontSize: 14,
                             lineHeight: 1.5,
                           ),
                       maxLines: 2,

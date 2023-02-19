@@ -175,10 +175,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // recipient_page
   {
-    '9myhatyc': {
+    'mrifrk2y': {
       'en': 'Recipient',
-      'fr': 'Destinataire',
-      'sw': 'Mpokeaji',
+      'fr': 'Jetons',
+      'sw': 'Ishara',
     },
     'hjqrsgeh': {
       'en': 'Wallet address',
