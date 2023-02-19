@@ -55,14 +55,14 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
     // );
     Flushbar(
       backgroundColor: Colors.black,
-      margin: EdgeInsets.all(8),
+      margin: EdgeInsets.all(10),
       borderRadius: BorderRadius.circular(8),
       titleText: Text(
         FFLocalizations.of(context).getText('pay_toast_title',),
         style: GoogleFonts.getFont(
           'Poppins',
           color: Colors.white,
-          fontSize: 16,
+          fontSize: 14,
         ),
       ),
       messageText: Text(
@@ -70,7 +70,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
         style: GoogleFonts.getFont(
           'Poppins',
           color: Colors.white,
-          fontSize: 14,
+          fontSize: 12,
         ),
       ),
       duration:  Duration(seconds: 2),
