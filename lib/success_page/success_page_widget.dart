@@ -45,7 +45,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
     super.dispose();
   }
 
-  _onAccountNumberCopied(BuildContext context, String accountNumberKey) {
+  _onAccountNumberCopied(BuildContext context, String vaultPaymentAcountNumber) {
     // showTopSnackBar(
     //   Overlay.of(context)!,
     //   CustomSnackBar.info(
@@ -58,19 +58,19 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
       margin: EdgeInsets.all(8),
       borderRadius: BorderRadius.circular(8),
       titleText: Text(
-        FFLocalizations.of(context).getText('success_toast_title',),
+        FFLocalizations.of(context).getText('pay_toast_title',),
+        style: GoogleFonts.getFont(
+          'Poppins',
+          color: Colors.white,
+          fontSize: 16,
+        ),
+      ),
+      messageText: Text(
+        vaultPaymentAcountNumber,
         style: GoogleFonts.getFont(
           'Poppins',
           color: Colors.white,
           fontSize: 14,
-        ),
-      ),
-      messageText: Text(
-        '0971504436',
-        style: GoogleFonts.getFont(
-          'Poppins',
-          color: Colors.white,
-          fontSize: 22,
         ),
       ),
       duration:  Duration(seconds: 2),

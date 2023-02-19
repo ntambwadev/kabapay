@@ -416,10 +416,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Maison',
       'sw': 'Nyumbani',
     },
-    'success_toast_title': {
-      'en': 'Vault mobile money number copied',
-      'fr': 'Numéro de mobile money de Vault copié',
-      'sw': 'Nambari ya pesa ya rununu ya Vault imechapishwa',
+    'pay_toast_title': {
+      'en': 'Copied. Send payment to this number',
+      'fr': 'Copier. Envoyer le paiement à ce numéro',
+      'sw': 'Imekopishwa. Tuma malipo kwa nambari hii',
     },
   },
   // phone_login_page
