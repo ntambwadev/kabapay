@@ -166,7 +166,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                   EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'x73isb0j' /* To complete the transaction, s... */,
+                                  'x73isb0j' /* To pay, send */,
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)

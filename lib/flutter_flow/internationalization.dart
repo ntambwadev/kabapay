@@ -363,9 +363,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sw': 'Muamala wako umeundwa.',
     },
     'x73isb0j': {
-      'en': 'To complete the transaction, send',
-      'fr': 'Pour terminer la transaction, envoyez',
-      'sw': 'Ili kukamilisha muamala, tuma',
+      'en': 'To pay, send',
+      'fr': 'Pour payer, envoyez',
+      'sw': 'Ili kulipa, tuma',
     },
     'lda607x5': {
       'en': '\$97 USD',
