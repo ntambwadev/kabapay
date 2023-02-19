@@ -40,7 +40,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: double.infinity,
+      height: 340,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
       ),

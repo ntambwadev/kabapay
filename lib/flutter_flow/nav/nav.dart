@@ -83,6 +83,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => OnboardingPageWidget(),
             ),
             FFRoute(
+              name: 'recipient_page',
+              path: 'recipientPage',
+              builder: (context, params) => RecipientPageWidget(),
+            ),
+            FFRoute(
               name: 'register_page',
               path: 'registerPage',
               builder: (context, params) => RegisterPageWidget(),
