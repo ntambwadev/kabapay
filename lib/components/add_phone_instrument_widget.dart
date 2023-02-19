@@ -1,6 +1,7 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:kabapay/firestore/firestore_service.dart';
 import 'package:kabapay/models/payment_instrument_model.dart';
+import 'package:kabapay/models/vault_data_model.dart';
 
 import '../components/telecom_selector_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -48,17 +49,11 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
   _onAddPhoneInstrumentTap(BuildContext context,
       CurrentTransactionModel currentTransaction,
       List<PaymentInstrumentModel> paymentInstruments) async {
-    if (_model.textController.text.isEmpty) {
-      showSnackBar(context, '1xq7xq7x');  /* Please enter a valid phone number */
-      return;
-    }
     //create a method to validate phone number
-    if(!isPhoneNumberValid(_model.telecomSelectorModel.selectedNetworkName, _model.textController.text)) {
-      return;
-    }
-    // check if paymentInstruments.accountNumber contains the _model.textController.text
-    if (paymentInstruments.any((element) => element.accountNumber == '+243' + _model.textController.text)) {
-      showSnackBar(context, 'old_phone_error'); /* Phone number is present already in use*/
+    if(!isPhoneNumberValid(
+        _model.telecomSelectorModel.selectedNetworkName,
+        _model.textController.text,
+        paymentInstruments)) {
       return;
     }
 
@@ -378,29 +373,39 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
     );
   }
 
-  isPhoneNumberValid(MomoTelecomOption? networkName, String text) {
+  isPhoneNumberValid(MomoTelecomOption? networkName,
+      String phoneNumberText,
+      List<PaymentInstrumentModel> paymentInstruments) {
+    if (phoneNumberText.isEmpty) {
+      showSnackBar(context, '1xq7xq7x');  /* Please enter a valid phone number */
+      return false;
+    }
+    if (paymentInstruments.any((element) => element.accountNumber == '+243' + phoneNumberText)) {
+      showSnackBar(context, 'old_phone_error'); /* Phone number is present already in use*/
+      return;
+    }
     if (networkName == null) return false;
     switch (networkName) {
       case MomoTelecomOption.AIRTEL:
-        if (!text.startsWith('93') &&
-            !text.startsWith('94') &&
-            !text.startsWith('95') &&
-            !text.startsWith('97') &&
-           ! text.startsWith('99')) {
+        if (!phoneNumberText.startsWith('93') &&
+            !phoneNumberText.startsWith('94') &&
+            !phoneNumberText.startsWith('95') &&
+            !phoneNumberText.startsWith('97') &&
+           ! phoneNumberText.startsWith('99')) {
           showSnackBar(context, 'airtel_error');
           return false;
         }
         break;
       case MomoTelecomOption.ORANGE:
-        if (!text.startsWith('84') &&
-            !text.startsWith('85') &&
-            !text.startsWith('89')) {
+        if (!phoneNumberText.startsWith('84') &&
+            !phoneNumberText.startsWith('85') &&
+            !phoneNumberText.startsWith('89')) {
           showSnackBar(context, 'orange_error');
           return false;
         }
         return ;
       case MomoTelecomOption.VODACOM:
-        if (!text.startsWith('81') && !text.startsWith('82')) {
+        if (!phoneNumberText.startsWith('81') && !phoneNumberText.startsWith('82')) {
           showSnackBar(context, 'vodacom_error');
           return false;
         }

@@ -1,4 +1,5 @@
 import 'package:kabapay/models/current_transaction_model.dart';
+import 'package:kabapay/models/vault_data_model.dart';
 import 'package:provider/provider.dart';
 import '../components/nav_back_button_widget.dart';
 import '../components/transaction_details_widget.dart';
@@ -111,19 +112,7 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        logFirebaseEvent(
-                            'CONFIRMATION_CONFIRM_AND_PAY_BTN_ON_TAP');
-                        logFirebaseEvent('Button_navigate_to');
-
-                        context.pushNamed(
-                          'success_page',
-                          extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
-                              hasTransition: true,
-                              transitionType: PageTransitionType.rightToLeft,
-                            ),
-                          },
-                        );
+                        _onConfirmButtonTapped(context, transactionModel);
                       },
                       text: FFLocalizations.of(context).getText(
                         'm4tvulyy' /* Confirm and pay */,

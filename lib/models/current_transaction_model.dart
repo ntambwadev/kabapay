@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:kabapay/models/payment_instrument_model.dart';
 import 'package:kabapay/models/transaction_model.dart';
 import 'package:kabapay/models/user_model.dart';
+import 'package:kabapay/models/vault_data_model.dart';
 
 import 'BaseTransactionModel.dart';
 import 'token_model.dart';
@@ -35,9 +36,7 @@ class CurrentTransactionModel extends BaseTransactionModel  {
 
   void addAmount(String amountUSD, String tokenAmount) {
     super.amountUSD = amountUSD;
-    String currentPrice = '${token?.tokenMetadata.currentPrice ?? 0}';
     super.amountToken = tokenAmount;
-        // (double.parse(currentPrice) * double.parse(amountUSD)).toString();
     notifyListeners();
   }
 

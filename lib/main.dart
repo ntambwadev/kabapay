@@ -8,6 +8,7 @@ import 'package:kabapay/models/current_transaction_model.dart';
 import 'package:kabapay/models/token_model.dart';
 import 'package:kabapay/models/transaction_model.dart';
 import 'package:kabapay/models/user_model.dart';
+import 'package:kabapay/models/vault_data_model.dart';
 import 'package:provider/provider.dart';
 import 'auth/firebase_user_provider.dart';
 import 'auth/auth_util.dart';
@@ -90,6 +91,15 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        StreamProvider<VaultDataModel?>(
+          initialData: null,
+          create: (context) =>
+              FirestoreService().streamVaultData(),
+          catchError:(context, err) {
+            debugPrint('VAULT DATA MODEL PROVIDER ERROR: ${err.toString()}');
+            return null;
+          },
+        ),
         StreamProvider<UserModel?>(
           initialData: null,
           create: (context) =>
@@ -120,7 +130,7 @@ class _MyAppState extends State<MyApp> {
         StreamProvider<List<PaymentInstrumentModel>>(
           initialData: [],
           create: (context) =>
-              FirestoreService().streamPaymentInstruments(currentUserUid),
+              FirestoreService().streamUserPaymentInstruments(currentUserUid),
           catchError:(context, err) {
             debugPrint('PAYMENT INSTRUMENT PROVIDER ERROR: ${err.toString()}');
             return List.empty();
@@ -182,6 +192,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
     // preloads all items here
+    Provider.of<VaultDataModel?>(context);
     Provider.of<UserModel?>(context);
     Provider.of<List<TokenModel>>(context);
     Provider.of<List<TransactionModel>>(context);

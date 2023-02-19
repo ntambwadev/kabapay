@@ -196,30 +196,30 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        FFLocalizations.of(context).getText(
-                          '9dx3sx8g' /* Transaction fees */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                            ),
-                      ),
-                      Text(
-                        FFLocalizations.of(context).getText(
-                          '5qtg3guc' /* $0.05 USD */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w500,
-                            ),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   mainAxisSize: MainAxisSize.max,
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     Text(
+                  //       FFLocalizations.of(context).getText(
+                  //         '9dx3sx8g' /* Transaction fees */,
+                  //       ),
+                  //       style: FlutterFlowTheme.of(context).bodyText1.override(
+                  //             fontFamily: 'Poppins',
+                  //             color: FlutterFlowTheme.of(context).secondaryText,
+                  //           ),
+                  //     ),
+                  //     Text(
+                  //       FFLocalizations.of(context).getText(
+                  //         '5qtg3guc' /* $0.05 USD */,
+                  //       ),
+                  //       style: FlutterFlowTheme.of(context).bodyText1.override(
+                  //             fontFamily: 'Poppins',
+                  //             fontWeight: FontWeight.w500,
+                  //           ),
+                  //     ),
+                  //   ],
+                  // ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

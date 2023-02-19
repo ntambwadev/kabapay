@@ -7,6 +7,7 @@ import 'package:kabapay/models/transaction_model.dart';
 import 'dart:async';
 
 import 'package:kabapay/models/user_model.dart';
+import 'package:kabapay/models/vault_data_model.dart';
 import '../auth/auth_util.dart';
 import '../models/payment_instrument_model.dart';
 
@@ -79,7 +80,7 @@ class FirestoreService {
   }
 
   /// Query the user payment instruments subcollection
-  Stream<List<PaymentInstrumentModel>> streamPaymentInstruments(String? userId) {
+  Stream<List<PaymentInstrumentModel>> streamUserPaymentInstruments(String? userId) {
     if (userId == null || userId.isEmpty) {
       print('PAYMENT INSTRUMENT QUERY ERROR EMPTY userId');
       return Stream.empty();
@@ -93,6 +94,20 @@ class FirestoreService {
           list.docs.map((doc) => PaymentInstrumentModel.fromFirestore(doc)).toList());
     } catch (error) {
       print('PAYMENT INSTRUMENT QUERY ERROR: $error');
+      return Stream.empty();
+    }
+  }
+
+  /// Query the user payment instruments subcollection
+  Stream<VaultDataModel> streamVaultData() {
+    try {
+      return _firestoreDb
+          .collection('vault_data')
+          .doc('SOe4NYfPUA9YWijo6uJT')
+          .snapshots()
+          .map((snap) => VaultDataModel.fromMap(snap.data()));
+    } catch (error) {
+      print('VAULT DATA QUERY ERROR: $error');
       return Stream.empty();
     }
   }

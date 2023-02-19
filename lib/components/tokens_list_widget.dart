@@ -12,6 +12,7 @@ import '../flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../models/vault_data_model.dart';
 import 'tokens_list_model.dart';
 export 'tokens_list_model.dart';
 import '../flutter_flow/flutter_flow_model.dart';

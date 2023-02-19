@@ -390,6 +390,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sw':
           'Muhimu: Hakikisha unatumia nambari yako: 0971504436 kwa uhamisho. Tutakutumia cryptocurrency yako mara tu tutakapopokea malipo.',
     },
+    'vsl23of5': {
+      'en':
+      'Important: Make sure to use your',
+      'fr':
+      'Important : Assurez-vous d\'utiliser votre numéro',
+      'sw':
+      'Muhimu: Hakikisha unatumia nambari',
+    },
+    'vsl23of6': {
+      'en':
+      'number for the transfer. We\'ll send your crypto once we receive the payment. ',
+      'fr':
+      'pour le transfert. Nous vous enverrons votre crypto une fois que nous aurons reçu le paiement.',
+      'sw':
+      'yako kwa uhamisho. Tutakutumia cryptocurrency yako mara tu tutakapopokea malipo.',
+    },
     'ba5y4wt5': {
       'en': 'Done',
       'fr': 'Fait',

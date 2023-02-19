@@ -8,6 +8,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../models/vault_data_model.dart';
 import 'success_page_model.dart';
 export 'success_page_model.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
@@ -76,9 +77,19 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
     )..show(context);
   }
 
+  _getPayRecipientAccountNumber(CurrentTransactionModel currentTransaction, VaultDataModel? vaultData) {
+    String userPaymentInstitutionName = currentTransaction.paymentInstrument?.organizationName.toLowerCase() ?? '';
+    String vaultPaymentAcountNumber = vaultData?.paymentInstruments
+        .firstWhere((element) => element.organizationName.toLowerCase()
+        == userPaymentInstitutionName).accountNumber ?? '';
+    return vaultPaymentAcountNumber;
+  }
+
   @override
   Widget build(BuildContext context) {
     CurrentTransactionModel currentTransaction = Provider.of<CurrentTransactionModel>(context);
+    VaultDataModel? vaultData = Provider.of<VaultDataModel?>(context);
+    String vaultPaymentAcountNumber = _getPayRecipientAccountNumber(currentTransaction, vaultData);
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -209,11 +220,9 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                   logFirebaseEvent(
                                       'SUCCESS_PAGE_PAGE_0971504436_BTN_ON_TAP');
                                   logFirebaseEvent('Button_bottom_sheet');
-                                  _onAccountNumberCopied(context, '0971504436');
+                                  _onAccountNumberCopied(context, vaultPaymentAcountNumber);
                                 },
-                                text: FFLocalizations.of(context).getText(
-                                  '6p8d0o9w' /* 0971504436 */,
-                                ),
+                                text: vaultPaymentAcountNumber,
                                 icon: Icon(
                                   Icons.content_copy_outlined,
                                   size: 20,
@@ -241,9 +250,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 20, 0, 10),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'vsl23of4' /* Important: Make sure to use yo... */,
-                                ),
+                                '${FFLocalizations.of(context).getText('vsl23of5')} ${currentTransaction.paymentInstrument?.accountNumber} ${currentTransaction.paymentInstrument?.organizationName} ${FFLocalizations.of(context).getText('vsl23of6')}',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .subtitle2
