@@ -27,6 +27,7 @@ class _TokensListWidgetState extends State<TokensListWidget> {
   _onTokenSelected(BuildContext context, TokenModel tokenItem, UserModel? userModel) async {
     logFirebaseEvent('TOKENS_LIST_Container_ywi18osh_ON_TAP');
     logFirebaseEvent('token_item_navigate_to');
+    print('TOKEN PRICE: ${tokenItem.tokenMetadata.currentPrice}');
     Provider.of<CurrentTransactionModel>(context, listen: false)
         .selectToken(tokenItem, userModel);
     context.pushNamed(

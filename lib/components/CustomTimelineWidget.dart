@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
 
+import '../flutter_flow/flutter_flow_theme.dart';
+
 class Event {
   final String title;
   final bool isCompleted;
@@ -17,7 +19,7 @@ class CustomTimelineWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 170,
+      height: 180,
       child: FixedTimeline.tileBuilder(
         theme: TimelineThemeData(
           nodePosition: 0,
@@ -34,9 +36,11 @@ class CustomTimelineWidget extends StatelessWidget {
             padding: const EdgeInsets.all(12.0),
             child: Text(
               events[index].title,
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 14.0,
+              style: FlutterFlowTheme.of(context).bodyText1.override(
+                fontFamily: 'Poppins',
+                color: FlutterFlowTheme.of(context).secondaryText,
+                // fontWeight: FontWeight.w500,
+                fontSize: 13
               ),
             ),
           ),

@@ -41,8 +41,8 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final amountTokenText = '${widget.transaction.token.amountToken} ${widget.transaction.token.symbol.toUpperCase()}';
-    final amountUSDText = '\$${widget.transaction.token.amountUSD}';
+    final amountTokenText = '${widget.transaction.token?.amountToken} ${widget.transaction.token?.symbol.toUpperCase()}';
+    final amountUSDText = '\$${widget.transaction.token?.amountUSD}';
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 10),
       child: InkWell(
@@ -60,11 +60,10 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                 child: Container(
                   height: MediaQuery.of(context).size.height * 0.75,
                   child: TransactionDetailsWidget(transactionModel: widget.transaction),
-
                 ),
               );
             },
-          ).then((value) => setState(() {}));
+          );
         },
         child: Container(
           width: double.infinity,
@@ -90,7 +89,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  widget.transaction.createdAt,
+                  widget.transaction.createdAt ?? '',
                   style: FlutterFlowTheme.of(context).bodyText2.override(
                         fontFamily: 'Poppins',
                         color: FlutterFlowTheme.of(context).secondaryText,
@@ -111,7 +110,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                           shape: BoxShape.circle,
                         ),
                         child: Image.network(
-                          widget.transaction.token.tokenMetadata.image
+                          widget.transaction.token?.tokenMetadata.image ?? ''
                         ),
                       ),
                       Padding(
@@ -122,8 +121,8 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              '${FFLocalizations.of(context).getText(widget.transaction.type.descriptionKey)} '
-                                  '${widget.transaction.token.tokenMetadata.name}',
+                              '${FFLocalizations.of(context).getText(widget.transaction.type?.descriptionKey ?? '')} '
+                                  '${widget.transaction.token?.tokenMetadata.name}',
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
@@ -134,12 +133,12 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                             ),
                             Text(
                               FFLocalizations.of(context).getText(
-                                widget.transaction.status.descriptionKey,
+                                widget.transaction.status?.descriptionKey ?? '',
                               ),
                               style:
                                   FlutterFlowTheme.of(context).bodyText2.override(
                                         fontFamily: 'Poppins',
-                                        color: widget.transaction.status.color,
+                                        color: widget.transaction.status?.color,
                                         fontSize: 10,
                                       ),
                             ),

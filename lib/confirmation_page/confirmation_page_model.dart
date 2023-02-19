@@ -1,3 +1,4 @@
+import '../components/transaction_summary_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -9,11 +10,21 @@ import '../flutter_flow/flutter_flow_model.dart';
 import '../flutter_flow/flutter_flow_model.dart';
 
 class ConfirmationPageModel extends FlutterFlowModel {
+  ///  State fields for stateful widgets in this page.
+
+  // Model for transaction_summary component.
+  late TransactionSummaryModel transactionSummaryModel;
+
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    transactionSummaryModel =
+        createModel(context, () => TransactionSummaryModel());
+  }
 
-  void dispose() {}
+  void dispose() {
+    transactionSummaryModel.dispose();
+  }
 
   /// Additional helper methods are added here.
 

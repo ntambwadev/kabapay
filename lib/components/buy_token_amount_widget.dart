@@ -70,6 +70,8 @@ class BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
       } else {
         amount = amount + value;
       }
+
+      print('tokenPrice: $tokenPrice');
       tokenAmount = (double.parse(amount) / tokenPrice).toStringAsFixed(decimalNumber);
     });
     Provider.of<CurrentTransactionModel>(context, listen: false)

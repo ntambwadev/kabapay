@@ -1,41 +1,34 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:kabapay/models/BaseTransactionModel.dart';
 import 'package:kabapay/models/payment_instrument_model.dart';
 
 import '../flutter_flow/flutter_flow_util.dart';
 import 'token_model.dart';
 
-class TransactionModel {
-  final String id;
-  final String userId;
-  final String amountPaid;
-  final String tokenAmount;
-  final TransactionType type;
-  final TokenModel token;
-  final String userAddress;
-  final String recipientAddress;
-  final PaymentInstrumentModel paymentInstrument;
-  final String createdAt;
-  final TransactionStatus status;
+class TransactionModel extends BaseTransactionModel {
+  final String? createdAt;
+  final TransactionStatus? status;
 
-  TransactionModel({required this.id, required this.userId,
-    required this.amountPaid, required this.tokenAmount,
-    required this.type, required this.token, required this.userAddress,
-    required this.recipientAddress, required this.paymentInstrument, required this.createdAt,
-    required this.status});
+  TransactionModel({String? id, String? userId, String? amountUSD, String? amountToken,
+    TransactionType? type, TokenModel? token, String? userAddress, String? recipientAddress,
+    PaymentInstrumentModel? paymentInstrument, this.createdAt, this.status,})
+      : super(id: id, userId: userId, amountUSD: amountUSD, amountToken: amountToken,
+      type: type, token: token, userAddress: userAddress, recipientAddress: recipientAddress,
+      paymentInstrument: paymentInstrument,);
 
   factory TransactionModel.fromFirestore(DocumentSnapshot doc) {
     Map data = doc.data() as Map;
     return TransactionModel(
-      id: data['id'] ?? '',
-      userId: data['userId'] ?? '',
-      amountPaid: data['amountPaid'] ?? '',
-      tokenAmount: data['tokenAmount'] ?? '',
+      id: data['id'] as String?,
+      userId: data['userId'] as String?,
+      amountUSD: data['amountPaid'] as String?,
+      amountToken: data['tokenAmount'] as String?,
       type: TransactionType.fromValue(data['type'] ?? 'buy'),
       token: TokenModel.fromMap(data['token']),
-      userAddress: data['userAddress'] ?? '',
-      recipientAddress: data['recipientAddress'] ?? '',
+      userAddress: data['userAddress'] as String?,
+      recipientAddress: data['recipientAddress'] as String?,
       paymentInstrument: PaymentInstrumentModel.fromMap(data['paymentInstrument'] as Map<String, dynamic>),
       createdAt: DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.parse(data['createdAt'])),
       status: TransactionStatus.fromValue(data['status'] ?? ''),
