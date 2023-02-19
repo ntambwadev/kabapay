@@ -160,7 +160,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                                   .bodyText2
                                   .override(
                                     fontFamily: 'Poppins',
-                                    fontSize: 10,
+                                    fontSize: 12,
                                     lineHeight: 1.5,
                                   ),
                               enabledBorder: UnderlineInputBorder(
@@ -169,28 +169,28 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                                       .secondaryText,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(0),
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(0),
                               ),
                               errorBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(0),
                               ),
                               focusedErrorBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(0),
                               ),
                               suffixIcon:
                                   _model.textController1!.text.isNotEmpty
@@ -215,6 +215,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                                     ),
                             maxLines: 2,
                             minLines: 1,
+                            keyboardType: TextInputType.streetAddress,
                             validator: _model.textController1Validator
                                 .asValidator(context),
                           ),
@@ -271,7 +272,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                         hintStyle:
                             FlutterFlowTheme.of(context).bodyText2.override(
                                   fontFamily: 'Poppins',
-                                  fontSize: 10,
+                                  fontSize: 12,
                                   lineHeight: 1.5,
                                 ),
                         enabledBorder: UnderlineInputBorder(
@@ -279,28 +280,28 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                             color: FlutterFlowTheme.of(context).secondaryText,
                             width: 0.5,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(0),
                         ),
                         focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
                             width: 0.5,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(0),
                         ),
                         errorBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
                             width: 0.5,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(0),
                         ),
                         focusedErrorBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
                             width: 0.5,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(0),
                         ),
                         suffixIcon: _model.textController2!.text.isNotEmpty
                             ? InkWell(
@@ -361,7 +362,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                         hintStyle:
                             FlutterFlowTheme.of(context).bodyText2.override(
                                   fontFamily: 'Poppins',
-                                  fontSize: 10,
+                                  fontSize: 12,
                                   lineHeight: 1.5,
                                 ),
                         enabledBorder: UnderlineInputBorder(
@@ -369,28 +370,28 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                             color: FlutterFlowTheme.of(context).secondaryText,
                             width: 0.5,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(0),
                         ),
                         focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
                             width: 0.5,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(0),
                         ),
                         errorBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
                             width: 0.5,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(0),
                         ),
                         focusedErrorBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
                             width: 0.5,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(0),
                         ),
                         suffixIcon: _model.textController3!.text.isNotEmpty
                             ? InkWell(
