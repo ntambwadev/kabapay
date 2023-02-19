@@ -9,6 +9,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../models/transaction_model.dart';
 import 'buy_token_next_button_model.dart';
 export 'buy_token_next_button_model.dart';
 
@@ -35,15 +36,33 @@ class _BuyTokenNextButtonWidgetState extends State<BuyTokenNextButtonWidget> {
       )..show(context);
       return;
     }
-    context.pushNamed(
-      'payment_methods_page',
-      extra: <String, dynamic>{
-        kTransitionInfoKey: TransitionInfo(
-          hasTransition: true,
-          transitionType: PageTransitionType.rightToLeft,
-        ),
-      },
-    );
+
+    switch (currentTransaction.type) {
+      case TransactionType.BUY:
+        context.pushNamed(
+          'payment_methods_page',
+          extra: <String, dynamic>{
+            kTransitionInfoKey: TransitionInfo(
+              hasTransition: true,
+              transitionType: PageTransitionType.rightToLeft,
+            ),
+          },
+        );
+        break;
+      case TransactionType.SEND:
+        context.pushNamed(
+          'confirmation_page',
+          extra: <String, dynamic>{
+            kTransitionInfoKey: TransitionInfo(
+              hasTransition: true,
+              transitionType: PageTransitionType.rightToLeft,
+            ),
+          },
+        );
+        break;
+      default:
+        break;
+    }
   }
 
   late BuyTokenNextButtonModel _model;
