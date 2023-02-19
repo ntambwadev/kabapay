@@ -222,7 +222,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 5, 5, 0),
                         child: InkWell(
                           onTap: () async {
                             logFirebaseEvent(
