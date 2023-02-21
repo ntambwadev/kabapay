@@ -8,6 +8,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../models/transaction_model.dart';
 import '../models/vault_data_model.dart';
 import 'success_page_model.dart';
 export 'success_page_model.dart';
@@ -89,7 +90,10 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
   Widget build(BuildContext context) {
     CurrentTransactionModel currentTransaction = Provider.of<CurrentTransactionModel>(context);
     VaultDataModel? vaultData = Provider.of<VaultDataModel?>(context);
-    String vaultPaymentAcountNumber = _getPayRecipientAccountNumber(currentTransaction, vaultData);
+    String vaultPaymentAcountNumber = '';
+    if (currentTransaction.type == TransactionType.BUY) {
+      vaultPaymentAcountNumber = _getPayRecipientAccountNumber(currentTransaction, vaultData);
+    }
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -158,7 +162,8 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                           height: 200,
                           fit: BoxFit.cover,
                         ),
-                        Column(
+                        if (currentTransaction.type == TransactionType.BUY)
+                          Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(

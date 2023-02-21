@@ -7,8 +7,10 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../models/current_transaction_model.dart';
 import 'recipient_page_model.dart';
 export 'recipient_page_model.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 class RecipientPageWidget extends StatefulWidget {
   const RecipientPageWidget({Key? key}) : super(key: key);
@@ -42,6 +44,37 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
     _unfocusNode.dispose();
     super.dispose();
   }
+
+  _onSendButtonTapped(BuildContext context) async {
+    logFirebaseEvent(
+        'RECIPIENT_PAGE_PAGE_CONTINUE_BTN_ON_TAP');
+    logFirebaseEvent('Button_navigate_to');
+
+    Provider.of<CurrentTransactionModel>(context, listen: false)
+        .addRecipientAddress(_model.textController1.text);
+
+    context.pushNamed(
+      'tokens_page',
+      extra: <String, dynamic>{
+        kTransitionInfoKey: TransitionInfo(
+          hasTransition: true,
+          transitionType: PageTransitionType.rightToLeft,
+        ),
+      },);
+    }
+
+    _onScanQRCode(BuildContext context) async {
+      logFirebaseEvent(
+          'RECIPIENT_PAGE_PAGE_Icon_l7r27iv6_ON_TAP');
+      logFirebaseEvent('Icon_close_dialog,_drawer,_etc');
+      _model.textController1.text =
+      await FlutterBarcodeScanner.scanBarcode(
+        '#C62828', // scanning line color
+        'Cancel', // cancel button text
+        true, // whether to show the flash icon
+        ScanMode.QR,
+      );
+    }
 
   @override
   Widget build(BuildContext context) {
@@ -188,10 +221,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(10, 5, 5, 0),
                           child: InkWell(
                             onTap: () async {
-                              logFirebaseEvent(
-                                  'RECIPIENT_PAGE_PAGE_Icon_l7r27iv6_ON_TAP');
-                              logFirebaseEvent('Icon_close_dialog,_drawer,_etc');
-                              Navigator.pop(context);
+                              _onScanQRCode(context);
                             },
                             child: Icon(
                               Icons.qr_code,
@@ -386,19 +416,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          logFirebaseEvent(
-                              'RECIPIENT_PAGE_PAGE_CONTINUE_BTN_ON_TAP');
-                          logFirebaseEvent('Button_navigate_to');
-
-                          context.pushNamed(
-                            'tokens_page',
-                            extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.rightToLeft,
-                              ),
-                            },
-                          );
+                          _onSendButtonTapped(context);
                         },
                         text: FFLocalizations.of(context).getText(
                           'o2q4hy0a' /* Continue */,

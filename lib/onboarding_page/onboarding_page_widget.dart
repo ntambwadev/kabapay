@@ -86,7 +86,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                   Image.asset(
                                     'assets/images/34rbv_6.png',
                                     width: 300,
-                                    height: 300,
+                                    height: 270,
                                     fit: BoxFit.cover,
                                   ),
                                   Padding(
@@ -136,7 +136,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                   Image.asset(
                                     'assets/images/x5rbw_5.png',
                                     width: 300,
-                                    height: 300,
+                                    height: 270,
                                     fit: BoxFit.cover,
                                   ),
                                   Padding(
@@ -186,7 +186,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                   Image.asset(
                                     'assets/images/ml88i_4.png',
                                     width: 300,
-                                    height: 300,
+                                    height: 270,
                                     fit: BoxFit.cover,
                                   ),
                                   Padding(

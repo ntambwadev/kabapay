@@ -6,15 +6,16 @@ import 'package:kabapay/models/user_model.dart';
 import 'package:kabapay/models/vault_data_model.dart';
 
 import 'BaseTransactionModel.dart';
+import 'EventData.dart';
 import 'token_model.dart';
 
 class CurrentTransactionModel extends BaseTransactionModel  {
   CurrentTransactionModel({String? id, String? userId, String? amountUSD, String? amountToken,
     TransactionType? type, TokenModel? token, String? userAddress, String? recipientAddress,
-    PaymentInstrumentModel? paymentInstrument,})
+    PaymentInstrumentModel? paymentInstrument, List<EventData>? events})
       : super(id: id, userId: userId, amountUSD: amountUSD, amountToken: amountToken,
       type: type, token: token, userAddress: userAddress, recipientAddress: recipientAddress,
-      paymentInstrument: paymentInstrument,);
+      paymentInstrument: paymentInstrument, events: events);
 
   void addUserId(String userId) {
     super.userId = userId;

@@ -131,7 +131,7 @@ class _TokenItemWidgetState extends State<TokenItemWidget> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
-                        '${widget.token.amountToken} ${widget.token.symbol.toUpperCase()}',
+                        '\$${double.parse(widget.token.amountUSD).toStringAsFixed(2)}',
                         style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Poppins',
                             fontSize: 14,
@@ -139,7 +139,7 @@ class _TokenItemWidgetState extends State<TokenItemWidget> {
                         ),
                       ),
                       Text(
-                        '\$${widget.token.amountUSD}',
+                        '${widget.token.amountToken} ${widget.token.symbol.toUpperCase()}',
                         style: FlutterFlowTheme.of(context).bodyText2.override(
                               fontFamily: 'Poppins',
                               fontSize: 10,

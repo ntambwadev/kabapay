@@ -48,7 +48,7 @@ class _HomePageTabWidgetState extends State<HomePageTabWidget> {
         color: FlutterFlowTheme.of(context).backgroundcolor,
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
+        padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
         child: DefaultTabController(
           length: 2,
           initialIndex: 0,

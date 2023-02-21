@@ -1,3 +1,4 @@
+import 'package:kabapay/firestore/firebase_api.dart';
 import 'package:kabapay/firestore/firestore_service.dart';
 import 'package:kabapay/models/current_transaction_model.dart';
 import 'package:kabapay/models/token_model.dart';
@@ -87,6 +88,7 @@ class _TokensListWidgetState extends State<TokensListWidget> {
           return RefreshIndicator(
             onRefresh: () async {
               //TODO refresh tokens list with new values
+              FirebaseApi.updateUserTokenBalances(userModel);
             },
             child: ListView.builder(
               padding: EdgeInsets.zero,

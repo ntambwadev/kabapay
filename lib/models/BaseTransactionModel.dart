@@ -3,6 +3,8 @@ import 'package:kabapay/models/payment_instrument_model.dart';
 import 'package:kabapay/models/token_model.dart';
 import 'package:kabapay/models/transaction_model.dart';
 
+import 'EventData.dart';
+
 class BaseTransactionModel extends ChangeNotifier {
   String? id;
   String? userId;
@@ -13,9 +15,10 @@ class BaseTransactionModel extends ChangeNotifier {
   String? userAddress;
   String? recipientAddress;
   PaymentInstrumentModel? paymentInstrument;
+  List<EventData>? events;
 
   BaseTransactionModel({required this.id, required this.userId, required this.amountUSD,
     required this.amountToken, required this.type, required this.token,
     required this.userAddress, required this.recipientAddress,
-    required this.paymentInstrument,});
+    required this.paymentInstrument, required this.events});
 }

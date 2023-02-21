@@ -19,10 +19,10 @@ class TokenMetadataModel {
       id: data['id'] ?? '',
       name: data['name'] ?? '',
       chain: data['chain'] ?? 'BSC',
-      currentPrice: data['currentPrice'] ?? '',
+      currentPrice: data['currentPrice'].toDouble(),
       symbol: data['symbol'] ?? '',
       image: data['image'] ?? '',
-      priceChangePercent24h: data['priceChangePercent24h'] ?? '',
+      priceChangePercent24h: data['priceChangePercent24h'].toDouble(),
     );
   }
 

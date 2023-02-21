@@ -37,6 +37,7 @@ class _HomePageBalanceWidgetState extends State<HomePageBalanceWidget> {
 
   @override
   Widget build(BuildContext context) {
+    double total = Provider.of<double?>(context) ?? 0.0;
     return Container(
       width: double.infinity,
       height: 100,
@@ -59,9 +60,7 @@ class _HomePageBalanceWidgetState extends State<HomePageBalanceWidget> {
                 ),
           ),
           Text(
-            FFLocalizations.of(context).getText(
-              '82j6thjy' /* $0 */,
-            ),
+            '\$${total.toStringAsFixed(2)}',
             maxLines: 1,
             style: FlutterFlowTheme.of(context).title1.override(
                   fontFamily: 'Poppins',

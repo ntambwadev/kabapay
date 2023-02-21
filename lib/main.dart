@@ -109,6 +109,15 @@ class _MyAppState extends State<MyApp> {
             return null;
           },
         ),
+        StreamProvider<double?>(
+          initialData: null,
+          create: (context) =>
+              FirestoreService().streamCurrentUserTotal(currentUserUid),
+          catchError:(context, err) {
+            debugPrint('USER DATA TOTAL PROVIDER ERROR: ${err.toString()}');
+            return null;
+          },
+        ),
         StreamProvider<List<TransactionModel>>(
           initialData: [],
           create: (context) =>
@@ -194,6 +203,7 @@ class _NavBarPageState extends State<NavBarPage> {
     // preloads all items here
     Provider.of<VaultDataModel?>(context);
     Provider.of<UserModel?>(context);
+    Provider.of<double?>(context);
     Provider.of<List<TokenModel>>(context);
     Provider.of<List<TransactionModel>>(context);
     Provider.of<List<PaymentInstrumentModel>>(context);

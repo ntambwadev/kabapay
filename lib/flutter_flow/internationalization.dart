@@ -433,7 +433,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'lda607x5': {
       'en': '\$97 USD',
       'fr': '97 USD',
-      'sw': '\$97 USD',
+      'sw': '\$97 USD'  ,
     },
     '4uxsg6tk': {
       'en': 'to',
@@ -790,8 +790,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'nvsz7pmg': {
       'en': 'Balance',
-      'fr': 'Équilibre',
-      'sw': 'Mizani',
+      'fr': 'Balance',
+      'sw': 'Balance',
     },
     '82j6thjy': {
       'en': '\$0',
@@ -873,12 +873,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'j4tcradb': {
       'en': 'Transaction Details',
-      'fr': 'détails de la transaction',
+      'fr': 'Détails de la transaction',
       'sw': 'Maelezo ya Muamala',
     },
     'lw2h6xsc': {
       'en': 'Transaction Status',
-      'fr': 'État de la transaction',
+      'fr': 'Status de la transaction',
       'sw': 'Hali ya Muamala',
     },
   },
@@ -886,7 +886,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'g9cyjw6b': {
       'en': 'Transaction Summary',
-      'fr': 'récapitulatif des transactions',
+      'fr': 'Sommaire de la transaction',
       'sw': 'Muhtasari wa Muamala',
     },
     '0s3cbmii': {
@@ -901,7 +901,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '1vdr04oj': {
       'en': 'Mobile money number',
-      'fr': 'Numéro d\'argent mobile',
+      'fr': 'Numéro mobile money',
       'sw': 'Nambari ya pesa ya rununu',
     },
     '9j45tc8b': {
@@ -948,6 +948,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '\$100.05 USD',
       'fr': '100,05 USD',
       'sw': '\$100.05 USD',
+    },
+    'recipient': {
+      'en': 'Recipient wallet',
+      'fr': 'Le wallet du recipient',
+      'sw': 'Hifadhi ya mteja',
+    },
+    'yousend': {
+      'en': 'You send',
+      'fr': 'Vous envoye',
+      'sw': 'Unatuma',
+    },
+    'theyreceive': {
+      'en': 'They receive',
+      'fr': 'Il recoit',
+      'sw': 'Wanaopokea',
     },
   },
 

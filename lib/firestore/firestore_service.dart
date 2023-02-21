@@ -40,6 +40,24 @@ class FirestoreService {
     }
   }
 
+  Stream<double> streamCurrentUserTotal(String? userId) {
+    if (userId == null || userId.isEmpty) {
+      print('CURRENT USER TOTAL ERROR EMPTY userId');
+      return Stream.empty();
+    }
+    try {
+      debugPrint('CURRENT USER ID: $userId');
+      return _firestoreDb
+          .collection('users_data')
+          .doc(userId)
+          .snapshots()
+          .map((snap) => double.parse(snap.data()?['total'] ?? ''));
+    } catch (error) {
+      print('CURRENT USER TOTAL QUERY ERROR: $error');
+      return Stream.empty();
+    }
+  }
+
   /// Query the transaction collection
   Stream<List<TransactionModel>> streamTransactions(String? userId) {
     if (userId == null || userId.isEmpty) {
@@ -128,7 +146,7 @@ class FirestoreService {
 
 
   /// Write data
-  Future<DocumentReference<Map<String, dynamic>>> createTransaction(CurrentTransactionModel currentTransactionModel) {
+  Future<DocumentReference<Map<String, dynamic>>>   createTransaction(CurrentTransactionModel currentTransactionModel) {
     var txObject = {
       "userId" : currentUserUid.toString(),
       'type': currentTransactionModel.type?.descriptionKey,
@@ -136,6 +154,7 @@ class FirestoreService {
       'amountPaid': currentTransactionModel.amountUSD,
       'tokenAmount': currentTransactionModel.amountToken,
       'recipientAddress': currentTransactionModel.recipientAddress,
+      'userAddress': currentTransactionModel.userAddress,
       'paymentInstrument': currentTransactionModel.paymentInstrument?.toJson()
     };
     if (currentTransactionModel.type == TransactionType.INTERAC_CASH_IN ||

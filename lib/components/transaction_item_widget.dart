@@ -41,8 +41,9 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final amountTokenText = '${widget.transaction.token?.amountToken} ${widget.transaction.token?.symbol.toUpperCase()}';
-    final amountUSDText = '\$${widget.transaction.token?.amountUSD}';
+    debugPrint('TransactionModel.events: ${widget.transaction.events}');
+    final amountTokenText = '${widget.transaction.amountToken} ${widget.transaction.token?.symbol.toUpperCase()}';
+    final amountUSDText = '\$${widget.transaction.amountUSD}';
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 10),
       child: InkWell(

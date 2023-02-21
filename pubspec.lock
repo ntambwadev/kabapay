@@ -377,6 +377,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  flutter_barcode_scanner:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "603ea693b43575dafa4c6672e6232f5a99e261ef"
+      url: "https://github.com/FlutterFlow/flutter_barcode_scanner"
+    source: git
+    version: "2.0.0"
   flutter_blurhash:
     dependency: transitive
     description:
@@ -396,6 +405,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_plugin_android_lifecycle:
+    dependency: transitive
+    description:
+      name: flutter_plugin_android_lifecycle
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.7"
   flutter_test:
     dependency: "direct dev"
     description: flutter

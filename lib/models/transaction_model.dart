@@ -5,6 +5,7 @@ import 'package:kabapay/models/BaseTransactionModel.dart';
 import 'package:kabapay/models/payment_instrument_model.dart';
 
 import '../flutter_flow/flutter_flow_util.dart';
+import 'EventData.dart';
 import 'token_model.dart';
 
 class TransactionModel extends BaseTransactionModel {
@@ -13,13 +14,17 @@ class TransactionModel extends BaseTransactionModel {
 
   TransactionModel({String? id, String? userId, String? amountUSD, String? amountToken,
     TransactionType? type, TokenModel? token, String? userAddress, String? recipientAddress,
-    PaymentInstrumentModel? paymentInstrument, this.createdAt, this.status,})
+    PaymentInstrumentModel? paymentInstrument, List<EventData>? events, this.createdAt, this.status,})
       : super(id: id, userId: userId, amountUSD: amountUSD, amountToken: amountToken,
       type: type, token: token, userAddress: userAddress, recipientAddress: recipientAddress,
-      paymentInstrument: paymentInstrument,);
+      paymentInstrument: paymentInstrument, events: events);
 
   factory TransactionModel.fromFirestore(DocumentSnapshot doc) {
     Map data = doc.data() as Map;
+    debugPrint('data: ${data}');
+    List<EventData> events = List.empty(growable: true);
+    data["events"].entries.forEach(
+            (entry) => events.add(EventData.fromMap(entry.value)));
     return TransactionModel(
       id: data['id'] as String?,
       userId: data['userId'] as String?,
@@ -29,19 +34,21 @@ class TransactionModel extends BaseTransactionModel {
       token: TokenModel.fromMap(data['token']),
       userAddress: data['userAddress'] as String?,
       recipientAddress: data['recipientAddress'] as String?,
-      paymentInstrument: PaymentInstrumentModel.fromMap(data['paymentInstrument'] as Map<String, dynamic>),
+      paymentInstrument: data['paymentInstrument'] != null
+          ? PaymentInstrumentModel.fromMap(data['paymentInstrument'] as Map<String, dynamic>) : null,
       createdAt: DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.parse(data['createdAt'])),
       status: TransactionStatus.fromValue(data['status'] ?? ''),
+      events: events,
     );
   }
 }
 
 enum TransactionStatus {
-  WAITING_FOR_USER_PAYMENT('WAITING_FOR_USER_PAYMENT'),
-  RECEIVED_USER_PAYMENT('RECEIVED_USER_PAYMENT'),
-  CRYPTO_TRANSFER_PROCESSING('CRYPTO_TRANSFER_PROCESSING'),
-  CRYPTO_TRANSFER_COMPLETED('CRYPTO_TRANSFER_COMPLETED'),
-  CRYPTO_TRANSFER_FAILED('CRYPTO_TRANSFER_FAILED'),
+  PAYIN_WAITING_FOR_USER_PAYMENT('PAYIN_WAITING_FOR_USER_PAYMENT'),
+  PAYIN_RECEIVED_USER_PAYMENT('PAYIN_RECEIVED_USER_PAYMENT'),
+  PAYIN_CRYPTO_TRANSFER_PROCESSING('PAYIN_CRYPTO_TRANSFER_PROCESSING'),
+  PAYIN_CRYPTO_TRANSFER_COMPLETED('PAYIN_CRYPTO_TRANSFER_COMPLETED'),
+  PAYIN_CRYPTO_TRANSFER_FAILED('PAYIN_CRYPTO_TRANSFER_FAILED'),
   PAYOUT_CRYPTO_TRANSFER_PROCESSING('PAYOUT_CRYPTO_TRANSFER_PROCESSING'),
   PAYOUT_CRYPTO_TRANSFER_SUCCEDED('PAYOUT_CRYPTO_TRANSFER_SUCCEDED'),
   PAYOUT_CRYPTO_TRANSFER_FAILED('PAYOUT_CRYPTO_TRANSFER_FAILED'),
@@ -60,19 +67,19 @@ enum TransactionStatus {
 extension TransactionStatusExtension on TransactionStatus {
   String get descriptionKey {
     switch (this) {
-      case TransactionStatus.WAITING_FOR_USER_PAYMENT:
+      case TransactionStatus.PAYIN_WAITING_FOR_USER_PAYMENT:
         return 'status_pending_payment';
-      case TransactionStatus.WAITING_FOR_USER_PAYMENT:
+      case TransactionStatus.PAYIN_RECEIVED_USER_PAYMENT:
         return 'status_payment_received';
-      case TransactionStatus.CRYPTO_TRANSFER_PROCESSING:
+      case TransactionStatus.PAYIN_CRYPTO_TRANSFER_PROCESSING:
       case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_PROCESSING:
       case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_SUCCEDED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_PROCESSING:
         return 'status_processing';
-      case TransactionStatus.CRYPTO_TRANSFER_COMPLETED:
+      case TransactionStatus.PAYIN_CRYPTO_TRANSFER_COMPLETED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_SUCCEDEED:
         return 'status_completed';
-      case TransactionStatus.CRYPTO_TRANSFER_FAILED:
+      case TransactionStatus.PAYIN_CRYPTO_TRANSFER_FAILED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_FAILED:
         return 'status_failed';
       default:
@@ -82,19 +89,19 @@ extension TransactionStatusExtension on TransactionStatus {
 
   int get index {
     switch (this) {
-      case TransactionStatus.WAITING_FOR_USER_PAYMENT:
+      case TransactionStatus.PAYIN_WAITING_FOR_USER_PAYMENT:
         return 0;
-      case TransactionStatus.WAITING_FOR_USER_PAYMENT:
+      case TransactionStatus.PAYIN_RECEIVED_USER_PAYMENT:
         return 1;
-      case TransactionStatus.CRYPTO_TRANSFER_PROCESSING:
+      case TransactionStatus.PAYIN_CRYPTO_TRANSFER_PROCESSING:
       case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_PROCESSING:
       case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_SUCCEDED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_PROCESSING:
         return 2;
-      case TransactionStatus.CRYPTO_TRANSFER_COMPLETED:
+      case TransactionStatus.PAYIN_CRYPTO_TRANSFER_COMPLETED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_SUCCEDEED:
         return 3;
-      case TransactionStatus.CRYPTO_TRANSFER_FAILED:
+      case TransactionStatus.PAYIN_CRYPTO_TRANSFER_FAILED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_FAILED:
         return 4;
       default:
@@ -104,17 +111,17 @@ extension TransactionStatusExtension on TransactionStatus {
 
   Color get color {
     switch (this) {
-      case TransactionStatus.WAITING_FOR_USER_PAYMENT:
-      case TransactionStatus.WAITING_FOR_USER_PAYMENT:
-      case TransactionStatus.CRYPTO_TRANSFER_PROCESSING:
+      case TransactionStatus.PAYIN_WAITING_FOR_USER_PAYMENT:
+      case TransactionStatus.PAYIN_RECEIVED_USER_PAYMENT:
+      case TransactionStatus.PAYIN_CRYPTO_TRANSFER_PROCESSING:
       case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_PROCESSING:
       case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_SUCCEDED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_PROCESSING:
         return Colors.deepOrangeAccent;
-      case TransactionStatus.CRYPTO_TRANSFER_COMPLETED:
+      case TransactionStatus.PAYIN_CRYPTO_TRANSFER_COMPLETED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_SUCCEDEED:
         return Colors.green;
-      case TransactionStatus.CRYPTO_TRANSFER_FAILED:
+      case TransactionStatus.PAYIN_CRYPTO_TRANSFER_FAILED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_FAILED:
         return Colors.red;
       default:

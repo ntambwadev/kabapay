@@ -43,13 +43,6 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
     super.dispose();
   }
 
-  final List<Event> events = [
-    Event(title: 'You transaction was successfully created', isCompleted: true),
-    Event(title: 'Waiting on your payment transfer', isCompleted: true),
-    Event(title: 'You transaction is processing', isCompleted: false),
-    Event(title: 'You transaction is completed', isCompleted: false),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -65,6 +58,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
         ),
       ),
       child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -102,25 +96,12 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'lw2h6xsc' /* Transaction Status */,
-                      ),
-                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Poppins',
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  CustomTimelineWidget(events: events),
                   wrapWithModel(
                     model: _model.transactionSummaryModel,
                     updateCallback: () => setState(() {}),
                     child: TransactionSummaryWidget(),
                   ),
+                  CustomTimelineWidget(events: widget.transactionModel?.events ?? []),
                 ],
               ),
             ),
