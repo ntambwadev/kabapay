@@ -55,7 +55,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
             child: ExpandablePanel(
               header: Text(
                 FFLocalizations.of(context).getText(
-                  'b8ytvlgx' /* Transaction summary */,
+                  '6z8150o2' /* Transaction summary */,
                 ),
                 style: FlutterFlowTheme.of(context).bodyText1.override(
                       fontFamily: 'Poppins',
@@ -67,19 +67,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                 width: MediaQuery.of(context).size.width * 1.0,
                 height: 40.0,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                ),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                  child: Text(
-                    FFLocalizations.of(context).getText(
-                      'dxgc3lgy' /* Lorem ipsum dolor sit amet, co... */,
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: Color(0x8A000000),
-                        ),
-                  ),
+                  color: FlutterFlowTheme.of(context).primaryBackground,
                 ),
               ),
               expanded: Column(

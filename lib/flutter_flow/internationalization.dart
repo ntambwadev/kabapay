@@ -807,13 +807,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // transaction_summary
   {
-    'b8ytvlgx': {
+    '6z8150o2': {
       'en': 'Transaction summary',
-      'fr': '',
-      'sw': '',
-    },
-    'dxgc3lgy': {
-      'en': 'Lorem ipsum dolor sit amet, consectetur adipiscing...',
       'fr': '',
       'sw': '',
     },
@@ -880,10 +875,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // payment_instructions
   {
-    'wo42hte7': {
+    'wd4xh3q8': {
       'en': 'Payment instructions',
-      'fr': 'État de la transaction',
-      'sw': 'Hali ya Muamala',
+      'fr': '',
+      'sw': '',
     },
     '1k87empz': {
       'en':
