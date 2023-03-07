@@ -51,7 +51,10 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
     logFirebaseEvent('Button_navigate_to');
 
     Provider.of<CurrentTransactionModel>(context, listen: false)
-        .addRecipientAddress(_model.textController1.text);
+        .addRecipientInfo(
+        _model.textController1.text,
+        _model.textController2.text,
+        _model.textController3.text);
 
     context.pushNamed(
       'tokens_page',

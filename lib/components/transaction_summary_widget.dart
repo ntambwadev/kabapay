@@ -44,7 +44,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
     BaseTransactionModel? transactionModel = _model.transactionModel;
     return Container(
       width: double.infinity,
-      height: 300,
+      height: transactionModel?.type == TransactionType.BUY ? 300 : 390,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
       ),
@@ -69,7 +69,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
             child: Container(
               width: double.infinity,
-              height: 250,
+              height: transactionModel?.type == TransactionType.BUY ? 250 : 340,
               decoration: BoxDecoration(
                 color: Colors.transparent,
                 borderRadius: BorderRadius.circular(8),
@@ -233,11 +233,62 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                     ),
                   if (transactionModel?.type == TransactionType.SEND)
                     Expanded(
-                      child:
-                      Column(
+                      child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'recipientname' /* Recipient Name*/,
+                                ),
+                                style: FlutterFlowTheme.of(context).bodyText1.override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context).primaryColor,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                overflow: TextOverflow.fade,
+                                '${transactionModel?.recipientName}',
+                                style: FlutterFlowTheme.of(context).bodyText1.override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'recipientphone' /* Recipient Phone*/,
+                                ),
+                                style: FlutterFlowTheme.of(context).bodyText1.override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context).primaryColor,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                overflow: TextOverflow.fade,
+                                '${transactionModel?.recipientPhone}',
+                                style: FlutterFlowTheme.of(context).bodyText1.override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                            ],
+                          ),
                           Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.stretch,

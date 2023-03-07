@@ -172,9 +172,7 @@ class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
                           logFirebaseEvent('Button_bottom_sheet');
                           _copyToClipboard();
                         },
-                        text: FFLocalizations.of(context).getText(
-                          'ip7tqqd4' /* 0x123ghxffkjsds */,
-                        ),
+                        text: userAddress,
                         icon: Icon(
                           Icons.content_copy_outlined,
                           size: 20,

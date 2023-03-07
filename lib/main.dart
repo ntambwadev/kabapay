@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+// import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -24,6 +25,47 @@ import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 import 'models/payment_instrument_model.dart';
 
+// @pragma('vm:entry-point')
+// Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+//   // If you're going to use other Firebase services in the background, such as Firestore,
+//   // make sure you call `initializeApp` before using other Firebase services.
+//   await Firebase.initializeApp();
+//
+//   print("Handling a background message: ${message.messageId}");
+// }
+//
+// onBackgroundMessage(SmsMessage message) {
+//   debugPrint("main onBackgroundMessage called: ${message.body}");
+// }
+//
+// initMessagingNotification() async {
+//   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+//   final fcmToken = await FirebaseMessaging.instance.getToken();
+//   debugPrint('fcmToken: ${fcmToken}');
+//   FFAppState().fcmToken = fcmToken;
+//
+//   FirebaseMessaging messaging = FirebaseMessaging.instance;
+//   NotificationSettings settings = await messaging.requestPermission(
+//     alert: true,
+//     announcement: false,
+//     badge: true,
+//     carPlay: false,
+//     criticalAlert: false,
+//     provisional: false,
+//     sound: true,
+//   );
+//   print('User granted permission: ${settings.authorizationStatus}');
+//
+//   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+//     print('Got a message whilst in the foreground!');
+//     print('Message data: ${message.data}');
+//
+//     if (message.notification != null) {
+//       print('Message also contained a notification: ${message.notification}');
+//     }
+//   });
+// }
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initFirebase();
@@ -32,6 +74,7 @@ void main() async {
   if (!kIsWeb) {
     FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
   }
+  // await initMessagingNotification();
   // await initializeFirebaseRemoteConfig();
 
   runApp(MyApp());

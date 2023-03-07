@@ -14,11 +14,13 @@ class BaseTransactionModel extends ChangeNotifier {
   TokenModel? token;
   String? userAddress;
   String? recipientAddress;
+  String? recipientName;
+  String? recipientPhone;
   PaymentInstrumentModel? paymentInstrument;
   List<EventData>? events;
 
   BaseTransactionModel({required this.id, required this.userId, required this.amountUSD,
     required this.amountToken, required this.type, required this.token,
     required this.userAddress, required this.recipientAddress,
-    required this.paymentInstrument, required this.events});
+    required this.paymentInstrument, required this.events, required this.recipientName, required this.recipientPhone});
 }

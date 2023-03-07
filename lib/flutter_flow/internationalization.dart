@@ -954,6 +954,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Le wallet du recipient',
       'sw': 'Hifadhi ya mteja',
     },
+    'recipientname': {
+      'en': 'Name',
+      'fr': 'Nom',
+      'sw': 'Jina',
+    },
+    'recipientphone': {
+      'en': 'Phone number',
+      'fr': 'Numéro de téléphone',
+      'sw': 'Nambari ya simu',
+    },
     'yousend': {
       'en': 'You send',
       'fr': 'Vous envoye',

@@ -14,10 +14,10 @@ class TransactionModel extends BaseTransactionModel {
 
   TransactionModel({String? id, String? userId, String? amountUSD, String? amountToken,
     TransactionType? type, TokenModel? token, String? userAddress, String? recipientAddress,
-    PaymentInstrumentModel? paymentInstrument, List<EventData>? events, this.createdAt, this.status,})
+    PaymentInstrumentModel? paymentInstrument, String? recipientName, String? recipientPhone, List<EventData>? events, this.createdAt, this.status,})
       : super(id: id, userId: userId, amountUSD: amountUSD, amountToken: amountToken,
       type: type, token: token, userAddress: userAddress, recipientAddress: recipientAddress,
-      paymentInstrument: paymentInstrument, events: events);
+      paymentInstrument: paymentInstrument, events: events, recipientName: recipientName, recipientPhone: recipientPhone);
 
   factory TransactionModel.fromFirestore(DocumentSnapshot doc) {
     Map data = doc.data() as Map;
@@ -38,6 +38,8 @@ class TransactionModel extends BaseTransactionModel {
           ? PaymentInstrumentModel.fromMap(data['paymentInstrument'] as Map<String, dynamic>) : null,
       createdAt: DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.parse(data['createdAt'])),
       status: TransactionStatus.fromValue(data['status'] ?? ''),
+      recipientName: data['recipientName'] as String?,
+      recipientPhone: data['recipientPhone'] as String?,
       events: events,
     );
   }

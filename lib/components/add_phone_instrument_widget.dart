@@ -384,7 +384,10 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
       showSnackBar(context, 'old_phone_error'); /* Phone number is present already in use*/
       return;
     }
-    if (networkName == null) return false;
+    if (networkName == null) {
+      showSnackBar(context, '1xq7xq7x');
+      return false;
+    }
     switch (networkName) {
       case MomoTelecomOption.AIRTEL:
         if (!phoneNumberText.startsWith('93') &&
@@ -403,7 +406,7 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
           showSnackBar(context, 'orange_error');
           return false;
         }
-        return ;
+        break;
       case MomoTelecomOption.VODACOM:
         if (!phoneNumberText.startsWith('81') && !phoneNumberText.startsWith('82')) {
           showSnackBar(context, 'vodacom_error');

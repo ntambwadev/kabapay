@@ -1,5 +1,6 @@
 //create a singleton class name FirebaseApi to handle all the firebase operations
 import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
 import '../models/user_model.dart';
@@ -10,6 +11,7 @@ class FirebaseApi {
       if (user == null) {
         return Future.error('User is null');
       }
+      debugPrint('updateUserTokenBalances CURRENT USER ID: ${user.uid}');
       return http.post(
         Uri.parse('https://apikaba-updateusertokenbalances-hsvesecgcq-uc.a.run.app'),
         headers: <String, String>{
