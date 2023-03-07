@@ -807,10 +807,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // transaction_summary
   {
-    'g9cyjw6b': {
-      'en': 'Transaction Summary',
-      'fr': 'récapitulatif des transactions',
-      'sw': 'Muhtasari wa Muamala',
+    'b8ytvlgx': {
+      'en': 'Transaction summary',
+      'fr': '',
+      'sw': '',
+    },
+    'dxgc3lgy': {
+      'en': 'Lorem ipsum dolor sit amet, consectetur adipiscing...',
+      'fr': '',
+      'sw': '',
     },
     '0s3cbmii': {
       'en': 'Payment method',
@@ -877,46 +882,44 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'wo42hte7': {
       'en': 'Payment instructions',
-      'fr': 'Instructions de paiement',
-      'sw': 'Maagizo ya malipo',
+      'fr': 'État de la transaction',
+      'sw': 'Hali ya Muamala',
     },
     '1k87empz': {
       'en':
-          'To complete your transaction, send us your payment from 0971504436. Use the details below to make the transfer.',
-      'fr':
-          'Pour finaliser votre transaction, envoyez-nous votre paiement au 0971504436. Utilisez les coordonnées ci-dessous pour effectuer le virement.',
-      'sw':
-          'Ili kukamilisha muamala wako, tutumie malipo yako kutoka 0971504436. Tumia maelezo yaliyo hapa chini kufanya uhamisho.',
+          'To complete your transaction, send us your payment from 0971504436. Use the details below to make the transfer',
+      'fr': 'pour',
+      'sw': 'kwa',
     },
     '37hmzj2z': {
       'en': 'Amount to send',
-      'fr': 'Montant à envoyer',
-      'sw': 'Kiasi cha kutuma',
+      'fr': 'Pour payer, envoyez',
+      'sw': 'Ili kulipa, tuma',
     },
     'vo2zw0yz': {
       'en': '\$97 USD',
       'fr': '97 USD',
       'sw': '\$97 USD',
     },
-    '2pjopfre': {
-      'en': 'Copy ',
-      'fr': 'Copie',
-      'sw': 'Nakili',
+    'qg3l5g4e': {
+      'en': 'Copy',
+      'fr': '97 USD',
+      'sw': '\$97 USD',
     },
     'z73au94g': {
       'en': 'To number',
-      'fr': 'Numéroter',
-      'sw': 'Kwa nambari',
+      'fr': 'pour',
+      'sw': 'kwa',
     },
     'tmqgie05': {
       'en': '0971504436',
-      'fr': '0971504436',
-      'sw': '0971504436',
+      'fr': '97 USD',
+      'sw': '\$97 USD',
     },
-    'qg3l5g4e': {
+    'zwrxzhdy': {
       'en': 'Copy',
-      'fr': 'Copie',
-      'sw': 'Nakili',
+      'fr': '97 USD',
+      'sw': '\$97 USD',
     },
   },
   // Miscellaneous

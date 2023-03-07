@@ -40,7 +40,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 180.0,
+      height: 200.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
       ),
@@ -64,7 +64,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -105,16 +105,34 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                             textAlign: TextAlign.start,
                             style: FlutterFlowTheme.of(context).bodyText1,
                           ),
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              '2pjopfre' /* Copy  */,
+                          Container(
+                            width: 45.0,
+                            height: 20.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              borderRadius: BorderRadius.circular(4.0),
+                              shape: BoxShape.rectangle,
+                              border: Border.all(
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryColor,
+                                width: 0.5,
+                              ),
                             ),
-                            textAlign: TextAlign.end,
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 10.0,
-                                    ),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'qg3l5g4e' /* Copy */,
+                              ),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 10.0,
+                                    lineHeight: 2.0,
+                                  ),
+                            ),
                           ),
                         ],
                       ),
@@ -146,16 +164,34 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                             textAlign: TextAlign.start,
                             style: FlutterFlowTheme.of(context).bodyText1,
                           ),
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'qg3l5g4e' /* Copy */,
+                          Container(
+                            width: 45.0,
+                            height: 20.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              borderRadius: BorderRadius.circular(4.0),
+                              shape: BoxShape.rectangle,
+                              border: Border.all(
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryColor,
+                                width: 0.5,
+                              ),
                             ),
-                            textAlign: TextAlign.end,
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 10.0,
-                                    ),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'zwrxzhdy' /* Copy */,
+                              ),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 10.0,
+                                    lineHeight: 2.0,
+                                  ),
+                            ),
                           ),
                         ],
                       ),
