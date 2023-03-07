@@ -40,7 +40,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 180.0,
+      height: 200.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
       ),

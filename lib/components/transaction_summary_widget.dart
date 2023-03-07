@@ -88,9 +88,9 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Row(
+                          Column(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               Text(
                                 FFLocalizations.of(context).getText(
@@ -98,25 +98,24 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                  color: FlutterFlowTheme.of(context).primaryColor,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                child: Text(
-                                  '${transactionModel?.paymentInstrument?.productName}',
-                                  style:
-                                  FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                              Text(
+                                '${transactionModel?.paymentInstrument?.productName}',
+                                style: FlutterFlowTheme.of(context).bodyText1.override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.normal,
                                 ),
                               ),
                             ],
                           ),
-                          Row(
+                          Column(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               Text(
                                 FFLocalizations.of(context).getText(
@@ -124,22 +123,24 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                  color: FlutterFlowTheme.of(context).primaryColor,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
                               Text(
                                 '${transactionModel?.paymentInstrument?.accountNumber}',
                                 style: FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context).secondaryText,
                                   fontSize: 12,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.normal,
                                 ),
                               ),
                             ],
                           ),
-                          Row(
+                          Column(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               Text(
                                 FFLocalizations.of(context).getText(
@@ -147,22 +148,24 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                  color: FlutterFlowTheme.of(context).primaryColor,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
                               Text(
                                 '\$ ${transactionModel?.amountUSD} USD',
                                 style: FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w500,
+                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.normal,
                                 ),
                               ),
                             ],
                           ),
-                          Row(
+                          Column(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               Text(
                                 FFLocalizations.of(context).getText(
@@ -170,7 +173,8 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                  color: FlutterFlowTheme.of(context).primaryColor,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
                               Row(
@@ -191,11 +195,11 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                     child: Text(
                                       '${transactionModel?.amountToken} ${transactionModel?.token?.symbol.toUpperCase()}',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1
-                                          .override(
+                                      style: FlutterFlowTheme.of(context).bodyText1.override(
                                         fontFamily: 'Poppins',
-                                        fontWeight: FontWeight.w500,
+                                        color: FlutterFlowTheme.of(context).secondaryText,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.normal,
                                       ),
                                     ),
                                   ),
@@ -203,9 +207,9 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                               ),
                             ],
                           ),
-                          Row(
+                          Column(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               Text(
                                 FFLocalizations.of(context).getText(
@@ -213,17 +217,18 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                  fontSize: 14,
+                                  color: FlutterFlowTheme.of(context).primaryColor,
                                   fontWeight: FontWeight.w500,
+                                  fontSize: 14,
                                 ),
                               ),
                               Text(
                                 '\$ ${transactionModel?.amountUSD} USD',
                                 style: FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Poppins',
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
+                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.normal,
                                 ),
                               ),
                             ],
