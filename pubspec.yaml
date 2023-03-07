@@ -85,6 +85,7 @@ dependencies:
       url: https://github.com/FlutterFlow/flutter_barcode_scanner
   flutter_launcher_icons: ^0.11.0
   flutter_local_notifications: ^13.0.0
+  expandable: ^5.0.1
 #  firebase_messaging: ^14.1.4
 
 dev_dependencies:
