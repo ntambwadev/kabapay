@@ -271,7 +271,7 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home_outlined,
-              size: 24,
+              size: 24.0,
             ),
             label: FFLocalizations.of(context).getText(
               '5f7w2rwu' /* Home */,
@@ -281,7 +281,7 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.settings,
-              size: 24,
+              size: 24.0,
             ),
             label: FFLocalizations.of(context).getText(
               'lgf10g04' /* Home */,

@@ -7,11 +7,12 @@ import '../components/telecom_selector_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '/components/telecom_selector_widget.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import '../models/current_transaction_model.dart';
+import '/models/current_transaction_model.dart';
 import 'add_phone_instrument_model.dart';
 
 class AddPhoneInstrumentWidget extends StatefulWidget {
@@ -114,14 +115,14 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0),
-          bottomRight: Radius.circular(0),
-          topLeft: Radius.circular(8),
-          topRight: Radius.circular(8),
+          bottomLeft: Radius.circular(0.0),
+          bottomRight: Radius.circular(0.0),
+          topLeft: Radius.circular(8.0),
+          topRight: Radius.circular(8.0),
         ),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
+        padding: EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -132,7 +133,7 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'nk7meo7x' /* Enter a number? */,
@@ -142,7 +143,7 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -161,25 +162,26 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                           await _onSelectNetworkTap(context);
                         },
                         child: Container(
-                          width: 130,
-                          height: 40,
+                          width: 130.0,
+                          height: 40.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).primaryBtnText,
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(8.0),
                             border: Border.all(
                               color: Color(0xFFCBCBCB),
                               width: 0.5,
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                5.0, 5.0, 5.0, 5.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  width: 28,
-                                  height: 28,
+                                  width: 28.0,
+                                  height: 28.0,
                                   clipBehavior: Clip.antiAlias,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
@@ -199,7 +201,7 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                                 Icon(
                                   Icons.keyboard_arrow_down,
                                   color: Colors.black,
-                                  size: 22,
+                                  size: 22.0,
                                 ),
                               ],
                             ),
@@ -210,13 +212,14 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'xc6581zs' /* Mobile money number: */,
@@ -226,20 +229,21 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                         child: Container(
                           width: double.infinity,
-                          height: 56,
+                          height: 56.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).primaryBtnText,
                             boxShadow: [
                               BoxShadow(
-                                blurRadius: 1,
+                                blurRadius: 1.0,
                                 color: FlutterFlowTheme.of(context).lineColor,
-                                offset: Offset(0, 1),
+                                offset: Offset(0.0, 1.0),
                               )
                             ],
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -247,8 +251,8 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     's6izsmq2' /* +243 */,
@@ -259,7 +263,7 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                               Expanded(
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      6, 0, 0, 0),
+                                      6.0, 0.0, 0.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.textController,
                                     onChanged: (_) => EasyDebounce.debounce(
@@ -283,30 +287,34 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1,
+                                          width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(0),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1,
+                                          width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(0),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
                                       ),
                                       errorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1,
+                                          width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(0),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1,
+                                          width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(0),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
                                       ),
                                       suffixIcon: _model
                                               .textController!.text.isNotEmpty
@@ -317,7 +325,7 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                                               child: Icon(
                                                 Icons.clear,
                                                 color: Color(0xFF757575),
-                                                size: 22,
+                                                size: 22.0,
                                               ),
                                             )
                                           : null,
@@ -341,7 +349,7 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
               ],
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 20),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 20.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   logFirebaseEvent('ADD_PHONE_INSTRUMENT_COMP_ADD_BTN_ON_TAP');
@@ -353,7 +361,10 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                 ),
                 options: FFButtonOptions(
                   width: double.infinity,
-                  height: 50,
+                  height: 50.0,
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  iconPadding:
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primaryColor,
                   textStyle: FlutterFlowTheme.of(context).subtitle2.override(
                         fontFamily: 'Poppins',
@@ -361,9 +372,9 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                       ),
                   borderSide: BorderSide(
                     color: Colors.transparent,
-                    width: 1,
+                    width: 1.0,
                   ),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
             ),

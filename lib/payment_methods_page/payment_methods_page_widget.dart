@@ -98,7 +98,7 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
       resizeToAvoidBottomInset: false,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(100.0),
         child: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
@@ -112,7 +112,7 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
             centerTitle: true,
             expandedTitleScale: 1.0,
           ),
-          elevation: 0,
+          elevation: 0.0,
         ),
       ),
       body: SafeArea(
@@ -124,21 +124,22 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).backgroundcolor,
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(0),
-                bottomRight: Radius.circular(0),
-                topLeft: Radius.circular(16),
-                topRight: Radius.circular(16),
+                bottomLeft: Radius.circular(0.0),
+                bottomRight: Radius.circular(0.0),
+                topLeft: Radius.circular(16.0),
+                topRight: Radius.circular(16.0),
               ),
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'br10fnam' /* Select your payment method */,
@@ -146,7 +147,7 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).bodyText2.override(
                             fontFamily: 'Poppins',
-                            fontSize: 12,
+                            fontSize: 12.0,
                           ),
                     ),
                   ),
@@ -182,7 +183,8 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                           },
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               'lfjf7ceh' /* Or  */,
@@ -191,12 +193,13 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                             style:
                                 FlutterFlowTheme.of(context).bodyText2.override(
                                       fontFamily: 'Poppins',
-                                      fontSize: 12,
+                                      fontSize: 12.0,
                                     ),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 1),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 15.0, 0.0, 1.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               _onAddNewNumberButtonTapped(context);
@@ -206,24 +209,28 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                             ),
                             icon: Icon(
                               Icons.add,
-                              size: 15,
+                              size: 15.0,
                             ),
                             options: FFButtonOptions(
                               width: double.infinity,
-                              height: 50,
+                              height: 50.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
                               color: Color(0xFF42444C),
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
-                                    fontSize: 14,
+                                    fontSize: 14.0,
                                   ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
                         ),

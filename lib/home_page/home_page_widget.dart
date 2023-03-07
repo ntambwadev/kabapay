@@ -1,8 +1,8 @@
-import '../components/home_page_balance_widget.dart';
-import '../components/home_page_buttons_widget.dart';
-import '../components/home_page_tab_widget.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/components/home_page_balance_widget.dart';
+import '/components/home_page_buttons_widget.dart';
+import '/components/home_page_tab_widget.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -48,7 +48,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         automaticallyImplyLeading: false,
         actions: [],
         centerTitle: false,
-        elevation: 0,
+        elevation: 0.0,
       ),
       body: SafeArea(
         child: GestureDetector(
@@ -58,7 +58,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             children: [
               Container(
                 width: double.infinity,
-                height: 200,
+                height: 200.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).primaryBackground,
                 ),

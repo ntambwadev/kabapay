@@ -5,16 +5,16 @@ import '../components/nav_back_button_widget.dart';
 import '../components/transaction_details_widget.dart';
 import '../firestore/firestore_service.dart';
 import '../components/transaction_summary_widget.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'confirmation_page_model.dart';
 export 'confirmation_page_model.dart';
-import '../flutter_flow/flutter_flow_model.dart';
+import '/flutter_flow/flutter_flow_model.dart';
 
 class ConfirmationPageWidget extends StatefulWidget {
   const ConfirmationPageWidget({Key? key}) : super(key: key);
@@ -70,7 +70,7 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(100.0),
         child: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
@@ -84,14 +84,14 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
             centerTitle: true,
             expandedTitleScale: 1.0,
           ),
-          elevation: 0,
+          elevation: 0.0,
         ),
       ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
             child: Container(
               width: double.infinity,
               height: double.infinity,
@@ -109,7 +109,8 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                     child: TransactionSummaryWidget(),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         _onConfirmButtonTapped(context, transactionModel);
@@ -119,7 +120,11 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                       ),
                       options: FFButtonOptions(
                         width: double.infinity,
-                        height: 50,
+                        height: 50.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primaryColor,
                         textStyle:
                             FlutterFlowTheme.of(context).subtitle2.override(
@@ -128,9 +133,9 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                                 ),
                         borderSide: BorderSide(
                           color: Colors.transparent,
-                          width: 1,
+                          width: 1.0,
                         ),
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
                   ),

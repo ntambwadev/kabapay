@@ -48,7 +48,7 @@ class _HomePageTabWidgetState extends State<HomePageTabWidget> {
         color: FlutterFlowTheme.of(context).backgroundcolor,
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
+        padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
         child: DefaultTabController(
           length: 2,
           initialIndex: 0,
@@ -59,14 +59,15 @@ class _HomePageTabWidgetState extends State<HomePageTabWidget> {
                 labelColor: FlutterFlowTheme.of(context).primaryColor,
                 unselectedLabelColor:
                     FlutterFlowTheme.of(context).secondaryText,
-                labelPadding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                labelPadding:
+                    EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                 labelStyle: FlutterFlowTheme.of(context).subtitle1.override(
                       fontFamily: 'Poppins',
-                      fontSize: 16,
+                      fontSize: 16.0,
                       fontWeight: FontWeight.w500,
                     ),
                 indicatorColor: FlutterFlowTheme.of(context).primaryColor,
-                indicatorWeight: 2,
+                indicatorWeight: 2.0,
                 tabs: [
                   Tab(
                     text: FFLocalizations.of(context).getText(

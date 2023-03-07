@@ -69,10 +69,10 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0),
-          bottomRight: Radius.circular(0),
-          topLeft: Radius.circular(16),
-          topRight: Radius.circular(16),
+          bottomLeft: Radius.circular(0.0),
+          bottomRight: Radius.circular(0.0),
+          topLeft: Radius.circular(16.0),
+          topRight: Radius.circular(16.0),
         ),
       ),
       child: Column(
@@ -85,12 +85,12 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
             child: TopSeparatorWidget(),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -109,7 +109,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 20),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -123,10 +123,10 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                     },
                     child: Container(
                       width: double.infinity,
-                      height: 70,
+                      height: 70.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(8.0),
                         border: Border.all(
                           color: FlutterFlowTheme.of(context).secondaryColor,
                           width: 0.5,
@@ -138,11 +138,11 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                15.0, 0.0, 15.0, 0.0),
                             child: Container(
-                              width: 44,
-                              height: 44,
+                              width: 44.0,
+                              height: 44.0,
                               clipBehavior: Clip.antiAlias,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
@@ -173,7 +173,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                                       .bodyText2
                                       .override(
                                         fontFamily: 'Poppins',
-                                        fontSize: 12,
+                                        fontSize: 12.0,
                                       ),
                                 ),
                               ],
@@ -187,7 +187,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                               Icon(
                                 Icons.chevron_right_outlined,
                                 color: Colors.black,
-                                size: 24,
+                                size: 24.0,
                               ),
                             ],
                           ),
@@ -204,10 +204,10 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                     },
                     child: Container(
                       width: double.infinity,
-                      height: 70,
+                      height: 70.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(8.0),
                         border: Border.all(
                           color: FlutterFlowTheme.of(context).secondaryColor,
                           width: 0.5,
@@ -219,11 +219,11 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                15.0, 0.0, 15.0, 0.0),
                             child: Container(
-                              width: 44,
-                              height: 44,
+                              width: 44.0,
+                              height: 44.0,
                               clipBehavior: Clip.antiAlias,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
@@ -254,7 +254,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                                       .bodyText2
                                       .override(
                                         fontFamily: 'Poppins',
-                                        fontSize: 12,
+                                        fontSize: 12.0,
                                       ),
                                 ),
                               ],
@@ -268,7 +268,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                               Icon(
                                 Icons.chevron_right_outlined,
                                 color: Colors.black,
-                                size: 24,
+                                size: 24.0,
                               ),
                             ],
                           ),
@@ -285,10 +285,10 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                     },
                     child: Container(
                       width: double.infinity,
-                      height: 70,
+                      height: 70.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(8.0),
                         border: Border.all(
                           color: FlutterFlowTheme.of(context).secondaryColor,
                           width: 0.5,
@@ -300,11 +300,11 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                15.0, 0.0, 15.0, 0.0),
                             child: Container(
-                              width: 44,
-                              height: 44,
+                              width: 44.0,
+                              height: 44.0,
                               clipBehavior: Clip.antiAlias,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
@@ -335,7 +335,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                                       .bodyText2
                                       .override(
                                         fontFamily: 'Poppins',
-                                        fontSize: 12,
+                                        fontSize: 12.0,
                                       ),
                                 ),
                               ],
@@ -349,7 +349,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                               Icon(
                                 Icons.chevron_right_outlined,
                                 color: Colors.black,
-                                size: 24,
+                                size: 24.0,
                               ),
                             ],
                           ),

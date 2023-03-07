@@ -3,9 +3,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import '../flutter_flow/flutter_flow_model.dart';
+import '/flutter_flow/flutter_flow_model.dart';
 
-class TokenItemModel extends FlutterFlowModel {
+class PaymentInstructionsModel extends FlutterFlowModel {
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}

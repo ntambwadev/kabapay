@@ -44,13 +44,13 @@ class _PhonePaymentMethodItemWidgetState
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
+      padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
       child: Container(
         width: double.infinity,
-        height: 70,
+        height: 70.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8.0),
           border: Border.all(
             color: FlutterFlowTheme.of(context).secondaryColor,
             width: 0.5,
@@ -62,10 +62,10 @@ class _PhonePaymentMethodItemWidgetState
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
+              padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
               child: Container(
-                width: 44,
-                height: 44,
+                width: 44.0,
+                height: 44.0,
                 clipBehavior: Clip.antiAlias,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
@@ -88,7 +88,7 @@ class _PhonePaymentMethodItemWidgetState
                   Text(widget.paymentInstrument.organizationName,
                     style: FlutterFlowTheme.of(context).bodyText2.override(
                           fontFamily: 'Poppins',
-                          fontSize: 12,
+                          fontSize: 12.0,
                         ),
                   ),
                 ],
@@ -102,7 +102,7 @@ class _PhonePaymentMethodItemWidgetState
                 Icon(
                   Icons.chevron_right_outlined,
                   color: Colors.black,
-                  size: 24,
+                  size: 24.0,
                 ),
               ],
             ),

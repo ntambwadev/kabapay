@@ -1,5 +1,7 @@
 import 'package:kabapay/components/CustomTimelineWidget.dart';
 import 'package:kabapay/models/transaction_model.dart';
+import 'package:kabapay/models/payment_instrument_model.dart';
+import '/components/payment_instructions_widget.dart';
 import '../components/transaction_summary_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -51,10 +53,10 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).lineColor,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0),
-          bottomRight: Radius.circular(0),
-          topLeft: Radius.circular(8),
-          topRight: Radius.circular(8),
+          bottomLeft: Radius.circular(0.0),
+          bottomRight: Radius.circular(0.0),
+          topLeft: Radius.circular(8.0),
+          topRight: Radius.circular(8.0),
         ),
       ),
       child: SingleChildScrollView(
@@ -84,7 +86,8 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'j4tcradb' /* Transaction Details */,
@@ -95,6 +98,11 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
+                  ),
+                  wrapWithModel(
+                    model: _model.paymentInstructionsModel,
+                    updateCallback: () => setState(() {}),
+                    child: PaymentInstructionsWidget(),
                   ),
                   wrapWithModel(
                     model: _model.transactionSummaryModel,

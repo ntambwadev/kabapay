@@ -106,24 +106,25 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).backgroundcolor,
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(0),
-                bottomRight: Radius.circular(0),
-                topLeft: Radius.circular(16),
-                topRight: Radius.circular(16),
+                bottomLeft: Radius.circular(0.0),
+                bottomRight: Radius.circular(0.0),
+                topLeft: Radius.circular(16.0),
+                topRight: Radius.circular(16.0),
               ),
               border: Border.all(
                 color: FlutterFlowTheme.of(context).backgroundcolor,
               ),
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -136,11 +137,12 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                           textAlign: TextAlign.center,
                           style: FlutterFlowTheme.of(context).title1.override(
                                 fontFamily: 'Poppins',
-                                fontSize: 32,
+                                fontSize: 32.0,
                               ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 30),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 30.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               'jfgpj763' /* Your transaction was successfu... */,
@@ -152,14 +154,14 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                   fontFamily: 'Poppins',
                                   color:
                                       FlutterFlowTheme.of(context).primaryColor,
-                                  fontSize: 14,
+                                  fontSize: 14.0,
                                 ),
                           ),
                         ),
                         Image.asset(
                           'assets/images/transaction-success.png',
-                          width: 200,
-                          height: 200,
+                          width: 200.0,
+                          height: 200.0,
                           fit: BoxFit.cover,
                         ),
                         if (currentTransaction.type == TransactionType.BUY)
@@ -167,8 +169,8 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'x73isb0j' /* To pay, send */,
@@ -180,13 +182,13 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryColor,
-                                      fontSize: 14,
+                                      fontSize: 14.0,
                                     ),
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 0.0),
                               child: Text(
                                 '\$${currentTransaction.amountUSD} USD',
                                 textAlign: TextAlign.center,
@@ -196,13 +198,13 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryColor,
-                                      fontSize: 28,
+                                      fontSize: 28.0,
                                     ),
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 5.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   '4uxsg6tk' /* to */,
@@ -218,8 +220,8 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 10.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   logFirebaseEvent(
@@ -230,30 +232,34 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                 text: vaultPaymentAcountNumber,
                                 icon: Icon(
                                   Icons.content_copy_outlined,
-                                  size: 20,
+                                  size: 20.0,
                                 ),
                                 options: FFButtonOptions(
-                                  width: 160,
-                                  height: 50,
+                                  width: 160.0,
+                                  height: 50.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
                                   color: Color(0xFF393939),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
                                         fontFamily: 'Poppins',
                                         color: Colors.white,
-                                        fontSize: 16,
+                                        fontSize: 16.0,
                                       ),
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 10),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 10.0),
                               child: Text(
                                 '${FFLocalizations.of(context).getText('vsl23of5')} ${currentTransaction.paymentInstrument?.accountNumber} ${currentTransaction.paymentInstrument?.organizationName} ${FFLocalizations.of(context).getText('vsl23of6')}',
                                 textAlign: TextAlign.center,
@@ -263,7 +269,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryColor,
-                                      fontSize: 12,
+                                      fontSize: 12.0,
                                       fontWeight: FontWeight.w600,
                                       decoration: TextDecoration.underline,
                                     ),
@@ -294,7 +300,11 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                     ),
                     options: FFButtonOptions(
                       width: double.infinity,
-                      height: 50,
+                      height: 50.0,
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: Color(0xFF23A094),
                       textStyle:
                           FlutterFlowTheme.of(context).subtitle2.override(
@@ -303,9 +313,9 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                               ),
                       borderSide: BorderSide(
                         color: Colors.transparent,
-                        width: 1,
+                        width: 1.0,
                       ),
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
                 ],

@@ -2,12 +2,12 @@ import 'package:kabapay/components/transactions_list_model.dart';
 
 import '../components/tokens_list_widget.dart';
 import '../components/transactions_list_widget.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import '../flutter_flow/flutter_flow_model.dart';
+import '/flutter_flow/flutter_flow_model.dart';
 
 class HomePageTabModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this component.

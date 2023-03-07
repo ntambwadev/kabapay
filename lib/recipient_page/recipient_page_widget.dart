@@ -85,7 +85,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(100.0),
         child: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
@@ -99,14 +99,14 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
             centerTitle: true,
             expandedTitleScale: 1.0,
           ),
-          elevation: 0,
+          elevation: 0.0,
         ),
       ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
             child: Container(
               width: double.infinity,
               height: double.infinity,
@@ -268,7 +268,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                           hintStyle:
                               FlutterFlowTheme.of(context).bodyText2.override(
                                     fontFamily: 'Poppins',
-                                    fontSize: 12,
+                                    fontSize: 12.0,
                                     lineHeight: 1.5,
                                   ),
                           enabledBorder: UnderlineInputBorder(

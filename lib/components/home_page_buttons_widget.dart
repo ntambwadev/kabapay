@@ -103,10 +103,10 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
     UserModel? userModel = Provider.of<UserModel?>(context);
     return Container(
       width: double.infinity,
-      height: 90,
+      height: 90.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).backgroundcolor,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.0),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.max,

@@ -1,7 +1,7 @@
 import 'package:kabapay/models/BaseTransactionModel.dart';
 
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -53,26 +53,26 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 'g9cyjw6b' /* Transaction Summary */,
               ),
               style: FlutterFlowTheme.of(context).bodyText1.override(
                     fontFamily: 'Poppins',
-                    fontSize: 16,
+                    fontSize: 16.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
             child: Container(
               width: double.infinity,
               height: transactionModel?.type == TransactionType.BUY ? 250 : 340,
               decoration: BoxDecoration(
                 color: Colors.transparent,
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(8.0),
                 border: Border.all(
                   color: Color(0x00D7E4E3),
                   width: 0.5,

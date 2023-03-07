@@ -49,33 +49,33 @@ class _TokenItemWidgetState extends State<TokenItemWidget> {
         : FlutterFlowTheme.of(context).gain;
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
+      padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 5.0),
       child: Container(
         width: double.infinity,
-        height: 70,
+        height: 70.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBtnText,
           boxShadow: [
             BoxShadow(
-              blurRadius: 1,
+              blurRadius: 1.0,
               color: Color(0xFFB8B8B8),
-              offset: Offset(0, 1),
+              offset: Offset(0.0, 1.0),
             )
           ],
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8.0),
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+          padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(6, 0, 12, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 12.0, 0.0),
                 child: Container(
-                  width: 40,
-                  height: 40,
+                  width: 40.0,
+                  height: 40.0,
                   clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
@@ -124,7 +124,7 @@ class _TokenItemWidgetState extends State<TokenItemWidget> {
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 6.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,

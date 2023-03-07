@@ -50,7 +50,7 @@ class _TokensPageWidgetState extends State<TokensPageWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(100.0),
         child: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
@@ -64,14 +64,14 @@ class _TokensPageWidgetState extends State<TokensPageWidget> {
             centerTitle: true,
             expandedTitleScale: 1.0,
           ),
-          elevation: 0,
+          elevation: 0.0,
         ),
       ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
+            padding: EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
             child: Container(
               width: double.infinity,
               height: double.infinity,

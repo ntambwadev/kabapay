@@ -49,10 +49,10 @@ class _TokensListPlaceholderWidgetState
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0),
-          bottomRight: Radius.circular(0),
-          topLeft: Radius.circular(16),
-          topRight: Radius.circular(16),
+          bottomLeft: Radius.circular(0.0),
+          bottomRight: Radius.circular(0.0),
+          topLeft: Radius.circular(16.0),
+          topRight: Radius.circular(16.0),
         ),
       ),
       child: Column(
@@ -66,7 +66,7 @@ class _TokensListPlaceholderWidgetState
               Lottie.asset(
                 'assets/lottie_animations/loading-crypto.json',
                 width: MediaQuery.of(context).size.width * 0.5,
-                height: 200,
+                height: 200.0,
                 fit: BoxFit.cover,
                 animate: true,
               ),

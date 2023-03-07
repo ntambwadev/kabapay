@@ -98,7 +98,9 @@ class _BuyTokenNextButtonWidgetState extends State<BuyTokenNextButtonWidget> {
       ),
       options: FFButtonOptions(
         width: double.infinity,
-        height: 50,
+        height: 50.0,
+        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
         color: FlutterFlowTheme.of(context).primaryColor,
         textStyle: FlutterFlowTheme.of(context).subtitle2.override(
               fontFamily: 'Poppins',
@@ -106,9 +108,9 @@ class _BuyTokenNextButtonWidgetState extends State<BuyTokenNextButtonWidget> {
             ),
         borderSide: BorderSide(
           color: Colors.transparent,
-          width: 1,
+          width: 1.0,
         ),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.0),
       ),
     );
   }
