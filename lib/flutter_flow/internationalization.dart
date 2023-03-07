@@ -804,11 +804,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'détails de la transaction',
       'sw': 'Maelezo ya Muamala',
     },
-    'lw2h6xsc': {
-      'en': 'Transaction Status',
-      'fr': 'État de la transaction',
-      'sw': 'Hali ya Muamala',
-    },
   },
   // transaction_summary
   {
@@ -876,6 +871,52 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '\$100.05 USD',
       'fr': '100,05 USD',
       'sw': '\$100.05 USD',
+    },
+  },
+  // payment_instructions
+  {
+    'wo42hte7': {
+      'en': 'Payment instructions',
+      'fr': 'Instructions de paiement',
+      'sw': 'Maagizo ya malipo',
+    },
+    '1k87empz': {
+      'en':
+          'To complete your transaction, send us your payment from 0971504436. Use the details below to make the transfer.',
+      'fr':
+          'Pour finaliser votre transaction, envoyez-nous votre paiement au 0971504436. Utilisez les coordonnées ci-dessous pour effectuer le virement.',
+      'sw':
+          'Ili kukamilisha muamala wako, tutumie malipo yako kutoka 0971504436. Tumia maelezo yaliyo hapa chini kufanya uhamisho.',
+    },
+    '37hmzj2z': {
+      'en': 'Amount to send',
+      'fr': 'Montant à envoyer',
+      'sw': 'Kiasi cha kutuma',
+    },
+    'vo2zw0yz': {
+      'en': '\$97 USD',
+      'fr': '97 USD',
+      'sw': '\$97 USD',
+    },
+    '2pjopfre': {
+      'en': 'Copy ',
+      'fr': 'Copie',
+      'sw': 'Nakili',
+    },
+    'z73au94g': {
+      'en': 'To number',
+      'fr': 'Numéroter',
+      'sw': 'Kwa nambari',
+    },
+    'tmqgie05': {
+      'en': '0971504436',
+      'fr': '0971504436',
+      'sw': '0971504436',
+    },
+    'qg3l5g4e': {
+      'en': 'Copy',
+      'fr': 'Copie',
+      'sw': 'Nakili',
     },
   },
   // Miscellaneous

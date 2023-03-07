@@ -1,11 +1,11 @@
-import '../components/add_phone_instrument_widget.dart';
-import '../components/phone_payment_method_item_widget.dart';
-import '../components/tokens_list_placeholder_widget.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/random_data_util.dart' as random_data;
+import '/components/add_phone_instrument_widget.dart';
+import '/components/phone_payment_method_item_widget.dart';
+import '/components/tokens_list_placeholder_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -49,7 +49,7 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(100.0),
         child: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
@@ -61,21 +61,22 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
-                          borderRadius: 30,
-                          borderWidth: 1,
-                          buttonSize: 50,
+                          borderRadius: 30.0,
+                          borderWidth: 1.0,
+                          buttonSize: 50.0,
                           icon: Icon(
                             Icons.chevron_left,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 28,
+                            size: 28.0,
                           ),
                           onPressed: () async {
                             logFirebaseEvent(
@@ -89,7 +90,7 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       '9r7aauvp' /* How will you pay? */,
@@ -102,7 +103,7 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
             centerTitle: true,
             expandedTitleScale: 1.0,
           ),
-          elevation: 0,
+          elevation: 0.0,
         ),
       ),
       body: SafeArea(
@@ -114,21 +115,22 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).backgroundcolor,
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(0),
-                bottomRight: Radius.circular(0),
-                topLeft: Radius.circular(16),
-                topRight: Radius.circular(16),
+                bottomLeft: Radius.circular(0.0),
+                bottomRight: Radius.circular(0.0),
+                topLeft: Radius.circular(16.0),
+                topRight: Radius.circular(16.0),
               ),
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'br10fnam' /* Select your payment method */,
@@ -136,7 +138,7 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).bodyText2.override(
                             fontFamily: 'Poppins',
-                            fontSize: 12,
+                            fontSize: 12.0,
                           ),
                     ),
                   ),
@@ -192,7 +194,8 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                           },
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               'lfjf7ceh' /* Or  */,
@@ -201,12 +204,13 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                             style:
                                 FlutterFlowTheme.of(context).bodyText2.override(
                                       fontFamily: 'Poppins',
-                                      fontSize: 12,
+                                      fontSize: 12.0,
                                     ),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 1),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 15.0, 0.0, 1.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               logFirebaseEvent(
@@ -234,24 +238,28 @@ class _PaymentMethodsPageWidgetState extends State<PaymentMethodsPageWidget> {
                             ),
                             icon: Icon(
                               Icons.add,
-                              size: 15,
+                              size: 15.0,
                             ),
                             options: FFButtonOptions(
                               width: double.infinity,
-                              height: 50,
+                              height: 50.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
                               color: Color(0xFF42444C),
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: Colors.white,
-                                    fontSize: 14,
+                                    fontSize: 14.0,
                                   ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
                         ),

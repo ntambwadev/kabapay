@@ -1,5 +1,5 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -38,11 +38,11 @@ class _HomeButtonWidgetState extends State<HomeButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
-      height: 45,
+      width: 100.0,
+      height: 45.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryColor,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.0),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.max,
@@ -51,7 +51,7 @@ class _HomeButtonWidgetState extends State<HomeButtonWidget> {
           Icon(
             Icons.arrow_upward_outlined,
             color: Colors.black,
-            size: 14,
+            size: 14.0,
           ),
           Text(
             FFLocalizations.of(context).getText(

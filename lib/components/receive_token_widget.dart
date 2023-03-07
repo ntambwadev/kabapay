@@ -1,7 +1,7 @@
-import '../components/top_separator_widget.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/components/top_separator_widget.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -45,10 +45,10 @@ class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).backgroundcolor,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0),
-          bottomRight: Radius.circular(0),
-          topLeft: Radius.circular(16),
-          topRight: Radius.circular(16),
+          bottomLeft: Radius.circular(0.0),
+          bottomRight: Radius.circular(0.0),
+          topLeft: Radius.circular(16.0),
+          topRight: Radius.circular(16.0),
         ),
       ),
       child: Column(
@@ -62,7 +62,7 @@ class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -73,7 +73,7 @@ class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
                     ),
                     style: FlutterFlowTheme.of(context).title1.override(
                           fontFamily: 'Poppins',
-                          fontSize: 32,
+                          fontSize: 32.0,
                           fontWeight: FontWeight.w500,
                         ),
                   ),
@@ -93,7 +93,8 @@ class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
                     style: FlutterFlowTheme.of(context).bodyText1,
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 20),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 20.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         logFirebaseEvent(
@@ -106,11 +107,15 @@ class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
                       ),
                       icon: Icon(
                         Icons.content_copy_outlined,
-                        size: 20,
+                        size: 20.0,
                       ),
                       options: FFButtonOptions(
-                        width: 220,
-                        height: 50,
+                        width: 220.0,
+                        height: 50.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primaryColor,
                         textStyle:
                             FlutterFlowTheme.of(context).subtitle2.override(
@@ -119,9 +124,9 @@ class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
                                 ),
                         borderSide: BorderSide(
                           color: Colors.transparent,
-                          width: 1,
+                          width: 1.0,
                         ),
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
                   ),

@@ -1,6 +1,6 @@
-import '../components/transaction_details_widget.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/components/transaction_details_widget.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -39,7 +39,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 10),
+      padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 10.0),
       child: InkWell(
         onTap: () async {
           logFirebaseEvent('TRANSACTION_ITEM_Container_3pf0lgjc_ON_T');
@@ -62,23 +62,23 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
         },
         child: Container(
           width: double.infinity,
-          height: 80,
+          height: 80.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryBtnText,
             boxShadow: [
               BoxShadow(
-                blurRadius: 1,
+                blurRadius: 1.0,
                 color: FlutterFlowTheme.of(context).secondaryColor,
-                offset: Offset(0, 1),
+                offset: Offset(0.0, 1.0),
               )
             ],
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(8.0),
             border: Border.all(
               color: FlutterFlowTheme.of(context).secondaryColor,
             ),
           ),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(12, 12, 12, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,18 +90,18 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                   style: FlutterFlowTheme.of(context).bodyText2.override(
                         fontFamily: 'Poppins',
                         color: FlutterFlowTheme.of(context).secondaryText,
-                        fontSize: 10,
+                        fontSize: 10.0,
                       ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
-                        width: 32,
-                        height: 32,
+                        width: 32.0,
+                        height: 32.0,
                         clipBehavior: Clip.antiAlias,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
@@ -111,7 +111,8 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -139,7 +140,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
                                         .tertiaryColor,
-                                    fontSize: 10,
+                                    fontSize: 10.0,
                                   ),
                             ),
                           ],
@@ -161,7 +162,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
-                                    fontSize: 12,
+                                    fontSize: 12.0,
                                   ),
                             ),
                             Text(
@@ -174,7 +175,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    fontSize: 12,
+                                    fontSize: 12.0,
                                   ),
                             ),
                           ],

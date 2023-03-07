@@ -1,7 +1,8 @@
-import '../components/transaction_summary_widget.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/components/payment_instructions_widget.dart';
+import '/components/transaction_summary_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -46,10 +47,10 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).lineColor,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0),
-          bottomRight: Radius.circular(0),
-          topLeft: Radius.circular(8),
-          topRight: Radius.circular(8),
+          bottomLeft: Radius.circular(0.0),
+          bottomRight: Radius.circular(0.0),
+          topLeft: Radius.circular(8.0),
+          topRight: Radius.circular(8.0),
         ),
       ),
       child: Column(
@@ -58,13 +59,13 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
         children: [
           FlutterFlowIconButton(
             borderColor: Colors.transparent,
-            borderRadius: 30,
-            borderWidth: 1,
-            buttonSize: 60,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
             icon: Icon(
               Icons.close,
               color: FlutterFlowTheme.of(context).primaryText,
-              size: 24,
+              size: 24.0,
             ),
             onPressed: () {
               print('IconButton pressed ...');
@@ -72,43 +73,34 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 20),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'j4tcradb' /* Transaction Details */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Poppins',
-                            fontSize: 24,
+                            fontSize: 24.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'lw2h6xsc' /* Transaction Status */,
-                      ),
-                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Poppins',
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
-                    ),
+                  wrapWithModel(
+                    model: _model.paymentInstructionsModel,
+                    updateCallback: () => setState(() {}),
+                    child: PaymentInstructionsWidget(),
                   ),
-                  Expanded(
-                    child: wrapWithModel(
-                      model: _model.transactionSummaryModel,
-                      updateCallback: () => setState(() {}),
-                      child: TransactionSummaryWidget(),
-                    ),
+                  wrapWithModel(
+                    model: _model.transactionSummaryModel,
+                    updateCallback: () => setState(() {}),
+                    child: TransactionSummaryWidget(),
                   ),
                 ],
               ),

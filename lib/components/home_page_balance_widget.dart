@@ -1,5 +1,5 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -39,10 +39,10 @@ class _HomePageBalanceWidgetState extends State<HomePageBalanceWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 100,
+      height: 100.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.0),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.max,
@@ -65,7 +65,7 @@ class _HomePageBalanceWidgetState extends State<HomePageBalanceWidget> {
             maxLines: 1,
             style: FlutterFlowTheme.of(context).title1.override(
                   fontFamily: 'Poppins',
-                  fontSize: 48,
+                  fontSize: 48.0,
                   fontWeight: FontWeight.normal,
                 ),
           ),

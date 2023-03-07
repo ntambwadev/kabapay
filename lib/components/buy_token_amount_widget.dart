@@ -1,5 +1,5 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -39,7 +39,7 @@ class _BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -60,7 +60,7 @@ class _BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
                       textAlign: TextAlign.start,
                       style: FlutterFlowTheme.of(context).title1.override(
                             fontFamily: 'Poppins',
-                            fontSize: 64,
+                            fontSize: 64.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -72,12 +72,13 @@ class _BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
                       maxLines: 1,
                       style: FlutterFlowTheme.of(context).title1.override(
                             fontFamily: 'Poppins',
-                            fontSize: 64,
+                            fontSize: 64.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'ozwfhod8' /* USD */,

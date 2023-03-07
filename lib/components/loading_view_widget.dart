@@ -1,5 +1,5 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -44,10 +44,10 @@ class _LoadingViewWidgetState extends State<LoadingViewWidget> {
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0),
-          bottomRight: Radius.circular(0),
-          topLeft: Radius.circular(16),
-          topRight: Radius.circular(16),
+          bottomLeft: Radius.circular(0.0),
+          bottomRight: Radius.circular(0.0),
+          topLeft: Radius.circular(16.0),
+          topRight: Radius.circular(16.0),
         ),
       ),
       child: Column(
@@ -61,14 +61,14 @@ class _LoadingViewWidgetState extends State<LoadingViewWidget> {
               Lottie.asset(
                 'assets/lottie_animations/lottie-loading.json',
                 width: MediaQuery.of(context).size.width * 0.5,
-                height: 200,
+                height: 200.0,
                 fit: BoxFit.cover,
                 animate: true,
               ),
             ],
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(40, 40, 40, 40),
+            padding: EdgeInsetsDirectional.fromSTEB(40.0, 40.0, 40.0, 40.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 '1k1br4ry' /* Waiting for mobile money payme... */,

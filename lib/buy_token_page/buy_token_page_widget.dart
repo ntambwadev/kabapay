@@ -1,9 +1,9 @@
-import '../components/buy_token_amount_widget.dart';
-import '../components/buy_token_next_button_widget.dart';
-import '../components/number_keyboard_widget.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/components/buy_token_amount_widget.dart';
+import '/components/buy_token_next_button_widget.dart';
+import '/components/number_keyboard_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -46,7 +46,7 @@ class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(100.0),
         child: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
@@ -58,21 +58,22 @@ class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
-                          borderRadius: 30,
-                          borderWidth: 1,
-                          buttonSize: 50,
+                          borderRadius: 30.0,
+                          borderWidth: 1.0,
+                          buttonSize: 50.0,
                           icon: Icon(
                             Icons.chevron_left,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 28,
+                            size: 28.0,
                           ),
                           onPressed: () async {
                             logFirebaseEvent(
@@ -86,7 +87,7 @@ class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'np0tkmuy' /* Buy Token */,
@@ -99,14 +100,14 @@ class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
             centerTitle: true,
             expandedTitleScale: 1.0,
           ),
-          elevation: 0,
+          elevation: 0.0,
         ),
       ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
             child: Container(
               width: double.infinity,
               height: double.infinity,

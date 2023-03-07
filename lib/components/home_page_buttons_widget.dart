@@ -1,6 +1,6 @@
-import '../components/home_button_widget.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/components/home_button_widget.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -40,10 +40,10 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 90,
+      height: 90.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).backgroundcolor,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.0),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.max,

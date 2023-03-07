@@ -1,8 +1,8 @@
-import '../auth/auth_util.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/auth/auth_util.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -46,7 +46,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(100.0),
         child: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
@@ -58,21 +58,22 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
-                          borderRadius: 30,
-                          borderWidth: 1,
-                          buttonSize: 50,
+                          borderRadius: 30.0,
+                          borderWidth: 1.0,
+                          buttonSize: 50.0,
                           icon: Icon(
                             Icons.chevron_left,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 28,
+                            size: 28.0,
                           ),
                           onPressed: () async {
                             logFirebaseEvent(
@@ -86,7 +87,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'k7njmv60' /* Login */,
@@ -99,26 +100,27 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
             centerTitle: true,
             expandedTitleScale: 1.0,
           ),
-          elevation: 0,
+          elevation: 0.0,
         ),
       ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(4, 4, 4, 4),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              4.0, 4.0, 4.0, 4.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               '7lnzj2mq' /* Access your account by logging... */,
@@ -136,20 +138,20 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                   child: Container(
                     width: double.infinity,
-                    height: 50,
+                    height: 50.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       boxShadow: [
                         BoxShadow(
-                          blurRadius: 1,
+                          blurRadius: 1.0,
                           color: Color(0x4D101213),
-                          offset: Offset(0, 1),
+                          offset: Offset(0.0, 1.0),
                         )
                       ],
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: TextFormField(
                       controller: _model.emailAddressController,
@@ -164,43 +166,43 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             .override(
                               fontFamily: 'Poppins',
                               color: FlutterFlowTheme.of(context).secondaryText,
-                              fontSize: 12,
+                              fontSize: 12.0,
                               fontWeight: FontWeight.normal,
                               lineHeight: 1.2,
                             ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
-                            width: 0,
+                            width: 0.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
-                            width: 0,
+                            width: 0.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         errorBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
-                            width: 0,
+                            width: 0.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedErrorBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
-                            width: 0,
+                            width: 0.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         filled: true,
                         fillColor:
                             FlutterFlowTheme.of(context).secondaryBackground,
-                        contentPadding:
-                            EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
+                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                            24.0, 24.0, 20.0, 24.0),
                       ),
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Poppins',
@@ -212,20 +214,20 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: Container(
                     width: double.infinity,
-                    height: 50,
+                    height: 50.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       boxShadow: [
                         BoxShadow(
-                          blurRadius: 1,
+                          blurRadius: 1.0,
                           color: Color(0x4D101213),
-                          offset: Offset(0, 1),
+                          offset: Offset(0.0, 1.0),
                         )
                       ],
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: TextFormField(
                       controller: _model.passwordLoginController,
@@ -240,43 +242,43 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             .override(
                               fontFamily: 'Poppins',
                               color: FlutterFlowTheme.of(context).secondaryText,
-                              fontSize: 12,
+                              fontSize: 12.0,
                               fontWeight: FontWeight.normal,
                               lineHeight: 1.2,
                             ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
-                            width: 0,
+                            width: 0.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
-                            width: 0,
+                            width: 0.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         errorBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
-                            width: 0,
+                            width: 0.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedErrorBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0x00000000),
-                            width: 0,
+                            width: 0.0,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         filled: true,
                         fillColor:
                             FlutterFlowTheme.of(context).secondaryBackground,
-                        contentPadding:
-                            EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
+                        contentPadding: EdgeInsetsDirectional.fromSTEB(
+                            24.0, 24.0, 20.0, 24.0),
                         suffixIcon: InkWell(
                           onTap: () => setState(
                             () => _model.passwordLoginVisibility =
@@ -288,7 +290,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 ? Icons.visibility_outlined
                                 : Icons.visibility_off_outlined,
                             color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 22,
+                            size: 22.0,
                           ),
                         ),
                       ),
@@ -299,7 +301,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       logFirebaseEvent('LOGIN_PAGE_PAGE_Button-Login_ON_TAP');
@@ -322,25 +324,29 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     ),
                     options: FFButtonOptions(
                       width: double.infinity,
-                      height: 50,
+                      height: 50.0,
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primaryText,
                       textStyle:
                           FlutterFlowTheme.of(context).subtitle2.override(
                                 fontFamily: 'Poppins',
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                fontSize: 16,
+                                fontSize: 16.0,
                               ),
-                      elevation: 3,
+                      elevation: 3.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,
-                        width: 1,
+                        width: 1.0,
                       ),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -357,8 +363,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           'b1818lqs' /* Forgot Password? */,
                         ),
                         options: FFButtonOptions(
-                          width: 170,
-                          height: 50,
+                          width: 170.0,
+                          height: 50.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           textStyle: FlutterFlowTheme.of(context)
                               .subtitle2
@@ -367,10 +377,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                               ),
-                          elevation: 0,
+                          elevation: 0.0,
                           borderSide: BorderSide(
                             color: Colors.transparent,
-                            width: 1,
+                            width: 1.0,
                           ),
                         ),
                       ),

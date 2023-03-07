@@ -1,8 +1,8 @@
-import '../auth/auth_util.dart';
-import '../components/nav_back_button_widget.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/auth/auth_util.dart';
+import '/components/nav_back_button_widget.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -47,7 +47,7 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(100.0),
         child: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
@@ -61,14 +61,14 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
             centerTitle: true,
             expandedTitleScale: 1.0,
           ),
-          elevation: 0,
+          elevation: 0.0,
         ),
       ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -77,14 +77,15 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 8),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Expanded(
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 4, 0, 4),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 4.0, 0.0, 4.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'ojco3nk2' /* This code helps keep your acco... */,
@@ -97,7 +98,8 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 32, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                       child: PinCodeTextField(
                         appContext: context,
                         length: 6,
@@ -115,10 +117,10 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                         obscureText: false,
                         hintCharacter: '-',
                         pinTheme: PinTheme(
-                          fieldHeight: 60,
-                          fieldWidth: 60,
-                          borderWidth: 2,
-                          borderRadius: BorderRadius.circular(12),
+                          fieldHeight: 60.0,
+                          fieldWidth: 60.0,
+                          borderWidth: 2.0,
+                          borderRadius: BorderRadius.circular(12.0),
                           shape: PinCodeFieldShape.box,
                           activeColor:
                               FlutterFlowTheme.of(context).primaryColor,
@@ -138,7 +140,8 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 44),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 44.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent(
@@ -169,7 +172,11 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                         ),
                         options: FFButtonOptions(
                           width: double.infinity,
-                          height: 50,
+                          height: 50.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryText,
                           textStyle:
                               FlutterFlowTheme.of(context).subtitle2.override(
@@ -177,12 +184,12 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                   ),
-                          elevation: 2,
+                          elevation: 2.0,
                           borderSide: BorderSide(
                             color: Colors.transparent,
-                            width: 1,
+                            width: 1.0,
                           ),
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
                       ),
                     ),

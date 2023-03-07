@@ -1,6 +1,6 @@
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -40,7 +40,7 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 250,
+      height: 250.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
       ),
@@ -56,13 +56,13 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
               children: [
                 FlutterFlowIconButton(
                   borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 80,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 80.0,
                   icon: Icon(
                     FFIcons.k1,
                     color: FlutterFlowTheme.of(context).primaryText,
-                    size: 22,
+                    size: 22.0,
                   ),
                   onPressed: () {
                     print('IconButton pressed ...');
@@ -70,13 +70,13 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                 ),
                 FlutterFlowIconButton(
                   borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 80,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 80.0,
                   icon: Icon(
                     FFIcons.k2,
                     color: FlutterFlowTheme.of(context).primaryText,
-                    size: 22,
+                    size: 22.0,
                   ),
                   onPressed: () {
                     print('IconButton pressed ...');
@@ -84,13 +84,13 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                 ),
                 FlutterFlowIconButton(
                   borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 80,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 80.0,
                   icon: Icon(
                     FFIcons.k3,
                     color: FlutterFlowTheme.of(context).primaryText,
-                    size: 22,
+                    size: 22.0,
                   ),
                   onPressed: () {
                     print('IconButton pressed ...');
@@ -106,13 +106,13 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
               children: [
                 FlutterFlowIconButton(
                   borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 80,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 80.0,
                   icon: Icon(
                     FFIcons.k4,
                     color: FlutterFlowTheme.of(context).primaryText,
-                    size: 22,
+                    size: 22.0,
                   ),
                   onPressed: () {
                     print('IconButton pressed ...');
@@ -120,13 +120,13 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                 ),
                 FlutterFlowIconButton(
                   borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 80,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 80.0,
                   icon: Icon(
                     FFIcons.k5,
                     color: FlutterFlowTheme.of(context).primaryText,
-                    size: 22,
+                    size: 22.0,
                   ),
                   onPressed: () {
                     print('IconButton pressed ...');
@@ -134,13 +134,13 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                 ),
                 FlutterFlowIconButton(
                   borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 80,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 80.0,
                   icon: Icon(
                     FFIcons.k6,
                     color: FlutterFlowTheme.of(context).primaryText,
-                    size: 22,
+                    size: 22.0,
                   ),
                   onPressed: () {
                     print('IconButton pressed ...');
@@ -156,13 +156,13 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
               children: [
                 FlutterFlowIconButton(
                   borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 80,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 80.0,
                   icon: Icon(
                     FFIcons.k7,
                     color: FlutterFlowTheme.of(context).primaryText,
-                    size: 22,
+                    size: 22.0,
                   ),
                   onPressed: () {
                     print('IconButton pressed ...');
@@ -170,13 +170,13 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                 ),
                 FlutterFlowIconButton(
                   borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 80,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 80.0,
                   icon: Icon(
                     FFIcons.k8,
                     color: FlutterFlowTheme.of(context).primaryText,
-                    size: 22,
+                    size: 22.0,
                   ),
                   onPressed: () {
                     print('IconButton pressed ...');
@@ -184,13 +184,13 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                 ),
                 FlutterFlowIconButton(
                   borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 80,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 80.0,
                   icon: Icon(
                     FFIcons.k9,
                     color: FlutterFlowTheme.of(context).primaryText,
-                    size: 22,
+                    size: 22.0,
                   ),
                   onPressed: () {
                     print('IconButton pressed ...');
@@ -206,13 +206,13 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
               children: [
                 FlutterFlowIconButton(
                   borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 80,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 80.0,
                   icon: Icon(
                     FFIcons.kdot,
                     color: FlutterFlowTheme.of(context).primaryText,
-                    size: 6,
+                    size: 6.0,
                   ),
                   onPressed: () {
                     print('IconButton pressed ...');
@@ -220,13 +220,13 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                 ),
                 FlutterFlowIconButton(
                   borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 80,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 80.0,
                   icon: Icon(
                     FFIcons.k0,
                     color: FlutterFlowTheme.of(context).primaryText,
-                    size: 22,
+                    size: 22.0,
                   ),
                   onPressed: () {
                     print('IconButton pressed ...');
@@ -234,13 +234,13 @@ class _NumberKeyboardWidgetState extends State<NumberKeyboardWidget> {
                 ),
                 FlutterFlowIconButton(
                   borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 80,
+                  borderRadius: 30.0,
+                  borderWidth: 1.0,
+                  buttonSize: 80.0,
                   icon: Icon(
                     FFIcons.kdelete,
                     color: FlutterFlowTheme.of(context).primaryText,
-                    size: 22,
+                    size: 22.0,
                   ),
                   onPressed: () {
                     print('IconButton pressed ...');

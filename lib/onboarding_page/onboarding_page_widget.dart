@@ -1,6 +1,6 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
@@ -55,7 +55,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
         ),
         actions: [],
         centerTitle: false,
-        elevation: 0,
+        elevation: 0.0,
       ),
       body: SafeArea(
         child: GestureDetector(
@@ -66,11 +66,12 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
               Expanded(
                 child: Container(
                   width: double.infinity,
-                  height: 500,
+                  height: 500.0,
                   child: Stack(
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
                         child: PageView(
                           controller: _model.pageViewController ??=
                               PageController(initialPage: 0),
@@ -78,20 +79,20 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                           children: [
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  12, 12, 12, 12),
+                                  12.0, 12.0, 12.0, 12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Image.asset(
-                                    'assets/images/34rbv_6.png',
-                                    width: 300,
-                                    height: 300,
+                                    'assets/images/8jz5a_6.png',
+                                    width: 300.0,
+                                    height: 300.0,
                                     fit: BoxFit.cover,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 8, 16, 0),
+                                        16.0, 8.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -107,7 +108,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 8, 16, 0),
+                                        16.0, 8.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -128,20 +129,20 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  12, 12, 12, 12),
+                                  12.0, 12.0, 12.0, 12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Image.asset(
-                                    'assets/images/x5rbw_5.png',
-                                    width: 300,
-                                    height: 300,
+                                    'assets/images/5repw_5.png',
+                                    width: 300.0,
+                                    height: 300.0,
                                     fit: BoxFit.cover,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 8, 16, 0),
+                                        16.0, 8.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -157,7 +158,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 8, 16, 0),
+                                        16.0, 8.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -178,20 +179,20 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  12, 12, 12, 12),
+                                  12.0, 12.0, 12.0, 12.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Image.asset(
-                                    'assets/images/ml88i_4.png',
-                                    width: 300,
-                                    height: 300,
+                                    'assets/images/ee7yh_4.png',
+                                    width: 300.0,
+                                    height: 300.0,
                                     fit: BoxFit.cover,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 8, 16, 0),
+                                        16.0, 8.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -207,7 +208,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 8, 16, 0),
+                                        16.0, 8.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -230,9 +231,10 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0, 1),
+                        alignment: AlignmentDirectional(0.0, 1.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 10.0),
                           child: smooth_page_indicator.SmoothPageIndicator(
                             controller: _model.pageViewController ??=
                                 PageController(initialPage: 0),
@@ -246,11 +248,11 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                               );
                             },
                             effect: smooth_page_indicator.ExpandingDotsEffect(
-                              expansionFactor: 2,
-                              spacing: 8,
-                              radius: 16,
-                              dotWidth: 16,
-                              dotHeight: 4,
+                              expansionFactor: 2.0,
+                              spacing: 8.0,
+                              radius: 16.0,
+                              dotWidth: 16.0,
+                              dotHeight: 4.0,
                               dotColor: FlutterFlowTheme.of(context).lineColor,
                               activeDotColor:
                                   FlutterFlowTheme.of(context).primaryText,
@@ -264,7 +266,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     logFirebaseEvent('ONBOARDING_LOGIN_WITH_PHONE_BTN_ON_TAP');
@@ -276,23 +278,26 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                     '4tdqak56' /* Login with phone */,
                   ),
                   options: FFButtonOptions(
-                    width: 300,
-                    height: 50,
+                    width: 300.0,
+                    height: 50.0,
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     textStyle: FlutterFlowTheme.of(context).subtitle2.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).primaryText,
                         ),
-                    elevation: 2,
+                    elevation: 2.0,
                     borderSide: BorderSide(
                       color: Colors.transparent,
-                      width: 1,
+                      width: 1.0,
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 16),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 16.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     logFirebaseEvent('ONBOARDING_LOGIN_WITH_EMAIL_BTN_ON_TAP');
@@ -304,23 +309,26 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                     '1ne6njze' /* Login with email */,
                   ),
                   options: FFButtonOptions(
-                    width: 300,
-                    height: 50,
+                    width: 300.0,
+                    height: 50.0,
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     textStyle: FlutterFlowTheme.of(context).subtitle2.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).primaryText,
                         ),
-                    elevation: 2,
+                    elevation: 2.0,
                     borderSide: BorderSide(
                       color: Colors.transparent,
-                      width: 1,
+                      width: 1.0,
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 24),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     logFirebaseEvent(
@@ -333,18 +341,21 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                     '8lb31spr' /* Register */,
                   ),
                   options: FFButtonOptions(
-                    width: 300,
-                    height: 50,
+                    width: 300.0,
+                    height: 50.0,
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primaryText,
                     textStyle: FlutterFlowTheme.of(context).subtitle2.override(
                           fontFamily: 'Poppins',
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
                         ),
-                    elevation: 2,
+                    elevation: 2.0,
                     borderSide: BorderSide(
                       color: Colors.transparent,
-                      width: 1,
+                      width: 1.0,
                     ),
                   ),
                 ),
