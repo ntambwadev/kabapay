@@ -23,8 +23,10 @@ class TransactionModel extends BaseTransactionModel {
     Map data = doc.data() as Map;
     debugPrint('data: ${data}');
     List<EventData> events = List.empty(growable: true);
-    data["events"].entries.forEach(
+    if (data["events"] != null) {
+      data["events"].entries.forEach(
             (entry) => events.add(EventData.fromMap(entry.value)));
+    }
     return TransactionModel(
       id: data['id'] as String?,
       userId: data['userId'] as String?,
@@ -51,12 +53,20 @@ enum TransactionStatus {
   PAYIN_CRYPTO_TRANSFER_PROCESSING('PAYIN_CRYPTO_TRANSFER_PROCESSING'),
   PAYIN_CRYPTO_TRANSFER_COMPLETED('PAYIN_CRYPTO_TRANSFER_COMPLETED'),
   PAYIN_CRYPTO_TRANSFER_FAILED('PAYIN_CRYPTO_TRANSFER_FAILED'),
+
+  PAYOUT_CRYPTO_TRANSFER_CREATED('PAYOUT_CRYPTO_TRANSFER_CREATED'),
   PAYOUT_CRYPTO_TRANSFER_PROCESSING('PAYOUT_CRYPTO_TRANSFER_PROCESSING'),
-  PAYOUT_CRYPTO_TRANSFER_SUCCEDED('PAYOUT_CRYPTO_TRANSFER_SUCCEDED'),
+  PAYOUT_CRYPTO_TRANSFER_SUCCEEDED('PAYOUT_CRYPTO_TRANSFER_SUCCEEDED'),
   PAYOUT_CRYPTO_TRANSFER_FAILED('PAYOUT_CRYPTO_TRANSFER_FAILED'),
+
   PAYOUT_MOMO_TRANSFER_PROCESSING('PAYOUT_MOMO_TRANSFER_PROCESSING'),
-  PAYOUT_MOMO_TRANSFER_SUCCEDEED('PAYOUT_MOMO_TRANSFER_SUCCEDEED'),
-  PAYOUT_MOMO_TRANSFER_FAILED('PAYOUT_MOMO_TRANSFER_FAILED');
+  PAYOUT_MOMO_TRANSFER_SUCCEEDED('PAYOUT_MOMO_TRANSFER_SUCCEEDED'),
+  PAYOUT_MOMO_TRANSFER_FAILED('PAYOUT_MOMO_TRANSFER_FAILED'),
+
+  PAYOUT_INTERAC_PAYTRIE_TRANSFER_CREATED('PAYOUT_INTERAC_PAYTRIE_TRANSFER_CREATED'),
+  PAYOUT_INTERAC_TRANSFER_PROCESSING('PAYOUT_INTERAC_TRANSFER_PROCESSING'),
+  PAYOUT_INTERAC_TRANSFER_SUCCEEDED('PAYOUT_INTERAC_TRANSFER_SUCCEEDED'),
+  PAYOUT_INTERAC_TRANSFER_FAILED('PAYOUT_INTERAC_TRANSFER_FAILED');
 
   const TransactionStatus(this.value);
   final String value;
@@ -75,14 +85,16 @@ extension TransactionStatusExtension on TransactionStatus {
         return 'status_payment_received';
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_PROCESSING:
       case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_PROCESSING:
-      case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_SUCCEDED:
+      case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_SUCCEEDED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_PROCESSING:
         return 'status_processing';
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_COMPLETED:
-      case TransactionStatus.PAYOUT_MOMO_TRANSFER_SUCCEDEED:
+      case TransactionStatus.PAYOUT_MOMO_TRANSFER_SUCCEEDED:
+      case TransactionStatus.PAYOUT_INTERAC_TRANSFER_SUCCEEDED:
         return 'status_completed';
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_FAILED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_FAILED:
+      case TransactionStatus.PAYOUT_INTERAC_TRANSFER_FAILED:
         return 'status_failed';
       default:
         return "";
@@ -97,14 +109,16 @@ extension TransactionStatusExtension on TransactionStatus {
         return 1;
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_PROCESSING:
       case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_PROCESSING:
-      case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_SUCCEDED:
+      case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_SUCCEEDED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_PROCESSING:
         return 2;
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_COMPLETED:
-      case TransactionStatus.PAYOUT_MOMO_TRANSFER_SUCCEDEED:
+      case TransactionStatus.PAYOUT_MOMO_TRANSFER_SUCCEEDED:
+      case TransactionStatus.PAYOUT_INTERAC_TRANSFER_SUCCEEDED:
         return 3;
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_FAILED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_FAILED:
+      case TransactionStatus.PAYOUT_INTERAC_TRANSFER_FAILED:
         return 4;
       default:
         return -1;
@@ -117,14 +131,15 @@ extension TransactionStatusExtension on TransactionStatus {
       case TransactionStatus.PAYIN_RECEIVED_USER_PAYMENT:
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_PROCESSING:
       case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_PROCESSING:
-      case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_SUCCEDED:
+      case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_SUCCEEDED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_PROCESSING:
         return Colors.deepOrangeAccent;
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_COMPLETED:
-      case TransactionStatus.PAYOUT_MOMO_TRANSFER_SUCCEDEED:
+      case TransactionStatus.PAYOUT_MOMO_TRANSFER_SUCCEEDED:
         return Colors.green;
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_FAILED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_FAILED:
+      case TransactionStatus.PAYOUT_INTERAC_TRANSFER_FAILED:
         return Colors.red;
       default:
         return Colors.red;

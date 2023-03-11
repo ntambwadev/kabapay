@@ -54,11 +54,11 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
           width: double.infinity,
           color: FlutterFlowTheme.of(context).primaryBackground,
           child: ExpandableNotifier(
-            initialExpanded: false,
+            initialExpanded: true,
             child: ExpandablePanel(
               header: Text(
                 FFLocalizations.of(context).getText(
-                  'b8ytvlgx' /* Transaction summary */,
+                  '6z8150o2' /* Transaction summary */,
                 ),
                 style: FlutterFlowTheme.of(context).bodyText1.override(
                       fontFamily: 'Poppins',
@@ -67,354 +67,357 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                     ),
               ),
               collapsed: Container(),
-              expanded: Container(
-                height: 340,
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (transactionModel?.type == TransactionType.BUY)
-                      Expanded(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    '0s3cbmii' /* Payment method */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primaryColor,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Text(
-                                  '${transactionModel?.paymentInstrument?.productName}',
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    '1vdr04oj' /* Mobile money number */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primaryColor,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Text(
-                                  '${transactionModel?.paymentInstrument?.accountNumber}',
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'enxf3cm7' /* You pay */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primaryColor,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Text(
-                                  '\$ ${transactionModel?.amountUSD} USD',
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'a4h035al' /* You receive */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primaryColor,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      width: 18,
-                                      height: 18,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: Image.network(
-                                        transactionModel?.token?.tokenMetadata.image ?? '',
-                                      ),
+              expanded: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                child: Container(
+                  height: 340,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (transactionModel?.type == TransactionType.BUY)
+                        Expanded(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '0s3cbmii' /* Payment method */,
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                                      child: Text(
-                                        '${transactionModel?.amountToken} ${transactionModel?.token?.symbol.toUpperCase()}',
-                                        style: FlutterFlowTheme.of(context).bodyText1.override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context).secondaryText,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.normal,
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).primaryColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  Text(
+                                    '${transactionModel?.paymentInstrument?.productName}',
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '1vdr04oj' /* Mobile money number */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).primaryColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  Text(
+                                    '${transactionModel?.paymentInstrument?.accountNumber}',
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'enxf3cm7' /* You pay */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).primaryColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  Text(
+                                    '\$ ${transactionModel?.amountUSD} USD',
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'a4h035al' /* You receive */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).primaryColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Container(
+                                        width: 18,
+                                        height: 18,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Image.network(
+                                          transactionModel?.token?.tokenMetadata.image ?? '',
                                         ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    '2caxy42a' /* Total */,
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                        child: Text(
+                                          '${transactionModel?.amountToken} ${transactionModel?.token?.symbol.toUpperCase()}',
+                                          style: FlutterFlowTheme.of(context).bodyText1.override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context).secondaryText,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
+                                ],
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '2caxy42a' /* Total */,
+                                    ),
 
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primaryColor,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                                Text(
-                                  '\$ ${transactionModel?.amountUSD} USD',
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    if (transactionModel?.type == TransactionType.SEND)
-                      Expanded(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'recipientname' /* Recipient Name*/,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primaryColor,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Text(
-                                  overflow: TextOverflow.fade,
-                                  '${transactionModel?.recipientName}',
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'recipientphone' /* Recipient Phone*/,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primaryColor,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Text(
-                                  overflow: TextOverflow.fade,
-                                  '${transactionModel?.recipientPhone}',
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'recipient' /* Recipient*/,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primaryColor,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Text(
-                                  overflow: TextOverflow.fade,
-                                  '${transactionModel?.recipientAddress}',
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'yousend' /* You send */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primaryColor,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Text(
-                                  '\$ ${transactionModel?.amountUSD} USD',
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    'theyreceive' /* They receive */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primaryColor,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      width: 18,
-                                      height: 18,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/usdt.png',
-                                      ),
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).primaryColor,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14,
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'hfvxl2pp' /* 100 USDT */,
+                                  ),
+                                  Text(
+                                    '\$ ${transactionModel?.amountUSD} USD',
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      if (transactionModel?.type == TransactionType.SEND)
+                        Expanded(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'recipientname' /* Recipient Name*/,
+                                    ),
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).primaryColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  Text(
+                                    overflow: TextOverflow.fade,
+                                    '${transactionModel?.recipientName}',
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'recipientphone' /* Recipient Phone*/,
+                                    ),
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).primaryColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  Text(
+                                    overflow: TextOverflow.fade,
+                                    '${transactionModel?.recipientPhone}',
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'recipient' /* Recipient*/,
+                                    ),
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).primaryColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  Text(
+                                    overflow: TextOverflow.fade,
+                                    '${transactionModel?.recipientAddress}',
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'yousend' /* You send */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).primaryColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  Text(
+                                    '\$ ${transactionModel?.amountUSD} USD',
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'theyreceive' /* They receive */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).primaryColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Container(
+                                        width: 18,
+                                        height: 18,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          fontWeight: FontWeight.normal,
+                                        child: Image.asset(
+                                          'assets/images/usdt.png',
                                         ),
                                       ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            'hfvxl2pp' /* 100 USDT */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1
+                                              .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '2caxy42a' /* Total */,
                                     ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    '2caxy42a' /* Total */,
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).primaryColor,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primaryColor,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
+                                  Text(
+                                    '\$ ${transactionModel?.amountUSD} USD',
+                                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context).secondaryText,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  '\$ ${transactionModel?.amountUSD} USD',
-                                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               theme: ExpandableThemeData(

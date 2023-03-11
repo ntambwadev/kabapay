@@ -889,15 +889,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Sommaire de la transaction',
       'sw': 'Muhtasari wa Muamala',
     },
-    'b8ytvlgx': {
+    '6z8150o2': {
       'en': 'Transaction summary',
       'fr': 'Sommaire de la transaction',
       'sw': 'Muhtasari wa Muamala',
-    },
-    'dxgc3lgy': {
-      'en': 'Lorem ipsum dolor sit amet, consectetur adipiscing...',
-      'fr': '',
-      'sw': '',
     },
     '0s3cbmii': {
       'en': 'Payment method',
@@ -1051,16 +1046,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
 
   // payment_instructions
   {
-    'wo42hte7': {
+    'wd4xh3q8': {
       'en': 'Payment instructions',
-      'fr': 'État de la transaction',
-      'sw': 'Hali ya Muamala',
+      'fr': 'Instructions de paiement',
+      'sw': 'Maelekezo ya malipo',
     },
     '1k87empz': {
-      'en':
-          'To complete your transaction, send us your payment from 0971504436. Use the details below to make the transfer',
-      'fr': 'pour',
-      'sw': 'kwa',
+      'en': 'To complete your transaction, send us your transfer from 0971504436. Use the details below to make the transfer.',
+      'fr': 'Pour finaliser votre transaction, envoyez-nous votre virement a partir du 0971504436. Utilisez les coordonnées ci-dessous pour effectuer le virement.',
+      'sw': 'Ili kukamilisha muamala wako, tutumie malipo yako kutoka 0971504436. Tumia maelezo yaliyo hapa chini kufanya uhamisho.',
     },
     '37hmzj2z': {
       'en': 'Amount to send',
@@ -1074,13 +1068,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qg3l5g4e': {
       'en': 'Copy',
-      'fr': '97 USD',
-      'sw': '\$97 USD',
+      'fr': 'Copier',
+      'sw': 'Nakili',
     },
     'z73au94g': {
       'en': 'To number',
-      'fr': 'pour',
-      'sw': 'kwa',
+      'fr': 'Au numero',
+      'sw': 'Nambari ya mteja',
     },
     'tmqgie05': {
       'en': '0971504436',
