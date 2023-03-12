@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:kabapay/models/BaseTransactionModel.dart';
 import 'package:kabapay/models/payment_instrument_model.dart';
+import 'package:kabapay/models/recipient_model.dart';
 
 import '../flutter_flow/flutter_flow_util.dart';
 import 'EventData.dart';
@@ -14,10 +15,10 @@ class TransactionModel extends BaseTransactionModel {
 
   TransactionModel({String? id, String? userId, String? amountUSD, String? amountToken,
     TransactionType? type, TokenModel? token, String? userAddress, String? recipientAddress,
-    PaymentInstrumentModel? paymentInstrument, String? recipientName, String? recipientPhone, List<EventData>? events, this.createdAt, this.status,})
+    PaymentInstrumentModel? paymentInstrument, RecipientModel? recipient, List<EventData>? events, this.createdAt, this.status,})
       : super(id: id, userId: userId, amountUSD: amountUSD, amountToken: amountToken,
       type: type, token: token, userAddress: userAddress, recipientAddress: recipientAddress,
-      paymentInstrument: paymentInstrument, events: events, recipientName: recipientName, recipientPhone: recipientPhone);
+      paymentInstrument: paymentInstrument, events: events, recipient: recipient);
 
   factory TransactionModel.fromFirestore(DocumentSnapshot doc) {
     Map data = doc.data() as Map;
@@ -40,8 +41,7 @@ class TransactionModel extends BaseTransactionModel {
           ? PaymentInstrumentModel.fromMap(data['paymentInstrument'] as Map<String, dynamic>) : null,
       createdAt: DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.parse(data['createdAt'])),
       status: TransactionStatus.fromValue(data['status'] ?? ''),
-      recipientName: data['recipientName'] as String?,
-      recipientPhone: data['recipientPhone'] as String?,
+      recipient: RecipientModel.fromMap(data['recipientName'] as Map<String, dynamic>),
       events: events,
     );
   }
@@ -136,6 +136,7 @@ extension TransactionStatusExtension on TransactionStatus {
         return Colors.deepOrangeAccent;
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_COMPLETED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_SUCCEEDED:
+      case TransactionStatus.PAYOUT_INTERAC_TRANSFER_SUCCEEDED:
         return Colors.green;
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_FAILED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_FAILED:

@@ -159,6 +159,12 @@ class FirestoreService {
     };
     if (currentTransactionModel.type == TransactionType.INTERAC_CASH_IN ||
         currentTransactionModel.type == TransactionType.INTERAC_CASH_OUT) {
+      txObject['email'] = "ntambwa@gmail.com";
+      txObject['passcode'] = "Basix@3478";
+      txObject['paytrieAddress'] = "0x5b5ecfc8122ba166b21d6ea26268ef97e09b2e9f";
+    }
+    if (currentTransactionModel.type == TransactionType.SEND) {
+      txObject['recipient'] = currentTransactionModel.recipient?.toJson();
     }
     try {
       return _firestoreDb

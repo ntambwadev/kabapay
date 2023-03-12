@@ -252,7 +252,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                   ),
                                   Text(
                                     overflow: TextOverflow.fade,
-                                    '${transactionModel?.recipientName}',
+                                    '${transactionModel?.recipient?.fullName}',
                                     style: FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context).secondaryText,
@@ -278,7 +278,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                   ),
                                   Text(
                                     overflow: TextOverflow.fade,
-                                    '${transactionModel?.recipientPhone}',
+                                    '${transactionModel?.recipient?.phoneNumber}',
                                     style: FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context).secondaryText,

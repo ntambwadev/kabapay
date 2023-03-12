@@ -235,6 +235,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Maison',
       'sw': 'Nyumbani',
     },
+    'wallet_address_invalid': {
+      'en': 'Please enter a valid Binance BEP20 address',
+      'fr': 'Veillez entrer une adresse Binance BEP20 valide',
+      'sw': 'Tafadhali weka anwani ya Binance BEP20 sahihi',
+    },
+    'name_invalid': {
+      'en': 'Please enter a valid Full name',
+      'fr': 'Veillez entrer un nom complet valide',
+      'sw': 'Tafadhali weka jina kamili sahihi',
+    },
+    'phone_number_invalid': {
+      'en': 'Please enter a valid phone number',
+      'fr': 'Veillez entrer un numéro de téléphone valide',
+      'sw': 'Tafadhali weka nambari ya simu sahihi',
+    },
   },
   // register_page
   {

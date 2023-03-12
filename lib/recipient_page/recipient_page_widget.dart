@@ -1,8 +1,10 @@
+import 'package:kabapay/utils/input_validator_utils.dart';
+
 import '../components/nav_back_button_widget.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,6 +13,7 @@ import '../models/current_transaction_model.dart';
 import 'recipient_page_model.dart';
 export 'recipient_page_model.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:another_flushbar/flushbar.dart';
 
 class RecipientPageWidget extends StatefulWidget {
   const RecipientPageWidget({Key? key}) : super(key: key);
@@ -32,9 +35,9 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'recipient_page'});
-    _model.textController1 ??= TextEditingController();
-    _model.textController2 ??= TextEditingController();
-    _model.textController3 ??= TextEditingController();
+    _model.walletAdressController ??= TextEditingController();
+    _model.fullNameController ??= TextEditingController();
+    _model.phoneNumberController ??= TextEditingController();
   }
 
   @override
@@ -50,11 +53,14 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
         'RECIPIENT_PAGE_PAGE_CONTINUE_BTN_ON_TAP');
     logFirebaseEvent('Button_navigate_to');
 
+    if(!_validateInput(context)) {
+      return;
+    }
     Provider.of<CurrentTransactionModel>(context, listen: false)
         .addRecipientInfo(
-        _model.textController1.text,
-        _model.textController2.text,
-        _model.textController3.text);
+        _model.walletAdressController.text,
+        _model.fullNameController.text,
+        _model.phoneNumberController.text);
 
     context.pushNamed(
       'tokens_page',
@@ -63,21 +69,49 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
           hasTransition: true,
           transitionType: PageTransitionType.rightToLeft,
         ),
-      },);
-    }
+      },
+    );
+  }
 
-    _onScanQRCode(BuildContext context) async {
-      logFirebaseEvent(
-          'RECIPIENT_PAGE_PAGE_Icon_l7r27iv6_ON_TAP');
-      logFirebaseEvent('Icon_close_dialog,_drawer,_etc');
-      _model.textController1.text =
-      await FlutterBarcodeScanner.scanBarcode(
-        '#C62828', // scanning line color
-        'Cancel', // cancel button text
-        true, // whether to show the flash icon
-        ScanMode.QR,
-      );
+  _onScanQRCode(BuildContext context) async {
+    logFirebaseEvent(
+        'RECIPIENT_PAGE_PAGE_Icon_l7r27iv6_ON_TAP');
+    logFirebaseEvent('Icon_close_dialog,_drawer,_etc');
+    _model.walletAdressController.text =
+    await FlutterBarcodeScanner.scanBarcode(
+      '#C62828', // scanning line color
+      'Cancel', // cancel button text
+      true, // whether to show the flash icon
+      ScanMode.QR,
+    );
+  }
+
+  showSnackBar(BuildContext context, String messageKey) {
+    Flushbar(
+      backgroundColor: Colors.red,
+      margin: EdgeInsets.all(8),
+      borderRadius: BorderRadius.circular(8),
+      title:  FFLocalizations.of(context).getText('error_title',),
+      message:  FFLocalizations.of(context).getText(messageKey,),
+      duration:  Duration(seconds: 2),
+    )..show(context);
+  }
+
+  bool _validateInput(BuildContext context) {
+    if (!InputValidatorUtils.isAddressValidBep20(_model.walletAdressController.text)) {
+      showSnackBar(context, 'wallet_address_invalid');
+      return false;
     }
+    if (!InputValidatorUtils.isValidFullName(_model.fullNameController.text)) {
+      showSnackBar(context, 'name_invalid');
+      return false;
+    }
+    if (!InputValidatorUtils.isValidNumber(_model.phoneNumberController.text)) {
+      showSnackBar(context, 'phone_number_invalid');
+      return false;
+    }
+    return true;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -141,9 +175,9 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                           child: Container(
                             width: double.infinity,
                             child: TextFormField(
-                              controller: _model.textController1,
+                              controller: _model.walletAdressController,
                               onChanged: (_) => EasyDebounce.debounce(
-                                '_model.textController1',
+                                '_model.walletAdressController',
                                 Duration(milliseconds: 2000),
                                 () => setState(() {}),
                               ),
@@ -192,10 +226,10 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                                   borderRadius: BorderRadius.circular(0),
                                 ),
                                 suffixIcon:
-                                    _model.textController1!.text.isNotEmpty
+                                    _model.walletAdressController!.text.isNotEmpty
                                         ? InkWell(
                                             onTap: () async {
-                                              _model.textController1?.clear();
+                                              _model.walletAdressController?.clear();
                                               setState(() {});
                                             },
                                             child: Icon(
@@ -215,7 +249,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                               maxLines: 2,
                               minLines: 1,
                               keyboardType: TextInputType.streetAddress,
-                              validator: _model.textController1Validator
+                              validator: _model.walletAdressValidator
                                   .asValidator(context),
                             ),
                           ),
@@ -251,9 +285,9 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                     Container(
                       width: double.infinity,
                       child: TextFormField(
-                        controller: _model.textController2,
+                        controller: _model.fullNameController,
                         onChanged: (_) => EasyDebounce.debounce(
-                          '_model.textController2',
+                          '_model.fullNameController',
                           Duration(milliseconds: 2000),
                           () => setState(() {}),
                         ),
@@ -299,10 +333,10 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                             ),
                             borderRadius: BorderRadius.circular(0),
                           ),
-                          suffixIcon: _model.textController2!.text.isNotEmpty
+                          suffixIcon: _model.fullNameController!.text.isNotEmpty
                               ? InkWell(
                                   onTap: () async {
-                                    _model.textController2?.clear();
+                                    _model.fullNameController?.clear();
                                     setState(() {});
                                   },
                                   child: Icon(
@@ -322,7 +356,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                         minLines: 1,
                         keyboardType: TextInputType.name,
                         validator:
-                            _model.textController2Validator.asValidator(context),
+                            _model.fullNameValidator.asValidator(context),
                       ),
                     ),
                     Padding(
@@ -341,9 +375,9 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                     Container(
                       width: double.infinity,
                       child: TextFormField(
-                        controller: _model.textController3,
+                        controller: _model.phoneNumberController,
                         onChanged: (_) => EasyDebounce.debounce(
-                          '_model.textController3',
+                          '_model.phoneNumberController',
                           Duration(milliseconds: 2000),
                           () => setState(() {}),
                         ),
@@ -389,10 +423,10 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                             ),
                             borderRadius: BorderRadius.circular(0),
                           ),
-                          suffixIcon: _model.textController3!.text.isNotEmpty
+                          suffixIcon: _model.phoneNumberController!.text.isNotEmpty
                               ? InkWell(
                                   onTap: () async {
-                                    _model.textController3?.clear();
+                                    _model.phoneNumberController?.clear();
                                     setState(() {});
                                   },
                                   child: Icon(
@@ -412,7 +446,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                         minLines: 1,
                         keyboardType: TextInputType.name,
                         validator:
-                            _model.textController3Validator.asValidator(context),
+                            _model.phoneNumberValidator.asValidator(context),
                       ),
                     ),
                     Padding(

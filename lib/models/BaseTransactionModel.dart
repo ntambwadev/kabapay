@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:kabapay/models/payment_instrument_model.dart';
+import 'package:kabapay/models/recipient_model.dart';
 import 'package:kabapay/models/token_model.dart';
 import 'package:kabapay/models/transaction_model.dart';
 
@@ -14,13 +15,12 @@ class BaseTransactionModel extends ChangeNotifier {
   TokenModel? token;
   String? userAddress;
   String? recipientAddress;
-  String? recipientName;
-  String? recipientPhone;
+  RecipientModel? recipient;
   PaymentInstrumentModel? paymentInstrument;
   List<EventData>? events;
 
   BaseTransactionModel({required this.id, required this.userId, required this.amountUSD,
     required this.amountToken, required this.type, required this.token,
     required this.userAddress, required this.recipientAddress,
-    required this.paymentInstrument, required this.events, required this.recipientName, required this.recipientPhone});
+    required this.paymentInstrument, required this.events, this.recipient});
 }
