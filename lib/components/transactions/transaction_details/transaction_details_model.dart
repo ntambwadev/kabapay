@@ -1,8 +1,8 @@
+import '/components/transactions/payment_instructions/payment_instructions_widget.dart';
+import '/components/transactions/transaction_summary/transaction_summary_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/transactions/payment_instructions/payment_instructions_widget.dart';
-import '/transactions/transaction_summary/transaction_summary_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';

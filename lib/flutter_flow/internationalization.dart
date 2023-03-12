@@ -563,7 +563,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Ajouter un nouveau numéro',
       'sw': 'Ongeza nambari mpya',
     },
-    'f794rwqr': {
+    '13xnn2xj': {
       'en': 'Home',
       'fr': '',
       'sw': '',

@@ -1,6 +1,6 @@
+import '/components/transactions/transaction_details/transaction_details_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/transactions/transaction_details/transaction_details_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';

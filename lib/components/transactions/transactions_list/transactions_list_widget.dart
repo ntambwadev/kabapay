@@ -1,7 +1,7 @@
 import '/components/tokens/tokens_list_placeholder/tokens_list_placeholder_widget.dart';
+import '/components/transactions/transaction_item/transaction_item_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/transactions/transaction_item/transaction_item_widget.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

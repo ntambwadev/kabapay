@@ -1,7 +1,7 @@
 import '/components/tokens/tokens_list/tokens_list_widget.dart';
+import '/components/transactions/transactions_list/transactions_list_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/transactions/transactions_list/transactions_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
