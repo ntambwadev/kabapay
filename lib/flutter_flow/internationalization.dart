@@ -541,6 +541,34 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sw': 'Nyumbani',
     },
   },
+  // select_recipient_page
+  {
+    'xqrfb5nj': {
+      'en': 'Select Recipient',
+      'fr': 'Comment paierez-vous?',
+      'sw': 'Utalipaje?',
+    },
+    'g31uzcy0': {
+      'en': 'Select your recipient',
+      'fr': 'Sélectionnez votre méthode de paiement',
+      'sw': 'Chagua njia yako ya kulipa',
+    },
+    'tsyofvs2': {
+      'en': 'Or ',
+      'fr': 'Ou',
+      'sw': 'Au',
+    },
+    'blq1s1o2': {
+      'en': 'Add new recipient',
+      'fr': 'Ajouter un nouveau numéro',
+      'sw': 'Ongeza nambari mpya',
+    },
+    'f794rwqr': {
+      'en': 'Home',
+      'fr': '',
+      'sw': '',
+    },
+  },
   // home_button
   {
     'tkmbhgt6': {
@@ -807,7 +835,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // transaction_summary
   {
-    '6z8150o2': {
+    '6iv597d9': {
       'en': 'Transaction summary',
       'fr': '',
       'sw': '',
@@ -875,7 +903,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // payment_instructions
   {
-    'wd4xh3q8': {
+    'oezsg2a1': {
       'en': 'Payment instructions',
       'fr': '',
       'sw': '',
@@ -915,6 +943,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Copy',
       'fr': '97 USD',
       'sw': '\$97 USD',
+    },
+  },
+  // recipient_item
+  {
+    'ujt2c82q': {
+      'en': 'Ntambwa Basambombo',
+      'fr': 'Reçu',
+      'sw': 'Imepokelewa',
+    },
+    'p77wquk7': {
+      'en': 'Address: 0x473... aD4c18EF6C02721ae10Caac',
+      'fr': 'Reçu',
+      'sw': 'Imepokelewa',
+    },
+    '5emknfgo': {
+      'en': 'Phone: +243992457388',
+      'fr': 'En attente',
+      'sw': 'Inasubiri',
     },
   },
   // Miscellaneous
