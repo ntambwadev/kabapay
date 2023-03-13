@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
@@ -257,6 +259,7 @@ class _NavBarPageState extends State<NavBarPage> {
     Provider.of<VaultDataModel?>(context);
     Provider.of<UserModel?>(context);
     Provider.of<double?>(context);
+    // Provider.of<bool>(context);
     Provider.of<List<TokenModel>>(context);
     Provider.of<List<RecipientModel>>(context);
     Provider.of<List<TransactionModel>>(context);

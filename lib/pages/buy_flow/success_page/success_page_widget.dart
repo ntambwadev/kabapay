@@ -2,6 +2,8 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:kabapay/components/CustomTimelineWidget.dart';
 import 'package:kabapay/models/current_transaction_model.dart';
 
+import '../../../models/BaseTransactionModel.dart';
+import '../../home_page/home_page_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -78,12 +80,27 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
     )..show(context);
   }
 
-  _getPayRecipientAccountNumber(CurrentTransactionModel currentTransaction, VaultDataModel? vaultData) {
+  _getPayRecipientAccountNumber(BaseTransactionModel currentTransaction, VaultDataModel? vaultData) {
     String userPaymentInstitutionName = currentTransaction.paymentInstrument?.organizationName.toLowerCase() ?? '';
     String vaultPaymentAcountNumber = vaultData?.paymentInstruments
         .firstWhere((element) => element.organizationName.toLowerCase()
         == userPaymentInstitutionName).accountNumber ?? '';
     return vaultPaymentAcountNumber;
+  }
+
+  _onDoneButtonPressed(BuildContext context) async {
+    logFirebaseEvent('SUCCESS_PAGE_PAGE_DONE_BTN_ON_TAP');
+    logFirebaseEvent('Button_navigate_to');
+    Provider.of<CurrentTransactionModel>(context, listen: false).isTxCreationCompleted = true;
+    context.goNamed(
+      'home_page',
+      extra: <String, dynamic>{
+        kTransitionInfoKey: TransitionInfo(
+          hasTransition: true,
+          transitionType: PageTransitionType.fade,
+        ),
+      },
+    );
   }
 
   @override
@@ -282,18 +299,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                   ),
                   FFButtonWidget(
                     onPressed: () async {
-                      logFirebaseEvent('SUCCESS_PAGE_PAGE_DONE_BTN_ON_TAP');
-                      logFirebaseEvent('Button_navigate_to');
-
-                      context.goNamed(
-                        'home_page',
-                        extra: <String, dynamic>{
-                          kTransitionInfoKey: TransitionInfo(
-                            hasTransition: true,
-                            transitionType: PageTransitionType.fade,
-                          ),
-                        },
-                      );
+                      _onDoneButtonPressed(context);
                     },
                     text: FFLocalizations.of(context).getText(
                       'ba5y4wt5' /* Done */,

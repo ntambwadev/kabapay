@@ -1,3 +1,7 @@
+import 'package:kabapay/models/transaction_model.dart';
+
+import '../../../models/BaseTransactionModel.dart';
+import '../../../models/vault_data_model.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:expandable/expandable.dart';
@@ -8,8 +12,8 @@ import 'payment_instructions_model.dart';
 export 'payment_instructions_model.dart';
 
 class PaymentInstructionsWidget extends StatefulWidget {
-  const PaymentInstructionsWidget({Key? key}) : super(key: key);
-
+  const PaymentInstructionsWidget({Key? key, required this.transactionModel}) : super(key: key);
+  final TransactionModel transactionModel;
   @override
   _PaymentInstructionsWidgetState createState() =>
       _PaymentInstructionsWidgetState();
@@ -37,8 +41,17 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
     super.dispose();
   }
 
+  _getPayRecipientAccountNumber(BaseTransactionModel currentTransaction, VaultDataModel? vaultData) {
+    String userPaymentInstitutionName = currentTransaction.paymentInstrument?.organizationName.toLowerCase() ?? '';
+    String vaultPaymentAcountNumber = vaultData?.paymentInstruments
+        .firstWhere((element) => element.organizationName.toLowerCase()
+        == userPaymentInstitutionName).accountNumber ?? '';
+    return '0$vaultPaymentAcountNumber';
+  }
+
   @override
   Widget build(BuildContext context) {
+    VaultDataModel? vaultData = Provider.of<VaultDataModel?>(context);
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -114,9 +127,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    FFLocalizations.of(context).getText(
-                                      'vo2zw0yz' /* $97 USD */,
-                                    ),
+                                    '\$${widget.transactionModel.amountUSD} USD',
                                     textAlign: TextAlign.start,
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,
@@ -177,9 +188,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    FFLocalizations.of(context).getText(
-                                      'tmqgie05' /* 0971504436 */,
-                                    ),
+                                    _getPayRecipientAccountNumber(widget.transactionModel, vaultData),
                                     textAlign: TextAlign.start,
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,

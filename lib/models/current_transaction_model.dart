@@ -11,6 +11,7 @@ import 'EventData.dart';
 import 'token_model.dart';
 
 class CurrentTransactionModel extends BaseTransactionModel  {
+  bool isTxCreationCompleted = false;
   CurrentTransactionModel({String? id, String? userId, String? amountUSD, String? amountToken,
     TransactionType? type, TokenModel? token, String? userAddress, String? recipientAddress,
     PaymentInstrumentModel? paymentInstrument, List<EventData>? events, RecipientModel? recipient,})
@@ -23,7 +24,8 @@ class CurrentTransactionModel extends BaseTransactionModel  {
   }
 
   void selectTxType(TransactionType type) {
-    super. type = type;
+    super.type = type;
+    isTxCreationCompleted = false;
     notifyListeners();
   }
 

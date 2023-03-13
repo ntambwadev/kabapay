@@ -452,7 +452,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4uxsg6tk': {
       'en': 'to',
-      'fr': 'pour',
+      'fr': 'a',
       'sw': 'kwa',
     },
     '6p8d0o9w': {
@@ -486,8 +486,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ba5y4wt5': {
       'en': 'Done',
-      'fr': 'Fait',
-      'sw': 'Imekamilika',
+      'fr': 'Completer',
+      'sw': 'Imefanyika',
     },
     'fi4h7dml': {
       'en': 'Home',

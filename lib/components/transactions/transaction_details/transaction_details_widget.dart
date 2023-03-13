@@ -99,11 +99,13 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       ),
                     ),
                   ),
-                  if (widget.transactionModel.type == TransactionType.BUY)
+                  if (widget.transactionModel.type == TransactionType.BUY
+                      && (widget.transactionModel?.status == TransactionStatus.PAYIN_TRANSACTION_CREATED
+                      || widget.transactionModel?.status == TransactionStatus.PAYIN_WAITING_FOR_USER_PAYMENT))
                     wrapWithModel(
                       model: _model.paymentInstructionsModel,
                       updateCallback: () => setState(() {}),
-                      child: PaymentInstructionsWidget(),
+                      child: PaymentInstructionsWidget(transactionModel: widget.transactionModel),
                     ),
                   wrapWithModel(
                     model: _model.transactionSummaryModel,

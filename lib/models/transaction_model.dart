@@ -48,6 +48,7 @@ class TransactionModel extends BaseTransactionModel {
 }
 
 enum TransactionStatus {
+  PAYIN_TRANSACTION_CREATED('PAYIN_TRANSACTION_CREATED'),
   PAYIN_WAITING_FOR_USER_PAYMENT('PAYIN_WAITING_FOR_USER_PAYMENT'),
   PAYIN_RECEIVED_USER_PAYMENT('PAYIN_RECEIVED_USER_PAYMENT'),
   PAYIN_CRYPTO_TRANSFER_PROCESSING('PAYIN_CRYPTO_TRANSFER_PROCESSING'),
@@ -79,6 +80,7 @@ enum TransactionStatus {
 extension TransactionStatusExtension on TransactionStatus {
   String get descriptionKey {
     switch (this) {
+      case TransactionStatus.PAYIN_TRANSACTION_CREATED:
       case TransactionStatus.PAYIN_WAITING_FOR_USER_PAYMENT:
         return 'status_pending_payment';
       case TransactionStatus.PAYIN_RECEIVED_USER_PAYMENT:
@@ -103,6 +105,7 @@ extension TransactionStatusExtension on TransactionStatus {
 
   int get index {
     switch (this) {
+      case TransactionStatus.PAYIN_TRANSACTION_CREATED:
       case TransactionStatus.PAYIN_WAITING_FOR_USER_PAYMENT:
         return 0;
       case TransactionStatus.PAYIN_RECEIVED_USER_PAYMENT:
@@ -127,6 +130,7 @@ extension TransactionStatusExtension on TransactionStatus {
 
   Color get color {
     switch (this) {
+      case TransactionStatus.PAYIN_TRANSACTION_CREATED:
       case TransactionStatus.PAYIN_WAITING_FOR_USER_PAYMENT:
       case TransactionStatus.PAYIN_RECEIVED_USER_PAYMENT:
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_PROCESSING:
