@@ -123,7 +123,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                     child: TransactionSummaryWidget(),
                   ),
                   CustomTimelineWidget(events: widget.transactionModel?.events ?? []),
-                  if(widget.transactionModel?.status?.index != 4 && widget.transactionModel?.status?.index != 6)
+                  if(widget.transactionModel?.status?.index != 4 && widget.transactionModel?.status?.index != 5 && widget.transactionModel?.status?.index != 6)
                     Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
