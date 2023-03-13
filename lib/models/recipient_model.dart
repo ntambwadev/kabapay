@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
 
-import '../auth/auth_util.dart';
+import '/../auth/auth_util.dart';
 
 class RecipientModel with ChangeNotifier {
   final String? uid;
@@ -13,6 +13,17 @@ class RecipientModel with ChangeNotifier {
 
   factory RecipientModel.fromMap(Map? data) {
     data = data ?? { };
+    return RecipientModel(
+      uid: data['uid'] as String?,
+      fullName: data['fullName'] ?? '',
+      phoneNumber: data['phoneNumber'] ?? '',
+      walletAddress: data['walletAddress'] ?? '',
+      username: data['username'] as String?,
+    );
+  }
+
+  factory RecipientModel.fromFirestore(DocumentSnapshot doc) {
+    Map data = doc.data() as Map;
     return RecipientModel(
       uid: data['uid'] as String?,
       fullName: data['fullName'] ?? '',

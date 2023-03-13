@@ -577,6 +577,34 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sw': 'Nyumbani',
     },
   },
+  // select_recipient_page
+  {
+    'xqrfb5nj': {
+      'en': 'Select Recipient',
+      'fr': 'Comment paierez-vous?',
+      'sw': 'Utalipaje?',
+    },
+    'g31uzcy0': {
+      'en': 'Select your recipient',
+      'fr': 'Sélectionnez votre méthode de paiement',
+      'sw': 'Chagua njia yako ya kulipa',
+    },
+    'tsyofvs2': {
+      'en': 'Or ',
+      'fr': 'Ou',
+      'sw': 'Au',
+    },
+    'blq1s1o2': {
+      'en': 'Add new recipient',
+      'fr': 'Ajouter un nouveau numéro',
+      'sw': 'Ongeza nambari mpya',
+    },
+    '13xnn2xj': {
+      'en': 'Home',
+      'fr': '',
+      'sw': '',
+    },
+  },
   // home_button
   {
     'tkmbhgt6': {
@@ -954,6 +982,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Les frais de transaction',
       'sw': 'Ada za muamala',
     },
+
+    '9dx3sx8g': {
+      'en': 'Send Money for free',
+      'fr': 'Envoyer de l\'argent gratuitement',
+      'sw': 'Tuma pesa bure',
+    },
     '5qtg3guc': {
       'en': '\$0.05 USD',
       'fr': '0,05 USD',
@@ -971,18 +1005,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'recipient': {
       'en': 'Recipient wallet',
-      'fr': 'Le wallet du recipient',
+      'fr': 'Wallet du recipient',
       'sw': 'Hifadhi ya mteja',
     },
     'recipientname': {
-      'en': 'Name',
-      'fr': 'Nom',
-      'sw': 'Jina',
+      'en': 'Recipient name',
+      'fr': 'Nom du Recipient',
+      'sw': 'Jina la mteja',
     },
     'recipientphone': {
-      'en': 'Phone number',
-      'fr': 'Numéro de téléphone',
-      'sw': 'Nambari ya simu',
+      'en': 'Recipient phone number',
+      'fr': 'Numéro de téléphone du Recipient ',
+      'sw': 'Nambari ya simu ya mteja',
     },
     'yousend': {
       'en': 'You send',
@@ -1061,7 +1095,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
 
   // payment_instructions
   {
-    'wd4xh3q8': {
+    'oezsg2a1': {
       'en': 'Payment instructions',
       'fr': 'Instructions de paiement',
       'sw': 'Maelekezo ya malipo',
@@ -1100,6 +1134,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Copy',
       'fr': '97 USD',
       'sw': '\$97 USD',
+    },
+  },
+  // recipient_item
+  {
+    'ujt2c82q': {
+      'en': 'Ntambwa Basambombo',
+      'fr': 'Reçu',
+      'sw': 'Imepokelewa',
+    },
+    'p77wquk7': {
+      'en': 'Address: 0x473... aD4c18EF6C02721ae10Caac',
+      'fr': 'Reçu',
+      'sw': 'Imepokelewa',
+    },
+    '5emknfgo': {
+      'en': 'Phone: +243992457388',
+      'fr': 'En attente',
+      'sw': 'Inasubiri',
     },
   },
   // Miscellaneous

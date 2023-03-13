@@ -5,7 +5,7 @@ import 'package:kabapay/models/BaseTransactionModel.dart';
 import 'package:kabapay/models/payment_instrument_model.dart';
 import 'package:kabapay/models/recipient_model.dart';
 
-import '../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'EventData.dart';
 import 'token_model.dart';
 
@@ -41,7 +41,7 @@ class TransactionModel extends BaseTransactionModel {
           ? PaymentInstrumentModel.fromMap(data['paymentInstrument'] as Map<String, dynamic>) : null,
       createdAt: DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.parse(data['createdAt'])),
       status: TransactionStatus.fromValue(data['status'] ?? ''),
-      recipient: RecipientModel.fromMap(data['recipientName'] as Map<String, dynamic>),
+      recipient: RecipientModel.fromMap(data['recipient'] as Map<String, dynamic>?),
       events: events,
     );
   }

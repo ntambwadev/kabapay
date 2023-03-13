@@ -2,13 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:kabapay/models/current_transaction_model.dart';
+import 'package:kabapay/models/recipient_model.dart';
 import 'package:kabapay/models/token_model.dart';
 import 'package:kabapay/models/transaction_model.dart';
 import 'dart:async';
 
 import 'package:kabapay/models/user_model.dart';
 import 'package:kabapay/models/vault_data_model.dart';
-import '../auth/auth_util.dart';
+import '/../auth/auth_util.dart';
 import '../models/payment_instrument_model.dart';
 
 class FirestoreService {
@@ -97,6 +98,25 @@ class FirestoreService {
     }
   }
 
+  /// Query the user recipients subcollection
+  Stream<List<RecipientModel>> streamRecipients(String? userId) {
+    if (userId == null || userId.isEmpty) {
+      print('RECIPIENTS QUERY ERROR EMPTY userId');
+      return Stream.empty();
+    }
+    try {
+      var ref = _firestoreDb
+          .collection('users_data')
+          .doc(userId)
+          .collection('recipients');
+      return ref.snapshots().map((list) =>
+          list.docs.map((doc) => RecipientModel.fromFirestore(doc)).toList());
+    } catch (error) {
+      print('RECIPIENTS QUERY ERROR: $error');
+      return Stream.empty();
+    }
+  }
+
   /// Query the user payment instruments subcollection
   Stream<List<PaymentInstrumentModel>> streamUserPaymentInstruments(String? userId) {
     if (userId == null || userId.isEmpty) {
@@ -139,11 +159,24 @@ class FirestoreService {
           .collection('payment_instruments')
           .add(paymentInstrument.toJson());
     } catch (error) {
-      print('createTestTransaction ERROR: $error');
+      print('addPaymentInstrument to Firestore ERROR: $error');
       return new Future.value();
     }
   }
 
+  /// Write data
+  Future<DocumentReference<Map<String, dynamic>>> addRecipient(RecipientModel recipientModel) {
+    try {
+      return _firestoreDb
+          .collection('users_data')
+          .doc(currentUserUid)
+          .collection('recipients')
+          .add(recipientModel.toJson());
+    } catch (error) {
+      print('addRecipient to Firestore ERROR: $error');
+      return new Future.value();
+    }
+  }
 
   /// Write data
   Future<DocumentReference<Map<String, dynamic>>>   createTransaction(CurrentTransactionModel currentTransactionModel) {

@@ -61,4 +61,9 @@ class CurrentTransactionModel extends BaseTransactionModel  {
     notifyListeners();
   }
 
+  void addRecipient(RecipientModel? recipientModel) {
+    super.recipient = recipientModel;
+    notifyListeners();
+  }
+
 }

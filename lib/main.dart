@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:kabapay/firestore/firestore_service.dart';
 import 'package:kabapay/models/current_transaction_model.dart';
+import 'package:kabapay/models/recipient_model.dart';
 import 'package:kabapay/models/token_model.dart';
 import 'package:kabapay/models/transaction_model.dart';
 import 'package:kabapay/models/user_model.dart';
@@ -179,6 +180,15 @@ class _MyAppState extends State<MyApp> {
             return List.empty();
           },
         ),
+        StreamProvider<List<RecipientModel>>(
+          initialData: [],
+          create: (context) =>
+              FirestoreService().streamRecipients(currentUserUid),
+          catchError: (context, err) {
+            debugPrint('RECIPIENT MODEL PROVIDER ERROR: ${err.toString()}');
+            return List.empty();
+          },
+        ),
         StreamProvider<List<PaymentInstrumentModel>>(
           initialData: [],
           create: (context) =>
@@ -248,6 +258,7 @@ class _NavBarPageState extends State<NavBarPage> {
     Provider.of<UserModel?>(context);
     Provider.of<double?>(context);
     Provider.of<List<TokenModel>>(context);
+    Provider.of<List<RecipientModel>>(context);
     Provider.of<List<TransactionModel>>(context);
     Provider.of<List<PaymentInstrumentModel>>(context);
     Provider.of<CurrentTransactionModel>(context, listen: false)

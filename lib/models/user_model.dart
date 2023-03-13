@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
 
-import '../auth/auth_util.dart';
+import '/../auth/auth_util.dart';
 
 class UserModel with ChangeNotifier {
   final String uid;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
 import 'package:expandable/expandable.dart';
 
-import '../flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/internationalization.dart';
 import '../models/EventData.dart';
 
