@@ -419,6 +419,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Maison',
       'sw': 'Nyumbani',
     },
+    'confirm': {
+      'en': 'Confirm before paying',
+      'fr': 'Confirmer avant de payer',
+      'sw': 'Thibitisha kabla ya kulipa',
+    },
   },
   // settings_page
   {
