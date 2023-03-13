@@ -1,4 +1,5 @@
 import 'package:kabapay/models/current_transaction_model.dart';
+import 'package:kabapay/models/transaction_model.dart';
 import 'package:kabapay/models/vault_data_model.dart';
 import 'package:provider/provider.dart';
 import '../../../components/nav_back_button/nav_back_button_widget.dart';
@@ -65,6 +66,7 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
   Widget build(BuildContext context) {
     CurrentTransactionModel transactionModel = Provider.of<CurrentTransactionModel>(context);
     _model.transactionSummaryModel.transactionModel = transactionModel;
+    var confirmButtonKey = (transactionModel.type == TransactionType.BUY) ? 'm4tvulyy' : 'confirm_send';
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -115,7 +117,7 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                         _onConfirmButtonTapped(context, transactionModel);
                       },
                       text: FFLocalizations.of(context).getText(
-                        'm4tvulyy' /* Confirm and pay */,
+                        confirmButtonKey,
                       ),
                       options: FFButtonOptions(
                         width: double.infinity,

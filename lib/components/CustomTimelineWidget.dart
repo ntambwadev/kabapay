@@ -17,7 +17,8 @@ class Event {
 class CustomTimelineWidget extends StatelessWidget {
   final List<EventData> events;
 
-  const CustomTimelineWidget({required this.events});
+  const CustomTimelineWidget({required this.events, required this.transactionModel});
+  final TransactionModel transactionModel;
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +32,12 @@ class CustomTimelineWidget extends StatelessWidget {
     }
     var isTxCancelled = events.length > 0 && events.any((event) => event.type == txCancelledStatus && event.isCompleted);
 
-    var height = events.length > 1 ? (events.length - 1) * 40.0 : 70.0;
+    var height = events.length > 1 ? (events.length - 1) * 45.0 : 45.0;
     if (isTxCancelled) {
       height = completedEvents.length > 1 ? (completedEvents.length - 1) * 70.0 : 70;
     }
 
-    var itemCount = events.length - 2;
+    var itemCount = transactionModel.type == TransactionType.BUY ? events.length - 2 : events.length - 1;
     if (isTxCancelled) {
       itemCount = events.length;
     }

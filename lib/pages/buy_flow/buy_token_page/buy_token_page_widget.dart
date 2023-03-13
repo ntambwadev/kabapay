@@ -1,4 +1,7 @@
+import 'package:kabapay/models/transaction_model.dart';
+
 import '../../../components/nav_back_button/nav_back_button_widget.dart';
+import '../../../models/current_transaction_model.dart';
 import '/components/buy_token_page_components/buy_token_amount/buy_token_amount_widget.dart';
 import '/components/buy_token_page_components/buy_token_next_button/buy_token_next_button_widget.dart';
 import '/components/buy_token_page_components/number_keyboard/number_keyboard_widget.dart';
@@ -49,6 +52,8 @@ class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    CurrentTransactionModel transactionModel = Provider.of<CurrentTransactionModel>(context);
+    var titleKey = transactionModel.type == TransactionType.BUY ? 'np0tkmuy' : 'send_token';
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -60,7 +65,7 @@ class _BuyTokenPageWidgetState extends State<BuyTokenPageWidget> {
           actions: [],
           flexibleSpace: FlexibleSpaceBar(
             title: NavBackButtonWidget(
-              titleKey: 'np0tkmuy' /* Buy Token */,
+              titleKey: titleKey /* Buy Token */,
               firebaseEvent: 'BUY_TOKEN_chevron_left_ICN_ON_TAP',
               firebaseEvent2: 'IconButton_navigate_back',
             ),

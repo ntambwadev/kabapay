@@ -122,8 +122,8 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                     updateCallback: () => setState(() {}),
                     child: TransactionSummaryWidget(),
                   ),
-                  CustomTimelineWidget(events: widget.transactionModel?.events ?? []),
-                  if(widget.transactionModel?.status?.index != 4 && widget.transactionModel?.status?.index != 5 && widget.transactionModel?.status?.index != 6)
+                  CustomTimelineWidget(events: widget.transactionModel?.events ?? [], transactionModel: widget.transactionModel),
+                  if(widget.transactionModel?.status?.index == 0 || widget.transactionModel?.status?.index == 1)
                     Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),

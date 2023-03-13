@@ -355,8 +355,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'np0tkmuy': {
       'en': 'Buy Token',
-      'fr': 'Acheter un jeton',
-      'sw': 'Nunua Tokeni',
+      'fr': 'Acheter',
+      'sw': 'Nunua',
+    },
+    'send_token': {
+      'en': 'Send Token',
+      'fr': 'Envoyer',
+      'sw': 'Tuma',
     },
     'u9is7l5l': {
       'en': 'Home',
@@ -403,6 +408,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Confirm and pay',
       'fr': 'Confirmer et payer',
       'sw': 'Thibitisha na ulipe',
+    },
+    'confirm_send': {
+      'en': 'Confirm and send',
+      'fr': 'Confirmer et envoyer',
+      'sw': 'Thibitisha na utume',
     },
     'gsq78zqf': {
       'en': 'Home',
@@ -580,14 +590,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // select_recipient_page
   {
     'xqrfb5nj': {
-      'en': 'Select Recipient',
-      'fr': 'Comment paierez-vous?',
-      'sw': 'Utalipaje?',
+      'en': 'Recipient',
+      'fr': 'Destinataire',
+      'sw': 'Mpokeaji',
     },
     'g31uzcy0': {
       'en': 'Select your recipient',
-      'fr': 'Sélectionnez votre méthode de paiement',
-      'sw': 'Chagua njia yako ya kulipa',
+      'fr': 'Sélectionnez votre destinataire',
+      'sw': 'Chagua mpokeaji wako',
     },
     'tsyofvs2': {
       'en': 'Or ',
@@ -596,8 +606,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'blq1s1o2': {
       'en': 'Add new recipient',
-      'fr': 'Ajouter un nouveau numéro',
-      'sw': 'Ongeza nambari mpya',
+      'fr': 'Ajouter un nouveau destinataire',
+      'sw': 'Ongeza mpokeaji mpya',
     },
     'oogi1izk': {
       'en': 'Home',

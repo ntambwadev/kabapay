@@ -56,7 +56,7 @@ class _RecipientListWidgetState extends State<RecipientListWidget> {
               child: Container(
                 width: double.infinity,
                 height: double.infinity,
-                child: TokensListPlaceholderWidget(),
+                child: Container(),
               ),
             );
           }
