@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
 import 'confirmation_page_model.dart';
 export 'confirmation_page_model.dart';
@@ -130,17 +131,22 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
                       onPressed: () async {
                         logFirebaseEvent(
                             'CONFIRMATION_CONFIRM_AND_PAY_BTN_ON_TAP');
-                        logFirebaseEvent('Button_navigate_to');
+                        logFirebaseEvent('Button_biometric_verification');
+                        final _localAuth = LocalAuthentication();
+                        bool _isBiometricSupported =
+                            await _localAuth.isDeviceSupported();
 
-                        context.pushNamed(
-                          'success_page',
-                          extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
-                              hasTransition: true,
-                              transitionType: PageTransitionType.rightToLeft,
-                            ),
-                          },
-                        );
+                        if (_isBiometricSupported) {
+                          _model.isAuthenticated =
+                              await _localAuth.authenticate(
+                                  localizedReason:
+                                      FFLocalizations.of(context).getText(
+                            '51ozp1v6' /* Please authenticate to continu... */,
+                          ));
+                          setState(() {});
+                        }
+
+                        setState(() {});
                       },
                       text: FFLocalizations.of(context).getText(
                         'm4tvulyy' /* Confirm and pay */,

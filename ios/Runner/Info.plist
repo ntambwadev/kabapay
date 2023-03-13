@@ -59,7 +59,8 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 
-
+	<key>NSFaceIDUsageDescription</key>
+    <string>This app requires permissions to perform a biometric verification.</string>
 	<key>NSFaceIDUsageDescription</key>
     <string>This app requires permissions to perfrom biometric verification</string>
 	<key>NSCameraUsageDescription</key>
