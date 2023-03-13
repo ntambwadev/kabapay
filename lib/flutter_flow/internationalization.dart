@@ -563,7 +563,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Ajouter un nouveau numéro',
       'sw': 'Ongeza nambari mpya',
     },
-    '13xnn2xj': {
+    'oogi1izk': {
       'en': 'Home',
       'fr': '',
       'sw': '',
@@ -831,6 +831,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Transaction Details',
       'fr': 'détails de la transaction',
       'sw': 'Maelezo ya Muamala',
+    },
+    'dzxvejah': {
+      'en': 'Cancel',
+      'fr': 'Continuer',
+      'sw': 'Endelea',
     },
   },
   // transaction_summary
