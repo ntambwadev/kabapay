@@ -43,7 +43,11 @@ class _HomePageTabWidgetState extends State<HomePageTabWidget> with SingleTicker
 
   @override
   Widget build(BuildContext context) {
-    Provider.of<CurrentTransactionModel>(context, listen: false).isTxCreationCompleted == true ? _tabController.animateTo(1) : _tabController.animateTo(0);
+    CurrentTransactionModel currentTransactionModel = Provider.of<CurrentTransactionModel>(context, listen: false);
+    if (currentTransactionModel.isTxCreationCompleted == true) {
+      _tabController.animateTo(1);
+      Provider.of<CurrentTransactionModel>(context, listen: false).isTxCreationCompleted = false;
+    }
     return Container(
       width: double.infinity,
       height: double.infinity,

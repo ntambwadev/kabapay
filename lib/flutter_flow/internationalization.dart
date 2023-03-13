@@ -622,6 +622,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Recevoir',
       'sw': 'Pata',
     },
+    'warning_title': {
+      'en': 'Warning',
+      'fr': 'Attention',
+      'sw': 'Onyo',
+    },
+    'pending_tx_warning': {
+      'en': 'You already have a pending transaction. Completed it or Cancel first',
+      'fr': 'Vous avez déjà une transaction en cours. Completer la ou annulez d\'abord',
+      'sw': 'Umeanza biashara. Fanya au Ghairi kwanza',
+    },
   },
   // add_phone_instrument
   {
@@ -1066,6 +1076,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Failed',
       'fr': 'Echec',
       'sw': 'Imeshindwa',
+    },
+    'status_cancelled': {
+      'en': 'Cancelled',
+      'fr': 'Annuler',
+      'sw': 'Imezuiwa',
     },
   },
 

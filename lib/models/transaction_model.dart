@@ -54,6 +54,7 @@ enum TransactionStatus {
   PAYIN_CRYPTO_TRANSFER_PROCESSING('PAYIN_CRYPTO_TRANSFER_PROCESSING'),
   PAYIN_CRYPTO_TRANSFER_COMPLETED('PAYIN_CRYPTO_TRANSFER_COMPLETED'),
   PAYIN_CRYPTO_TRANSFER_FAILED('PAYIN_CRYPTO_TRANSFER_FAILED'),
+  PAYIN_TRANSACTION_CANCELLED('PAYIN_TRANSACTION_CANCELLED'),
 
   PAYOUT_CRYPTO_TRANSFER_CREATED('PAYOUT_CRYPTO_TRANSFER_CREATED'),
   PAYOUT_CRYPTO_TRANSFER_PROCESSING('PAYOUT_CRYPTO_TRANSFER_PROCESSING'),
@@ -98,6 +99,8 @@ extension TransactionStatusExtension on TransactionStatus {
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_FAILED:
       case TransactionStatus.PAYOUT_INTERAC_TRANSFER_FAILED:
         return 'status_failed';
+      case TransactionStatus.PAYIN_TRANSACTION_CANCELLED:
+        return 'status_cancelled';
       default:
         return "";
     }
@@ -106,23 +109,26 @@ extension TransactionStatusExtension on TransactionStatus {
   int get index {
     switch (this) {
       case TransactionStatus.PAYIN_TRANSACTION_CREATED:
-      case TransactionStatus.PAYIN_WAITING_FOR_USER_PAYMENT:
         return 0;
-      case TransactionStatus.PAYIN_RECEIVED_USER_PAYMENT:
+      case TransactionStatus.PAYIN_WAITING_FOR_USER_PAYMENT:
         return 1;
+      case TransactionStatus.PAYIN_RECEIVED_USER_PAYMENT:
+        return 2;
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_PROCESSING:
       case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_PROCESSING:
       case TransactionStatus.PAYOUT_CRYPTO_TRANSFER_SUCCEEDED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_PROCESSING:
-        return 2;
+        return 3;
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_COMPLETED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_SUCCEEDED:
       case TransactionStatus.PAYOUT_INTERAC_TRANSFER_SUCCEEDED:
-        return 3;
+        return 4;
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_FAILED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_FAILED:
       case TransactionStatus.PAYOUT_INTERAC_TRANSFER_FAILED:
-        return 4;
+        return 5;
+      case TransactionStatus.PAYIN_TRANSACTION_CANCELLED:
+        return 6;
       default:
         return -1;
     }
@@ -145,6 +151,7 @@ extension TransactionStatusExtension on TransactionStatus {
       case TransactionStatus.PAYIN_CRYPTO_TRANSFER_FAILED:
       case TransactionStatus.PAYOUT_MOMO_TRANSFER_FAILED:
       case TransactionStatus.PAYOUT_INTERAC_TRANSFER_FAILED:
+      case TransactionStatus.PAYIN_TRANSACTION_CANCELLED:
         return Colors.red;
       default:
         return Colors.red;

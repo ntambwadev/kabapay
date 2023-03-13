@@ -10,9 +10,34 @@ class SnackBarUtils {
       backgroundColor: Colors.red,
       margin: EdgeInsets.all(8),
       borderRadius: BorderRadius.circular(8),
-      title:  FFLocalizations.of(context).getText('error_title',),
+      title:  FFLocalizations.of(context).getText('warning_title',),
       message:  FFLocalizations.of(context).getText(messageKey,),
       duration:  Duration(seconds: 2),
+    )..show(context);
+  }
+
+  static void showWarningSnackBar(BuildContext context, String messageKey) {
+    Flushbar(
+      backgroundColor: Colors.orange,
+      margin: EdgeInsets.all(8),
+      borderRadius: BorderRadius.circular(8),
+      duration:  Duration(seconds: 3),
+      titleText: Text(
+        FFLocalizations.of(context).getText('warning_title',),
+        style: GoogleFonts.getFont(
+          'Poppins',
+          color: Colors.white,
+          fontSize: 14,
+        ),
+      ),
+      messageText: Text(
+        FFLocalizations.of(context).getText(messageKey,),
+        style: GoogleFonts.getFont(
+          'Poppins',
+          color: Colors.white,
+          fontSize: 12,
+        ),
+      ),
     )..show(context);
   }
 

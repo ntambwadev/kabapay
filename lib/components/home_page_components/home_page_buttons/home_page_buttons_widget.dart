@@ -1,6 +1,7 @@
 import 'package:kabapay/index.dart';
 import 'package:kabapay/models/current_transaction_model.dart';
 import 'package:kabapay/models/transaction_model.dart';
+import 'package:kabapay/utils/snack_bar_utils.dart';
 import 'package:provider/provider.dart';
 
 import '../../tokens/receive_token/receive_token_widget.dart';
@@ -27,6 +28,10 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
   _onBuyButtonTap(BuildContext context, UserModel? userModel) async {
     logFirebaseEvent('HOME_BUY_BUTTON_Container_g4p1ceub_ON_TAP');
     logFirebaseEvent('home_buy_button_navigate_to');
+    if(!_validatePendingTransactions(context)) {
+      SnackBarUtils.showWarningSnackBar(context, 'pending_tx_warning');
+      return;
+    }
     Provider.of<CurrentTransactionModel>(context, listen: false)
         .selectTxType(TransactionType.BUY);
     Provider.of<CurrentTransactionModel>(context, listen: false)
@@ -75,6 +80,11 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
       );
     },
     );
+  }
+
+  bool _validatePendingTransactions(BuildContext context) {
+    List<TransactionModel> transactions = Provider.of<List<TransactionModel>>(context, listen: false);
+    return transactions.where((tx) => tx.status == TransactionStatus.PAYIN_WAITING_FOR_USER_PAYMENT || tx.status == TransactionStatus.PAYIN_TRANSACTION_CREATED).isEmpty;
   }
 
   late HomePageButtonsModel _model;

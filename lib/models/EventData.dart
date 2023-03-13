@@ -1,5 +1,5 @@
 class EventData {
-  final int index;
+  int index;
   final String type;
   final bool isCompleted;
   final Map<String, String> title;

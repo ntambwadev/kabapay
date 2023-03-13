@@ -1,4 +1,5 @@
 import 'package:kabapay/components/CustomTimelineWidget.dart';
+import 'package:kabapay/firestore/firestore_service.dart';
 import 'package:kabapay/models/transaction_model.dart';
 import 'package:kabapay/models/payment_instrument_model.dart';
 import '/components/transactions/payment_instructions/payment_instructions_widget.dart';
@@ -50,7 +51,8 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
     logFirebaseEvent(
         'TRANSACTION_DETAILS_CANCEL_BTN_ON_TAP');
     logFirebaseEvent('Button_navigate_to');
-    // _model.transactionSummaryModel.transactionModel.cancelTransaction();
+    FirestoreService().cancelTransaction(widget.transactionModel);
+    Navigator.of(context).pop();
   }
 
   @override
@@ -121,7 +123,8 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                     child: TransactionSummaryWidget(),
                   ),
                   CustomTimelineWidget(events: widget.transactionModel?.events ?? []),
-                  Padding(
+                  if(widget.transactionModel?.status?.index != 4 && widget.transactionModel?.status?.index != 6)
+                    Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
                     child: FFButtonWidget(

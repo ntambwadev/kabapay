@@ -209,6 +209,23 @@ class FirestoreService {
     }
   }
 
+  /// Write data
+  Future<void> cancelTransaction(TransactionModel transactionModel) {
+    try {
+      return _firestoreDb
+          .collection('transactions')
+          .doc(transactionModel.id)
+          .update({
+        'status': 'PAYIN_TRANSACTION_CANCELLED',
+        'updatedAt': DateTime.now().toUtc().toIso8601String()
+      });
+
+    } catch (error) {
+      print('addPaymentInstrument to Firestore ERROR: $error');
+      return new Future.value();
+    }
+  }
+
   Future<DocumentReference<Map<String, dynamic>>> createTestTransaction() async {
     var txObject = {
       "userId" : currentUserUid.toString(),
