@@ -3,6 +3,7 @@ import 'dart:ui' as ui;
 
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/services.dart';
+import 'package:kabapay/utils/snack_bar_utils.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 import '/../auth/auth_util.dart';
@@ -29,22 +30,7 @@ class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
 
   _copyToClipboard() async {
     Clipboard.setData(new ClipboardData(text: userAddress)).then((_){
-      Flushbar(
-        backgroundColor: Colors.black,
-        margin: EdgeInsets.all(8),
-        borderRadius: BorderRadius.circular(8),
-        title:  FFLocalizations.of(context).getText('toast_title',), /* Please enter an amount */
-        message:  FFLocalizations.of(context).getText(userAddress,),
-        messageText: Text(
-          userAddress,
-          style: GoogleFonts.getFont(
-            'Poppins',
-            color: Colors.white,
-            fontSize: 14,
-          ),
-        ),
-        duration:  Duration(seconds: 2),
-      )..show(context);
+      SnackBarUtils.showCopyAddressSnackBar(context, userAddress);
     });
   }
   late ReceiveTokenModel _model;

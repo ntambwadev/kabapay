@@ -1,6 +1,7 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:kabapay/components/CustomTimelineWidget.dart';
 import 'package:kabapay/models/current_transaction_model.dart';
+import 'package:kabapay/utils/snack_bar_utils.dart';
 
 import '../../../models/BaseTransactionModel.dart';
 import '../../home_page/home_page_widget.dart';
@@ -49,35 +50,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
   }
 
   _onAccountNumberCopied(BuildContext context, String vaultPaymentAcountNumber) {
-    // showTopSnackBar(
-    //   Overlay.of(context)!,
-    //   CustomSnackBar.info(
-    //     message:
-    //     "Veuille envoyer le montant au numéro de compte que vous venez de copier",
-    //   ),
-    // );
-    Flushbar(
-      backgroundColor: Colors.black,
-      margin: EdgeInsets.all(10),
-      borderRadius: BorderRadius.circular(8),
-      titleText: Text(
-        FFLocalizations.of(context).getText('pay_toast_title',),
-        style: GoogleFonts.getFont(
-          'Poppins',
-          color: Colors.white,
-          fontSize: 14,
-        ),
-      ),
-      messageText: Text(
-        vaultPaymentAcountNumber,
-        style: GoogleFonts.getFont(
-          'Poppins',
-          color: Colors.white,
-          fontSize: 12,
-        ),
-      ),
-      duration:  Duration(seconds: 2),
-    )..show(context);
+    SnackBarUtils.showPayToNumberMessageSnackBar(context, vaultPaymentAcountNumber);
   }
 
   _getPayRecipientAccountNumber(BaseTransactionModel currentTransaction, VaultDataModel? vaultData) {

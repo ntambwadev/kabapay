@@ -1,4 +1,6 @@
+import 'package:flutter/services.dart';
 import 'package:kabapay/models/transaction_model.dart';
+import 'package:kabapay/utils/snack_bar_utils.dart';
 
 import '../../../models/BaseTransactionModel.dart';
 import '../../../models/vault_data_model.dart';
@@ -49,9 +51,28 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
     return '0$vaultPaymentAcountNumber';
   }
 
+  _onCopyPayRecipientAccountNumber(BuildContext context, String payRecipientAccountNumber) async {
+    await Clipboard.setData(new ClipboardData(text: payRecipientAccountNumber));
+    SnackBarUtils.showCopyMessageSnackBar(
+        context,
+        'oq0q2q1a' /* Copied to clipboard */,
+        payRecipientAccountNumber
+    );
+  }
+
+  _onCopyAmountUSD(BuildContext context, String amountUSD) async {
+    await Clipboard.setData(new ClipboardData(text: amountUSD));
+    SnackBarUtils.showCopyMessageSnackBar(
+      context,
+      'oq0q2q1a' /* Copied to clipboard */,
+        amountUSD
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     VaultDataModel? vaultData = Provider.of<VaultDataModel?>(context);
+    String payRecipientAccountNumber = _getPayRecipientAccountNumber(widget.transactionModel, vaultData);
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -132,33 +153,38 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,
                                   ),
-                                  Container(
-                                    width: 55.0,
-                                    height: 25.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      shape: BoxShape.rectangle,
-                                      border: Border.all(
+                                  InkWell(
+                                    onTap: () async {
+                                      _onCopyAmountUSD(context, widget.transactionModel.amountUSD ?? '0');
+                                    },
+                                    child: Container(
+                                      width: 55.0,
+                                      height: 25.0,
+                                      decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryColor,
-                                        width: 0.5,
+                                            .primaryBackground,
+                                        borderRadius: BorderRadius.circular(4.0),
+                                        shape: BoxShape.rectangle,
+                                        border: Border.all(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryColor,
+                                          width: 0.5,
+                                        ),
                                       ),
-                                    ),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'qg3l5g4e' /* Copy */,
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'qg3l5g4e' /* Copy */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        maxLines: 1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              fontSize: 12.0,
+                                              lineHeight: 2.0,
+                                            ),
                                       ),
-                                      textAlign: TextAlign.center,
-                                      maxLines: 1,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            fontSize: 12.0,
-                                            lineHeight: 2.0,
-                                          ),
                                     ),
                                   ),
                                 ],
@@ -188,38 +214,44 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    _getPayRecipientAccountNumber(widget.transactionModel, vaultData),
+                                    payRecipientAccountNumber,
                                     textAlign: TextAlign.start,
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,
                                   ),
-                                  Container(
-                                    width: 55.0,
-                                    height: 25.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      borderRadius: BorderRadius.circular(4.0),
-                                      shape: BoxShape.rectangle,
-                                      border: Border.all(
+                                  InkWell(
+                                    onTap: () async {
+                                      _onCopyPayRecipientAccountNumber(
+                                          context, payRecipientAccountNumber);
+                                    },
+                                    child: Container(
+                                      width: 55.0,
+                                      height: 25.0,
+                                      decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryColor,
-                                        width: 0.5,
+                                            .primaryBackground,
+                                        borderRadius: BorderRadius.circular(4.0),
+                                        shape: BoxShape.rectangle,
+                                        border: Border.all(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryColor,
+                                          width: 0.5,
+                                        ),
                                       ),
-                                    ),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'qg3l5g4e' /* Copy */,
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'qg3l5g4e' /* Copy */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        maxLines: 1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              fontSize: 12.0,
+                                              lineHeight: 2.0,
+                                            ),
                                       ),
-                                      textAlign: TextAlign.center,
-                                      maxLines: 1,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            fontSize: 12.0,
-                                            lineHeight: 2.0,
-                                          ),
                                     ),
                                   ),
                                 ],

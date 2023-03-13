@@ -2,6 +2,7 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:kabapay/models/current_transaction_model.dart';
 import 'package:provider/provider.dart';
 
+import '../../../utils/snack_bar_utils.dart';
 import '/flutter_flow/flutter_flow_model.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -26,14 +27,7 @@ class _BuyTokenNextButtonWidgetState extends State<BuyTokenNextButtonWidget> {
     logFirebaseEvent('BUY_TOKEN_NEXT_BUTTON_NEXT_BTN_ON_TAP');
     logFirebaseEvent('Button_navigate_to');
     if (currentTransaction.amountUSD == null || currentTransaction.amountUSD == '0') {
-      Flushbar(
-        backgroundColor: Colors.red,
-        margin: EdgeInsets.all(8),
-        borderRadius: BorderRadius.circular(8),
-        title:  FFLocalizations.of(context).getText('error_title',), /* Please enter an amount */
-        message:  FFLocalizations.of(context).getText('u9is7890',),
-        duration:  Duration(seconds: 2),
-      )..show(context);
+      SnackBarUtils.showErrorSnackBar(context, 'u9is7890');
       return;
     }
 

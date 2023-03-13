@@ -799,6 +799,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Vous avez copié votre adresse',
       'sw': 'Ume nakili anwani yako',
     },
+    'oq0q2q1a': {
+      'en': 'Copy done',
+      'fr': 'Copie effectue',
+      'sw': 'Kukamilika kwa nakili',
+    }
   },
   // loading_view
   {

@@ -2,6 +2,7 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:kabapay/firestore/firestore_service.dart';
 import 'package:kabapay/models/payment_instrument_model.dart';
 import 'package:kabapay/models/vault_data_model.dart';
+import 'package:kabapay/utils/snack_bar_utils.dart';
 
 import '/components/telecoms/telecom_selector/telecom_selector_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -71,14 +72,7 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
   }
 
   showSnackBar(BuildContext context, String messageKey) {
-    Flushbar(
-      backgroundColor: Colors.red,
-      margin: EdgeInsets.all(8),
-      borderRadius: BorderRadius.circular(8),
-      title:  FFLocalizations.of(context).getText('error_title',),
-      message:  FFLocalizations.of(context).getText(messageKey,),
-      duration:  Duration(seconds: 2),
-    )..show(context);
+    SnackBarUtils.showErrorSnackBar(context, messageKey);
   }
 
   _onSelectNetworkTap(BuildContext context) async {

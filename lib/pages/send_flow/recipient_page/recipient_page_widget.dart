@@ -3,6 +3,7 @@ import 'package:kabapay/utils/input_validator_utils.dart';
 
 import '../../../components/nav_back_button/nav_back_button_widget.dart';
 import '../../../firestore/firestore_service.dart';
+import '../../../utils/snack_bar_utils.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -83,28 +84,17 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
     );
   }
 
-  showSnackBar(BuildContext context, String messageKey) {
-    Flushbar(
-      backgroundColor: Colors.red,
-      margin: EdgeInsets.all(8),
-      borderRadius: BorderRadius.circular(8),
-      title:  FFLocalizations.of(context).getText('error_title',),
-      message:  FFLocalizations.of(context).getText(messageKey,),
-      duration:  Duration(seconds: 2),
-    )..show(context);
-  }
-
   bool _validateInput(BuildContext context) {
     if (!InputValidatorUtils.isAddressValidBep20(_model.walletAdressController.text)) {
-      showSnackBar(context, 'wallet_address_invalid');
+      SnackBarUtils.showErrorSnackBar(context, 'wallet_address_invalid');
       return false;
     }
     if (!InputValidatorUtils.isValidFullName(_model.fullNameController.text)) {
-      showSnackBar(context, 'name_invalid');
+      SnackBarUtils.showErrorSnackBar(context, 'name_invalid');
       return false;
     }
     if (!InputValidatorUtils.isValidNumber(_model.phoneNumberController.text)) {
-      showSnackBar(context, 'phone_number_invalid');
+      SnackBarUtils.showErrorSnackBar(context, 'phone_number_invalid');
       return false;
     }
     return true;
