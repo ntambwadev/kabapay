@@ -175,12 +175,12 @@ class FirestoreService {
       return _firestoreDb
           .collection('users')
           .doc(currentUserUid)
-          .update({
+          .set({
               'fcmTokens': {
                 if (Platform.isIOS) 'ios': fcmToken,
                 if (Platform.isAndroid) 'android': fcmToken,
               },
-      });
+            }, SetOptions(merge: true));
     } catch (error) {
       print('addPaymentInstrument to Firestore ERROR: $error');
       return new Future.value();
