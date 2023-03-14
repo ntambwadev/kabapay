@@ -37,6 +37,17 @@ if (keystorePropertiesFile.exists()) {
 android {
     compileSdkVersion 33
 
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
+//    splits {
+//        abi {
+//            enable true
+//            universalApk false
+//        }
+//    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -79,4 +90,5 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'io.uqudo.sdk:Uqudo:2.5.0'
 }

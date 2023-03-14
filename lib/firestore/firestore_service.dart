@@ -165,6 +165,26 @@ class FirestoreService {
   }
 
   /// Write data
+  Future<void> addFcmToken(String? fcmToken, String? currentUserUid) {
+    try {
+      if (fcmToken == null || fcmToken.isEmpty || currentUserUid == null || currentUserUid.isEmpty) {
+        print('addFcmToken to Firestore ERROR: fcmToken is empty or currentUserUid is empty');
+        return new Future.value();
+      }
+      return _firestoreDb
+          .collection('users')
+          .doc(currentUserUid)
+          .update({
+            'fcmToken': fcmToken,
+          });
+    } catch (error) {
+      print('addPaymentInstrument to Firestore ERROR: $error');
+      return new Future.value();
+    }
+  }
+
+
+  /// Write data
   Future<DocumentReference<Map<String, dynamic>>> addRecipient(RecipientModel recipientModel) {
     try {
       return _firestoreDb

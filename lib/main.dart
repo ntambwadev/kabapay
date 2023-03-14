@@ -1,7 +1,10 @@
 import 'dart:ffi';
+import 'dart:io';
 
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -28,56 +31,116 @@ import 'package:google_fonts/google_fonts.dart';
 import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 import 'models/payment_instrument_model.dart';
+import 'package:uqudosdk_flutter/UqudoIdPlugin.dart';
+import 'package:uqudosdk_flutter/uqudosdk_flutter.dart';
+import 'package:permission_handler/permission_handler.dart';
 
-// @pragma('vm:entry-point')
-// Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-//   // If you're going to use other Firebase services in the background, such as Firestore,
-//   // make sure you call `initializeApp` before using other Firebase services.
-//   await Firebase.initializeApp();
-//
-//   print("Handling a background message: ${message.messageId}");
-// }
-//
-// onBackgroundMessage(SmsMessage message) {
-//   debugPrint("main onBackgroundMessage called: ${message.body}");
-// }
-//
-// initMessagingNotification() async {
-//   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-//   final fcmToken = await FirebaseMessaging.instance.getToken();
-//   debugPrint('fcmToken: ${fcmToken}');
-//   FFAppState().fcmToken = fcmToken;
-//
-//   FirebaseMessaging messaging = FirebaseMessaging.instance;
-//   NotificationSettings settings = await messaging.requestPermission(
-//     alert: true,
-//     announcement: false,
-//     badge: true,
-//     carPlay: false,
-//     criticalAlert: false,
-//     provisional: false,
-//     sound: true,
-//   );
-//   print('User granted permission: ${settings.authorizationStatus}');
-//
-//   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-//     print('Got a message whilst in the foreground!');
-//     print('Message data: ${message.data}');
-//
-//     if (message.notification != null) {
-//       print('Message also contained a notification: ${message.notification}');
-//     }
-//   });
-// }
+@pragma('vm:entry-point')
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  // If you're going to use other Firebase services in the background, such as Firestore,
+  // make sure you call `initializeApp` before using other Firebase services.
+  await Firebase.initializeApp();
+
+  print("Handling a background message: ${message.messageId}");
+}
+
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+FlutterLocalNotificationsPlugin();
+
+initMessagingNotification() async {
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
+  FirebaseMessaging messaging = FirebaseMessaging.instance;
+  NotificationSettings settings = await messaging.requestPermission(
+    alert: true,
+    announcement: true,
+    badge: true,
+    carPlay: false,
+    criticalAlert: false,
+    provisional: false,
+    sound: true,
+  );
+
+  await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
+    alert: true, // Required to display a heads up notification
+    badge: true,
+    sound: true,
+  );
+
+  print('User granted permission: ${settings.authorizationStatus}');
+
+  enableAndroidForegroundNotification();
+  listenToForegroundNotifications();
+}
+
+enableAndroidForegroundNotification() async {
+  if(Platform.isAndroid) {
+
+    flutterLocalNotificationsPlugin.initialize(
+      InitializationSettings(
+        android: AndroidInitializationSettings('@mipmap/ic_launcher'),
+      ),);
+
+    const AndroidNotificationChannel channel = AndroidNotificationChannel(
+      'high_importance_channel', // id
+      'High Importance Notifications', // title
+      description: 'This channel is used for important notifications.',
+      importance: Importance.max,
+    );
+
+    await flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
+        ?.createNotificationChannel(channel);
+  }
+}
+
+listenToForegroundNotifications() async {
+  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    print('Got a message whilst in the foreground!');
+    print('Message data: ${message.data}');
+
+    if (message.notification != null) {
+      print('Message also contained a notification: ${message.notification}');
+    }
+    showCustomAndroidForegroundNotifications(message);
+  });
+}
+
+showCustomAndroidForegroundNotifications(RemoteMessage message) async {
+  if(Platform.isAndroid) {
+    RemoteNotification? notification = message.notification;
+    AndroidNotification? android = message.notification?.android;
+
+    // If `onMessage` is triggered with a notification, construct our own
+    // local notification to show to users using the created channel.
+    if (notification != null && android != null) {
+      flutterLocalNotificationsPlugin.show(
+          notification.hashCode,
+          notification.title,
+          notification.body,
+          NotificationDetails(
+            android: AndroidNotificationDetails(
+              'high_importance_channel',
+              'High Importance Notifications',
+              channelDescription: 'This channel is used for important notifications.',
+              icon: android?.smallIcon,
+              // other properties...
+            ),
+          ));
+    }
+  }
+}
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initFirebase();
   await FFLocalizations.initialize();
-
+  UqudoIdPlugin.init();
+  // UqudoIdPlugin.setLocale('fr');
   if (!kIsWeb) {
     FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
   }
-  // await initMessagingNotification();
+  await initMessagingNotification();
   // await initializeFirebaseRemoteConfig();
 
   runApp(MyApp());
@@ -246,6 +309,14 @@ class _NavBarPageState extends State<NavBarPage> {
     _currentPageName = widget.initialPage ?? _currentPageName;
     _currentPage = widget.page;
     _checkAuthentification();
+    _getFcmToken();
+    _askPermissions();
+  }
+
+  _getFcmToken() async {
+    final fcmToken = await  FirebaseMessaging.instance.getToken();
+    debugPrint('fcmToken: $fcmToken');
+    FirestoreService().addFcmToken(fcmToken, currentUserUid);
   }
 
   _checkAuthentification() async {
@@ -255,6 +326,14 @@ class _NavBarPageState extends State<NavBarPage> {
     BiometricsUtils.isFirstLaunchDone = true;
     if(!await BiometricsUtils.validateBiometric(context)) {
       await signOut();
+    }
+  }
+
+  _askPermissions() async {
+    var notificationPermissionStatus = await Permission.notification.status;
+    if (!notificationPermissionStatus.isGranted) {
+      // Either the permission was already granted before or the user just granted it.
+      await Permission.notification.request();
     }
   }
 
