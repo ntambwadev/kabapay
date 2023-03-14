@@ -1,4 +1,5 @@
 import 'package:another_flushbar/flushbar.dart';
+import 'package:flutter/services.dart';
 import 'package:kabapay/components/CustomTimelineWidget.dart';
 import 'package:kabapay/models/current_transaction_model.dart';
 import 'package:kabapay/utils/snack_bar_utils.dart';
@@ -49,7 +50,8 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
     super.dispose();
   }
 
-  _onAccountNumberCopied(BuildContext context, String vaultPaymentAcountNumber) {
+  _onAccountNumberCopied(BuildContext context, String vaultPaymentAcountNumber) async {
+    await Clipboard.setData(new ClipboardData(text: vaultPaymentAcountNumber));
     SnackBarUtils.showPayToNumberMessageSnackBar(context, vaultPaymentAcountNumber);
   }
 

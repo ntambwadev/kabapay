@@ -123,7 +123,8 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                             style:
                                 FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Poppins',
-                                      fontSize: 10.0,
+                                      fontSize: 11.0,
+                                      fontWeight: FontWeight.w400,
                                     ),
                           ),
                           Column(
@@ -140,53 +141,62 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                     .override(
                                       fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w500,
+                                      fontSize: 12
                                     ),
                               ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Text(
                                     '\$${widget.transactionModel.amountUSD} USD',
                                     textAlign: TextAlign.start,
                                     style:
-                                        FlutterFlowTheme.of(context).bodyText1,
-                                  ),
-                                  InkWell(
-                                    onTap: () async {
-                                      _onCopyAmountUSD(context, widget.transactionModel.amountUSD ?? '0');
-                                    },
-                                    child: Container(
-                                      width: 55.0,
-                                      height: 25.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        borderRadius: BorderRadius.circular(4.0),
-                                        shape: BoxShape.rectangle,
-                                        border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryColor,
-                                          width: 0.5,
-                                        ),
-                                      ),
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'qg3l5g4e' /* Copy */,
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        maxLines: 1,
-                                        style: FlutterFlowTheme.of(context)
+                                        FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
-                                              fontFamily: 'Poppins',
-                                              fontSize: 12.0,
-                                              lineHeight: 2.0,
-                                            ),
-                                      ),
-                                    ),
+                                          fontFamily: 'Poppins',
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 16.0,
+                                          lineHeight: 2.0,
+                                        ),
                                   ),
+                                  // InkWell(
+                                  //   onTap: () async {
+                                  //     _onCopyAmountUSD(context, widget.transactionModel.amountUSD ?? '0');
+                                  //   },
+                                  //   child: Container(
+                                  //     width: 55.0,
+                                  //     height: 25.0,
+                                  //     decoration: BoxDecoration(
+                                  //       color: FlutterFlowTheme.of(context)
+                                  //           .primaryBackground,
+                                  //       borderRadius: BorderRadius.circular(4.0),
+                                  //       shape: BoxShape.rectangle,
+                                  //       border: Border.all(
+                                  //         color: FlutterFlowTheme.of(context)
+                                  //             .secondaryColor,
+                                  //         width: 0.5,
+                                  //       ),
+                                  //     ),
+                                  //     child: Text(
+                                  //       FFLocalizations.of(context).getText(
+                                  //         'qg3l5g4e' /* Copy */,
+                                  //       ),
+                                  //       textAlign: TextAlign.center,
+                                  //       maxLines: 1,
+                                  //       style: FlutterFlowTheme.of(context)
+                                  //           .bodyText1
+                                  //           .override(
+                                  //             fontFamily: 'Poppins',
+                                  //             fontSize: 12.0,
+                                  //             lineHeight: 2.0,
+                                  //           ),
+                                  //     ),
+                                  //   ),
+                                  // ),
                                 ],
                               ),
                             ],
@@ -212,12 +222,19 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Text(
                                     payRecipientAccountNumber,
                                     textAlign: TextAlign.start,
                                     style:
-                                        FlutterFlowTheme.of(context).bodyText1,
+                                        FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                                fontFamily: 'Poppins',
+                                                fontSize: 14.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
                                   ),
                                   InkWell(
                                     onTap: () async {
@@ -225,16 +242,15 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                           context, payRecipientAccountNumber);
                                     },
                                     child: Container(
-                                      width: 55.0,
-                                      height: 25.0,
+                                      width: 65.0,
+                                      height: 30.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
-                                        borderRadius: BorderRadius.circular(4.0),
+                                        borderRadius: BorderRadius.circular(6.0),
                                         shape: BoxShape.rectangle,
                                         border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryColor,
+                                          color: Colors.black54,
                                           width: 0.5,
                                         ),
                                       ),
@@ -249,6 +265,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                             .override(
                                               fontFamily: 'Poppins',
                                               fontSize: 12.0,
+                                              fontWeight: FontWeight.w500,
                                               lineHeight: 2.0,
                                             ),
                                       ),

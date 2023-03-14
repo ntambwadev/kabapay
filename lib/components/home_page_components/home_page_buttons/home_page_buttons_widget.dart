@@ -4,6 +4,7 @@ import 'package:kabapay/models/transaction_model.dart';
 import 'package:kabapay/utils/snack_bar_utils.dart';
 import 'package:provider/provider.dart';
 
+import '../../../utils/biometrics_utils.dart';
 import '../../tokens/receive_token/receive_token_widget.dart';
 import '/components/home_page_components/home_button/home_button_widget.dart';
 import '/../firestore/firestore_service.dart';
@@ -66,6 +67,9 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
   _onReceiveButtonTap(BuildContext context) async {
     logFirebaseEvent('HOME_RECEIVE_BUTTON_Container_g4p1ceub_ON_TAP');
     logFirebaseEvent('home_receive_button_navigate_to');
+    if(!await BiometricsUtils.validateBiometric(context)) {
+      return;
+    }
     await showModalBottomSheet(
         isScrollControlled: true,
         backgroundColor: Colors.transparent,
