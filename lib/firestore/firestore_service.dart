@@ -239,10 +239,10 @@ class FirestoreService {
       return _firestoreDb
           .collection('transactions')
           .doc(transactionModel.id)
-          .update({
-        'status': 'PAYIN_TRANSACTION_CANCELLED',
-        'updatedAt': DateTime.now().toUtc().toIso8601String()
-      });
+          .set({
+            'status': 'PAYIN_TRANSACTION_CANCELLED',
+            'updatedAt': DateTime.now().toUtc().toIso8601String()
+          }, SetOptions(merge: true));
 
     } catch (error) {
       print('addPaymentInstrument to Firestore ERROR: $error');
