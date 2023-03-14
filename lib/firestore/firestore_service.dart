@@ -11,6 +11,7 @@ import 'package:kabapay/models/user_model.dart';
 import 'package:kabapay/models/vault_data_model.dart';
 import '/../auth/auth_util.dart';
 import '../models/payment_instrument_model.dart';
+import 'dart:io';
 
 class FirestoreService {
   FirestoreService._privateConstructor();
@@ -175,8 +176,11 @@ class FirestoreService {
           .collection('users')
           .doc(currentUserUid)
           .update({
-            'fcmToken': fcmToken,
-          });
+              'fcmTokens': {
+                if (Platform.isIOS) 'ios': fcmToken,
+                if (Platform.isAndroid) 'android': fcmToken,
+              },
+      });
     } catch (error) {
       print('addPaymentInstrument to Firestore ERROR: $error');
       return new Future.value();
