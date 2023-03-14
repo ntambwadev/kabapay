@@ -13,6 +13,7 @@ import 'package:kabapay/models/token_model.dart';
 import 'package:kabapay/models/transaction_model.dart';
 import 'package:kabapay/models/user_model.dart';
 import 'package:kabapay/models/vault_data_model.dart';
+import 'package:kabapay/utils/biometrics_utils.dart';
 import 'package:provider/provider.dart';
 import 'auth/firebase_user_provider.dart';
 import 'auth/auth_util.dart';
@@ -68,7 +69,6 @@ import 'models/payment_instrument_model.dart';
 //     }
 //   });
 // }
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initFirebase();
@@ -245,6 +245,17 @@ class _NavBarPageState extends State<NavBarPage> {
     super.initState();
     _currentPageName = widget.initialPage ?? _currentPageName;
     _currentPage = widget.page;
+    _checkAuthentification();
+  }
+
+  _checkAuthentification() async {
+    if (BiometricsUtils.isFirstLaunchDone) {
+      return;
+    }
+    BiometricsUtils.isFirstLaunchDone = true;
+    if(!await BiometricsUtils.validateBiometric(context)) {
+      await signOut();
+    }
   }
 
   @override

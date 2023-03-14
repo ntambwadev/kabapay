@@ -58,6 +58,11 @@ dependencies:
   intl: 0.17.0
   json_path: 0.4.1
   json_serializable: 6.3.1
+  local_auth: 2.1.0
+  local_auth_android: 1.0.6
+  local_auth_ios: 1.0.7
+  local_auth_platform_interface: 1.0.4
+  local_auth_windows: 1.0.1
   lottie: 1.2.1
   page_transition: 2.0.4
   pin_code_fields: 7.4.0

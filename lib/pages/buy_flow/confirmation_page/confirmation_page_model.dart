@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
 import '/flutter_flow/flutter_flow_model.dart';
 import '/flutter_flow/flutter_flow_model.dart';
@@ -14,6 +15,7 @@ class ConfirmationPageModel extends FlutterFlowModel {
 
   // Model for transaction_summary component.
   late TransactionSummaryModel transactionSummaryModel;
+  bool isAuthenticated = false;
 
   /// Initialization and disposal methods.
 

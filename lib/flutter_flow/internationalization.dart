@@ -413,6 +413,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Confirm and send',
       'fr': 'Confirmer et envoyer',
       'sw': 'Thibitisha na utume',
+      },
+    '51ozp1v6': {
+      'en': 'Please authenticate to continue',
+      'fr': 'Veuillez vous authentifier pour continuer',
+      'sw': 'Tafadhali thibitisha ili kuendelea',
     },
     'gsq78zqf': {
       'en': 'Home',

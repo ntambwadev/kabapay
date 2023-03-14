@@ -1,3 +1,4 @@
+import '../../utils/biometrics_utils.dart';
 import '/components/home_page_components/home_page_balance/home_page_balance_widget.dart';
 import '/components/home_page_components/home_page_buttons/home_page_buttons_widget.dart';
 import '/components/home_page_components/home_page_tab/home_page_tab_widget.dart';
@@ -28,7 +29,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     _model = createModel(context, () => HomePageModel());
 
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'home_page'});
+    // _checkAuthentification();
   }
+
+  // _checkAuthentification() async {
+  //   !await BiometricsUtils.validateBiometric(context);
+  // }
 
   @override
   void dispose() {

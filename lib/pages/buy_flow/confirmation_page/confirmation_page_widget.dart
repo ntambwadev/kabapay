@@ -1,6 +1,7 @@
 import 'package:kabapay/models/current_transaction_model.dart';
 import 'package:kabapay/models/transaction_model.dart';
 import 'package:kabapay/models/vault_data_model.dart';
+import 'package:kabapay/utils/biometrics_utils.dart';
 import 'package:provider/provider.dart';
 import '../../../components/nav_back_button/nav_back_button_widget.dart';
 import '/../firestore/firestore_service.dart';
@@ -11,6 +12,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
 import 'confirmation_page_model.dart';
 export 'confirmation_page_model.dart';
@@ -49,6 +51,10 @@ class _ConfirmationPageWidgetState extends State<ConfirmationPageWidget> {
   _onConfirmButtonTapped(BuildContext context, CurrentTransactionModel transactionModel) async {
     logFirebaseEvent(
         'CONFIRMATION_CONFIRM_AND_PAY_BTN_ON_TAP');
+    logFirebaseEvent('Button_biometric_verification');
+    if (!await BiometricsUtils.validateBiometric(context)) {
+      return;
+    }
     logFirebaseEvent('Button_navigate_to');
     await FirestoreService().createTransaction(transactionModel);
     context.pushNamed(
