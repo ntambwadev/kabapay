@@ -93,6 +93,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                       logFirebaseEvent('Button_auth');
                       GoRouter.of(context).prepareAuthEvent();
                       await signOut();
+                      GoRouter.of(context).clearRedirectLocation();
 
                       context.goNamedAuth('onboarding_page', mounted);
                     },

@@ -574,6 +574,44 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sw': '',
     },
   },
+  // settings_main_page
+  {
+    'merg4u9m': {
+      'en': 'Andrea Davis',
+      'fr': '',
+      'sw': '',
+    },
+    'vrd3evnm': {
+      'en': 'andrea@domainname.com',
+      'fr': '',
+      'sw': '',
+    },
+    '8sba9svs': {
+      'en': 'Edit Profile',
+      'fr': '',
+      'sw': '',
+    },
+    'haxxp4bo': {
+      'en': 'Account Settings',
+      'fr': '',
+      'sw': '',
+    },
+    '52qk5n3x': {
+      'en': 'Terms of service & Privacy',
+      'fr': '',
+      'sw': '',
+    },
+    'wfbb2kkl': {
+      'en': 'Logout',
+      'fr': 'Se déconnecter',
+      'sw': 'Ondoka',
+    },
+    'skr3lx23': {
+      'en': '__',
+      'fr': '',
+      'sw': '',
+    },
+  },
   // home_button
   {
     'tkmbhgt6': {
@@ -971,6 +1009,84 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Phone: +243992457388',
       'fr': 'En attente',
       'sw': 'Inasubiri',
+    },
+  },
+  // user_kyc_auth
+  {
+    '5i509a64': {
+      'en': 'Identification',
+      'fr': 'Destinataire',
+      'sw': 'Mpokeaji',
+    },
+    'kqqcxytd': {
+      'en': 'Wallet address',
+      'fr': 'Adresse du portefeuille',
+      'sw': 'Anwani ya Wallet',
+    },
+    '9kqiexqa': {
+      'en': '',
+      'fr': '',
+      'sw': '',
+    },
+    'cl040q0x': {
+      'en': '0x473Adc04036b3c318aD4c18EF6C0',
+      'fr': '0x473Adc04036b3c318aD4c18EF6C0',
+      'sw': '0x473Adc04036b3c318aD4c18EF6C0',
+    },
+    'cgfnd95j': {
+      'en': 'Full name',
+      'fr': 'Nom et prénom',
+      'sw': 'Jina kamili',
+    },
+    'aeqm7ule': {
+      'en': '',
+      'fr': '',
+      'sw': '',
+    },
+    'cn24ee90': {
+      'en': 'Aime Tshibangu',
+      'fr': 'Aimé Tshibangu',
+      'sw': 'Aime Tshibangu',
+    },
+    'ggn02brh': {
+      'en': 'Mobile phone',
+      'fr': 'Téléphone mobile',
+      'sw': 'Simu ya rununu',
+    },
+    'i7eqmf9v': {
+      'en': '',
+      'fr': '',
+      'sw': '',
+    },
+    's0mgtq15': {
+      'en': '+243992457388',
+      'fr': '+243992457388',
+      'sw': '+243992457388',
+    },
+    '0ir4unyl': {
+      'en': 'Continue',
+      'fr': 'Continuer',
+      'sw': 'Endelea',
+    },
+    'a1pv11o6': {
+      'en': 'Title',
+      'fr': '',
+      'sw': '',
+    },
+    'hmmb48dr': {
+      'en': 'Subtitle',
+      'fr': '',
+      'sw': '',
+    },
+    '64ltmh5o': {
+      'en': 'Title',
+      'fr': '',
+      'sw': '',
+    },
+    'rbhsubio': {
+      'en': 'Subtitle',
+      'fr': '',
+      'sw': '',
     },
   },
   // Miscellaneous

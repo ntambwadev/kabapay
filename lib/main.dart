@@ -131,6 +131,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'home_page': HomePageWidget(),
       'settings_page': SettingsPageWidget(),
+      'settings_main_page': SettingsMainPageWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
     return Scaffold(
@@ -165,6 +166,16 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             label: FFLocalizations.of(context).getText(
               'lgf10g04' /* Home */,
+            ),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.account_circle_outlined,
+              size: 24.0,
+            ),
+            label: FFLocalizations.of(context).getText(
+              'skr3lx23' /* __ */,
             ),
             tooltip: '',
           )

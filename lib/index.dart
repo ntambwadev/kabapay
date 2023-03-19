@@ -16,7 +16,8 @@ export '/pages/buy_flow/payment_methods_page/payment_methods_page_widget.dart'
     show PaymentMethodsPageWidget;
 export '/pages/buy_flow/confirmation_page/confirmation_page_widget.dart'
     show ConfirmationPageWidget;
-export '/pages/settings_page/settings_page_widget.dart' show SettingsPageWidget;
+export '/pages/settings_flow/settings_page/settings_page_widget.dart'
+    show SettingsPageWidget;
 export '/pages/buy_flow/success_page/success_page_widget.dart'
     show SuccessPageWidget;
 export '/pages/account_auth/phone_login_page/phone_login_page_widget.dart'
@@ -27,3 +28,5 @@ export '/pages/account_auth/forgot_password_page/forgot_password_page_widget.dar
     show ForgotPasswordPageWidget;
 export '/pages/send_flow/select_recipient_page/select_recipient_page_widget.dart'
     show SelectRecipientPageWidget;
+export '/pages/settings_flow/settings_main_page/settings_main_page_widget.dart'
+    show SettingsMainPageWidget;
