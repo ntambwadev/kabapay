@@ -48,7 +48,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
     String vaultPaymentAcountNumber = vaultData?.paymentInstruments
         .firstWhere((element) => element.organizationName.toLowerCase()
         == userPaymentInstitutionName).accountNumber ?? '';
-    return '0$vaultPaymentAcountNumber';
+    return vaultPaymentAcountNumber;
   }
 
   _onCopyPayRecipientAccountNumber(BuildContext context, String payRecipientAccountNumber) async {
@@ -57,15 +57,6 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
         context,
         'oq0q2q1a' /* Copied to clipboard */,
         payRecipientAccountNumber
-    );
-  }
-
-  _onCopyAmountUSD(BuildContext context, String amountUSD) async {
-    await Clipboard.setData(new ClipboardData(text: amountUSD));
-    SnackBarUtils.showCopyMessageSnackBar(
-      context,
-      'oq0q2q1a' /* Copied to clipboard */,
-        amountUSD
     );
   }
 

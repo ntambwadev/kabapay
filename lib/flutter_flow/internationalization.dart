@@ -342,7 +342,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '4dfo553x': {
       'en': 'Tokens',
-      'fr': 'Jetons',
+      'fr': 'Tokens',
       'sw': 'Ishara',
     },
     'zv0rvf78': {
@@ -730,7 +730,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ahrk9kui': {
       'en': 'Airtel money',
-      'fr': 'L\'argent d\'Airtel',
+      'fr': 'Airtel money',
       'sw': 'Airtel money',
     },
     '6gtpes89': {
@@ -810,13 +810,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'd5ox0e1u': {
       'en': 'Copy or Scan your BSC wallet address to receive tokens',
       'fr':
-          'Copiez ou scannez votre adresse de portefeuille BSC pour recevoir des jetons',
+          'Copiez ou scannez votre adresse de portefeuille BSC pour recevoir des tokens',
       'sw':
           'Nakili au Changanua anwani yako ya pochi ya BSC ili kupokea tokeni',
     },
     'lg2pfm1k': {
       'en': 'Send only binance BEP20 token to this address.',
-      'fr': 'Envoyez uniquement le jeton binance BEP20 à cette adresse.',
+      'fr': 'Envoyez uniquement le token binance BEP20 à cette adresse.',
       'sw': 'Tuma tokeni ya BEP20 pekee kwa anwani hii.',
     },
     'ip7tqqd4': {
@@ -1146,9 +1146,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sw': 'Maelekezo ya malipo',
     },
     '1k87empz': {
-      'en': 'To complete your transaction, send us your transfer from 0971504436. Use the details below to make the transfer.',
-      'fr': 'Pour finaliser votre transaction, envoyez-nous votre virement a partir du 0971504436. Utilisez les coordonnées ci-dessous pour effectuer le virement.',
-      'sw': 'Ili kukamilisha muamala wako, tutumie malipo yako kutoka 0971504436. Tumia maelezo yaliyo hapa chini kufanya uhamisho.',
+      'en': 'To complete your transaction, Use the details below to make a payment.',
+      'fr': 'Pour compléter votre transaction, utilisez les détails ci-dessous pour effectuer le paiement.',
+      'sw': 'Ili kukamilisha muamala wako, Tumia maelezo yaliyo hapa chini kufanya malipo.',
     },
     '37hmzj2z': {
       'en': 'Amount to send',
