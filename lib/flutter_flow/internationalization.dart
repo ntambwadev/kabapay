@@ -578,28 +578,28 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'merg4u9m': {
       'en': 'Andrea Davis',
-      'fr': '',
-      'sw': '',
+      'fr': 'Andréa Davis',
+      'sw': 'Andrea Davis',
     },
     'vrd3evnm': {
       'en': 'andrea@domainname.com',
-      'fr': '',
-      'sw': '',
+      'fr': 'andrea@nomdomaine.com',
+      'sw': 'andrea@domainname.com',
     },
     '8sba9svs': {
       'en': 'Edit Profile',
-      'fr': '',
-      'sw': '',
+      'fr': 'Editer le profil',
+      'sw': 'Badilisha Wasifu',
     },
     'haxxp4bo': {
       'en': 'Account Settings',
-      'fr': '',
-      'sw': '',
+      'fr': 'Paramètres du compte',
+      'sw': 'Mipangilio ya Akaunti',
     },
     '52qk5n3x': {
       'en': 'Terms of service & Privacy',
-      'fr': '',
-      'sw': '',
+      'fr': 'Conditions d\'utilisation et confidentialité',
+      'sw': 'Sheria na Masharti na Faragha',
     },
     'wfbb2kkl': {
       'en': 'Logout',
@@ -608,8 +608,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'skr3lx23': {
       'en': '__',
-      'fr': '',
-      'sw': '',
+      'fr': '__',
+      'sw': '__',
     },
   },
   // home_button
@@ -1091,6 +1091,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Miscellaneous
   {
+    'zw306lqi': {
+      'en': '',
+      'fr': '',
+      'sw': '',
+    },
     'q9u9tqyi': {
       'en': 'This app requires permissions to perfrom biometric verification',
       'fr':
