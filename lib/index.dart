@@ -30,3 +30,5 @@ export '/pages/send_flow/select_recipient_page/select_recipient_page_widget.dart
     show SelectRecipientPageWidget;
 export '/pages/settings_flow/settings_main_page/settings_main_page_widget.dart'
     show SettingsMainPageWidget;
+export '/pages/settings_flow/edit_profile/edit_profile_widget.dart'
+    show EditProfileWidget;

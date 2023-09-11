@@ -83,13 +83,13 @@ class _TokenItemWidgetState extends State<TokenItemWidget> {
                     FFLocalizations.of(context).getText(
                       'yqcnl5yr' /* Ethereum */,
                     ),
-                    style: FlutterFlowTheme.of(context).bodyText1,
+                    style: FlutterFlowTheme.of(context).bodyMedium,
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
                       'o1xrnt04' /* ETH BEP20 */,
                     ),
-                    style: FlutterFlowTheme.of(context).bodyText2.override(
+                    style: FlutterFlowTheme.of(context).bodySmall.override(
                           fontFamily: 'Poppins',
                           fontSize: 12.0,
                         ),
@@ -112,13 +112,13 @@ class _TokenItemWidgetState extends State<TokenItemWidget> {
                             FFLocalizations.of(context).getText(
                               '9xrvaw4d' /* $ */,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyText1,
+                            style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                           Text(
                             FFLocalizations.of(context).getText(
                               'zdn08gbt' /* $ 1734 */,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyText1,
+                            style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                         ],
                       ),
@@ -126,7 +126,7 @@ class _TokenItemWidgetState extends State<TokenItemWidget> {
                         FFLocalizations.of(context).getText(
                           'x6wbjhmi' /* +10.34% */,
                         ),
-                        style: FlutterFlowTheme.of(context).bodyText2.override(
+                        style: FlutterFlowTheme.of(context).bodySmall.override(
                               fontFamily: 'Poppins',
                               color: FlutterFlowTheme.of(context).gain,
                               fontSize: 11.0,

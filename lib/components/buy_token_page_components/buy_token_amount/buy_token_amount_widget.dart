@@ -58,7 +58,7 @@ class _BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
                         'bvf6srr8' /* $ */,
                       ),
                       textAlign: TextAlign.start,
-                      style: FlutterFlowTheme.of(context).title1.override(
+                      style: FlutterFlowTheme.of(context).displaySmall.override(
                             fontFamily: 'Poppins',
                             fontSize: 64.0,
                             fontWeight: FontWeight.w500,
@@ -70,7 +70,7 @@ class _BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
                       ),
                       textAlign: TextAlign.center,
                       maxLines: 1,
-                      style: FlutterFlowTheme.of(context).title1.override(
+                      style: FlutterFlowTheme.of(context).displaySmall.override(
                             fontFamily: 'Poppins',
                             fontSize: 64.0,
                             fontWeight: FontWeight.w500,
@@ -84,7 +84,7 @@ class _BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
                           'ozwfhod8' /* USD */,
                         ),
                         textAlign: TextAlign.start,
-                        style: FlutterFlowTheme.of(context).bodyText1,
+                        style: FlutterFlowTheme.of(context).bodyMedium,
                       ),
                     ),
                   ],
@@ -98,14 +98,14 @@ class _BuyTokenAmountWidgetState extends State<BuyTokenAmountWidget> {
                         'src5r0fb' /* =  */,
                       ),
                       textAlign: TextAlign.start,
-                      style: FlutterFlowTheme.of(context).subtitle2,
+                      style: FlutterFlowTheme.of(context).titleSmall,
                     ),
                     Text(
                       FFLocalizations.of(context).getText(
                         '59h7pq5s' /* 0.000345 ETH */,
                       ),
                       textAlign: TextAlign.start,
-                      style: FlutterFlowTheme.of(context).subtitle2,
+                      style: FlutterFlowTheme.of(context).titleSmall,
                     ),
                   ],
                 ),

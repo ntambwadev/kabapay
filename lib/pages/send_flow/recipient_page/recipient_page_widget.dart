@@ -20,7 +20,6 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
   late RecipientPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -38,76 +37,77 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100.0),
-        child: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          automaticallyImplyLeading: false,
-          actions: [],
-          flexibleSpace: FlexibleSpaceBar(
-            title: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                        child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 30.0,
-                          borderWidth: 1.0,
-                          buttonSize: 50.0,
-                          icon: Icon(
-                            Icons.chevron_left,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 28.0,
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(100.0),
+          child: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            automaticallyImplyLeading: false,
+            actions: [],
+            flexibleSpace: FlexibleSpaceBar(
+              title: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 0.0, 0.0),
+                          child: FlutterFlowIconButton(
+                            borderColor: Colors.transparent,
+                            borderRadius: 30.0,
+                            borderWidth: 1.0,
+                            buttonSize: 50.0,
+                            icon: Icon(
+                              Icons.chevron_left,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 28.0,
+                            ),
+                            onPressed: () async {
+                              logFirebaseEvent(
+                                  'RECIPIENT_chevron_left_ICN_ON_TAP');
+                              logFirebaseEvent('IconButton_navigate_back');
+                              context.pop();
+                            },
                           ),
-                          onPressed: () async {
-                            logFirebaseEvent(
-                                'RECIPIENT_chevron_left_ICN_ON_TAP');
-                            logFirebaseEvent('IconButton_navigate_back');
-                            context.pop();
-                          },
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
-                  child: Text(
-                    FFLocalizations.of(context).getText(
-                      'mrifrk2y' /* Recipient */,
+                      ],
                     ),
-                    style: FlutterFlowTheme.of(context).title1,
                   ),
-                ),
-              ],
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'mrifrk2y' /* Recipient */,
+                      ),
+                      style: FlutterFlowTheme.of(context).displaySmall,
+                    ),
+                  ),
+                ],
+              ),
+              centerTitle: true,
+              expandedTitleScale: 1.0,
             ),
-            centerTitle: true,
-            expandedTitleScale: 1.0,
+            elevation: 0.0,
           ),
-          elevation: 0.0,
         ),
-      ),
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+        body: SafeArea(
+          top: true,
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
             child: Container(
@@ -128,7 +128,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                       FFLocalizations.of(context).getText(
                         'hjqrsgeh' /* Wallet address */,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             fontSize: 16.0,
                             fontWeight: FontWeight.w500,
@@ -159,7 +159,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                                 'do55n5r6' /* 0x473Adc04036b3c318aD4c18EF6C0 */,
                               ),
                               hintStyle: FlutterFlowTheme.of(context)
-                                  .bodyText2
+                                  .bodySmall
                                   .override(
                                     fontFamily: 'Poppins',
                                     fontSize: 12.0,
@@ -209,12 +209,13 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                                         )
                                       : null,
                             ),
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 14.0,
-                                      lineHeight: 1.5,
-                                    ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 14.0,
+                                  lineHeight: 1.5,
+                                ),
                             maxLines: 2,
                             minLines: 1,
                             keyboardType: TextInputType.streetAddress,
@@ -227,6 +228,10 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 5.0, 0.0),
                         child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
                           onTap: () async {
                             logFirebaseEvent(
                                 'RECIPIENT_PAGE_PAGE_Icon_l7r27iv6_ON_TAP');
@@ -249,7 +254,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                       FFLocalizations.of(context).getText(
                         'o8a13o07' /* Full name */,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             fontSize: 16.0,
                             fontWeight: FontWeight.w500,
@@ -274,7 +279,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                           'z9ovzo1e' /* Aime Tshibangu */,
                         ),
                         hintStyle:
-                            FlutterFlowTheme.of(context).bodyText2.override(
+                            FlutterFlowTheme.of(context).bodySmall.override(
                                   fontFamily: 'Poppins',
                                   fontSize: 12.0,
                                   lineHeight: 1.5,
@@ -321,7 +326,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                               )
                             : null,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             fontSize: 14.0,
                             lineHeight: 1.5,
@@ -340,7 +345,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                       FFLocalizations.of(context).getText(
                         'lc09brsg' /* Mobile phone */,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             fontSize: 16.0,
                             fontWeight: FontWeight.w500,
@@ -365,7 +370,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                           '3r2nt6g2' /* +243992457388 */,
                         ),
                         hintStyle:
-                            FlutterFlowTheme.of(context).bodyText2.override(
+                            FlutterFlowTheme.of(context).bodySmall.override(
                                   fontFamily: 'Poppins',
                                   fontSize: 12.0,
                                   lineHeight: 1.5,
@@ -412,7 +417,7 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                               )
                             : null,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             fontSize: 14.0,
                             lineHeight: 1.5,
@@ -453,12 +458,13 @@ class _RecipientPageWidgetState extends State<RecipientPageWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primaryColor,
+                        color: FlutterFlowTheme.of(context).primary,
                         textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
+                            FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Poppins',
                                   color: Colors.white,
                                 ),
+                        elevation: 2.0,
                         borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,

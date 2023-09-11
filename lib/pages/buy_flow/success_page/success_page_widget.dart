@@ -18,7 +18,6 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
   late SuccessPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -33,18 +32,18 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        body: SafeArea(
+          top: true,
           child: Container(
             width: double.infinity,
             height: double.infinity,
@@ -80,7 +79,9 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                             'rmg0tflb' /* Success! */,
                           ),
                           textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.of(context).title1.override(
+                          style: FlutterFlowTheme.of(context)
+                              .displaySmall
+                              .override(
                                 fontFamily: 'Poppins',
                                 fontSize: 32.0,
                               ),
@@ -94,11 +95,10 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                             ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
-                                .subtitle2
+                                .titleSmall
                                 .override(
                                   fontFamily: 'Poppins',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
+                                  color: FlutterFlowTheme.of(context).primary,
                                   fontSize: 14.0,
                                 ),
                           ),
@@ -121,11 +121,11 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
-                                    .subtitle2
+                                    .titleSmall
                                     .override(
                                       fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryColor,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       fontSize: 14.0,
                                     ),
                               ),
@@ -139,11 +139,11 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
-                                    .subtitle2
+                                    .titleSmall
                                     .override(
                                       fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryColor,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       fontSize: 28.0,
                                     ),
                               ),
@@ -157,11 +157,11 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
-                                    .subtitle2
+                                    .titleSmall
                                     .override(
                                       fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryColor,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                     ),
                               ),
                             ),
@@ -191,12 +191,13 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                       0.0, 0.0, 0.0, 0.0),
                                   color: Color(0xFF393939),
                                   textStyle: FlutterFlowTheme.of(context)
-                                      .subtitle2
+                                      .titleSmall
                                       .override(
                                         fontFamily: 'Poppins',
                                         color: Colors.white,
                                         fontSize: 16.0,
                                       ),
+                                  elevation: 2.0,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
@@ -214,11 +215,11 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
-                                    .subtitle2
+                                    .titleSmall
                                     .override(
                                       fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryColor,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       fontSize: 12.0,
                                       fontWeight: FontWeight.w600,
                                       decoration: TextDecoration.underline,
@@ -257,10 +258,11 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: Color(0xFF23A094),
                       textStyle:
-                          FlutterFlowTheme.of(context).subtitle2.override(
+                          FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.white,
                               ),
+                      elevation: 2.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1.0,

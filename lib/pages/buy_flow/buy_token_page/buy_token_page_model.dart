@@ -4,6 +4,7 @@ import '/components/buy_token_page_components/number_keyboard/number_keyboard_wi
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -11,6 +12,7 @@ import 'package:provider/provider.dart';
 class BuyTokenPageModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for buy_token_amount component.
   late BuyTokenAmountModel buyTokenAmountModel;
   // Model for number_keyboard component.
@@ -28,11 +30,13 @@ class BuyTokenPageModel extends FlutterFlowModel {
   }
 
   void dispose() {
+    unfocusNode.dispose();
     buyTokenAmountModel.dispose();
     numberKeyboardModel.dispose();
     buyTokenNextButtonModel.dispose();
   }
 
-  /// Additional helper methods are added here.
+  /// Action blocks are added here.
 
+  /// Additional helper methods are added here.
 }

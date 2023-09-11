@@ -612,6 +612,299 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'sw': '__',
     },
   },
+  // edit_profile
+  {
+    '5lhizk3m': {
+      'en': 'Edit profile',
+      'fr': 'Comment paierez-vous?',
+      'sw': 'Utalipaje?',
+    },
+    'xi0b31v4': {
+      'en': 'Your Name',
+      'fr': '',
+      'sw': '',
+    },
+    'o8g4bc9p': {
+      'en': 'Your City',
+      'fr': '',
+      'sw': '',
+    },
+    'v3lzdrso': {
+      'en': 'State',
+      'fr': '',
+      'sw': '',
+    },
+    'm5int8i9': {
+      'en': 'State',
+      'fr': '',
+      'sw': '',
+    },
+    '2t8fy758': {
+      'en': 'Alabama',
+      'fr': '',
+      'sw': '',
+    },
+    '8mw7x1aq': {
+      'en': 'Alaska',
+      'fr': '',
+      'sw': '',
+    },
+    'lmd11anj': {
+      'en': 'Arizona',
+      'fr': '',
+      'sw': '',
+    },
+    '50nj3ajx': {
+      'en': 'Arkansas',
+      'fr': '',
+      'sw': '',
+    },
+    'o7yqp2tw': {
+      'en': 'California',
+      'fr': '',
+      'sw': '',
+    },
+    'ox7xsttx': {
+      'en': 'Colorado',
+      'fr': '',
+      'sw': '',
+    },
+    'yql130io': {
+      'en': 'Connecticut',
+      'fr': '',
+      'sw': '',
+    },
+    'cni7bxpl': {
+      'en': 'Delaware',
+      'fr': '',
+      'sw': '',
+    },
+    'mf6embu9': {
+      'en': 'Florida',
+      'fr': '',
+      'sw': '',
+    },
+    'jz3fxv8s': {
+      'en': 'Georgia',
+      'fr': '',
+      'sw': '',
+    },
+    '3o34gp01': {
+      'en': 'Hawaii',
+      'fr': '',
+      'sw': '',
+    },
+    '3yo13a86': {
+      'en': 'Idaho',
+      'fr': '',
+      'sw': '',
+    },
+    'ibc33c8b': {
+      'en': 'Illinoi',
+      'fr': '',
+      'sw': '',
+    },
+    'u0mnfx3y': {
+      'en': 'Indiana',
+      'fr': '',
+      'sw': '',
+    },
+    'vqxwt66y': {
+      'en': 'Iowa',
+      'fr': '',
+      'sw': '',
+    },
+    'l5oj3349': {
+      'en': 'Kansas',
+      'fr': '',
+      'sw': '',
+    },
+    's1fx9bcw': {
+      'en': 'Kentucky',
+      'fr': '',
+      'sw': '',
+    },
+    'e7odtij1': {
+      'en': 'Louisiana',
+      'fr': '',
+      'sw': '',
+    },
+    'rctcltye': {
+      'en': 'Maine',
+      'fr': '',
+      'sw': '',
+    },
+    'ju53hqh4': {
+      'en': 'Maryland',
+      'fr': '',
+      'sw': '',
+    },
+    'm7ifgrer': {
+      'en': 'Massachusetts',
+      'fr': '',
+      'sw': '',
+    },
+    'zin9klxz': {
+      'en': 'Michigan',
+      'fr': '',
+      'sw': '',
+    },
+    'a6xnnhbs': {
+      'en': 'Minnesota',
+      'fr': '',
+      'sw': '',
+    },
+    'v41dhhz3': {
+      'en': 'Mississippi',
+      'fr': '',
+      'sw': '',
+    },
+    'pzbkly96': {
+      'en': 'Missouri',
+      'fr': '',
+      'sw': '',
+    },
+    'zvtdleka': {
+      'en': 'Monta',
+      'fr': '',
+      'sw': '',
+    },
+    'd4d4dj6z': {
+      'en': 'Nebraska',
+      'fr': '',
+      'sw': '',
+    },
+    '4qdm3quu': {
+      'en': 'Nevada',
+      'fr': '',
+      'sw': '',
+    },
+    'pviwvfib': {
+      'en': 'New Hampshire',
+      'fr': '',
+      'sw': '',
+    },
+    'xjtof912': {
+      'en': 'New Jersey',
+      'fr': '',
+      'sw': '',
+    },
+    'uxo7rglz': {
+      'en': 'New Mexico',
+      'fr': '',
+      'sw': '',
+    },
+    'hgbr152p': {
+      'en': 'New York',
+      'fr': '',
+      'sw': '',
+    },
+    '0h72awkb': {
+      'en': 'North Carolina',
+      'fr': '',
+      'sw': '',
+    },
+    'yfjqm8zc': {
+      'en': 'North Dak',
+      'fr': '',
+      'sw': '',
+    },
+    'of8fp4w3': {
+      'en': 'Ohio',
+      'fr': '',
+      'sw': '',
+    },
+    'm1qakh0k': {
+      'en': 'Oklahoma',
+      'fr': '',
+      'sw': '',
+    },
+    'ti4qm885': {
+      'en': 'Oregon',
+      'fr': '',
+      'sw': '',
+    },
+    '7ditk5a8': {
+      'en': 'Pennsylvani',
+      'fr': '',
+      'sw': '',
+    },
+    'z2ysxcz6': {
+      'en': 'Rhode Island',
+      'fr': '',
+      'sw': '',
+    },
+    'eivrltat': {
+      'en': 'South Caroli',
+      'fr': '',
+      'sw': '',
+    },
+    'ybysp69p': {
+      'en': 'South Dakota',
+      'fr': '',
+      'sw': '',
+    },
+    'gttazu7k': {
+      'en': 'Tennessee',
+      'fr': '',
+      'sw': '',
+    },
+    'kl2dgkwl': {
+      'en': 'Texas',
+      'fr': '',
+      'sw': '',
+    },
+    'mtvgpddy': {
+      'en': 'Utah',
+      'fr': '',
+      'sw': '',
+    },
+    'lz1f7qxh': {
+      'en': 'Vermont',
+      'fr': '',
+      'sw': '',
+    },
+    'phy18qgu': {
+      'en': 'Virginia',
+      'fr': '',
+      'sw': '',
+    },
+    'jrye5f9f': {
+      'en': 'Washingto',
+      'fr': '',
+      'sw': '',
+    },
+    'ceq0fb5k': {
+      'en': 'West Virginia',
+      'fr': '',
+      'sw': '',
+    },
+    'hxo4cwwi': {
+      'en': 'Wisconsin',
+      'fr': '',
+      'sw': '',
+    },
+    'esxzr8o1': {
+      'en': 'Wyoming',
+      'fr': '',
+      'sw': '',
+    },
+    'meuw9xew': {
+      'en': 'Select State',
+      'fr': '',
+      'sw': '',
+    },
+    'a1fum1c0': {
+      'en': 'Your bio',
+      'fr': '',
+      'sw': '',
+    },
+    '8sjxsk4k': {
+      'en': 'Save Changes',
+      'fr': '',
+      'sw': '',
+    },
+  },
   // home_button
   {
     'tkmbhgt6': {

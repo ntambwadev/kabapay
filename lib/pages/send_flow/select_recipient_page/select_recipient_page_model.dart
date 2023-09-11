@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 class SelectRecipientPageModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for recipient_list component.
   late RecipientListModel recipientListModel;
 
@@ -20,9 +21,11 @@ class SelectRecipientPageModel extends FlutterFlowModel {
   }
 
   void dispose() {
+    unfocusNode.dispose();
     recipientListModel.dispose();
   }
 
-  /// Additional helper methods are added here.
+  /// Action blocks are added here.
 
+  /// Additional helper methods are added here.
 }

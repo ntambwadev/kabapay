@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -20,7 +20,6 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
   late RegisterPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -38,76 +37,77 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100.0),
-        child: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          automaticallyImplyLeading: false,
-          actions: [],
-          flexibleSpace: FlexibleSpaceBar(
-            title: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                        child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 30.0,
-                          borderWidth: 1.0,
-                          buttonSize: 50.0,
-                          icon: Icon(
-                            Icons.chevron_left,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 28.0,
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(100.0),
+          child: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            automaticallyImplyLeading: false,
+            actions: [],
+            flexibleSpace: FlexibleSpaceBar(
+              title: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 0.0, 0.0),
+                          child: FlutterFlowIconButton(
+                            borderColor: Colors.transparent,
+                            borderRadius: 30.0,
+                            borderWidth: 1.0,
+                            buttonSize: 50.0,
+                            icon: Icon(
+                              Icons.chevron_left,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 28.0,
+                            ),
+                            onPressed: () async {
+                              logFirebaseEvent(
+                                  'REGISTER_chevron_left_ICN_ON_TAP');
+                              logFirebaseEvent('IconButton_navigate_back');
+                              context.pop();
+                            },
                           ),
-                          onPressed: () async {
-                            logFirebaseEvent(
-                                'REGISTER_chevron_left_ICN_ON_TAP');
-                            logFirebaseEvent('IconButton_navigate_back');
-                            context.pop();
-                          },
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
-                  child: Text(
-                    FFLocalizations.of(context).getText(
-                      '33vz8nqh' /* Create Account */,
+                      ],
                     ),
-                    style: FlutterFlowTheme.of(context).title1,
                   ),
-                ),
-              ],
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        '33vz8nqh' /* Create Account */,
+                      ),
+                      style: FlutterFlowTheme.of(context).displaySmall,
+                    ),
+                  ),
+                ],
+              ),
+              centerTitle: true,
+              expandedTitleScale: 1.0,
             ),
-            centerTitle: true,
-            expandedTitleScale: 1.0,
+            elevation: 0.0,
           ),
-          elevation: 0.0,
         ),
-      ),
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+        body: SafeArea(
+          top: true,
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
             child: Column(
@@ -127,12 +127,13 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                             FFLocalizations.of(context).getText(
                               'yrcetpw2' /* Create your account by filling... */,
                             ),
-                            style:
-                                FlutterFlowTheme.of(context).subtitle2.override(
-                                      fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                    ),
+                            style: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                ),
                           ),
                         ),
                       ),
@@ -159,12 +160,12 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                       controller: _model.emailAddressController,
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelStyle: FlutterFlowTheme.of(context).bodyText2,
+                        labelStyle: FlutterFlowTheme.of(context).bodySmall,
                         hintText: FFLocalizations.of(context).getText(
                           '4pjed3e4' /* Enter your email... */,
                         ),
                         hintStyle:
-                            FlutterFlowTheme.of(context).bodyText2.override(
+                            FlutterFlowTheme.of(context).bodySmall.override(
                                   fontFamily: 'Poppins',
                                   lineHeight: 1.2,
                                 ),
@@ -202,7 +203,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                         contentPadding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 24.0, 20.0, 24.0),
                       ),
-                      style: FlutterFlowTheme.of(context).bodyText1,
+                      style: FlutterFlowTheme.of(context).bodyMedium,
                       validator: _model.emailAddressControllerValidator
                           .asValidator(context),
                     ),
@@ -228,12 +229,12 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                       controller: _model.passwordController,
                       obscureText: !_model.passwordVisibility,
                       decoration: InputDecoration(
-                        labelStyle: FlutterFlowTheme.of(context).bodyText2,
+                        labelStyle: FlutterFlowTheme.of(context).bodySmall,
                         hintText: FFLocalizations.of(context).getText(
                           '6ry1zj1g' /* Please enter your password... */,
                         ),
                         hintStyle:
-                            FlutterFlowTheme.of(context).bodyText2.override(
+                            FlutterFlowTheme.of(context).bodySmall.override(
                                   fontFamily: 'Poppins',
                                   lineHeight: 1.2,
                                 ),
@@ -285,7 +286,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                           ),
                         ),
                       ),
-                      style: FlutterFlowTheme.of(context).bodyText1,
+                      style: FlutterFlowTheme.of(context).bodyMedium,
                       validator: _model.passwordControllerValidator
                           .asValidator(context),
                     ),
@@ -311,12 +312,12 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                       controller: _model.confirmPasswordController,
                       obscureText: !_model.confirmPasswordVisibility,
                       decoration: InputDecoration(
-                        labelStyle: FlutterFlowTheme.of(context).bodyText2,
+                        labelStyle: FlutterFlowTheme.of(context).bodySmall,
                         hintText: FFLocalizations.of(context).getText(
                           'q6vvznln' /* Please enter your password... */,
                         ),
                         hintStyle: FlutterFlowTheme.of(context)
-                            .bodyText1
+                            .bodyMedium
                             .override(
                               fontFamily: 'Poppins',
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -372,7 +373,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                           ),
                         ),
                       ),
-                      style: FlutterFlowTheme.of(context).bodyText1,
+                      style: FlutterFlowTheme.of(context).bodyMedium,
                       validator: _model.confirmPasswordControllerValidator
                           .asValidator(context),
                     ),
@@ -398,7 +399,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                         return;
                       }
 
-                      final user = await createAccountWithEmail(
+                      final user = await authManager.createAccountWithEmail(
                         context,
                         _model.emailAddressController.text,
                         _model.passwordController.text,
@@ -407,7 +408,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                         return;
                       }
 
-                      context.goNamedAuth('home_page', mounted);
+                      context.goNamedAuth('home_page', context.mounted);
                     },
                     text: FFLocalizations.of(context).getText(
                       'gs8m1xvh' /* Create Account */,
@@ -421,7 +422,7 @@ class _RegisterPageWidgetState extends State<RegisterPageWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primaryText,
                       textStyle:
-                          FlutterFlowTheme.of(context).subtitle2.override(
+                          FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Poppins',
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,

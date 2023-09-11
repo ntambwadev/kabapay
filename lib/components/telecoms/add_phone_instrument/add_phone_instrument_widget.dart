@@ -73,7 +73,7 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                       'nk7meo7x' /* Enter a number? */,
                     ),
                     textAlign: TextAlign.start,
-                    style: FlutterFlowTheme.of(context).subtitle1,
+                    style: FlutterFlowTheme.of(context).titleMedium,
                   ),
                 ),
                 Padding(
@@ -86,9 +86,13 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                         FFLocalizations.of(context).getText(
                           '911nhcgc' /* Select network:  */,
                         ),
-                        style: FlutterFlowTheme.of(context).bodyText1,
+                        style: FlutterFlowTheme.of(context).bodyMedium,
                       ),
                       InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
                         onTap: () async {
                           logFirebaseEvent(
                               'ADD_PHONE_INSTRUMENT_Container_cyugx7h9_');
@@ -96,13 +100,14 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                           await showModalBottomSheet(
                             isScrollControlled: true,
                             backgroundColor: Colors.transparent,
+                            barrierColor: Color(0x00000000),
                             context: context,
                             builder: (context) {
                               return Padding(
-                                padding: MediaQuery.of(context).viewInsets,
+                                padding: MediaQuery.viewInsetsOf(context),
                                 child: Container(
                                   height:
-                                      MediaQuery.of(context).size.height * 0.45,
+                                      MediaQuery.sizeOf(context).height * 0.45,
                                   child: TelecomSelectorWidget(),
                                 ),
                               );
@@ -146,7 +151,7 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                                       'hmotvql5' /* Vodacom */,
                                     ),
                                     style:
-                                        FlutterFlowTheme.of(context).bodyText1,
+                                        FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                 ),
                                 Icon(
@@ -176,7 +181,7 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                             'xc6581zs' /* Mobile money number: */,
                           ),
                           textAlign: TextAlign.start,
-                          style: FlutterFlowTheme.of(context).bodyText1,
+                          style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                       ),
                       Padding(
@@ -208,7 +213,8 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                                   FFLocalizations.of(context).getText(
                                     's6izsmq2' /* +243 */,
                                   ),
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
                                 ),
                               ),
                               Expanded(
@@ -230,7 +236,7 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                                         'zkj2jcdp' /* 992457388 */,
                                       ),
                                       hintStyle: FlutterFlowTheme.of(context)
-                                          .bodyText2
+                                          .bodySmall
                                           .override(
                                             fontFamily: 'Poppins',
                                             color: Color(0xFFCBCBCB),
@@ -283,7 +289,7 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                                           : null,
                                     ),
                                     style:
-                                        FlutterFlowTheme.of(context).bodyText1,
+                                        FlutterFlowTheme.of(context).bodyMedium,
                                     textAlign: TextAlign.start,
                                     keyboardType: TextInputType.number,
                                     validator: _model.textControllerValidator
@@ -317,11 +323,12 @@ class _AddPhoneInstrumentWidgetState extends State<AddPhoneInstrumentWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primaryColor,
-                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                  color: FlutterFlowTheme.of(context).primary,
+                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Poppins',
                         color: Colors.white,
                       ),
+                  elevation: 2.0,
                   borderSide: BorderSide(
                     color: Colors.transparent,
                     width: 1.0,

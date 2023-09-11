@@ -71,7 +71,7 @@ class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
                     FFLocalizations.of(context).getText(
                       'bjys7lu3' /* Receive  */,
                     ),
-                    style: FlutterFlowTheme.of(context).title1.override(
+                    style: FlutterFlowTheme.of(context).displaySmall.override(
                           fontFamily: 'Poppins',
                           fontSize: 32.0,
                           fontWeight: FontWeight.w500,
@@ -83,14 +83,14 @@ class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
                     ),
                     textAlign: TextAlign.center,
                     maxLines: 2,
-                    style: FlutterFlowTheme.of(context).bodyText1,
+                    style: FlutterFlowTheme.of(context).bodyMedium,
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
                       'lg2pfm1k' /* Send only binance BEP20 token ... */,
                     ),
                     textAlign: TextAlign.center,
-                    style: FlutterFlowTheme.of(context).bodyText1,
+                    style: FlutterFlowTheme.of(context).bodyMedium,
                   ),
                   Padding(
                     padding:
@@ -116,12 +116,13 @@ class _ReceiveTokenWidgetState extends State<ReceiveTokenWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primaryColor,
+                        color: FlutterFlowTheme.of(context).primary,
                         textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
+                            FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Poppins',
                                   color: Colors.white,
                                 ),
+                        elevation: 2.0,
                         borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,

@@ -62,11 +62,12 @@ class _BuyTokenNextButtonWidgetState extends State<BuyTokenNextButtonWidget> {
         height: 50.0,
         padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
         iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-        color: FlutterFlowTheme.of(context).primaryColor,
-        textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+        color: FlutterFlowTheme.of(context).primary,
+        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
               fontFamily: 'Poppins',
               color: Colors.white,
             ),
+        elevation: 2.0,
         borderSide: BorderSide(
           color: Colors.transparent,
           width: 1.0,

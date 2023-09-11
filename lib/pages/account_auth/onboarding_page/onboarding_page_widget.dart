@@ -20,7 +20,6 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
   late OnboardingPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -35,31 +34,31 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: AppBar(
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      child: Scaffold(
+        key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        automaticallyImplyLeading: false,
-        title: Text(
-          FFLocalizations.of(context).getText(
-            'kgi0yevl' /* Welcome */,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          automaticallyImplyLeading: false,
+          title: Text(
+            FFLocalizations.of(context).getText(
+              'kgi0yevl' /* Welcome */,
+            ),
+            style: FlutterFlowTheme.of(context).displaySmall,
           ),
-          style: FlutterFlowTheme.of(context).title1,
+          actions: [],
+          centerTitle: false,
+          elevation: 0.0,
         ),
-        actions: [],
-        centerTitle: false,
-        elevation: 0.0,
-      ),
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+        body: SafeArea(
+          top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -85,7 +84,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Image.asset(
-                                    'assets/images/8jz5a_6.png',
+                                    'assets/images/dfjsb_6.png',
                                     width: 300.0,
                                     height: 300.0,
                                     fit: BoxFit.cover,
@@ -101,7 +100,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                             '76x3qb7u' /* Welcome to Vaultpay */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .title2,
+                                              .headlineMedium,
                                         ),
                                       ],
                                     ),
@@ -118,7 +117,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                               '0u5e512o' /* The first crypto platform in D... */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .subtitle2,
+                                                .titleSmall,
                                           ),
                                         ),
                                       ],
@@ -135,7 +134,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Image.asset(
-                                    'assets/images/5repw_5.png',
+                                    'assets/images/2emqy_5.png',
                                     width: 300.0,
                                     height: 300.0,
                                     fit: BoxFit.cover,
@@ -151,7 +150,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                             'fkvbn8zi' /* Secure and reliable  */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .title1,
+                                              .displaySmall,
                                         ),
                                       ],
                                     ),
@@ -168,7 +167,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                               '6jul5522' /* Buy and Sell Crypto with piece... */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .subtitle2,
+                                                .titleSmall,
                                           ),
                                         ),
                                       ],
@@ -185,7 +184,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Image.asset(
-                                    'assets/images/ee7yh_4.png',
+                                    'assets/images/fijek_4.png',
                                     width: 300.0,
                                     height: 300.0,
                                     fit: BoxFit.cover,
@@ -201,7 +200,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                             'p620jgn4' /* Fast and Flexible */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .title1,
+                                              .displaySmall,
                                         ),
                                       ],
                                     ),
@@ -218,7 +217,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                               'ddvmpmi9' /* We are constantly improving Va... */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .subtitle2,
+                                                .titleSmall,
                                           ),
                                         ),
                                       ],
@@ -231,7 +230,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 1.0),
+                        alignment: AlignmentDirectional(0.00, 1.00),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
@@ -240,8 +239,8 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                                 PageController(initialPage: 0),
                             count: 3,
                             axisDirection: Axis.horizontal,
-                            onDotClicked: (i) {
-                              _model.pageViewController!.animateToPage(
+                            onDotClicked: (i) async {
+                              await _model.pageViewController!.animateToPage(
                                 i,
                                 duration: Duration(milliseconds: 500),
                                 curve: Curves.ease,
@@ -284,7 +283,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).primaryText,
                         ),
@@ -315,7 +314,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).primaryText,
                         ),
@@ -347,7 +346,7 @@ class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primaryText,
-                    textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,

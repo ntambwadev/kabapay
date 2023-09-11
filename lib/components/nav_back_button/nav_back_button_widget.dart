@@ -77,7 +77,7 @@ class _NavBackButtonWidgetState extends State<NavBackButtonWidget> {
             FFLocalizations.of(context).getText(
               'dqz8qdg4' /* Confirm your code */,
             ),
-            style: FlutterFlowTheme.of(context).title1,
+            style: FlutterFlowTheme.of(context).displaySmall,
           ),
         ),
       ],

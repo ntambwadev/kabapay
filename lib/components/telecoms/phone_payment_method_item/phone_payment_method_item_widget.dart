@@ -48,7 +48,7 @@ class _PhonePaymentMethodItemWidgetState
           color: FlutterFlowTheme.of(context).secondaryBackground,
           borderRadius: BorderRadius.circular(8.0),
           border: Border.all(
-            color: FlutterFlowTheme.of(context).secondaryColor,
+            color: FlutterFlowTheme.of(context).secondary,
             width: 0.5,
           ),
         ),
@@ -82,13 +82,13 @@ class _PhonePaymentMethodItemWidgetState
                     FFLocalizations.of(context).getText(
                       'dahr2van' /* 0823345678 */,
                     ),
-                    style: FlutterFlowTheme.of(context).bodyText1,
+                    style: FlutterFlowTheme.of(context).bodyMedium,
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
                       'j6rjiybj' /* Vodacom */,
                     ),
-                    style: FlutterFlowTheme.of(context).bodyText2.override(
+                    style: FlutterFlowTheme.of(context).bodySmall.override(
                           fontFamily: 'Poppins',
                           fontSize: 12.0,
                         ),

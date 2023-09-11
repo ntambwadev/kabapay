@@ -9,6 +9,11 @@ import 'package:provider/provider.dart';
 class HomePageTabModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this component.
 
+  // State field(s) for TabBar widget.
+  TabController? tabBarController;
+  int get tabBarCurrentIndex =>
+      tabBarController != null ? tabBarController!.index : 0;
+
   // Model for tokens_list component.
   late TokensListModel tokensListModel;
   // Model for transactions_list component.
@@ -22,10 +27,12 @@ class HomePageTabModel extends FlutterFlowModel {
   }
 
   void dispose() {
+    tabBarController?.dispose();
     tokensListModel.dispose();
     transactionsListModel.dispose();
   }
 
-  /// Additional helper methods are added here.
+  /// Action blocks are added here.
 
+  /// Additional helper methods are added here.
 }

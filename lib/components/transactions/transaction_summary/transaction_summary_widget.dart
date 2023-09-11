@@ -57,14 +57,14 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                 FFLocalizations.of(context).getText(
                   '6iv597d9' /* Transaction summary */,
                 ),
-                style: FlutterFlowTheme.of(context).bodyText1.override(
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Poppins',
                       fontSize: 16.0,
                       fontWeight: FontWeight.w500,
                     ),
               ),
               collapsed: Container(
-                width: MediaQuery.of(context).size.width * 1.0,
+                width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 40.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -101,7 +101,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                   '0s3cbmii' /* Payment method */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyText1
+                                    .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
@@ -116,7 +116,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                     'pibxg7fm' /* MPesa */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
-                                      .bodyText1
+                                      .bodyMedium
                                       .override(
                                         fontFamily: 'Poppins',
                                         fontWeight: FontWeight.w500,
@@ -134,7 +134,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                   '1vdr04oj' /* Mobile money number */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyText1
+                                    .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
@@ -146,7 +146,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                   '9j45tc8b' /* 0971504436 */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyText1
+                                    .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
                                       fontSize: 12.0,
@@ -164,7 +164,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                   'enxf3cm7' /* You pay */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyText1
+                                    .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
@@ -176,7 +176,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                   'plkzh84c' /* $100 USD */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyText1
+                                    .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w500,
@@ -194,7 +194,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                   'a4h035al' /* You receive */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyText1
+                                    .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
@@ -223,7 +223,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                         'hfvxl2pp' /* 100 USDT */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyText1
+                                          .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
                                             fontWeight: FontWeight.w500,
@@ -243,7 +243,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                   '9dx3sx8g' /* Transaction fees */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyText1
+                                    .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
@@ -255,7 +255,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                   '5qtg3guc' /* $0.05 USD */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyText1
+                                    .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w500,
@@ -272,7 +272,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                   '2caxy42a' /* Total */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyText1
+                                    .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
                                       color: FlutterFlowTheme.of(context)
@@ -286,7 +286,7 @@ class _TransactionSummaryWidgetState extends State<TransactionSummaryWidget> {
                                   'c3vla7vk' /* $100.05 USD */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyText1
+                                    .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
                                       fontSize: 14.0,

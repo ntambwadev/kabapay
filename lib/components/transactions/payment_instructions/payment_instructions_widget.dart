@@ -55,7 +55,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
               FFLocalizations.of(context).getText(
                 'oezsg2a1' /* Payment instructions */,
               ),
-              style: FlutterFlowTheme.of(context).bodyText1.override(
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     fontSize: 16.0,
                     fontWeight: FontWeight.w500,
@@ -92,11 +92,12 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                               '1k87empz' /* To complete your transaction, ... */,
                             ),
                             textAlign: TextAlign.start,
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 10.0,
-                                    ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 10.0,
+                                ),
                           ),
                           Column(
                             mainAxisSize: MainAxisSize.max,
@@ -108,7 +109,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyText1
+                                    .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w500,
@@ -125,7 +126,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                     ),
                                     textAlign: TextAlign.start,
                                     style:
-                                        FlutterFlowTheme.of(context).bodyText1,
+                                        FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Container(
                                     width: 55.0,
@@ -137,7 +138,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                       shape: BoxShape.rectangle,
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryColor,
+                                            .secondary,
                                         width: 0.5,
                                       ),
                                     ),
@@ -148,7 +149,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                       textAlign: TextAlign.center,
                                       maxLines: 1,
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyText1
+                                          .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
                                             fontSize: 12.0,
@@ -170,7 +171,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
-                                    .bodyText1
+                                    .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
                                       fontSize: 12.0,
@@ -188,7 +189,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                     ),
                                     textAlign: TextAlign.start,
                                     style:
-                                        FlutterFlowTheme.of(context).bodyText1,
+                                        FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                   Container(
                                     width: 55.0,
@@ -200,7 +201,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                       shape: BoxShape.rectangle,
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryColor,
+                                            .secondary,
                                         width: 0.5,
                                       ),
                                     ),
@@ -211,7 +212,7 @@ class _PaymentInstructionsWidgetState extends State<PaymentInstructionsWidget> {
                                       textAlign: TextAlign.center,
                                       maxLines: 1,
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyText1
+                                          .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
                                             fontSize: 12.0,

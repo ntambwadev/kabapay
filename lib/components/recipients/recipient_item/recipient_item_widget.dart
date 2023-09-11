@@ -40,6 +40,10 @@ class _RecipientItemWidgetState extends State<RecipientItemWidget> {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 10.0),
       child: InkWell(
+        splashColor: Colors.transparent,
+        focusColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        highlightColor: Colors.transparent,
         onTap: () async {
           logFirebaseEvent('RECIPIENT_ITEM_Container_i943wwbj_ON_TAP');
           logFirebaseEvent('Container_navigate_to');
@@ -54,13 +58,13 @@ class _RecipientItemWidgetState extends State<RecipientItemWidget> {
             boxShadow: [
               BoxShadow(
                 blurRadius: 1.0,
-                color: FlutterFlowTheme.of(context).secondaryColor,
+                color: FlutterFlowTheme.of(context).secondary,
                 offset: Offset(0.0, 1.0),
               )
             ],
             borderRadius: BorderRadius.circular(8.0),
             border: Border.all(
-              color: FlutterFlowTheme.of(context).secondaryColor,
+              color: FlutterFlowTheme.of(context).secondary,
             ),
           ),
           child: Padding(
@@ -99,7 +103,7 @@ class _RecipientItemWidgetState extends State<RecipientItemWidget> {
                                 'ujt2c82q' /* Ntambwa Basambombo */,
                               ),
                               style: FlutterFlowTheme.of(context)
-                                  .bodyText1
+                                  .bodyMedium
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
@@ -114,7 +118,7 @@ class _RecipientItemWidgetState extends State<RecipientItemWidget> {
                               textAlign: TextAlign.start,
                               maxLines: 1,
                               style: FlutterFlowTheme.of(context)
-                                  .bodyText1
+                                  .bodyMedium
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
@@ -127,7 +131,7 @@ class _RecipientItemWidgetState extends State<RecipientItemWidget> {
                                 '5emknfgo' /* Phone: +243992457388 */,
                               ),
                               style: FlutterFlowTheme.of(context)
-                                  .bodyText1
+                                  .bodyMedium
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)

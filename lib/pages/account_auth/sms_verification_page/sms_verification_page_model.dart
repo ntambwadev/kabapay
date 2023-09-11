@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/components/nav_back_button/nav_back_button_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -11,10 +11,12 @@ import 'package:provider/provider.dart';
 class SmsVerificationPageModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for nav_back_button component.
   late NavBackButtonModel navBackButtonModel;
   // State field(s) for PinCode widget.
   TextEditingController? pinCodeController;
+  String? Function(BuildContext, String?)? pinCodeControllerValidator;
 
   /// Initialization and disposal methods.
 
@@ -24,10 +26,12 @@ class SmsVerificationPageModel extends FlutterFlowModel {
   }
 
   void dispose() {
+    unfocusNode.dispose();
     navBackButtonModel.dispose();
     pinCodeController?.dispose();
   }
 
-  /// Additional helper methods are added here.
+  /// Action blocks are added here.
 
+  /// Additional helper methods are added here.
 }

@@ -74,7 +74,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                           'f3bu15h3' /* Select network */,
                         ),
                         textAlign: TextAlign.start,
-                        style: FlutterFlowTheme.of(context).title3,
+                        style: FlutterFlowTheme.of(context).headlineSmall,
                       ),
                     ],
                   ),
@@ -90,6 +90,10 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
                     onTap: () async {
                       logFirebaseEvent(
                           'TELECOM_SELECTOR_Container_kncjvkcm_ON_T');
@@ -103,7 +107,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         borderRadius: BorderRadius.circular(8.0),
                         border: Border.all(
-                          color: FlutterFlowTheme.of(context).secondaryColor,
+                          color: FlutterFlowTheme.of(context).secondary,
                           width: 0.5,
                         ),
                       ),
@@ -138,14 +142,15 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                                   FFLocalizations.of(context).getText(
                                     'ahrk9kui' /* Airtel money */,
                                   ),
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
                                 ),
                                 Text(
                                   FFLocalizations.of(context).getText(
                                     '6gtpes89' /* Airtel */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
-                                      .bodyText2
+                                      .bodySmall
                                       .override(
                                         fontFamily: 'Poppins',
                                         fontSize: 12.0,
@@ -171,6 +176,10 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                     ),
                   ),
                   InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
                     onTap: () async {
                       logFirebaseEvent(
                           'TELECOM_SELECTOR_Container_eiv70dbx_ON_T');
@@ -184,7 +193,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         borderRadius: BorderRadius.circular(8.0),
                         border: Border.all(
-                          color: FlutterFlowTheme.of(context).secondaryColor,
+                          color: FlutterFlowTheme.of(context).secondary,
                           width: 0.5,
                         ),
                       ),
@@ -219,14 +228,15 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                                   FFLocalizations.of(context).getText(
                                     '1nxk651v' /* Mpesa */,
                                   ),
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
                                 ),
                                 Text(
                                   FFLocalizations.of(context).getText(
                                     '1cz39r2c' /* Vodacom */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
-                                      .bodyText2
+                                      .bodySmall
                                       .override(
                                         fontFamily: 'Poppins',
                                         fontSize: 12.0,
@@ -252,6 +262,10 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                     ),
                   ),
                   InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
                     onTap: () async {
                       logFirebaseEvent(
                           'TELECOM_SELECTOR_Container_frq8odze_ON_T');
@@ -265,7 +279,7 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         borderRadius: BorderRadius.circular(8.0),
                         border: Border.all(
-                          color: FlutterFlowTheme.of(context).secondaryColor,
+                          color: FlutterFlowTheme.of(context).secondary,
                           width: 0.5,
                         ),
                       ),
@@ -300,14 +314,15 @@ class _TelecomSelectorWidgetState extends State<TelecomSelectorWidget> {
                                   FFLocalizations.of(context).getText(
                                     'aqqyi7zj' /* Orange money */,
                                   ),
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
                                 ),
                                 Text(
                                   FFLocalizations.of(context).getText(
                                     'mikpg9tk' /* Orange */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
-                                      .bodyText2
+                                      .bodySmall
                                       .override(
                                         fontFamily: 'Poppins',
                                         fontSize: 12.0,

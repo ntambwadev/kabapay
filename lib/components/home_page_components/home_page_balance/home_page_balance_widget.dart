@@ -53,7 +53,7 @@ class _HomePageBalanceWidgetState extends State<HomePageBalanceWidget> {
             FFLocalizations.of(context).getText(
               'nvsz7pmg' /* Balance */,
             ),
-            style: FlutterFlowTheme.of(context).subtitle2.override(
+            style: FlutterFlowTheme.of(context).titleSmall.override(
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.normal,
                 ),
@@ -63,7 +63,7 @@ class _HomePageBalanceWidgetState extends State<HomePageBalanceWidget> {
               '82j6thjy' /* $0 */,
             ),
             maxLines: 1,
-            style: FlutterFlowTheme.of(context).title1.override(
+            style: FlutterFlowTheme.of(context).displaySmall.override(
                   fontFamily: 'Poppins',
                   fontSize: 48.0,
                   fontWeight: FontWeight.normal,

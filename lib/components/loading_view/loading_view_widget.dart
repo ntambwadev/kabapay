@@ -60,7 +60,7 @@ class _LoadingViewWidgetState extends State<LoadingViewWidget> {
             children: [
               Lottie.asset(
                 'assets/lottie_animations/lottie-loading.json',
-                width: MediaQuery.of(context).size.width * 0.5,
+                width: MediaQuery.sizeOf(context).width * 0.5,
                 height: 200.0,
                 fit: BoxFit.cover,
                 animate: true,
@@ -74,7 +74,7 @@ class _LoadingViewWidgetState extends State<LoadingViewWidget> {
                 '1k1br4ry' /* Waiting for mobile money payme... */,
               ),
               textAlign: TextAlign.center,
-              style: FlutterFlowTheme.of(context).subtitle1,
+              style: FlutterFlowTheme.of(context).titleMedium,
             ),
           ),
         ],

@@ -41,19 +41,24 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 10.0),
       child: InkWell(
+        splashColor: Colors.transparent,
+        focusColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        highlightColor: Colors.transparent,
         onTap: () async {
           logFirebaseEvent('TRANSACTION_ITEM_Container_3pf0lgjc_ON_T');
           logFirebaseEvent('Container_bottom_sheet');
           await showModalBottomSheet(
             isScrollControlled: true,
             backgroundColor: Colors.transparent,
+            barrierColor: Color(0x00000000),
             enableDrag: false,
             context: context,
             builder: (context) {
               return Padding(
-                padding: MediaQuery.of(context).viewInsets,
+                padding: MediaQuery.viewInsetsOf(context),
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.75,
+                  height: MediaQuery.sizeOf(context).height * 0.75,
                   child: TransactionDetailsWidget(),
                 ),
               );
@@ -68,13 +73,13 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
             boxShadow: [
               BoxShadow(
                 blurRadius: 1.0,
-                color: FlutterFlowTheme.of(context).secondaryColor,
+                color: FlutterFlowTheme.of(context).secondary,
                 offset: Offset(0.0, 1.0),
               )
             ],
             borderRadius: BorderRadius.circular(8.0),
             border: Border.all(
-              color: FlutterFlowTheme.of(context).secondaryColor,
+              color: FlutterFlowTheme.of(context).secondary,
             ),
           ),
           child: Padding(
@@ -87,7 +92,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                   FFLocalizations.of(context).getText(
                     'tfuogp09' /* 2022-09-08 1:52:35: PM */,
                   ),
-                  style: FlutterFlowTheme.of(context).bodyText2.override(
+                  style: FlutterFlowTheme.of(context).bodySmall.override(
                         fontFamily: 'Poppins',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 10.0,
@@ -123,7 +128,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                                 'nc374fp7' /* Received */,
                               ),
                               style: FlutterFlowTheme.of(context)
-                                  .bodyText1
+                                  .bodyMedium
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
@@ -135,11 +140,11 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                                 'v3z6xy0x' /* Pending */,
                               ),
                               style: FlutterFlowTheme.of(context)
-                                  .bodyText2
+                                  .bodySmall
                                   .override(
                                     fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .tertiaryColor,
+                                    color:
+                                        FlutterFlowTheme.of(context).tertiary,
                                     fontSize: 10.0,
                                   ),
                             ),
@@ -157,7 +162,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                                 'tf19m68r' /* 20 USDT */,
                               ),
                               style: FlutterFlowTheme.of(context)
-                                  .bodyText1
+                                  .bodyMedium
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
@@ -170,7 +175,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                                 'm0o9ogso' /* $19.20 */,
                               ),
                               style: FlutterFlowTheme.of(context)
-                                  .bodyText2
+                                  .bodySmall
                                   .override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)

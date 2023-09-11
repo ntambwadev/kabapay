@@ -50,6 +50,10 @@ class _HomePageButtonsWidgetState extends State<HomePageButtonsWidget> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
             onTap: () async {
               logFirebaseEvent('HOME_BUTTONS_Container_g4p1ceub_ON_TAP');
               logFirebaseEvent('home_button_navigate_to');

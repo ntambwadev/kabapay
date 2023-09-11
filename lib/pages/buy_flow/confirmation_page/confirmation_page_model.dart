@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 class ConfirmationPageModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for transaction_summary component.
   late TransactionSummaryModel transactionSummaryModel;
   bool isAuthenticated = false;
@@ -23,9 +24,11 @@ class ConfirmationPageModel extends FlutterFlowModel {
   }
 
   void dispose() {
+    unfocusNode.dispose();
     transactionSummaryModel.dispose();
   }
 
-  /// Additional helper methods are added here.
+  /// Action blocks are added here.
 
+  /// Additional helper methods are added here.
 }

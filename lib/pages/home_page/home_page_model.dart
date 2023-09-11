@@ -3,6 +3,7 @@ import '/components/home_page_components/home_page_buttons/home_page_buttons_wid
 import '/components/home_page_components/home_page_tab/home_page_tab_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -10,6 +11,7 @@ import 'package:provider/provider.dart';
 class HomePageModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for home_page_balance component.
   late HomePageBalanceModel homePageBalanceModel;
   // Model for home_page_buttons component.
@@ -26,11 +28,13 @@ class HomePageModel extends FlutterFlowModel {
   }
 
   void dispose() {
+    unfocusNode.dispose();
     homePageBalanceModel.dispose();
     homePageButtonsModel.dispose();
     homePageTabModel.dispose();
   }
 
-  /// Additional helper methods are added here.
+  /// Action blocks are added here.
 
+  /// Additional helper methods are added here.
 }

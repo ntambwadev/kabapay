@@ -15,7 +15,8 @@ class HomePageTabWidget extends StatefulWidget {
   _HomePageTabWidgetState createState() => _HomePageTabWidgetState();
 }
 
-class _HomePageTabWidgetState extends State<HomePageTabWidget> {
+class _HomePageTabWidgetState extends State<HomePageTabWidget>
+    with TickerProviderStateMixin {
   late HomePageTabModel _model;
 
   @override
@@ -28,6 +29,12 @@ class _HomePageTabWidgetState extends State<HomePageTabWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HomePageTabModel());
+
+    _model.tabBarController = TabController(
+      vsync: this,
+      length: 2,
+      initialIndex: 0,
+    )..addListener(() => setState(() {}));
   }
 
   @override
@@ -47,24 +54,24 @@ class _HomePageTabWidgetState extends State<HomePageTabWidget> {
       ),
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-        child: DefaultTabController(
-          length: 2,
-          initialIndex: 0,
-          child: Column(
-            children: [
-              TabBar(
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment(0.0, 0),
+              child: TabBar(
                 isScrollable: true,
-                labelColor: FlutterFlowTheme.of(context).primaryColor,
+                labelColor: FlutterFlowTheme.of(context).primary,
                 unselectedLabelColor:
                     FlutterFlowTheme.of(context).secondaryText,
                 labelPadding:
                     EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                labelStyle: FlutterFlowTheme.of(context).subtitle1.override(
+                labelStyle: FlutterFlowTheme.of(context).titleMedium.override(
                       fontFamily: 'Poppins',
                       fontSize: 16.0,
                       fontWeight: FontWeight.w500,
                     ),
-                indicatorColor: FlutterFlowTheme.of(context).primaryColor,
+                unselectedLabelStyle: TextStyle(),
+                indicatorColor: FlutterFlowTheme.of(context).primary,
                 indicatorWeight: 2.0,
                 tabs: [
                   Tab(
@@ -78,25 +85,27 @@ class _HomePageTabWidgetState extends State<HomePageTabWidget> {
                     ),
                   ),
                 ],
+                controller: _model.tabBarController,
               ),
-              Expanded(
-                child: TabBarView(
-                  children: [
-                    wrapWithModel(
-                      model: _model.tokensListModel,
-                      updateCallback: () => setState(() {}),
-                      child: TokensListWidget(),
-                    ),
-                    wrapWithModel(
-                      model: _model.transactionsListModel,
-                      updateCallback: () => setState(() {}),
-                      child: TransactionsListWidget(),
-                    ),
-                  ],
-                ),
+            ),
+            Expanded(
+              child: TabBarView(
+                controller: _model.tabBarController,
+                children: [
+                  wrapWithModel(
+                    model: _model.tokensListModel,
+                    updateCallback: () => setState(() {}),
+                    child: TokensListWidget(),
+                  ),
+                  wrapWithModel(
+                    model: _model.transactionsListModel,
+                    updateCallback: () => setState(() {}),
+                    child: TransactionsListWidget(),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

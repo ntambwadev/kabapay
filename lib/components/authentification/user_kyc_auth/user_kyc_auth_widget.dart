@@ -78,7 +78,7 @@ class _UserKycAuthWidgetState extends State<UserKycAuthWidget> {
                       FFLocalizations.of(context).getText(
                         '5i509a64' /* Identification */,
                       ),
-                      style: FlutterFlowTheme.of(context).title1,
+                      style: FlutterFlowTheme.of(context).displaySmall,
                     ),
                   ),
                   Padding(
@@ -130,7 +130,7 @@ class _UserKycAuthWidgetState extends State<UserKycAuthWidget> {
               FFLocalizations.of(context).getText(
                 'kqqcxytd' /* Wallet address */,
               ),
-              style: FlutterFlowTheme.of(context).bodyText1.override(
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     fontSize: 16.0,
                     fontWeight: FontWeight.w500,
@@ -161,7 +161,7 @@ class _UserKycAuthWidgetState extends State<UserKycAuthWidget> {
                         'cl040q0x' /* 0x473Adc04036b3c318aD4c18EF6C0 */,
                       ),
                       hintStyle:
-                          FlutterFlowTheme.of(context).bodyText2.override(
+                          FlutterFlowTheme.of(context).bodySmall.override(
                                 fontFamily: 'Poppins',
                                 fontSize: 12.0,
                                 lineHeight: 1.5,
@@ -208,7 +208,7 @@ class _UserKycAuthWidgetState extends State<UserKycAuthWidget> {
                             )
                           : null,
                     ),
-                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Poppins',
                           fontSize: 14.0,
                           lineHeight: 1.5,
@@ -224,6 +224,10 @@ class _UserKycAuthWidgetState extends State<UserKycAuthWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 5.0, 0.0),
                 child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   onTap: () async {
                     logFirebaseEvent('USER_KYC_AUTH_COMP_Icon_hdxz38z6_ON_TAP');
                     logFirebaseEvent('Icon_close_dialog,_drawer,_etc');
@@ -244,7 +248,7 @@ class _UserKycAuthWidgetState extends State<UserKycAuthWidget> {
               FFLocalizations.of(context).getText(
                 'cgfnd95j' /* Full name */,
               ),
-              style: FlutterFlowTheme.of(context).bodyText1.override(
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     fontSize: 16.0,
                     fontWeight: FontWeight.w500,
@@ -268,7 +272,7 @@ class _UserKycAuthWidgetState extends State<UserKycAuthWidget> {
                 hintText: FFLocalizations.of(context).getText(
                   'cn24ee90' /* Aime Tshibangu */,
                 ),
-                hintStyle: FlutterFlowTheme.of(context).bodyText2.override(
+                hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
                       fontFamily: 'Poppins',
                       fontSize: 12.0,
                       lineHeight: 1.5,
@@ -315,7 +319,7 @@ class _UserKycAuthWidgetState extends State<UserKycAuthWidget> {
                       )
                     : null,
               ),
-              style: FlutterFlowTheme.of(context).bodyText1.override(
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     fontSize: 14.0,
                     lineHeight: 1.5,
@@ -332,7 +336,7 @@ class _UserKycAuthWidgetState extends State<UserKycAuthWidget> {
               FFLocalizations.of(context).getText(
                 'ggn02brh' /* Mobile phone */,
               ),
-              style: FlutterFlowTheme.of(context).bodyText1.override(
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     fontSize: 16.0,
                     fontWeight: FontWeight.w500,
@@ -356,7 +360,7 @@ class _UserKycAuthWidgetState extends State<UserKycAuthWidget> {
                 hintText: FFLocalizations.of(context).getText(
                   's0mgtq15' /* +243992457388 */,
                 ),
-                hintStyle: FlutterFlowTheme.of(context).bodyText2.override(
+                hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
                       fontFamily: 'Poppins',
                       fontSize: 12.0,
                       lineHeight: 1.5,
@@ -403,7 +407,7 @@ class _UserKycAuthWidgetState extends State<UserKycAuthWidget> {
                       )
                     : null,
               ),
-              style: FlutterFlowTheme.of(context).bodyText1.override(
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Poppins',
                     fontSize: 14.0,
                     lineHeight: 1.5,
@@ -439,11 +443,12 @@ class _UserKycAuthWidgetState extends State<UserKycAuthWidget> {
                 height: 50.0,
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: FlutterFlowTheme.of(context).primaryColor,
-                textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                color: FlutterFlowTheme.of(context).primary,
+                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Poppins',
                       color: Colors.white,
                     ),
+                elevation: 2.0,
                 borderSide: BorderSide(
                   color: Colors.transparent,
                   width: 1.0,
@@ -465,16 +470,16 @@ class _UserKycAuthWidgetState extends State<UserKycAuthWidget> {
                 FFLocalizations.of(context).getText(
                   'a1pv11o6' /* Title */,
                 ),
-                style: FlutterFlowTheme.of(context).title3,
+                style: FlutterFlowTheme.of(context).headlineSmall,
               ),
               subtitle: Text(
                 FFLocalizations.of(context).getText(
                   'hmmb48dr' /* Subtitle */,
                 ),
-                style: FlutterFlowTheme.of(context).subtitle2,
+                style: FlutterFlowTheme.of(context).titleSmall,
               ),
               tileColor: Color(0xFFF5F5F5),
-              activeColor: FlutterFlowTheme.of(context).primaryColor,
+              activeColor: FlutterFlowTheme.of(context).primary,
               dense: false,
               controlAffinity: ListTileControlAffinity.trailing,
             ),
@@ -488,13 +493,13 @@ class _UserKycAuthWidgetState extends State<UserKycAuthWidget> {
               FFLocalizations.of(context).getText(
                 '64ltmh5o' /* Title */,
               ),
-              style: FlutterFlowTheme.of(context).title3,
+              style: FlutterFlowTheme.of(context).headlineSmall,
             ),
             subtitle: Text(
               FFLocalizations.of(context).getText(
                 'rbhsubio' /* Subtitle */,
               ),
-              style: FlutterFlowTheme.of(context).subtitle2,
+              style: FlutterFlowTheme.of(context).titleSmall,
             ),
             tileColor: FlutterFlowTheme.of(context).loss,
             dense: false,

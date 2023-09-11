@@ -86,7 +86,7 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                       FFLocalizations.of(context).getText(
                         'j4tcradb' /* Transaction Details */,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             fontSize: 24.0,
                             fontWeight: FontWeight.w500,
@@ -134,10 +134,11 @@ class _TransactionDetailsWidgetState extends State<TransactionDetailsWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).loss,
                         textStyle:
-                            FlutterFlowTheme.of(context).subtitle2.override(
+                            FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Poppins',
                                   color: Colors.white,
                                 ),
+                        elevation: 2.0,
                         borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,

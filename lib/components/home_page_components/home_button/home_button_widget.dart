@@ -41,7 +41,7 @@ class _HomeButtonWidgetState extends State<HomeButtonWidget> {
       width: 100.0,
       height: 45.0,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).secondaryColor,
+        color: FlutterFlowTheme.of(context).secondary,
         borderRadius: BorderRadius.circular(8.0),
       ),
       child: Row(
@@ -58,7 +58,7 @@ class _HomeButtonWidgetState extends State<HomeButtonWidget> {
               'tkmbhgt6' /* Send */,
             ),
             maxLines: 1,
-            style: FlutterFlowTheme.of(context).bodyText1,
+            style: FlutterFlowTheme.of(context).bodyMedium,
           ),
         ],
       ),

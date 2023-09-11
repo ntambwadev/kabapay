@@ -62,7 +62,7 @@ class _TokensListPlaceholderWidgetState
             children: [
               Lottie.asset(
                 'assets/lottie_animations/loading-crypto.json',
-                width: MediaQuery.of(context).size.width * 0.5,
+                width: MediaQuery.sizeOf(context).width * 0.5,
                 height: 200.0,
                 fit: BoxFit.cover,
                 animate: true,

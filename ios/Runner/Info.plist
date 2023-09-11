@@ -61,8 +61,6 @@
 
 	<key>NSFaceIDUsageDescription</key>
     <string>This app requires permissions to perform a biometric verification.</string>
-	<key>NSFaceIDUsageDescription</key>
-    <string>This app requires permissions to perfrom biometric verification</string>
 	<key>NSCameraUsageDescription</key>
     <string>This app requires permission to access the camera in order to scan for barcodes and QR codes. </string>
 	<key>PermissionGroupNotification</key>

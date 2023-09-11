@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/components/nav_back_button/nav_back_button_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -22,7 +22,6 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
   late SmsVerificationPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -37,36 +36,36 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100.0),
-        child: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          automaticallyImplyLeading: false,
-          actions: [],
-          flexibleSpace: FlexibleSpaceBar(
-            title: wrapWithModel(
-              model: _model.navBackButtonModel,
-              updateCallback: () => setState(() {}),
-              child: NavBackButtonWidget(),
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(100.0),
+          child: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            automaticallyImplyLeading: false,
+            actions: [],
+            flexibleSpace: FlexibleSpaceBar(
+              title: wrapWithModel(
+                model: _model.navBackButtonModel,
+                updateCallback: () => setState(() {}),
+                child: NavBackButtonWidget(),
+              ),
+              centerTitle: true,
+              expandedTitleScale: 1.0,
             ),
-            centerTitle: true,
-            expandedTitleScale: 1.0,
+            elevation: 0.0,
           ),
-          elevation: 0.0,
         ),
-      ),
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+        body: SafeArea(
+          top: true,
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: Column(
@@ -90,7 +89,7 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                                 FFLocalizations.of(context).getText(
                                   'ojco3nk2' /* This code helps keep your acco... */,
                                 ),
-                                style: FlutterFlowTheme.of(context).bodyText2,
+                                style: FlutterFlowTheme.of(context).bodySmall,
                               ),
                             ),
                           ),
@@ -101,19 +100,21 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                       child: PinCodeTextField(
+                        autoDisposeControllers: false,
                         appContext: context,
                         length: 6,
-                        textStyle: FlutterFlowTheme.of(context)
-                            .subtitle2
-                            .override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context).primaryColor,
-                            ),
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context).primary,
+                                ),
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         enableActiveFill: false,
                         autoFocus: true,
+                        enablePinAutofill: true,
+                        errorTextSpace: 16.0,
                         showCursor: true,
-                        cursorColor: FlutterFlowTheme.of(context).primaryColor,
+                        cursorColor: FlutterFlowTheme.of(context).primary,
                         obscureText: false,
                         hintCharacter: '-',
                         pinTheme: PinTheme(
@@ -122,21 +123,22 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                           borderWidth: 2.0,
                           borderRadius: BorderRadius.circular(12.0),
                           shape: PinCodeFieldShape.box,
-                          activeColor:
-                              FlutterFlowTheme.of(context).primaryColor,
+                          activeColor: FlutterFlowTheme.of(context).primary,
                           inactiveColor:
                               FlutterFlowTheme.of(context).primaryBackground,
                           selectedColor:
                               FlutterFlowTheme.of(context).secondaryText,
-                          activeFillColor:
-                              FlutterFlowTheme.of(context).primaryColor,
+                          activeFillColor: FlutterFlowTheme.of(context).primary,
                           inactiveFillColor:
                               FlutterFlowTheme.of(context).primaryBackground,
                           selectedFillColor:
                               FlutterFlowTheme.of(context).secondaryText,
                         ),
                         controller: _model.pinCodeController,
-                        onChanged: (_) => {},
+                        onChanged: (_) {},
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        validator: _model.pinCodeControllerValidator
+                            .asValidator(context),
                       ),
                     ),
                     Padding(
@@ -157,7 +159,8 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                             );
                             return;
                           }
-                          final phoneVerifiedUser = await verifySmsCode(
+                          final phoneVerifiedUser =
+                              await authManager.verifySmsCode(
                             context: context,
                             smsCode: smsCodeVal,
                           );
@@ -165,7 +168,7 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                             return;
                           }
 
-                          context.goNamedAuth('home_page', mounted);
+                          context.goNamedAuth('home_page', context.mounted);
                         },
                         text: FFLocalizations.of(context).getText(
                           'fd8yh3cc' /* Confirm & Continue */,
@@ -179,7 +182,7 @@ class _SmsVerificationPageWidgetState extends State<SmsVerificationPageWidget> {
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryText,
                           textStyle:
-                              FlutterFlowTheme.of(context).subtitle2.override(
+                              FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,

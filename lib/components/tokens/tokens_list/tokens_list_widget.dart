@@ -69,6 +69,10 @@ class _TokensListWidgetState extends State<TokensListWidget> {
             itemBuilder: (context, itemsIndex) {
               final itemsItem = items[itemsIndex];
               return InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
                 onTap: () async {
                   logFirebaseEvent('TOKENS_LIST_Container_ywi18osh_ON_TAP');
                   logFirebaseEvent('token_item_navigate_to');
